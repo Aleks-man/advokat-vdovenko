@@ -14,3 +14,11 @@ Edited with the built-in image_gen tool. Background changed to warm ivory to mat
 ### Edit prompt
 
 Edit the referenced Lady Justice image. Change ONLY the background and lighting balance: replace the dark forest green background with a very light warm ivory / pale sage studio backdrop, approximately #f4f2eb to #e9ece2, with only subtle soft tonal variation, no dark patches. Keep the exact same marble woman, blindfold, facial features, pose, robes, brass balance scale, both pans, chains, sword, composition and portrait aspect ratio. Preserve all details and realistic materials. Gently soften harsh contrast so this feels airy, warm and refined on a light cream lawyer website, while the sculpture remains clearly defined and brass stays natural. No text, no logos, no border, no rounded corners baked into image (corners will be rounded in CSS).
+
+## Transparent cutout revision
+
+Background removed with the built-in image_gen tool. The project WebP preserves the alpha channel; the hero container is transparent and the image uses object-fit: contain.
+
+### Edit prompt
+
+Use case: background-extraction. Edit the supplied image by removing the entire light cream background and making it genuinely transparent with an alpha channel. Preserve the exact Lady Justice sculpture, her facial features, blindfold, hair, robe folds, pose, hands, sword, brass scales, both pans, and every fine chain. Preserve original warm ivory marble lighting and brass colors, original portrait composition and proportions. All empty spaces must be transparent, including between arm and torso, between the scales chains and around the sword. Clean accurate edges, no cream halo, no added shadows, no backdrop, no text, no checkerboard baked into the image. Output an actual transparent-background cutout.
