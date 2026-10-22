@@ -1,0 +1,3 @@
+import { app } from './app.js'
+import { env } from './config/env.js'
+app.listen(env.port, '127.0.0.1', () => console.log(`API: http://127.0.0.1:${env.port}`))
