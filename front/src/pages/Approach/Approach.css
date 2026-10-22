@@ -1,14 +1,75 @@
-.work-steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 40px; }
-.work-steps article { border-top: 1px solid var(--line); padding-top: 25px; }
-.step-number { font-family: var(--serif); color: #8d9b7f; font-size: 45px; }
-.work-steps h3 { margin-block: 30px 18px; font-size: 26px; }
-.work-steps p { font-size: 13px; color: var(--muted); max-width: 300px; }
-.approach-quote { background: #e9ece2; padding-block: 75px; }
-.approach-quote h2 { margin-block: 30px; }
-.approach-quote h2 em { color: #71806a; font-weight: 400; }
-.approach-quote p { max-width: 560px; font-size: 14px; color: var(--muted); }
-.faq { max-width: 840px; margin-left: auto; border-top: 1px solid var(--line); }
-.faq details { border-bottom: 1px solid var(--line); padding-block: 25px; }
-.faq summary { cursor: pointer; font-family: var(--serif); font-size: 25px; padding-right: 15px; }
-.faq details p { font-size: 14px; color: var(--muted); margin-top: 20px; max-width: 650px; }
-@media(max-width: 700px) { .work-steps { grid-template-columns: 1fr; gap: 30px; } .work-steps h3 { margin-top: 15px; } .work-steps p { max-width: none; } .faq summary { font-size: 22px; } }
+.work-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+.work-steps article {
+  border-top: 1px solid var(--line);
+  padding-top: 25px;
+}
+.step-number {
+  font-family: var(--serif);
+  color: #8d9b7f;
+  font-size: 45px;
+}
+.work-steps h3 {
+  margin-block: 30px 18px;
+  font-size: 26px;
+}
+.work-steps p {
+  font-size: 13px;
+  color: var(--muted);
+  max-width: 300px;
+}
+.approach-quote {
+  background: #e9ece2;
+  padding-block: 75px;
+}
+.approach-quote h2 {
+  margin-block: 30px;
+}
+.approach-quote h2 em {
+  color: #71806a;
+  font-weight: 400;
+}
+.approach-quote p {
+  max-width: 560px;
+  font-size: 14px;
+  color: var(--muted);
+}
+.faq {
+  max-width: 840px;
+  margin-left: auto;
+  border-top: 1px solid var(--line);
+}
+.faq details {
+  border-bottom: 1px solid var(--line);
+  padding-block: 25px;
+}
+.faq summary {
+  cursor: pointer;
+  font-family: var(--serif);
+  font-size: 25px;
+  padding-right: 15px;
+}
+.faq details p {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 20px;
+  max-width: 650px;
+}
+@media (max-width: 700px) {
+  .work-steps {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .work-steps h3 {
+    margin-top: 15px;
+  }
+  .work-steps p {
+    max-width: none;
+  }
+  .faq summary {
+    font-size: 22px;
+  }
+}

@@ -2,5 +2,56 @@ import { ArrowDown, ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import './Hero.css'
 export function Hero() {
-  return <section className="hero container"><div className="hero-copy"><p className="eyebrow"><span className="status-dot"/> Частная адвокатская практика</p><h1>На вашей стороне.<br/><em>В сложный</em><br/><em>момент.</em></h1><p className="hero-description">Константин Вдовенко<span>Адвокат по уголовным делам</span></p><div className="hero-actions"><Link to="/contacts" className="button">Обсудить ситуацию <ArrowUpRight size={18}/></Link><a href="#practice" className="hero-explore" aria-label="Узнать о направлениях защиты"><ArrowDown size={18}/></a></div><p className="hero-note">Внимание к деталям. Взвешенный подход к защите.</p></div><div className="hero-art" aria-hidden="true"><div className="art-grain"/><div className="art-orbit"/><div className="art-arch"><div className="art-door"/></div><div className="art-step art-step-one"/><div className="art-step art-step-two"/><div className="art-step art-step-three"/><span className="art-index">КВ / АДВОКАТСКАЯ ПРАКТИКА</span><span className="art-caption">Опора.<br/><i>Когда она нужна.</i></span><span className="art-year">EST. ПРИНЦИПЫ</span></div><div className="hero-bottom"><span>УГОЛОВНОЕ ПРАВО</span><span>Личное внимание к каждому вопросу</span><span className="hero-scroll">ДАЛЕЕ <ArrowDown size={12}/></span></div></section>
+  return (
+    <section className="hero container">
+      <div className="hero-copy">
+        <p className="eyebrow">
+          <span className="status-dot" /> Частная адвокатская практика
+        </p>
+        <h1>
+          На вашей стороне.
+          <br />
+          <em>В сложный</em>
+          <br />
+          <em>момент.</em>
+        </h1>
+        <p className="hero-description">
+          Константин Вдовенко<span>Адвокат по уголовным делам</span>
+        </p>
+        <div className="hero-actions">
+          <Link to="/contacts" className="button">
+            Обсудить ситуацию <ArrowUpRight size={18} />
+          </Link>
+          <a href="#practice" className="hero-explore" aria-label="Узнать о направлениях защиты">
+            <ArrowDown size={18} />
+          </a>
+        </div>
+        <p className="hero-note">Внимание к деталям. Взвешенный подход к защите.</p>
+      </div>
+      <div className="hero-art" aria-hidden="true">
+        <div className="art-grain" />
+        <div className="art-orbit" />
+        <div className="art-arch">
+          <div className="art-door" />
+        </div>
+        <div className="art-step art-step-one" />
+        <div className="art-step art-step-two" />
+        <div className="art-step art-step-three" />
+        <span className="art-index">КВ / АДВОКАТСКАЯ ПРАКТИКА</span>
+        <span className="art-caption">
+          Опора.
+          <br />
+          <i>Когда она нужна.</i>
+        </span>
+        <span className="art-year">ТОЧНОСТЬ / ВНИМАНИЕ</span>
+      </div>
+      <div className="hero-bottom">
+        <span>УГОЛОВНОЕ ПРАВО</span>
+        <span>Личное внимание к каждому вопросу</span>
+        <span className="hero-scroll">
+          ДАЛЕЕ <ArrowDown size={12} />
+        </span>
+      </div>
+    </section>
+  )
 }
