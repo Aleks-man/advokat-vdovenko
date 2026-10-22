@@ -1,0 +1,8 @@
+.page-intro h1 em { font-weight: 400; color: #71806a; }
+.practice-stage { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; padding-block: 55px; border-bottom: 1px solid var(--line); scroll-margin-top: 30px; }
+.practice-stage > .eyebrow { color: var(--accent); padding-top: 10px; }
+.practice-stage h2 { font-size: clamp(32px, 3.5vw, 48px); margin-bottom: 25px; }
+.practice-stage p { max-width: 630px; font-size: 15px; color: var(--muted); }
+.practice-stage p + p { margin-top: 15px; }
+.content-disclaimer { padding-block: 30px 55px; color: var(--muted); font-size: 11px; line-height: 1.7; }
+@media(max-width: 700px) { .practice-stage { grid-template-columns: 1fr; gap: 20px; padding-block: 35px; } }

@@ -1,0 +1,14 @@
+.contacts-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 90px; }
+.contact-detail { display: flex; gap: 25px; padding-block: 28px; border-bottom: 1px solid var(--line); }
+.contact-detail:first-child { border-top: 1px solid var(--line); }
+.contact-detail > svg { margin-top: 4px; color: var(--accent); flex-shrink: 0; }
+.contact-detail .eyebrow { font-size: 8px; color: var(--muted); }
+.contact-detail p, .contact-detail a { display: flex; align-items: center; gap: 20px; font-family: var(--serif); font-size: 30px; margin-block: 10px 5px; line-height: 1.4; overflow-wrap: anywhere; }
+.contact-detail small { color: var(--muted); font-size: 11px; }
+.contact-aside { background: #e9ece2; padding: 40px; }
+.contact-aside > .eyebrow { color: #6e7a63; }
+.contact-aside h2 { font-size: 38px; margin-block: 35px 25px; }
+.contact-aside h2 em { font-weight: 400; color: #71806a; }
+.contact-aside > p:not(.eyebrow) { color: var(--muted); font-size: 14px; }
+.contact-aside-note { font-size: 11px; color: var(--muted); line-height: 1.8; padding-top: 25px; margin-top: 30px; border-top: 1px solid #cbd1c2; }
+@media(max-width: 850px) { .contacts-layout { grid-template-columns: 1fr; gap: 40px; } .contact-aside { padding: 30px; } }
