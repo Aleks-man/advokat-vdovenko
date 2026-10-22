@@ -1,5 +1,6 @@
 import { ArrowDown, ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import justiceHero from '../../assets/justice-hero.webp'
 import './Hero.css'
 export function Hero() {
   return (
@@ -28,22 +29,15 @@ export function Hero() {
         </div>
         <p className="hero-note">Внимание к деталям. Взвешенный подход к защите.</p>
       </div>
-      <div className="hero-art" aria-hidden="true">
-        <div className="art-grain" />
-        <div className="art-orbit" />
-        <div className="art-arch">
-          <div className="art-door" />
-        </div>
-        <div className="art-step art-step-one" />
-        <div className="art-step art-step-two" />
-        <div className="art-step art-step-three" />
-        <span className="art-index">КВ / АДВОКАТСКАЯ ПРАКТИКА</span>
-        <span className="art-caption">
-          Опора.
-          <br />
-          <i>Когда она нужна.</i>
-        </span>
-        <span className="art-year">ТОЧНОСТЬ / ВНИМАНИЕ</span>
+      <div className="hero-art">
+        <img
+          className="hero-image"
+          src={justiceHero}
+          alt="Фемида с повязкой на глазах и весами — символ правосудия"
+          width={1122}
+          height={1402}
+          fetchPriority="high"
+        />
       </div>
       <div className="hero-bottom">
         <span>УГОЛОВНОЕ ПРАВО</span>
