@@ -204,3 +204,35 @@
     inset-inline-start: 8%;
   }
 }
+
+/* Books are confined to the text column, away from the sculpture. */
+.hero-copy {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero-copy::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: -36px -20px -24px calc(-1 * var(--gutter));
+  background-image:
+    linear-gradient(90deg, rgb(247 248 243 / 78%), rgb(247 248 243 / 88%)),
+    url('../../assets/legal-desk.webp');
+  background-size: cover;
+  background-position: left bottom;
+  mask-image:
+    linear-gradient(90deg, #000 62%, transparent),
+    linear-gradient(transparent, #000 12%, #000 82%, transparent);
+  mask-composite: intersect;
+  pointer-events: none;
+}
+
+@media (max-width: 700px) {
+  .hero-copy::before {
+    inset: -20px calc(-1 * var(--gutter)) -8px;
+    background-image:
+      linear-gradient(rgb(247 248 243 / 85%), rgb(247 248 243 / 85%)),
+      url('../../assets/legal-desk.webp');
+  }
+}
