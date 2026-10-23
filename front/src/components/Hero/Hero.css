@@ -73,7 +73,9 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  object-position: center;
+  object-position: center bottom;
+  /* Balance the torso against the scales extending to the right. */
+  transform: translateX(8%);
 }
 .hero-bottom {
   grid-column: 1/-1;
@@ -150,7 +152,7 @@
 .hero-art::before {
   content: '';
   position: absolute;
-  inset: 0 0 0 12%;
+  inset: 0;
   z-index: -1;
   border-radius: 240px 240px 12px 12px;
   background:
@@ -164,7 +166,7 @@
 .hero-art::after {
   content: '';
   position: absolute;
-  left: 8%;
+  left: -3%;
   right: -3%;
   bottom: -2px;
   height: 18px;
@@ -198,10 +200,6 @@
 
   .hero h1 {
     font-size: clamp(46px, 9vw, 66px);
-  }
-
-  .hero-art::before {
-    inset-inline-start: 8%;
   }
 }
 
