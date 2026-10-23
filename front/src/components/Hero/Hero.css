@@ -75,7 +75,7 @@
   object-fit: contain;
   object-position: center bottom;
   /* Balance the torso against the scales extending to the right. */
-  transform: translateX(8%);
+  transform: translateX(3%);
 }
 .hero-bottom {
   grid-column: 1/-1;
