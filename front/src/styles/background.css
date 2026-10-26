@@ -1,8 +1,3 @@
-/* Architectural light and stone surfaces support the sculpture without a photo collage. */
 body {
-  background-color: var(--paper);
-  background-image:
-    radial-gradient(ellipse at 95% 9%, rgb(144 154 145 / 18%), transparent 44%),
-    linear-gradient(115deg, var(--paper-light), var(--paper) 58%, #e0e3dc);
-  background-repeat: no-repeat;
+  background: var(--paper);
 }

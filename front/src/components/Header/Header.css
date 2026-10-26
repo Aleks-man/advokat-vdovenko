@@ -2,28 +2,35 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 28px;
-  min-height: 112px;
-  border-bottom: 1px solid var(--line);
+  gap: 24px;
+  min-height: 100px;
   position: relative;
   z-index: 20;
 }
 .brand {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 13px;
   flex-shrink: 0;
 }
 .brand-mark {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
   font-family: var(--serif);
-  font-size: 32px;
+  font-size: 27px;
   letter-spacing: -0.12em;
-  padding-right: 8px;
-  border-right: 1px solid var(--line);
-  line-height: 1.4;
+  color: var(--accent-light);
+  background: var(--ink-dark);
+  border-radius: 9px;
+  position: relative;
 }
 .brand-mark span {
-  color: var(--accent);
+  position: absolute;
+  bottom: 8px;
+  right: 7px;
+  font-size: 15px;
 }
 .brand-name {
   font-size: 13px;
@@ -33,76 +40,87 @@
   display: block;
   font-size: 8px;
   font-weight: 400;
-  letter-spacing: 0.17em;
-  margin-top: 7px;
+  letter-spacing: 0.13em;
+  margin-top: 6px;
+  color: var(--muted);
 }
 .navigation {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 5px;
 }
 .navigation a {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--muted);
-  position: relative;
-  padding-block: 10px;
+  padding: 10px 13px;
+  border-radius: 30px;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
 .navigation a:hover,
 .navigation a.active {
   color: var(--ink);
-}
-.navigation a.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 16px;
-  height: 1px;
-  background: var(--ink);
+  background: #e5e4db;
 }
 .header-contact {
   display: flex;
-  gap: 25px;
+  gap: 18px;
   align-items: center;
-  font-size: 13px;
-  border-bottom: 1px solid var(--ink);
-  padding-block: 8px;
+  font-size: 12px;
+  background: var(--ink-dark);
+  color: var(--on-dark);
+  border-radius: 8px;
+  padding: 13px 18px;
+}
+.header-contact svg {
+  color: var(--accent-light);
 }
 .menu-toggle {
   display: none;
-  border: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
   background: transparent;
   color: var(--ink);
-  padding: 10px;
+  padding: 9px;
 }
-@media (max-width: 1050px) {
-  .navigation {
-    gap: 16px;
-  }
-  .brand-name {
-    font-size: 11px;
-  }
+@media (max-width: 1100px) {
   .header-contact {
     display: none;
+  }
+  .navigation a {
+    padding-inline: 11px;
   }
 }
 @media (max-width: 760px) {
   .header {
     min-height: 88px;
   }
+  .brand-mark {
+    width: 43px;
+    height: 43px;
+    font-size: 25px;
+  }
+  .brand-name {
+    font-size: 12px;
+  }
+  .brand-name small {
+    font-size: 7px;
+  }
   .menu-toggle {
-    display: block;
+    display: flex;
   }
   .navigation {
     display: none;
     position: absolute;
-    top: 87px;
-    left: calc(var(--gutter) * -1);
-    right: calc(var(--gutter) * -1);
+    top: 82px;
+    left: 0;
+    right: 0;
     background: var(--paper-light);
-    padding: 24px var(--gutter) 32px;
-    border-bottom: 1px solid var(--line);
-    box-shadow: 0 20px 25px #193d3510;
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: var(--card-radius);
+    box-shadow: 0 20px 40px rgb(21 30 25 / 16%);
   }
   .navigation.is-open {
     display: flex;
@@ -112,5 +130,13 @@
   }
   .navigation a {
     font-size: 17px;
+  }
+}
+@media (max-width: 380px) {
+  .brand {
+    gap: 9px;
+  }
+  .brand-name {
+    font-size: 11px;
   }
 }

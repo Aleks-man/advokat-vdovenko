@@ -4,12 +4,14 @@
   gap: 40px;
 }
 .work-steps article {
-  border-top: 1px solid var(--line);
-  padding-top: 25px;
+  border: 1px solid var(--line);
+  border-radius: var(--card-radius);
+  background: var(--paper-light);
+  padding: 25px;
 }
 .step-number {
-  font-family: var(--serif);
-  color: #8d9b7f;
+  font-family: var(--sans);
+  color: var(--accent);
   font-size: 45px;
 }
 .work-steps h3 {
@@ -22,20 +24,22 @@
   max-width: 300px;
 }
 .approach-quote {
-  background: #e9ece2;
+  background: var(--ink-dark);
+  color: var(--on-dark);
   padding-block: 75px;
 }
 .approach-quote h2 {
   margin-block: 30px;
 }
 .approach-quote h2 em {
-  color: #71806a;
+  color: var(--accent-light);
+  font-style: normal;
   font-weight: 400;
 }
 .approach-quote p {
   max-width: 560px;
   font-size: 14px;
-  color: var(--muted);
+  color: var(--on-dark-muted);
 }
 .faq {
   max-width: 840px;
@@ -48,7 +52,7 @@
 }
 .faq summary {
   cursor: pointer;
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: 25px;
   padding-right: 15px;
 }
