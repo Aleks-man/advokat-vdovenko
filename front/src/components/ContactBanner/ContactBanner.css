@@ -31,7 +31,7 @@
   margin-bottom: 25px;
 }
 .contact-banner h2 {
-  font-size: clamp(38px, 4.5vw, 64px);
+  font-size: clamp(27px, 3.6vw, 50px);
 }
 .contact-banner h2 em {
   color: #7e633e;

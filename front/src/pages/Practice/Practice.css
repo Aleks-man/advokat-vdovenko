@@ -16,7 +16,7 @@
   padding-top: 10px;
 }
 .practice-stage h2 {
-  font-size: clamp(32px, 3.5vw, 48px);
+  font-size: clamp(26px, 3vw, 42px);
   margin-bottom: 25px;
 }
 .practice-stage p {

@@ -47,16 +47,19 @@ h3 {
   font-weight: 500;
 }
 h1 {
-  font-size: clamp(48px, 6.3vw, 88px);
+  font-family: var(--display);
+  font-size: clamp(36px, 5.2vw, 74px);
   line-height: 1.04;
   letter-spacing: -0.055em;
 }
 h2 {
-  font-size: clamp(36px, 4.2vw, 58px);
-  line-height: 1.1;
+  font-family: var(--display);
+  font-size: clamp(28px, 3.5vw, 48px);
+  line-height: 1.2;
   letter-spacing: -0.04em;
 }
 h3 {
+  font-weight: 600;
   font-size: 29px;
   line-height: 1.2;
   letter-spacing: -0.025em;
@@ -187,6 +190,6 @@ p {
 
 @media (max-width: 380px) {
   .page-intro h1 {
-    font-size: 40px;
+    font-size: 30px;
   }
 }

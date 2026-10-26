@@ -4,6 +4,22 @@ test('desktop routes, stage links, FAQ and missing page', async ({ page }) => {
   const errors: string[] = []
   page.on('pageerror', (error) => errors.push(error.message))
   await page.goto('/')
+  await page.evaluate(async () => {
+    await document.fonts.ready
+  })
+  const fontStatus = await page.evaluate(async () => {
+    const families = ['Unbounded Variable', 'Onest Variable']
+    return Promise.all(
+      families.map(async (family) => {
+        const faces = await document.fonts.load(
+          '500 32px "' + family + '"',
+          '\u0417\u0430\u0449\u0438\u0442\u0430',
+        )
+        return faces.length > 0 && faces.every((face) => face.status === 'loaded')
+      }),
+    )
+  })
+  expect(fontStatus).toEqual([true, true])
   await expect(page.getByRole('heading', { level: 1 })).toContainText('На вашей стороне.')
   await page.screenshot({ path: 'artifacts/home-desktop.png', fullPage: true })
   await page.locator('.practice-row').first().click()
@@ -22,6 +38,9 @@ test('desktop routes, stage links, FAQ and missing page', async ({ page }) => {
   await expect(page.getByRole('heading', { level: 1 })).toContainText('Начнём')
   await expect(page.locator('a[href^="tel:"]')).toHaveCount(0)
   await page.goto('/missing-page')
+  await page.evaluate(async () => {
+    await document.fonts.ready
+  })
   await expect(page.getByText('404 / Страница не найдена')).toBeVisible()
   await page.getByRole('link', { name: 'На главную', exact: true }).click()
   await expect(page).toHaveURL('/')
@@ -32,11 +51,17 @@ test('mobile navigation and layouts have no horizontal overflow', async ({ page 
   await page.setViewportSize({ width: 390, height: 844 })
   for (const path of ['/', '/practice', '/approach', '/contacts']) {
     await page.goto(path)
+    await page.evaluate(async () => {
+      await document.fonts.ready
+    })
     expect(
       await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
     ).toBe(true)
   }
   await page.goto('/')
+  await page.evaluate(async () => {
+    await document.fonts.ready
+  })
   await page.getByRole('button', { name: 'Открыть меню' }).click()
   await expect(page.getByRole('navigation', { name: 'Основная навигация' })).toBeVisible()
   await page
@@ -49,6 +74,9 @@ test('mobile navigation and layouts have no horizontal overflow', async ({ page 
     'false',
   )
   await page.goto('/')
+  await page.evaluate(async () => {
+    await document.fonts.ready
+  })
   await page.screenshot({ path: 'artifacts/home-mobile.png', fullPage: true })
 })
 
@@ -57,6 +85,9 @@ test('narrow mobile and tablet layouts stay within viewport', async ({ page }) =
     await page.setViewportSize({ width, height: 900 })
     for (const path of ['/', '/practice', '/approach', '/contacts']) {
       await page.goto(path)
+      await page.evaluate(async () => {
+        await document.fonts.ready
+      })
       expect(
         await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
         `${path} at ${width}px`,
