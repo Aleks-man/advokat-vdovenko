@@ -51,3 +51,16 @@ test('mobile navigation and layouts have no horizontal overflow', async ({ page 
   await page.goto('/')
   await page.screenshot({ path: 'artifacts/home-mobile.png', fullPage: true })
 })
+
+test('narrow mobile and tablet layouts stay within viewport', async ({ page }) => {
+  for (const width of [320, 768]) {
+    await page.setViewportSize({ width, height: 900 })
+    for (const path of ['/', '/practice', '/approach', '/contacts']) {
+      await page.goto(path)
+      expect(
+        await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
+        `${path} at ${width}px`,
+      ).toBe(true)
+    }
+  }
+})

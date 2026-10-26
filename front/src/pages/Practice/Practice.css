@@ -1,6 +1,7 @@
 .page-intro h1 em {
+  font-style: normal;
   font-weight: 400;
-  color: #71806a;
+  color: #7e633e;
 }
 .practice-stage {
   display: grid;

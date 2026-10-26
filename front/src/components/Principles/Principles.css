@@ -1,51 +1,66 @@
 .principles {
-  padding-block: 85px;
-  background: #e2e7dc;
+  padding-block: 90px;
+  color: var(--on-dark);
+  background: radial-gradient(ellipse at 0 100%, #384432, transparent 60%), var(--ink-dark);
 }
 .principles-inner {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 40px;
+  gap: 60px;
 }
 .principles-label {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
+.principles-label .eyebrow {
+  color: var(--accent-light);
+}
 .principles-monogram {
+  display: grid;
+  place-items: center;
+  width: 154px;
+  aspect-ratio: 1;
   font-family: var(--serif);
-  font-size: 105px;
+  font-size: 82px;
   letter-spacing: -0.12em;
   line-height: 1;
-  color: #b8c2ab;
-  margin-block: 48px 25px;
+  color: var(--accent-light);
+  border: 1px solid rgb(223 188 131 / 35%);
+  border-radius: 50%;
+  margin-block: 36px 25px;
+  padding-right: 10px;
 }
 .principles-label > p:last-child {
-  color: var(--muted);
+  color: var(--on-dark-muted);
   font-size: 14px;
 }
+.principles-content h2 {
+  font-size: clamp(30px, 4.2vw, 58px);
+}
 .principles-content h2 em {
-  color: #71806a;
+  color: var(--accent-light);
   font-weight: 400;
+  font-style: normal;
 }
 .principles-lead {
-  max-width: 540px;
-  font-size: 15px;
-  color: #637060;
+  max-width: 570px;
+  font-size: 16px;
+  color: var(--on-dark-muted);
   margin-top: 27px;
 }
 .principles-items {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 35px;
-  margin-block: 40px 32px;
-  padding-top: 27px;
-  border-top: 1px solid #cbd1c2;
+  margin-block: 38px 30px;
+  padding-top: 28px;
+  border-top: 1px solid rgb(245 242 234 / 18%);
 }
 .principles-items span {
-  font-size: 8px;
-  letter-spacing: 0.15em;
-  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--accent-light);
 }
 .principles-items h3 {
   font-size: 23px;
@@ -53,22 +68,31 @@
 }
 .principles-items p {
   font-size: 14px;
-  color: var(--muted);
+  color: var(--on-dark-muted);
   margin-top: 12px;
 }
-@media (max-width: 700px) {
+.principles .text-link {
+  border-color: var(--accent-light);
+  color: var(--accent-light);
+}
+@media (max-width: 760px) {
   .principles {
     padding-block: 60px;
   }
   .principles-inner {
     grid-template-columns: 1fr;
-    gap: 25px;
+    gap: 28px;
   }
   .principles-monogram,
   .principles-label > p:last-child {
     display: none;
   }
   .principles-items {
-    gap: 20px;
+    gap: 24px;
+  }
+}
+@media (max-width: 380px) {
+  .principles-items {
+    grid-template-columns: 1fr;
   }
 }
