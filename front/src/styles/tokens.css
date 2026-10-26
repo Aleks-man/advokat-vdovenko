@@ -13,7 +13,8 @@
   --white: #fff;
   --card-radius: 16px;
   --serif: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
-  --sans: 'Segoe UI', Arial, sans-serif;
+  --display: 'Unbounded Variable', 'Arial Black', sans-serif;
+  --sans: 'Onest Variable', 'Segoe UI', Arial, sans-serif;
   --page-width: 1320px;
   --gutter: clamp(20px, 4vw, 72px);
 }

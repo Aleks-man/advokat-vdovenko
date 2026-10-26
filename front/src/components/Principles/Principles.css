@@ -21,9 +21,9 @@
   place-items: center;
   width: 154px;
   aspect-ratio: 1;
-  font-family: var(--serif);
-  font-size: 82px;
-  letter-spacing: -0.12em;
+  font-family: var(--display);
+  font-size: 49px;
+  letter-spacing: -0.08em;
   line-height: 1;
   color: var(--accent-light);
   border: 1px solid rgb(223 188 131 / 35%);
@@ -36,7 +36,7 @@
   font-size: 14px;
 }
 .principles-content h2 {
-  font-size: clamp(30px, 4.2vw, 58px);
+  font-size: clamp(26px, 3.5vw, 48px);
 }
 .principles-content h2 em {
   color: var(--accent-light);

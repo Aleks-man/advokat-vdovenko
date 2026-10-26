@@ -46,7 +46,7 @@
   color: var(--accent-light);
 }
 .contact-aside h2 {
-  font-size: 38px;
+  font-size: clamp(25px, 2.6vw, 34px);
   margin-block: 35px 25px;
 }
 .contact-aside h2 em {
