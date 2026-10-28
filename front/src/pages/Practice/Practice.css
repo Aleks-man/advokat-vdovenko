@@ -11,6 +11,9 @@
   border-bottom: 1px solid var(--line);
   scroll-margin-top: 30px;
 }
+.practice-stages {
+  padding-top: 24px;
+}
 .practice-stage > .eyebrow {
   color: var(--accent);
   padding-top: 10px;

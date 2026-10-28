@@ -1,10 +1,12 @@
 import { practiceAreas } from '../../data/site'
 import { ContactBanner } from '../../components/ContactBanner/ContactBanner'
 import './Practice.css'
+import { LegalArtwork } from '../../components/LegalArtwork/LegalArtwork'
 export function Practice() {
   return (
     <>
-      <section className="page-intro container">
+      <section className="page-intro container legal-intro">
+        <LegalArtwork kind="scales" />
         <p className="eyebrow">01 / Уголовная защита</p>
         <h1>
           Работа по делу.

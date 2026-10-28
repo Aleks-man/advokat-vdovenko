@@ -38,6 +38,16 @@ test('wide screens keep sections on the same centered grid', async ({ page }) =>
         expect(bounds!.x).toBeCloseTo(header!.x, 0)
         expect(bounds!.width).toBeCloseTo(header!.width, 0)
       }
+      if (width === 1920 && path !== '/') {
+        const intro = await page.locator('.legal-intro').boundingBox()
+        const heading = await page.locator('.legal-intro h1').boundingBox()
+        expect(heading!.x - intro!.x).toBeGreaterThanOrEqual(18)
+        await page.evaluate(() => document.fonts.ready)
+        await page.screenshot({
+          path: `artifacts/${path.slice(1)}-wide.png`,
+          fullPage: true,
+        })
+      }
     }
     if (width === 1920) {
       await page.goto('/')

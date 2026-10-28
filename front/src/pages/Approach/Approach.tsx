@@ -1,10 +1,12 @@
 import { workSteps } from '../../data/site'
 import { ContactBanner } from '../../components/ContactBanner/ContactBanner'
 import './Approach.css'
+import { LegalArtwork } from '../../components/LegalArtwork/LegalArtwork'
 export function Approach() {
   return (
     <>
-      <section className="container page-intro">
+      <section className="container page-intro legal-intro">
+        <LegalArtwork kind="court" />
         <p className="eyebrow">02 / Подход к работе</p>
         <h1>
           Разобрать материалы.

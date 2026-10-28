@@ -37,7 +37,8 @@
   font-size: 11px;
 }
 .contact-aside {
-  background: var(--ink-dark);
+  background:
+    radial-gradient(circle at 100% 0%, rgb(167 125 67 / 20%), transparent 65%), var(--ink-dark);
   color: var(--on-dark);
   border-radius: var(--card-radius);
   padding: 40px;

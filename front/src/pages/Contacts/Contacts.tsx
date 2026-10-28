@@ -1,10 +1,12 @@
 import { ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react'
 import { site } from '../../data/site'
 import './Contacts.css'
+import { LegalArtwork } from '../../components/LegalArtwork/LegalArtwork'
 export function Contacts() {
   return (
     <>
-      <section className="container page-intro">
+      <section className="container page-intro legal-intro">
+        <LegalArtwork kind="document" />
         <p className="eyebrow">03 / Контакты</p>
         <h1>
           Обращение
