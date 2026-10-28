@@ -67,9 +67,18 @@ h3 {
 p {
   line-height: 1.75;
 }
-.container {
+.container,
+.panel {
   width: min(100% - var(--gutter) * 2, var(--page-width));
   margin-inline: auto;
+}
+.panel {
+  border-radius: 24px;
+  margin-block: 24px;
+}
+.panel > .container {
+  width: auto;
+  margin-inline: var(--panel-inset);
 }
 .eyebrow {
   font-size: 10px;

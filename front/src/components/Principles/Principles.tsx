@@ -3,7 +3,7 @@ import { ArrowUpRight } from 'lucide-react'
 import './Principles.css'
 export function Principles() {
   return (
-    <section className="principles">
+    <section className="principles panel">
       <div className="container principles-inner">
         <div className="principles-label">
           <p className="eyebrow">Основа работы</p>

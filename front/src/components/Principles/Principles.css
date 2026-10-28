@@ -6,7 +6,7 @@
 .principles-inner {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 60px;
+  gap: 40px;
 }
 .principles-label {
   display: flex;

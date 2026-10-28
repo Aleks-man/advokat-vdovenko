@@ -3,7 +3,7 @@ import { ArrowUpRight } from 'lucide-react'
 import './ContactBanner.css'
 export function ContactBanner() {
   return (
-    <section className="contact-banner">
+    <section className="contact-banner panel">
       <div className="container contact-banner-inner">
         <div>
           <p className="eyebrow">Обращение к адвокату</p>

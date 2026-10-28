@@ -1,5 +1,29 @@
 import { test, expect } from '@playwright/test'
 
+test('wide screens keep sections on the same centered grid', async ({ page }) => {
+  for (const width of [1920, 2560]) {
+    await page.setViewportSize({ width, height: 1080 })
+    for (const path of ['/', '/practice', '/approach', '/contacts']) {
+      await page.goto(path)
+      const header = await page.locator('header').boundingBox()
+      expect(header).not.toBeNull()
+      expect(header!.width).toBeLessThanOrEqual(1320)
+      const sections = page.locator('main > .container, main > .panel, footer')
+      for (const section of await sections.all()) {
+        const bounds = await section.boundingBox()
+        expect(bounds).not.toBeNull()
+        expect(bounds!.x).toBeCloseTo(header!.x, 0)
+        expect(bounds!.width).toBeCloseTo(header!.width, 0)
+      }
+    }
+    if (width === 1920) {
+      await page.goto('/')
+      await page.evaluate(() => document.fonts.ready)
+      await page.screenshot({ path: 'artifacts/home-wide.png', fullPage: true })
+    }
+  }
+})
+
 test('desktop routes, stage links, FAQ and missing page', async ({ page }) => {
   const errors: string[] = []
   page.on('pageerror', (error) => errors.push(error.message))

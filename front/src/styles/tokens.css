@@ -17,4 +17,5 @@
   --sans: 'Onest Variable', 'Segoe UI', Arial, sans-serif;
   --page-width: 1320px;
   --gutter: clamp(20px, 4vw, 72px);
+  --panel-inset: clamp(18px, 4vw, 56px);
 }

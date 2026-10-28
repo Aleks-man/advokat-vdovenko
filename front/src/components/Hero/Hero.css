@@ -6,7 +6,7 @@
   isolation: isolate;
   overflow: hidden;
   margin-top: 24px;
-  padding: 56px 56px 0;
+  padding: 56px var(--panel-inset) 0;
   border: 1px solid #38453a;
   border-radius: 24px;
   color: var(--on-dark);
@@ -156,7 +156,7 @@
 }
 @media (max-width: 1100px) {
   .hero {
-    padding: 36px 32px 0;
+    padding: 36px var(--panel-inset) 0;
     column-gap: 16px;
   }
   .hero-art {
@@ -170,7 +170,7 @@
   .hero {
     grid-template-columns: 1fr;
     margin-top: 12px;
-    padding: 30px 24px 0;
+    padding: 30px var(--panel-inset) 0;
     border-radius: 20px;
   }
   .hero-copy {
@@ -216,7 +216,7 @@
 }
 @media (max-width: 380px) {
   .hero {
-    padding-inline: 18px;
+    padding-inline: var(--panel-inset);
   }
   .hero h1 {
     font-size: 28px;

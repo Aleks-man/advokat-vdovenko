@@ -35,7 +35,7 @@ export function Approach() {
           ))}
         </div>
       </section>
-      <section className="approach-quote">
+      <section className="approach-quote panel">
         <div className="container">
           <span className="eyebrow">Обсуждение позиции</span>
           <h2>
