@@ -8,7 +8,7 @@ test('desktop routes, stage links, FAQ and missing page', async ({ page }) => {
     await document.fonts.ready
   })
   const fontStatus = await page.evaluate(async () => {
-    const families = ['Unbounded Variable', 'Onest Variable']
+    const families = ['Manrope Variable', 'Onest Variable']
     return Promise.all(
       families.map(async (family) => {
         const faces = await document.fonts.load(
@@ -20,7 +20,7 @@ test('desktop routes, stage links, FAQ and missing page', async ({ page }) => {
     )
   })
   expect(fontStatus).toEqual([true, true])
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('На вашей стороне.')
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Защита начинается')
   await page.screenshot({ path: 'artifacts/home-desktop.png', fullPage: true })
   await page.locator('.practice-row').first().click()
   await expect(page).toHaveURL(/practice#stage-01/)
@@ -30,12 +30,12 @@ test('desktop routes, stage links, FAQ and missing page', async ({ page }) => {
     .getByRole('link', { name: 'Подход к работе' })
     .click()
   await page.getByText('Можно ли заранее узнать стоимость?').click()
-  await expect(page.getByText('Стоимость пока не указана.')).toBeVisible()
+  await expect(page.locator('details[open]')).toContainText('Условия оплаты уточняются у адвоката')
   await page
     .getByRole('navigation', { name: 'Основная навигация' })
     .getByRole('link', { name: 'Контакты' })
     .click()
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('Начнём')
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Обращение')
   await expect(page.locator('a[href^="tel:"]')).toHaveCount(0)
   await page.goto('/missing-page')
   await page.evaluate(async () => {

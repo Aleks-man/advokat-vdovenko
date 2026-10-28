@@ -19,18 +19,18 @@ export function Footer() {
             ))}
           </nav>
           <p className="footer-note">
-            Внимание к обстоятельствам.
+            Уголовные дела.
             <br />
-            Уважение к человеку.
+            Этапы защиты.
             <br />
-            Последовательность в защите.
+            Порядок работы.
           </p>
         </div>
         <div className="footer-bottom">
           <span>
             © {new Date().getFullYear()} {site.name}
           </span>
-          <span>Концепция сайта · тексты подлежат согласованию</span>
+          <span>Частная адвокатская практика</span>
         </div>
       </div>
     </footer>

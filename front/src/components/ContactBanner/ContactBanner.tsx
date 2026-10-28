@@ -6,13 +6,15 @@ export function ContactBanner() {
     <section className="contact-banner">
       <div className="container contact-banner-inner">
         <div>
-          <p className="eyebrow">Первый шаг — разговор</p>
+          <p className="eyebrow">Обращение к адвокату</p>
           <h2>
-            Когда нужна ясность,
+            С чего началась ситуация.
             <br />
-            <em>начните с вопроса.</em>
+            <em>Что происходит сейчас.</em>
           </h2>
-          <p className="contact-banner-copy">Обсудить обстоятельства и понять, с чего начать.</p>
+          <p className="contact-banner-copy">
+            Для первого разговора — краткая хронология и вопросы, с которыми вы обращаетесь.
+          </p>
         </div>
         <Link className="button button--light" to="/contacts">
           Перейти к контактам <ArrowUpRight size={18} />

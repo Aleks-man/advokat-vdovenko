@@ -10,24 +10,24 @@ export function Hero() {
           <span className="status-dot" /> Частная адвокатская практика
         </p>
         <h1>
-          На вашей стороне.
+          Защита начинается
           <br />
-          <em>В сложный</em>
+          <em>с изучения</em>
           <br />
-          <em>момент.</em>
+          <em>обстоятельств.</em>
         </h1>
         <p className="hero-description">
           Константин Вдовенко<span>Адвокат по уголовным делам</span>
         </p>
         <div className="hero-actions">
           <Link to="/contacts" className="button">
-            Обсудить ситуацию <ArrowUpRight size={18} />
+            Контакты адвоката <ArrowUpRight size={18} />
           </Link>
           <a href="#practice" className="hero-explore" aria-label="Узнать о направлениях защиты">
             <ArrowDown size={18} />
           </a>
         </div>
-        <p className="hero-note">Внимание к деталям. Взвешенный подход к защите.</p>
+        <p className="hero-note">Что произошло. Что известно. Что предстоит выяснить.</p>
       </div>
       <div className="hero-art">
         <img
@@ -41,7 +41,7 @@ export function Hero() {
       </div>
       <div className="hero-bottom">
         <span>УГОЛОВНОЕ ПРАВО</span>
-        <span>Личное внимание к каждому вопросу</span>
+        <span>Проверка · следствие · суд</span>
         <span className="hero-scroll">
           ДАЛЕЕ <ArrowDown size={12} />
         </span>
