@@ -45,9 +45,24 @@
   color: var(--muted);
 }
 .navigation {
+  position: relative;
+  isolation: isolate;
   display: flex;
   align-items: center;
   gap: 5px;
+}
+.navigation-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 30px;
+  background: #e5e4db;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    width 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .navigation a {
   font-size: 12px;
@@ -61,7 +76,9 @@
 .navigation a:hover,
 .navigation a.active {
   color: var(--ink);
-  background: #e5e4db;
+}
+.navigation a:hover:not(.active) {
+  background: rgb(229 228 219 / 50%);
 }
 .header-contact {
   display: flex;

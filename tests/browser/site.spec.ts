@@ -1,5 +1,28 @@
 import { test, expect } from '@playwright/test'
 
+test('menu highlight moves to the active link without remounting', async ({ page }) => {
+  await page.goto('/')
+  const indicator = page.locator('.navigation-indicator')
+  await expect(indicator).toBeVisible()
+  const original = await indicator.elementHandle()
+  const nav = page.getByRole('navigation', { name: 'Основная навигация' })
+  for (const label of ['Уголовная защита', 'Контакты', 'Главная']) {
+    const link = nav.getByRole('link', { name: label, exact: true })
+    await link.click()
+    await expect(link).toHaveAttribute('aria-current', 'page')
+    expect(await original!.evaluate((element) => element.isConnected)).toBe(true)
+    await expect
+      .poll(async () => {
+        const highlight = await indicator.boundingBox()
+        const active = await link.boundingBox()
+        return highlight && active ? Math.abs(highlight.x - active.x) : Infinity
+      })
+      .toBeLessThan(1)
+  }
+  await page.emulateMedia({ reducedMotion: 'reduce' })
+  await expect(indicator).toHaveCSS('transition-duration', '0s')
+})
+
 test('wide screens keep sections on the same centered grid', async ({ page }) => {
   for (const width of [1920, 2560]) {
     await page.setViewportSize({ width, height: 1080 })
