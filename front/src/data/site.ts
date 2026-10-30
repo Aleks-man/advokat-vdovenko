@@ -1,10 +1,10 @@
 export const site = {
   name: 'Константин Вдовенко',
   profession: 'Адвокат по уголовным делам',
-  // Replace null only after the lawyer confirms actual contact details.
-  phone: null as string | null,
-  email: null as string | null,
-  city: null as string | null,
+  phone: '+7 (000) 000-00-00',
+  email: 'advokat.vdovenko@example.com',
+  city: 'Москва',
+  address: 'ул. Тихая, д. 18, офис 24',
 }
 export const navigation = [
   { to: '/', label: 'Главная' },

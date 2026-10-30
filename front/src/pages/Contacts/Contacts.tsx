@@ -24,38 +24,32 @@ export function Contacts() {
             <Phone size={18} />
             <div>
               <span className="eyebrow">Телефон</span>
-              {site.phone ? (
-                <a href={`tel:${site.phone.replace(/[^+\d]/g, '')}`}>
-                  {site.phone}
-                  <ArrowUpRight size={20} />
-                </a>
-              ) : (
-                <p>Пока не опубликован</p>
-              )}
-              <small>Номер появится после подтверждения адвокатом</small>
+              <a href={`tel:${site.phone.replace(/[^+\d]/g, '')}`}>
+                {site.phone}
+                <ArrowUpRight size={20} />
+              </a>
+              <small>Для записи на консультацию</small>
             </div>
           </div>
           <div className="contact-detail">
             <Mail size={18} />
             <div>
               <span className="eyebrow">Электронная почта</span>
-              {site.email ? (
-                <a href={`mailto:${site.email}`}>
-                  {site.email}
-                  <ArrowUpRight size={20} />
-                </a>
-              ) : (
-                <p>Пока не опубликована</p>
-              )}
-              <small>Адрес появится после подтверждения адвокатом</small>
+              <a href={`mailto:${site.email}`}>
+                {site.email}
+                <ArrowUpRight size={20} />
+              </a>
+              <small>Для обращений и согласования встречи</small>
             </div>
           </div>
           <div className="contact-detail">
             <MapPin size={18} />
             <div>
-              <span className="eyebrow">Регион работы</span>
-              <p>{site.city ?? 'Уточняется'}</p>
-              <small>Формат и место встречи — по согласованию</small>
+              <span className="eyebrow">Адрес приёма</span>
+              <p>
+                {site.city}, {site.address}
+              </p>
+              <small>Приём по предварительной записи</small>
             </div>
           </div>
         </div>
@@ -71,9 +65,9 @@ export function Contacts() {
             вопросы, на которые нужен ответ.
           </p>
           <div className="contact-aside-note">
-            Контакты готовятся к публикации.
+            Время и формат консультации согласуются заранее.
             <br />
-            Отправить сведения о деле через сайт пока нельзя.
+            Для записи позвоните или напишите на электронную почту.
           </div>
         </aside>
       </section>
