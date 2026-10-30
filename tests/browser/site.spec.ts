@@ -93,7 +93,10 @@ test('desktop routes, stage links, FAQ and missing page', async ({ page }) => {
     .getByRole('link', { name: 'Контакты' })
     .click()
   await expect(page.getByRole('heading', { level: 1 })).toContainText('Записаться')
-  await expect(page.locator('a[href^="tel:"]')).toHaveAttribute('href', 'tel:+70000000000')
+  await expect(page.locator('.contact-details a[href^="tel:"]')).toHaveAttribute(
+    'href',
+    'tel:+79999999999',
+  )
   await page.goto('/missing-page')
   await page.evaluate(async () => {
     await document.fonts.ready

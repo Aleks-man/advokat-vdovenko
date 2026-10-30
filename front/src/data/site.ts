@@ -1,7 +1,7 @@
 export const site = {
   name: 'Константин Вдовенко',
   profession: 'Адвокат по уголовным делам',
-  phone: '+7 (000) 000-00-00',
+  phone: '+7 (999) 999 99 99',
   email: 'advokat.vdovenko@example.com',
   city: 'Москва',
   address: 'ул. Тихая, д. 18, офис 24',

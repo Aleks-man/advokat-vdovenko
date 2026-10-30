@@ -5,7 +5,7 @@
 }
 .footer-top {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 0.8fr;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.8fr) minmax(0, 1fr);
   gap: 40px;
   padding-bottom: 55px;
 }
@@ -24,9 +24,68 @@
 .footer nav a:hover {
   color: var(--accent-light);
 }
-.footer-note {
+.footer-contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  min-width: 0;
+}
+.footer-messengers {
+  display: flex;
+  gap: 8px;
+}
+.footer-messenger {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  transition: opacity 0.2s;
+}
+.footer-messenger:hover {
+  opacity: 0.8;
+}
+.footer-messenger--viber {
+  background: #7360f2;
+}
+.footer-messenger--whatsapp {
+  background: #25d366;
+}
+.footer-messenger--telegram {
+  background: #26a5e4;
+}
+.footer-messenger img {
+  display: block;
+  filter: invert(1);
+}
+.footer-phone,
+.footer-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  max-width: 100%;
+}
+.footer-phone {
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.footer-email {
+  font-size: 12px;
   color: var(--on-dark-muted);
-  font-size: 14px;
+}
+.footer-email span {
+  overflow-wrap: anywhere;
+}
+.footer-phone svg,
+.footer-email svg {
+  flex-shrink: 0;
+  color: var(--accent-light);
+}
+.footer-phone:hover,
+.footer-email:hover {
+  color: var(--accent-light);
 }
 .footer-bottom {
   display: flex;
@@ -48,5 +107,11 @@
   .footer-bottom {
     flex-direction: column;
     gap: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-contacts {
+    grid-column: 1 / -1;
   }
 }

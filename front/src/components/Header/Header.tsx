@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef, useState } from 'react'
 import { NavLink, Link, useLocation } from 'react-router-dom'
-import { ArrowUpRight, Menu, X } from 'lucide-react'
-import { navigation } from '../../data/site'
+import { Phone, Menu, X } from 'lucide-react'
+import { navigation, site } from '../../data/site'
 import './Header.css'
 export function Header() {
   const [open, setOpen] = useState(false)
@@ -97,9 +97,14 @@ export function Header() {
           </NavLink>
         ))}
       </nav>
-      <Link className="header-contact" to="/contacts">
-        Связаться <ArrowUpRight size={15} />
-      </Link>
+      <a
+        className="header-contact"
+        href={`tel:${site.phone.replace(/[^+\d]/g, '')}`}
+        aria-label={`Позвонить: ${site.phone}`}
+      >
+        <Phone size={19} aria-hidden="true" />
+        <span>{site.phone}</span>
+      </a>
     </header>
   )
 }
