@@ -15,10 +15,8 @@
   border-radius: var(--card-radius);
   background: var(--paper-light);
   transition:
-    background 0.2s,
-    color 0.2s,
-    transform 0.2s,
-    border-color 0.2s;
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 .practice-number {
   font-size: 12px;
@@ -55,16 +53,8 @@
     color 0.2s;
 }
 .practice-row:is(:hover, :focus-visible) {
-  background: var(--ink-dark);
-  color: var(--on-dark);
-  border-color: var(--ink-dark);
-  transform: translateY(-4px);
-}
-.practice-row:is(:hover, :focus-visible) p {
-  color: var(--on-dark-muted);
-}
-.practice-row:is(:hover, :focus-visible) .practice-number {
-  color: var(--accent-light);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgb(21 30 25 / 10%);
 }
 .practice-row:is(:hover, :focus-visible) .practice-arrow {
   grid-column: 3;
