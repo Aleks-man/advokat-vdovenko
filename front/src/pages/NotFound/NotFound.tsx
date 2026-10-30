@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { ArrowUpRight } from 'lucide-react'
 import './NotFound.css'
 export function NotFound() {
   return (
@@ -10,7 +9,7 @@ export function NotFound() {
         <br />к главному.
       </h1>
       <Link to="/" className="button">
-        На главную <ArrowUpRight size={18} />
+        На главную
       </Link>
     </section>
   )

@@ -49,9 +49,6 @@
   border-color: var(--ink-dark);
   color: var(--on-dark);
 }
-.contact-banner .button svg {
-  color: var(--accent-light);
-}
 .contact-banner .button:hover {
   background: #344136;
 }

@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { ArrowUpRight } from 'lucide-react'
 import './Principles.css'
 export function Principles() {
   return (
@@ -47,7 +46,7 @@ export function Principles() {
             </div>
           </div>
           <Link to="/approach" className="text-link">
-            Как строится работа <ArrowUpRight size={16} />
+            Как строится работа
           </Link>
         </div>
       </div>

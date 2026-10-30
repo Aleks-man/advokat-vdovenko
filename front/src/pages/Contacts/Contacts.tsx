@@ -1,4 +1,4 @@
-import { ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react'
+import { Mail, MapPin, Phone } from 'lucide-react'
 import { site } from '../../data/site'
 import './Contacts.css'
 import { LegalArtwork } from '../../components/LegalArtwork/LegalArtwork'
@@ -24,10 +24,7 @@ export function Contacts() {
             <Phone size={18} />
             <div>
               <span className="eyebrow">Телефон</span>
-              <a href={`tel:${site.phone.replace(/[^+\d]/g, '')}`}>
-                {site.phone}
-                <ArrowUpRight size={20} />
-              </a>
+              <a href={`tel:${site.phone.replace(/[^+\d]/g, '')}`}>{site.phone}</a>
               <small>Для записи на консультацию</small>
             </div>
           </div>
@@ -35,10 +32,7 @@ export function Contacts() {
             <Mail size={18} />
             <div>
               <span className="eyebrow">Электронная почта</span>
-              <a href={`mailto:${site.email}`}>
-                {site.email}
-                <ArrowUpRight size={20} />
-              </a>
+              <a href={`mailto:${site.email}`}>{site.email}</a>
               <small>Чтобы задать вопрос или договориться о встрече</small>
             </div>
           </div>

@@ -5,7 +5,7 @@
 }
 .practice-row {
   display: grid;
-  grid-template-columns: 30px minmax(0, 1fr) 42px;
+  grid-template-columns: 30px minmax(0, 1fr) 24px;
   grid-template-rows: auto 1fr;
   align-items: start;
   gap: 18px;
@@ -42,26 +42,19 @@
 .practice-arrow {
   grid-column: 3;
   grid-row: 1;
-  width: 42px;
-  height: 42px;
-  border: 1px solid var(--line);
-  border-radius: 50%;
+  width: 24px;
+  height: 30px;
   display: grid;
   place-items: center;
-  transition:
-    background 0.2s,
-    color 0.2s;
+  color: var(--muted);
+  transition: color 0.2s;
 }
 .practice-row:is(:hover, :focus-visible) {
   transform: translateY(-1px);
   box-shadow: 0 8px 24px rgb(21 30 25 / 10%);
 }
 .practice-row:is(:hover, :focus-visible) .practice-arrow {
-  grid-column: 3;
-  grid-row: 1;
-  background: var(--accent-light);
-  border-color: var(--accent-light);
-  color: var(--ink-dark);
+  color: var(--accent);
 }
 @media (max-width: 760px) {
   .practice-list {
@@ -70,7 +63,7 @@
   }
   .practice-row {
     padding: 24px;
-    grid-template-columns: 24px minmax(0, 1fr) 36px;
+    grid-template-columns: 24px minmax(0, 1fr) 24px;
     gap: 14px;
     min-height: 180px;
   }
@@ -80,28 +73,16 @@
     min-width: 0;
     font-size: 25px;
   }
-  .practice-arrow {
-    grid-column: 3;
-    grid-row: 1;
-    width: 36px;
-    height: 36px;
-  }
 }
 
 @media (max-width: 380px) {
   .practice-row {
     padding: 20px;
-    grid-template-columns: 20px minmax(0, 1fr) 32px;
+    grid-template-columns: 20px minmax(0, 1fr) 24px;
     gap: 12px;
   }
   .practice-row h3 {
-    grid-column: 2 / -1;
+    grid-column: 2;
     font-size: 23px;
-  }
-  .practice-arrow {
-    grid-row: 3;
-    grid-column: 3;
-    width: 32px;
-    height: 32px;
   }
 }

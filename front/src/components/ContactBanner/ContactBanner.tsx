@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { ArrowUpRight } from 'lucide-react'
 import './ContactBanner.css'
 export function ContactBanner() {
   return (
@@ -17,7 +16,7 @@ export function ContactBanner() {
           </p>
         </div>
         <Link className="button button--light" to="/contacts">
-          Перейти к контактам <ArrowUpRight size={18} />
+          Перейти к контактам
         </Link>
       </div>
     </section>

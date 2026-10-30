@@ -10,8 +10,8 @@ export function PracticeList() {
           <span className="practice-number">{area.number}</span>
           <h3>{area.title}</h3>
           <p>{area.description}</p>
-          <span className="practice-arrow">
-            <ArrowUpRight size={20} />
+          <span className="practice-arrow" aria-hidden="true">
+            <ArrowUpRight size={16} strokeWidth={1.5} />
           </span>
         </Link>
       ))}
