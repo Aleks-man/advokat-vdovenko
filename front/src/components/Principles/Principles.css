@@ -17,19 +17,10 @@
   color: var(--accent-light);
 }
 .principles-monogram {
-  display: grid;
-  place-items: center;
-  width: 154px;
-  aspect-ratio: 1;
-  font-family: var(--display);
-  font-size: 49px;
-  letter-spacing: -0.08em;
-  line-height: 1;
-  color: var(--accent-light);
-  border: 1px solid rgb(223 188 131 / 35%);
-  border-radius: 50%;
+  display: block;
+  width: 176px;
+  height: 176px;
   margin-block: 36px 25px;
-  padding-right: 10px;
 }
 .principles-label > p:last-child {
   color: var(--on-dark-muted);

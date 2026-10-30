@@ -58,11 +58,11 @@ export function Header() {
         aria-label="Константин Вдовенко — главная"
         onClick={() => setOpen(false)}
       >
-        <span className="brand-mark">
-          КВ<span>·</span>
-        </span>
+        <img className="brand-mark" src="/brand/vdovenko.svg" alt="" width="68" height="68" />
         <span className="brand-name">
-          Константин Вдовенко<small>АДВОКАТ · УГОЛОВНЫЕ ДЕЛА</small>
+          <span>Константин</span>
+          <strong>Вдовенко</strong>
+          <small>АДВОКАТ · УГОЛОВНЫЕ ДЕЛА</small>
         </span>
       </Link>
       <button

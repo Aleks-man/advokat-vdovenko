@@ -6,10 +6,13 @@ export function Footer() {
     <footer className="footer panel">
       <div className="container">
         <div className="footer-top">
-          <Link to="/" className="footer-name">
-            Константин
-            <br />
-            Вдовенко<span>Адвокат по уголовным делам</span>
+          <Link to="/" className="brand footer-brand" aria-label="Константин Вдовенко — главная">
+            <img className="brand-mark" src="/brand/vdovenko.svg" alt="" width="68" height="68" />
+            <span className="brand-name">
+              <span>Константин</span>
+              <strong>Вдовенко</strong>
+              <small>АДВОКАТ · УГОЛОВНЫЕ ДЕЛА</small>
+            </span>
           </Link>
           <nav aria-label="Навигация в подвале">
             {navigation.map((item) => (

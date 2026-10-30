@@ -3,45 +3,45 @@
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  min-height: 100px;
+  min-height: 108px;
   position: relative;
   z-index: 20;
 }
 .brand {
   display: flex;
   align-items: center;
-  gap: 13px;
+  gap: 14px;
   flex-shrink: 0;
 }
 .brand-mark {
-  display: grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  font-family: var(--serif);
-  font-size: 27px;
-  letter-spacing: -0.12em;
-  color: var(--accent-light);
-  background: var(--ink-dark);
-  border-radius: 9px;
-  position: relative;
-}
-.brand-mark span {
-  position: absolute;
-  bottom: 8px;
-  right: 7px;
-  font-size: 15px;
+  display: block;
+  width: 68px;
+  height: 68px;
+  flex-shrink: 0;
 }
 .brand-name {
-  font-size: 13px;
-  font-weight: 600;
+  display: block;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.15;
+}
+.brand-name > span,
+.brand-name strong {
+  display: block;
+}
+.brand-name strong {
+  font-size: 23px;
+  font-weight: 400;
+  margin-top: 2px;
 }
 .brand-name small {
   display: block;
-  font-size: 8px;
-  font-weight: 400;
-  letter-spacing: 0.13em;
-  margin-top: 6px;
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin-top: 7px;
   color: var(--muted);
 }
 .navigation {
@@ -109,20 +109,27 @@
     padding-inline: 11px;
   }
 }
-@media (max-width: 760px) {
+@media (max-width: 960px) {
   .header {
-    min-height: 88px;
+    min-height: 96px;
+    gap: 12px;
   }
   .brand-mark {
-    width: 43px;
-    height: 43px;
-    font-size: 25px;
+    width: 58px;
+    height: 58px;
+  }
+  .brand {
+    gap: 12px;
   }
   .brand-name {
-    font-size: 12px;
+    font-size: 16px;
+  }
+  .brand-name strong {
+    font-size: 21px;
   }
   .brand-name small {
-    font-size: 7px;
+    font-size: 8px;
+    margin-top: 7px;
   }
   .menu-toggle {
     display: flex;
@@ -130,7 +137,7 @@
   .navigation {
     display: none;
     position: absolute;
-    top: 82px;
+    top: calc(100% - 4px);
     left: 0;
     right: 0;
     background: var(--paper-light);
@@ -153,7 +160,18 @@
   .brand {
     gap: 9px;
   }
+  .brand-mark {
+    width: 52px;
+    height: 52px;
+  }
   .brand-name {
-    font-size: 11px;
+    font-size: 14px;
+  }
+  .brand-name strong {
+    font-size: 19px;
+  }
+  .brand-name small {
+    font-size: 7px;
+    letter-spacing: 0.07em;
   }
 }

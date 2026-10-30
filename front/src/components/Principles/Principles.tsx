@@ -7,9 +7,13 @@ export function Principles() {
       <div className="container principles-inner">
         <div className="principles-label">
           <p className="eyebrow">Первый разговор</p>
-          <span className="principles-monogram" aria-hidden="true">
-            КВ.
-          </span>
+          <img
+            className="principles-monogram"
+            src="/brand/vdovenko.svg"
+            alt=""
+            width="176"
+            height="176"
+          />
           <p>
             Документы.
             <br />
