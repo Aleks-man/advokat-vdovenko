@@ -77,7 +77,7 @@ test('desktop routes, stage links, FAQ and missing page', async ({ page }) => {
     )
   })
   expect(fontStatus).toEqual([true, true])
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('Защита начинается')
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Помощь адвоката')
   await page.screenshot({ path: 'artifacts/home-desktop.png', fullPage: true })
   await page.locator('.practice-row').first().click()
   await expect(page).toHaveURL(/practice#stage-01/)
@@ -87,12 +87,12 @@ test('desktop routes, stage links, FAQ and missing page', async ({ page }) => {
     .getByRole('link', { name: 'Подход к работе' })
     .click()
   await page.getByText('Можно ли заранее узнать стоимость?').click()
-  await expect(page.locator('details[open]')).toContainText('Условия оплаты уточняются у адвоката')
+  await expect(page.locator('details[open]')).toContainText('обсудить объём работы и оплату')
   await page
     .getByRole('navigation', { name: 'Основная навигация' })
     .getByRole('link', { name: 'Контакты' })
     .click()
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('Обращение')
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Записаться')
   await expect(page.locator('a[href^="tel:"]')).toHaveAttribute('href', 'tel:+70000000000')
   await page.goto('/missing-page')
   await page.evaluate(async () => {

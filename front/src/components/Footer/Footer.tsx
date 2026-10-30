@@ -21,9 +21,9 @@ export function Footer() {
           <p className="footer-note">
             Уголовные дела.
             <br />
-            Этапы защиты.
+            Консультации.
             <br />
-            Порядок работы.
+            Работа по делу.
           </p>
         </div>
         <div className="footer-bottom">

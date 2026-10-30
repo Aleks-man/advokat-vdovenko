@@ -10,11 +10,11 @@ export function Hero() {
           <span className="status-dot" /> Частная адвокатская практика
         </p>
         <h1>
-          Защита начинается
+          Помощь адвоката
           <br />
-          <em>с изучения</em>
+          <em>по уголовным</em>
           <br />
-          <em>обстоятельств.</em>
+          <em>делам.</em>
         </h1>
         <p className="hero-description">
           Константин Вдовенко<span>Адвокат по уголовным делам</span>
@@ -27,7 +27,7 @@ export function Hero() {
             <ArrowDown size={18} />
           </a>
         </div>
-        <p className="hero-note">Что произошло. Что известно. Что предстоит выяснить.</p>
+        <p className="hero-note">Расскажите, что случилось, и задайте свои вопросы.</p>
       </div>
       <div className="hero-art">
         <img
