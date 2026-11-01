@@ -12,7 +12,7 @@ export function ContactBanner() {
             <em>по уголовному делу?</em>
           </h2>
           <p className="contact-banner-copy">
-            Расскажите мне, что случилось. Договоримся о консультации и обсудим ваши вопросы.
+            Выберите удобный способ связи — телефон, почту или мессенджер.
           </p>
         </div>
         <Link className="button button--light" to="/contacts">

@@ -28,7 +28,7 @@
   border: 1px solid rgb(223 188 131 / 28%);
   border-radius: 40px;
   color: var(--accent-light);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.12em;
 }
 .status-dot {
@@ -79,11 +79,6 @@
 .hero .button:hover {
   background: #edce9e;
 }
-.hero-note {
-  font-size: 11px;
-  color: var(--on-dark-muted);
-  margin-top: 18px;
-}
 .hero-art {
   min-height: 600px;
   position: relative;
@@ -128,7 +123,7 @@
   gap: 18px;
   padding-block: 24px;
   border-top: 1px solid rgb(245 242 234 / 16%);
-  font-size: 10px;
+  font-size: 12px;
   color: var(--on-dark-muted);
 }
 .hero-bottom > :first-child {
@@ -162,7 +157,7 @@
     margin-top: 25px;
   }
   .hero-copy .eyebrow {
-    font-size: 8px;
+    font-size: 11px;
     padding-inline: 10px;
     letter-spacing: 0.08em;
   }
@@ -185,7 +180,7 @@
     flex-wrap: wrap;
     padding-block: 20px;
     gap: 10px;
-    font-size: 9px;
+    font-size: 11px;
   }
 }
 @media (max-width: 380px) {

@@ -13,7 +13,7 @@ export function Hero() {
           <br />
           <em>Константин</em>
           <br />
-          <em>Вдовенко.</em>
+          <em>Вдовенко</em>
         </h1>
         <p className="hero-description">
           Занимаюсь уголовными делами.<span>Обсудим вашу ситуацию и то, чем я могу помочь.</span>
@@ -23,7 +23,6 @@ export function Hero() {
             Связаться со мной
           </Link>
         </div>
-        <p className="hero-note">Напишите мне или позвоните, чтобы договориться о разговоре.</p>
       </div>
       <div className="hero-art">
         <img

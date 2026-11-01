@@ -33,7 +33,7 @@
 .content-disclaimer {
   padding-block: 30px 55px;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.7;
 }
 @media (max-width: 700px) {

@@ -72,7 +72,7 @@
   white-space: nowrap;
 }
 .footer-email {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--on-dark-muted);
 }
 .footer-email span {
@@ -94,7 +94,7 @@
   padding-block: 25px;
   border-top: 1px solid rgb(245 242 234 / 16%);
   color: var(--on-dark-muted);
-  font-size: 11px;
+  font-size: 12px;
 }
 @media (max-width: 900px) {
   .footer-top {

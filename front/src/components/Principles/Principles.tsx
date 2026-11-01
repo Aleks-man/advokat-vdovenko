@@ -5,7 +5,7 @@ export function Principles() {
     <section className="principles panel">
       <div className="container principles-inner">
         <div className="principles-label">
-          <p className="eyebrow">Первый разговор</p>
+          <p className="eyebrow">Мой подход</p>
           <img
             className="principles-monogram"
             src="/brand/vdovenko.svg"
@@ -23,24 +23,27 @@ export function Principles() {
         </div>
         <div className="principles-content">
           <h2>
-            Как я знакомлюсь
+            Понятная работа
             <br />
-            <em>с вашим делом.</em>
+            <em>по вашему делу</em>
           </h2>
           <p className="principles-lead">
-            Сначала я выслушаю вас и задам вопросы. Вместе разберёмся, что произошло, какая помощь
-            нужна сейчас и какие документы мне стоит изучить.
+            Я объясняю, что происходит с делом, какие действия предлагаю и зачем они нужны. Если
+            что-то непонятно, вы можете задать мне вопрос.
           </p>
           <div className="principles-items">
             <div>
               <span>01 / МАТЕРИАЛЫ</span>
-              <h3>Какие документы есть</h3>
-              <p>Повестки, постановления, судебные решения и другие материалы по вашему делу.</p>
+              <h3>Работа с материалами</h3>
+              <p>
+                Изучаю документы по делу, сопоставляю обстоятельства и уточняю то, что требует
+                проверки.
+              </p>
             </div>
             <div>
               <span>02 / ОБСУЖДЕНИЕ</span>
-              <h3>Что делать дальше</h3>
-              <p>Обсудим, какую работу я возьму на себя, её стоимость и как мы будем на связи.</p>
+              <h3>Понятные условия</h3>
+              <p>Заранее согласуем мои задачи, стоимость и порядок связи.</p>
             </div>
           </div>
           <Link to="/approach" className="text-link">

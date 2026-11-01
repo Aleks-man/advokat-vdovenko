@@ -82,9 +82,9 @@ p {
   margin-inline: var(--panel-inset);
 }
 .eyebrow {
-  font-size: 10px;
+  font-size: 11px;
   line-height: 1.5;
-  letter-spacing: 0.19em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   font-weight: 600;
 }

@@ -18,7 +18,7 @@
   flex-shrink: 0;
 }
 .contact-detail .eyebrow {
-  font-size: 8px;
+  font-size: 11px;
   color: var(--muted);
 }
 .contact-detail p,
@@ -34,7 +34,7 @@
 }
 .contact-detail small {
   color: var(--muted);
-  font-size: 11px;
+  font-size: 13px;
 }
 .contact-aside {
   background:
@@ -60,7 +60,7 @@
   font-size: 14px;
 }
 .contact-aside-note {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--on-dark-muted);
   line-height: 1.8;
   padding-top: 25px;
