@@ -1,3 +1,4 @@
+import { AccordionItem } from '../../components/AccordionItem/AccordionItem'
 import { workSteps } from '../../data/site'
 import { ContactBanner } from '../../components/ContactBanner/ContactBanner'
 import './Approach.css'
@@ -58,27 +59,24 @@ export function Approach() {
           <h2>Вопросы о начале работы</h2>
         </div>
         <div className="faq">
-          <details>
-            <summary>Что подготовить к первому разговору?</summary>
+          <AccordionItem title="Что подготовить к первому разговору?">
             <p>
               Запишите, что и когда произошло, и подготовьте свои вопросы. Если у вас есть документы
               по делу, скажите мне об этом при записи — я подскажу, что взять с собой.
             </p>
-          </details>
-          <details>
-            <summary>Можно ли заранее узнать стоимость?</summary>
+          </AccordionItem>
+          <AccordionItem title="Можно ли заранее узнать стоимость?">
             <p>
               Расскажите мне о деле и о том, какая помощь нужна. Объём работы и оплату мы обсудим до
               её начала.
             </p>
-          </details>
-          <details>
-            <summary>Как будем поддерживать связь?</summary>
+          </AccordionItem>
+          <AccordionItem title="Как будем поддерживать связь?">
             <p>
               Способ связи и порядок передачи документов согласуем в начале работы. Если появятся
               новые документы или назначат допрос либо заседание, сообщите мне об этом.
             </p>
-          </details>
+          </AccordionItem>
         </div>
       </section>
       <ContactBanner />

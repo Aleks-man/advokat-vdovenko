@@ -87,7 +87,9 @@ test('desktop routes, stage links, FAQ and missing page', async ({ page }) => {
     .getByRole('link', { name: 'Подход к работе' })
     .click()
   await page.getByText('Можно ли заранее узнать стоимость?').click()
-  await expect(page.locator('details[open]')).toContainText('мы обсудим до её начала')
+  await expect(
+    page.getByRole('region', { name: 'Можно ли заранее узнать стоимость?' }),
+  ).toContainText('мы обсудим до её начала')
   await page
     .getByRole('navigation', { name: 'Основная навигация' })
     .getByRole('link', { name: 'Контакты' })
@@ -208,5 +210,71 @@ test('fixed header compacts on scroll and mobile navigation remains usable', asy
       await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }))
       await expect(mark).toBeVisible()
     }
+  }
+})
+
+test('FAQ animates both directions and supports keyboard and rapid toggles', async ({ page }) => {
+  for (const width of [1280, 390]) {
+    await page.setViewportSize({ width, height: 900 })
+    await page.emulateMedia({ reducedMotion: 'no-preference' })
+    await page.goto('/approach')
+    await page.evaluate(() => document.fonts.ready)
+    const item = page.locator('.accordion-item').first()
+    const trigger = item.getByRole('button')
+    const panel = item.locator('.accordion-panel')
+    await trigger.evaluate((element) =>
+      element.scrollIntoView({ block: 'center', behavior: 'instant' }),
+    )
+
+    const sampleTransition = () =>
+      panel.evaluate((element) => {
+        getComputedStyle(element).gridTemplateRows
+        const transitions = element.getAnimations()
+        const sizing = transitions.find(
+          (animation) => (animation as CSSTransition).transitionProperty === 'grid-template-rows',
+        )
+        if (!sizing) throw new Error('Expected a running height transition')
+        for (const animation of transitions) {
+          animation.pause()
+          animation.currentTime = Number(animation.effect!.getTiming().duration) * 0.25
+        }
+        const height = element.getBoundingClientRect().height
+        const fullHeight = element.querySelector('.accordion-copy')!.getBoundingClientRect().height
+        for (const animation of transitions) animation.finish()
+        return { height, fullHeight }
+      })
+
+    await trigger.click()
+    await expect(trigger).toHaveAttribute('aria-expanded', 'true')
+    const opening = await sampleTransition()
+    expect(opening.height).toBeGreaterThan(0)
+    expect(opening.height).toBeLessThan(opening.fullHeight)
+    await expect(panel).toBeVisible()
+
+    await trigger.click()
+    await expect(trigger).toHaveAttribute('aria-expanded', 'false')
+    const closing = await sampleTransition()
+    expect(closing.height).toBeGreaterThan(0)
+    expect(closing.height).toBeLessThan(closing.fullHeight)
+    await expect(panel).toBeHidden()
+
+    await page.emulateMedia({ reducedMotion: 'reduce' })
+    await trigger.focus()
+    await page.keyboard.press('Enter')
+    await expect(panel).toBeVisible()
+    await page.keyboard.press('Space')
+    await expect(panel).toBeHidden()
+    await expect(trigger).toBeFocused()
+
+    await page.emulateMedia({ reducedMotion: 'no-preference' })
+    await trigger.evaluate((element) => {
+      element.click()
+      element.click()
+      element.click()
+    })
+    await expect(trigger).toHaveAttribute('aria-expanded', 'true')
+    await expect(panel).toHaveCSS('opacity', '1')
+    await trigger.click()
+    await expect(panel).toBeHidden()
   }
 })
