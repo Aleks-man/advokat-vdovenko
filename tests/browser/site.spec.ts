@@ -92,11 +92,26 @@ test('desktop routes, stage links, FAQ and missing page', async ({ page }) => {
     .getByRole('navigation', { name: 'Основная навигация' })
     .getByRole('link', { name: 'Контакты' })
     .click()
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('Записаться')
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Связаться')
   await expect(page.locator('.contact-details a[href^="tel:"]')).toHaveAttribute(
     'href',
     'tel:+79999999999',
   )
+  for (const section of ['.contact-details', 'footer']) {
+    const contacts = page.locator(section)
+    await expect(contacts.getByRole('link', { name: 'Написать в Viber' })).toHaveAttribute(
+      'href',
+      'viber://chat?number=%2B79999999999',
+    )
+    await expect(contacts.getByRole('link', { name: 'Написать в WhatsApp' })).toHaveAttribute(
+      'href',
+      'https://wa.me/79999999999',
+    )
+    await expect(contacts.getByRole('link', { name: 'Написать в Telegram' })).toHaveAttribute(
+      'href',
+      'https://t.me/+79999999999',
+    )
+  }
   await page.goto('/missing-page')
   await page.evaluate(async () => {
     await document.fonts.ready

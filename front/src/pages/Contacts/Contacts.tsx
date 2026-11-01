@@ -1,5 +1,6 @@
 import { Mail, MapPin, Phone } from 'lucide-react'
 import { site } from '../../data/site'
+import { MessengerLinks } from '../../components/MessengerLinks/MessengerLinks'
 import './Contacts.css'
 import { LegalArtwork } from '../../components/LegalArtwork/LegalArtwork'
 export function Contacts() {
@@ -9,9 +10,9 @@ export function Contacts() {
         <LegalArtwork kind="document" />
         <p className="eyebrow">03 / Контакты</p>
         <h1>
-          Записаться
+          Связаться
           <br />
-          <em>на консультацию</em>
+          <em>со мной</em>
         </h1>
         <p>Свяжитесь со мной, чтобы задать вопрос или выбрать время консультации.</p>
       </section>
@@ -22,7 +23,8 @@ export function Contacts() {
             <div>
               <span className="eyebrow">Телефон</span>
               <a href={`tel:${site.phone.replace(/[^+\d]/g, '')}`}>{site.phone}</a>
-              <small>Для записи на консультацию</small>
+              <small>Позвоните или напишите в удобном мессенджере</small>
+              <MessengerLinks />
             </div>
           </div>
           <div className="contact-detail">

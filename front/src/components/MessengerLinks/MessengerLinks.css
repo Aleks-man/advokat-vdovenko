@@ -1,0 +1,29 @@
+.messenger-links {
+  display: flex;
+  gap: 8px;
+}
+.messenger-links .messenger-link {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  margin: 0;
+  border-radius: 8px;
+  transition: opacity 0.2s;
+}
+.messenger-link:hover {
+  opacity: 0.8;
+}
+.messenger-link--viber {
+  background: #7360f2;
+}
+.messenger-link--whatsapp {
+  background: #25d366;
+}
+.messenger-link--telegram {
+  background: #26a5e4;
+}
+.messenger-link img {
+  display: block;
+  filter: invert(1);
+}
