@@ -12,44 +12,65 @@ body {
   background-repeat: no-repeat;
 }
 
-body::before {
+body::before,
+#practice::before {
   content: '';
   position: absolute;
   z-index: -1;
-  top: clamp(480px, 48vw, 760px);
-  left: 0;
-  width: 100%;
-  height: min(72vw, 1500px);
+  top: clamp(480px, 38vw, 640px);
+  left: 50%;
+  width: min(100%, 1600px);
+  aspect-ratio: 3 / 2;
+  transform: translateX(-50%);
   background-image:
-    linear-gradient(rgb(244 241 234 / 64%), rgb(244 241 234 / 72%)),
+    linear-gradient(rgb(244 241 234 / 72%), rgb(244 241 234 / 80%)),
     url('../assets/desk-background.webp');
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center;
-  mask-image: linear-gradient(transparent, #000 12%, #000 65%, transparent);
+  background-repeat: no-repeat;
+  mask-image:
+    linear-gradient(transparent, #000 12%, #000 58%, transparent),
+    linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+  mask-composite: intersect;
   pointer-events: none;
 }
 
 @media (max-width: 760px) {
-  body::before {
+  body::before,
+  #practice::before {
     top: 820px;
-    height: 1100px;
+    height: 720px;
+    aspect-ratio: auto;
     background-size:
       100% 100%,
-      auto 1100px;
+      1080px auto;
     background-position:
       center,
-      68% top;
+      64% top;
     opacity: 0.7;
   }
 }
 
 body:has(.contacts-layout)::before {
   top: clamp(240px, 24vw, 380px);
-  transform: scaleX(-1);
+  transform: translateX(-50%) scaleX(-1);
 }
 
 @media (max-width: 760px) {
   body:has(.contacts-layout)::before {
     top: 300px;
   }
+}
+
+body:has(.hero)::before {
+  display: none;
+}
+
+#practice {
+  position: relative;
+  isolation: isolate;
+}
+
+#practice::before {
+  top: 0;
 }
