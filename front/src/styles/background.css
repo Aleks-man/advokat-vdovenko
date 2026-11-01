@@ -1,3 +1,55 @@
 body {
-  background: var(--paper);
+  position: relative;
+  isolation: isolate;
+  min-height: 100svh;
+  background-color: #f1eee7;
+  background-image:
+    radial-gradient(ellipse at 48% 0, rgb(255 254 249 / 85%), transparent 72%),
+    linear-gradient(180deg, #f4f1ea 0%, #f1eee7 45%, #eaeae3 100%);
+  background-size:
+    100% 1300px,
+    100% 100%;
+  background-repeat: no-repeat;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: clamp(480px, 48vw, 760px);
+  left: 0;
+  width: 100%;
+  height: min(72vw, 1500px);
+  background-image:
+    linear-gradient(rgb(244 241 234 / 64%), rgb(244 241 234 / 72%)),
+    url('../assets/desk-background.webp');
+  background-size: cover;
+  background-position: center;
+  mask-image: linear-gradient(transparent, #000 12%, #000 65%, transparent);
+  pointer-events: none;
+}
+
+@media (max-width: 760px) {
+  body::before {
+    top: 820px;
+    height: 1100px;
+    background-size:
+      100% 100%,
+      auto 1100px;
+    background-position:
+      center,
+      68% top;
+    opacity: 0.7;
+  }
+}
+
+body:has(.contacts-layout)::before {
+  top: clamp(240px, 24vw, 380px);
+  transform: scaleX(-1);
+}
+
+@media (max-width: 760px) {
+  body:has(.contacts-layout)::before {
+    top: 300px;
+  }
 }
