@@ -1,11 +1,22 @@
+.header-space {
+  height: 108px;
+}
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
   min-height: 108px;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  isolation: isolate;
   z-index: 20;
+  padding-inline: 0;
+  transition:
+    min-height 0.36s cubic-bezier(0.22, 1, 0.36, 1),
+    padding 0.36s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .brand {
   display: flex;
@@ -190,5 +201,149 @@
   .brand-name small {
     font-size: 7px;
     letter-spacing: 0.07em;
+  }
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: rgb(244 241 234 / 95%);
+  border: 1px solid transparent;
+  border-top: 0;
+  border-radius: 0 0 8px 8px;
+  backdrop-filter: blur(16px);
+  pointer-events: none;
+  transition:
+    border-color 0.36s ease,
+    box-shadow 0.36s ease;
+}
+.header--compact {
+  min-height: 68px;
+  padding-inline: 18px;
+}
+.header--compact::before {
+  border-color: rgb(167 125 67 / 16%);
+  box-shadow: 0 6px 22px rgb(21 30 25 / 6%);
+}
+.header > .brand {
+  position: relative;
+  width: 260px;
+  transition: width 0.36s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.header .brand-mark {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+  transition:
+    opacity 0.28s ease,
+    transform 0.36s ease,
+    visibility 0s;
+}
+.header .brand-name {
+  flex-shrink: 0;
+  white-space: nowrap;
+  opacity: 1;
+  transform: translateX(0);
+  transition:
+    opacity 0.24s ease,
+    transform 0.36s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.header-compact-name {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 20px;
+  line-height: 1.2;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translate(10px, -50%);
+  pointer-events: none;
+  transition:
+    opacity 0.28s ease,
+    transform 0.36s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.header-compact-name small {
+  display: block;
+  margin-top: 5px;
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+.header--compact > .brand {
+  width: 230px;
+}
+.header--compact .brand-mark {
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0.85);
+  transition:
+    opacity 0.24s ease,
+    transform 0.36s ease,
+    visibility 0s 0.36s;
+}
+.header--compact .brand-name {
+  opacity: 0;
+  transform: translateX(-8px);
+  pointer-events: none;
+}
+.header--compact .header-compact-name {
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+@media (max-width: 960px) {
+  .header-space {
+    height: 96px;
+  }
+  .header--compact {
+    min-height: 64px;
+    padding-inline: 8px;
+  }
+  .header > .brand {
+    width: 225px;
+  }
+  .header--compact > .brand {
+    width: 210px;
+  }
+  .header-compact-name {
+    font-size: 18px;
+  }
+  .header-compact-name small {
+    font-size: 8px;
+  }
+  .header .navigation {
+    max-height: calc(100dvh - 112px);
+    overflow-y: auto;
+  }
+}
+@media (max-width: 380px) {
+  .header {
+    gap: 6px;
+  }
+  .header > .brand,
+  .header--compact > .brand {
+    width: 180px;
+  }
+  .header-compact-name {
+    font-size: 16px;
+  }
+  .header-compact-name small {
+    font-size: 7px;
+  }
+}
+
+@media (max-width: 380px) {
+  .header--compact {
+    padding-inline: 6px;
+  }
+  .header--compact > .brand {
+    width: 168px;
+  }
+  .header--compact .header-compact-name {
+    font-size: 15px;
   }
 }

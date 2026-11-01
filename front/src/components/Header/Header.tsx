@@ -1,10 +1,20 @@
-import { useLayoutEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { NavLink, Link, useLocation } from 'react-router-dom'
 import { Phone, Menu, X } from 'lucide-react'
 import { navigation, site } from '../../data/site'
 import './Header.css'
 export function Header() {
   const [open, setOpen] = useState(false)
+  const [compact, setCompact] = useState(false)
+
+  useEffect(() => {
+    const update = () => {
+      setCompact((current) => (current ? window.scrollY > 24 : window.scrollY > 80))
+    }
+    update()
+    window.addEventListener('scroll', update, { passive: true })
+    return () => window.removeEventListener('scroll', update)
+  }, [])
   const { pathname } = useLocation()
   const navigationRef = useRef<HTMLElement>(null)
   const [indicator, setIndicator] = useState<{
@@ -51,60 +61,66 @@ export function Header() {
     }
   }, [pathname, open])
   return (
-    <header className="header container">
-      <Link
-        to="/"
-        className="brand"
-        aria-label="Константин Вдовенко — главная"
-        onClick={() => setOpen(false)}
-      >
-        <img className="brand-mark" src="/brand/vdovenko.svg" alt="" width="68" height="68" />
-        <span className="brand-name">
-          <span>Константин</span>
-          <strong>Вдовенко</strong>
-          <small>АДВОКАТ · УГОЛОВНЫЕ ДЕЛА</small>
-        </span>
-      </Link>
-      <button
-        className="menu-toggle"
-        onClick={() => setOpen(!open)}
-        aria-expanded={open}
-        aria-controls="main-navigation"
-        aria-label={open ? 'Закрыть меню' : 'Открыть меню'}
-      >
-        {open ? <X /> : <Menu />}
-      </button>
-      <nav
-        ref={navigationRef}
-        id="main-navigation"
-        className={`navigation ${open ? 'is-open' : ''}`}
-        aria-label="Основная навигация"
-      >
-        {indicator && (
-          <span
-            className="navigation-indicator"
-            aria-hidden="true"
-            style={{
-              transform: `translate(${indicator.x}px, ${indicator.y}px)`,
-              width: indicator.width,
-              height: indicator.height,
-            }}
-          />
-        )}
-        {navigation.map((item) => (
-          <NavLink key={item.to} to={item.to} end onClick={() => setOpen(false)}>
-            {item.label}
-          </NavLink>
-        ))}
-      </nav>
-      <a
-        className="header-contact"
-        href={`tel:${site.phone.replace(/[^+\d]/g, '')}`}
-        aria-label={`Позвонить: ${site.phone}`}
-      >
-        <Phone size={19} aria-hidden="true" />
-        <span>{site.phone}</span>
-      </a>
-    </header>
+    <div className="header-space">
+      <header className={`header container${compact ? ' header--compact' : ''}`}>
+        <Link
+          to="/"
+          className="brand"
+          aria-label="Константин Вдовенко — главная"
+          onClick={() => setOpen(false)}
+        >
+          <img className="brand-mark" src="/brand/vdovenko.svg" alt="" width="68" height="68" />
+          <span className="brand-name">
+            <span>Константин</span>
+            <strong>Вдовенко</strong>
+            <small>АДВОКАТ · УГОЛОВНЫЕ ДЕЛА</small>
+          </span>
+          <span className="header-compact-name" aria-hidden="true">
+            Константин Вдовенко
+            <small>АДВОКАТ · УГОЛОВНЫЕ ДЕЛА</small>
+          </span>
+        </Link>
+        <button
+          className="menu-toggle"
+          onClick={() => setOpen(!open)}
+          aria-expanded={open}
+          aria-controls="main-navigation"
+          aria-label={open ? 'Закрыть меню' : 'Открыть меню'}
+        >
+          {open ? <X /> : <Menu />}
+        </button>
+        <nav
+          ref={navigationRef}
+          id="main-navigation"
+          className={`navigation ${open ? 'is-open' : ''}`}
+          aria-label="Основная навигация"
+        >
+          {indicator && (
+            <span
+              className="navigation-indicator"
+              aria-hidden="true"
+              style={{
+                transform: `translate(${indicator.x}px, ${indicator.y}px)`,
+                width: indicator.width,
+                height: indicator.height,
+              }}
+            />
+          )}
+          {navigation.map((item) => (
+            <NavLink key={item.to} to={item.to} end onClick={() => setOpen(false)}>
+              {item.label}
+            </NavLink>
+          ))}
+        </nav>
+        <a
+          className="header-contact"
+          href={`tel:${site.phone.replace(/[^+\d]/g, '')}`}
+          aria-label={`Позвонить: ${site.phone}`}
+        >
+          <Phone size={19} aria-hidden="true" />
+          <span>{site.phone}</span>
+        </a>
+      </header>
+    </div>
   )
 }

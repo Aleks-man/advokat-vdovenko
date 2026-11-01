@@ -155,3 +155,43 @@ test('narrow mobile and tablet layouts stay within viewport', async ({ page }) =
     }
   }
 })
+
+test('fixed header compacts on scroll and mobile navigation remains usable', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' })
+  for (const width of [1280, 390, 320]) {
+    await page.setViewportSize({ width, height: 844 })
+    await page.goto('/')
+    await page.evaluate(() => document.fonts.ready)
+    const header = page.locator('header')
+    const mark = header.locator('.brand-mark')
+    await expect(mark).toBeVisible()
+    const originalHeroTop = await page
+      .locator('.hero')
+      .evaluate((element) => element.getBoundingClientRect().top + window.scrollY)
+    await page.evaluate(() => window.scrollTo({ top: 500, behavior: 'instant' }))
+    await expect(mark).toBeHidden()
+    const bounds = await header.boundingBox()
+    expect(bounds!.y).toBe(0)
+    expect(bounds!.height).toBeLessThanOrEqual(68)
+    expect(
+      await page
+        .locator('.hero')
+        .evaluate((element) => element.getBoundingClientRect().top + window.scrollY),
+    ).toBeCloseTo(originalHeroTop, 0)
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
+    await expect(header.locator('.brand-name')).toContainText('Константин')
+    await expect(header.locator('.header-contact')).toHaveAttribute('href', 'tel:+79999999999')
+    if (width < 960) {
+      await page.getByRole('button', { name: 'Открыть меню' }).click()
+      await page
+        .getByRole('navigation', { name: 'Основная навигация' })
+        .getByRole('link', { name: 'Контакты', exact: true })
+        .click()
+      await expect(page).toHaveURL('/contacts')
+      await expect(mark).toBeVisible()
+    } else {
+      await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }))
+      await expect(mark).toBeVisible()
+    }
+  }
+})
