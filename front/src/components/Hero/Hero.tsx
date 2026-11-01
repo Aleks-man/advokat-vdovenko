@@ -6,24 +6,24 @@ export function Hero() {
     <section className="hero container">
       <div className="hero-copy">
         <p className="eyebrow">
-          <span className="status-dot" /> Частная адвокатская практика
+          <span className="status-dot" /> Адвокат по уголовным делам
         </p>
         <h1>
-          Помощь адвоката
+          Адвокат
           <br />
-          <em>по уголовным</em>
+          <em>Константин</em>
           <br />
-          <em>делам.</em>
+          <em>Вдовенко.</em>
         </h1>
         <p className="hero-description">
-          Константин Вдовенко<span>Адвокат по уголовным делам</span>
+          Занимаюсь уголовными делами.<span>Обсудим вашу ситуацию и то, чем я могу помочь.</span>
         </p>
         <div className="hero-actions">
           <Link to="/contacts" className="button">
-            Контакты адвоката
+            Связаться со мной
           </Link>
         </div>
-        <p className="hero-note">Расскажите, что случилось, и задайте свои вопросы.</p>
+        <p className="hero-note">Напишите мне или позвоните, чтобы договориться о разговоре.</p>
       </div>
       <div className="hero-art">
         <img

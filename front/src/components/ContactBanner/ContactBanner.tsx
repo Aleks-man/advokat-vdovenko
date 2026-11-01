@@ -5,18 +5,18 @@ export function ContactBanner() {
     <section className="contact-banner panel">
       <div className="container contact-banner-inner">
         <div>
-          <p className="eyebrow">Связаться с адвокатом</p>
+          <p className="eyebrow">Связаться со мной</p>
           <h2>
             Нужна помощь
             <br />
             <em>по уголовному делу?</em>
           </h2>
           <p className="contact-banner-copy">
-            Позвоните или напишите, чтобы рассказать о ситуации и договориться о консультации.
+            Расскажите мне, что случилось. Договоримся о консультации и обсудим ваши вопросы.
           </p>
         </div>
         <Link className="button button--light" to="/contacts">
-          Перейти к контактам
+          Записаться на консультацию
         </Link>
       </div>
     </section>
