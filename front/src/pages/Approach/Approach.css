@@ -25,9 +25,7 @@
 }
 .approach-quote {
   background:
-    radial-gradient(ellipse at 95% 0%, rgb(167 125 67 / 18%), transparent 60%),
-    repeating-linear-gradient(90deg, transparent 0 95px, rgb(223 188 131 / 5%) 95px 96px),
-    var(--ink-dark);
+    radial-gradient(ellipse at 95% 0%, rgb(167 125 67 / 18%), transparent 60%), var(--ink-dark);
   color: var(--on-dark);
   padding-block: 75px;
 }

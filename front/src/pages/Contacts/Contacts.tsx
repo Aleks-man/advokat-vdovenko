@@ -2,20 +2,22 @@ import { Mail, MapPin, Phone } from 'lucide-react'
 import { site } from '../../data/site'
 import { MessengerLinks } from '../../components/MessengerLinks/MessengerLinks'
 import './Contacts.css'
-import { LegalArtwork } from '../../components/LegalArtwork/LegalArtwork'
+import { PageIntro } from '../../components/PageIntro/PageIntro'
 export function Contacts() {
   return (
     <>
-      <section className="container page-intro legal-intro">
-        <LegalArtwork kind="document" />
-        <p className="eyebrow">03 / Контакты</p>
-        <h1>
-          Связаться
-          <br />
-          <em>со мной</em>
-        </h1>
-        <p>Свяжитесь со мной, чтобы задать вопрос или выбрать время консультации.</p>
-      </section>
+      <PageIntro
+        eyebrow="03 / Контакты"
+        title={
+          <>
+            Связаться
+            <br />
+            <em>со мной</em>
+          </>
+        }
+      >
+        Свяжитесь со мной, чтобы задать вопрос или выбрать время консультации.
+      </PageIntro>
       <section className="container section contacts-layout">
         <div className="contact-details">
           <div className="contact-detail">

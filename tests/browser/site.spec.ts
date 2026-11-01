@@ -39,8 +39,8 @@ test('wide screens keep sections on the same centered grid', async ({ page }) =>
         expect(bounds!.width).toBeCloseTo(header!.width, 0)
       }
       if (width === 1920 && path !== '/') {
-        const intro = await page.locator('.legal-intro').boundingBox()
-        const heading = await page.locator('.legal-intro h1').boundingBox()
+        const intro = await page.locator('.page-intro-panel').boundingBox()
+        const heading = await page.locator('.page-intro-panel h1').boundingBox()
         expect(heading!.x - intro!.x).toBeGreaterThanOrEqual(18)
         await page.evaluate(() => document.fonts.ready)
         await page.screenshot({

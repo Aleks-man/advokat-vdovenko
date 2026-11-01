@@ -1,23 +1,23 @@
 import { workSteps } from '../../data/site'
 import { ContactBanner } from '../../components/ContactBanner/ContactBanner'
 import './Approach.css'
-import { LegalArtwork } from '../../components/LegalArtwork/LegalArtwork'
+import { PageIntro } from '../../components/PageIntro/PageIntro'
 export function Approach() {
   return (
     <>
-      <section className="container page-intro legal-intro">
-        <LegalArtwork kind="court" />
-        <p className="eyebrow">02 / Подход к работе</p>
-        <h1>
-          Как мы будем
-          <br />
-          <em>работать</em>
-        </h1>
-        <p>
-          До начала работы мы согласуем задачи, стоимость и порядок связи. Здесь — о том, как
-          строится наше взаимодействие.
-        </p>
-      </section>
+      <PageIntro
+        eyebrow="02 / Подход к работе"
+        title={
+          <>
+            Как мы будем
+            <br />
+            <em>работать</em>
+          </>
+        }
+      >
+        До начала работы мы согласуем задачи, стоимость и порядок связи. Здесь — о том, как строится
+        наше взаимодействие.
+      </PageIntro>
       <section className="container section">
         <div className="section-heading">
           <p className="eyebrow">Начало работы</p>
