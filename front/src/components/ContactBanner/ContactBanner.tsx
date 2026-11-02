@@ -16,7 +16,7 @@ export function ContactBanner() {
           </p>
         </div>
         <Link className="button button--light" to="/contacts">
-          Обсудить консультацию
+          Договориться о консультации
         </Link>
       </div>
     </section>

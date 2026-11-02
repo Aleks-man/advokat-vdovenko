@@ -1,11 +1,12 @@
 .principles {
-  padding-block: 90px;
+  padding-block: 64px;
   color: var(--on-dark);
   background: radial-gradient(ellipse at 0 100%, #384432, transparent 60%), var(--ink-dark);
 }
 .principles-inner {
   display: grid;
   grid-template-columns: 1fr 2fr;
+  align-items: center;
   gap: 40px;
 }
 .principles-label {
@@ -20,70 +21,31 @@
   display: block;
   width: 176px;
   height: 176px;
-  margin-block: 36px 25px;
-}
-.principles-label > p:last-child {
-  color: var(--on-dark-muted);
-  font-size: 14px;
+  margin-top: 24px;
 }
 .principles-content h2 {
   font-size: clamp(26px, 3.5vw, 48px);
-}
-.principles-content h2 em {
-  color: var(--accent-light);
-  font-weight: 400;
-  font-style: normal;
 }
 .principles-lead {
   max-width: 570px;
   font-size: 16px;
   color: var(--on-dark-muted);
-  margin-top: 27px;
-}
-.principles-items {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 35px;
-  margin-block: 38px 30px;
-  padding-top: 28px;
-  border-top: 1px solid rgb(245 242 234 / 18%);
-}
-.principles-items span {
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  color: var(--accent-light);
-}
-.principles-items h3 {
-  font-size: 23px;
-  margin-top: 17px;
-}
-.principles-items p {
-  font-size: 14px;
-  color: var(--on-dark-muted);
-  margin-top: 12px;
+  margin-top: 24px;
 }
 .principles .text-link {
+  margin-top: 24px;
   border-color: var(--accent-light);
   color: var(--accent-light);
 }
 @media (max-width: 760px) {
   .principles {
-    padding-block: 60px;
+    padding-block: 48px;
   }
   .principles-inner {
     grid-template-columns: 1fr;
-    gap: 28px;
-  }
-  .principles-monogram,
-  .principles-label > p:last-child {
-    display: none;
-  }
-  .principles-items {
     gap: 24px;
   }
-}
-@media (max-width: 380px) {
-  .principles-items {
-    grid-template-columns: 1fr;
+  .principles-monogram {
+    display: none;
   }
 }
