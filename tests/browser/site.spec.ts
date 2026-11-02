@@ -26,7 +26,7 @@ test('menu highlight moves to the active link without remounting', async ({ page
 test('wide screens keep sections on the same centered grid', async ({ page }) => {
   for (const width of [1920, 2560]) {
     await page.setViewportSize({ width, height: 1080 })
-    for (const path of ['/', '/practice', '/approach', '/contacts']) {
+    for (const path of ['/', '/practice', '/about', '/contacts']) {
       await page.goto(path)
       const header = await page.locator('header').boundingBox()
       expect(header).not.toBeNull()
@@ -39,8 +39,10 @@ test('wide screens keep sections on the same centered grid', async ({ page }) =>
         expect(bounds!.width).toBeCloseTo(header!.width, 0)
       }
       if (width === 1920 && path !== '/') {
-        const intro = await page.locator('.page-intro-panel').boundingBox()
-        const heading = await page.locator('.page-intro-panel h1').boundingBox()
+        const intro = await page
+          .locator(path === '/about' ? '.about' : '.page-intro-panel')
+          .boundingBox()
+        const heading = await page.getByRole('heading', { level: 1 }).boundingBox()
         expect(heading!.x - intro!.x).toBeGreaterThanOrEqual(18)
         await page.evaluate(() => document.fonts.ready)
         await page.screenshot({
@@ -79,13 +81,17 @@ test('desktop routes, stage links, FAQ and missing page', async ({ page }) => {
   expect(fontStatus).toEqual([true, true])
   await expect(page.getByRole('heading', { level: 1 })).toContainText('Константин')
   await page.screenshot({ path: 'artifacts/home-desktop.png', fullPage: true })
+  await expect(page.locator('.about')).toHaveCount(0)
   await page.locator('.practice-row').first().click()
   await expect(page).toHaveURL(/practice#stage-01/)
   await expect(page.locator('#stage-01')).toBeInViewport()
   await page
     .getByRole('navigation', { name: 'Основная навигация' })
-    .getByRole('link', { name: 'Подход к работе' })
+    .getByRole('link', { name: 'Обо мне' })
     .click()
+  await expect(page).toHaveURL('/about')
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Константин')
+  await expect(page.locator('.about-portrait img')).toBeVisible()
   await page.getByText('Можно ли заранее узнать стоимость?').click()
   await expect(
     page.getByRole('region', { name: 'Можно ли заранее узнать стоимость?' }),
@@ -114,6 +120,8 @@ test('desktop routes, stage links, FAQ and missing page', async ({ page }) => {
       'https://t.me/+79999999999',
     )
   }
+  await page.goto('/approach')
+  await expect(page).toHaveURL('/about')
   await page.goto('/missing-page')
   await page.evaluate(async () => {
     await document.fonts.ready
@@ -126,7 +134,7 @@ test('desktop routes, stage links, FAQ and missing page', async ({ page }) => {
 
 test('mobile navigation and layouts have no horizontal overflow', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 })
-  for (const path of ['/', '/practice', '/approach', '/contacts']) {
+  for (const path of ['/', '/practice', '/about', '/contacts']) {
     await page.goto(path)
     await page.evaluate(async () => {
       await document.fonts.ready
@@ -160,7 +168,7 @@ test('mobile navigation and layouts have no horizontal overflow', async ({ page 
 test('narrow mobile and tablet layouts stay within viewport', async ({ page }) => {
   for (const width of [320, 768]) {
     await page.setViewportSize({ width, height: 900 })
-    for (const path of ['/', '/practice', '/approach', '/contacts']) {
+    for (const path of ['/', '/practice', '/about', '/contacts']) {
       await page.goto(path)
       await page.evaluate(async () => {
         await document.fonts.ready
@@ -217,7 +225,7 @@ test('FAQ animates both directions and supports keyboard and rapid toggles', asy
   for (const width of [1280, 390]) {
     await page.setViewportSize({ width, height: 900 })
     await page.emulateMedia({ reducedMotion: 'no-preference' })
-    await page.goto('/approach')
+    await page.goto('/about')
     await page.evaluate(() => document.fonts.ready)
     const item = page.locator('.accordion-item').first()
     const trigger = item.getByRole('button')

@@ -9,7 +9,7 @@ export const site = {
 export const navigation = [
   { to: '/', label: 'Главная' },
   { to: '/practice', label: 'Уголовная защита' },
-  { to: '/approach', label: 'Подход к работе' },
+  { to: '/about', label: 'Обо мне' },
   { to: '/contacts', label: 'Контакты' },
 ]
 export const practiceAreas = [

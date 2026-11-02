@@ -1,9 +1,9 @@
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import { Header } from '../components/Header/Header'
 import { Footer } from '../components/Footer/Footer'
 import { Home } from '../pages/Home/Home'
 import { Practice } from '../pages/Practice/Practice'
-import { Approach } from '../pages/Approach/Approach'
+import { AboutPage } from '../pages/About/About'
 import { Contacts } from '../pages/Contacts/Contacts'
 import { NotFound } from '../pages/NotFound/NotFound'
 import { RouteEffects } from './RouteEffects'
@@ -19,7 +19,8 @@ export function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/practice" element={<Practice />} />
-          <Route path="/approach" element={<Approach />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/approach" element={<Navigate to="/about" replace />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

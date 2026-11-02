@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom'
 const titles: Record<string, string> = {
   '/': 'Адвокат по уголовным делам',
   '/practice': 'Уголовная защита',
-  '/approach': 'Подход к работе',
+  '/about': 'Обо мне',
   '/contacts': 'Контакты',
 }
 export function RouteEffects() {

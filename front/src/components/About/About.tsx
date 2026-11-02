@@ -11,14 +11,13 @@ export function About() {
             alt={about.portrait.alt}
             width="800"
             height="1000"
-            loading="lazy"
             decoding="async"
           />
         </div>
         <div className="about-content">
           <div className="about-heading">
             <p className="eyebrow">02 / Обо мне</p>
-            <h2 id="about-heading">{about.name}</h2>
+            <h1 id="about-heading">{about.name}</h1>
             <p className="about-profession">{about.profession}</p>
           </div>
           <div className="about-biography">

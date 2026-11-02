@@ -31,7 +31,7 @@
   margin-bottom: 26px;
   color: var(--accent);
 }
-.about-heading h2 {
+.about-heading h1 {
   max-width: 540px;
   font-family: Georgia, 'Times New Roman', serif;
   font-size: clamp(32px, 3.3vw, 46px);
@@ -76,7 +76,7 @@
     grid-template-columns: 1fr;
     gap: 28px;
   }
-  .about-heading h2 {
+  .about-heading h1 {
     max-width: none;
   }
 }

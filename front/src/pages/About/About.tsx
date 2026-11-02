@@ -1,25 +1,13 @@
 import { AccordionItem } from '../../components/AccordionItem/AccordionItem'
 import { workSteps } from '../../data/site'
 import { ContactBanner } from '../../components/ContactBanner/ContactBanner'
-import './Approach.css'
-import { PageIntro } from '../../components/PageIntro/PageIntro'
-export function Approach() {
+import './About.css'
+import { About } from '../../components/About/About'
+export function AboutPage() {
   return (
     <>
-      <PageIntro
-        eyebrow="02 / Подход к работе"
-        title={
-          <>
-            Как мы будем
-            <br />
-            <em>работать</em>
-          </>
-        }
-      >
-        До начала работы мы согласуем задачи, стоимость и порядок связи. Здесь — о том, как строится
-        наше взаимодействие.
-      </PageIntro>
-      <section className="container section">
+      <About />
+      <section className="container section" id="approach">
         <div className="section-heading">
           <p className="eyebrow">Начало работы</p>
           <h2>

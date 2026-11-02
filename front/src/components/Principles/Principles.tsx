@@ -46,7 +46,7 @@ export function Principles() {
               <p>Заранее согласуем мои задачи, стоимость и порядок связи.</p>
             </div>
           </div>
-          <Link to="/approach" className="text-link">
+          <Link to="/about#approach" className="text-link">
             Как я работаю
           </Link>
         </div>
