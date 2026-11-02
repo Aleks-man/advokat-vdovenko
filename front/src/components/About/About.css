@@ -1,0 +1,115 @@
+.about {
+  padding-block: 64px;
+  border: 1px solid var(--line);
+  background: var(--paper-light);
+}
+.about-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.65fr);
+  align-items: center;
+  gap: 56px;
+}
+.about-portrait {
+  width: 100%;
+  max-width: 380px;
+}
+.about-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.about-content {
+  min-width: 0;
+}
+.about-heading {
+  margin-bottom: 24px;
+}
+.about-heading .eyebrow {
+  margin-bottom: 26px;
+  color: var(--accent);
+}
+.about-heading h2 {
+  max-width: 540px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(32px, 3.3vw, 46px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+.about-profession {
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--muted);
+}
+.about-biography {
+  display: grid;
+  gap: 18px;
+  max-width: 650px;
+  font-size: 15px;
+  color: var(--muted);
+}
+.about-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 32px 0 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+.about-facts dt {
+  margin-bottom: 10px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.about-facts dd {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+@media (max-width: 900px) {
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .about-heading h2 {
+    max-width: none;
+  }
+}
+@media (max-width: 600px) {
+  .about {
+    padding-block: 36px;
+  }
+  .about-portrait {
+    width: 100%;
+    max-width: 380px;
+  }
+  .about-portrait img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+  .about-content {
+    min-width: 0;
+  }
+  .about-heading {
+    margin-bottom: 24px;
+  }
+  .about-heading .eyebrow {
+    margin-bottom: 20px;
+  }
+  .about-facts {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .about-facts dt {
+    margin-bottom: 4px;
+  }
+}

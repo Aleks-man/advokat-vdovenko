@@ -1,0 +1,19 @@
+import portraitPlaceholder from '../assets/about-portrait-placeholder.webp'
+import { site } from './site'
+
+// Presentation biography: replace these fictional details before publishing.
+export const about = {
+  name: site.name,
+  // Generated fictional portrait; replace with the actual photograph before publishing.
+  portrait: { src: portraitPlaceholder, alt: 'Деловой портрет' },
+  profession: site.profession,
+  paragraphs: [
+    'Юридическое образование получил в 2012 году. С 2014 года занимаюсь уголовными делами: участвую в защите на стадии следствия, работаю в суде и готовлю жалобы на судебные решения.',
+    'Веду частную практику в Москве и Московской области. Беру на себя работу по делу лично — от изучения первых документов до участия в судебных заседаниях. Возможность выезда в другой регион обсуждаю отдельно.',
+  ],
+  facts: [
+    { label: 'Практика', value: 'С 2014 года' },
+    { label: 'Регион работы', value: 'Москва и область' },
+    { label: 'Образование', value: 'Высшее юридическое' },
+  ],
+}

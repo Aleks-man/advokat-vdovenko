@@ -1,3 +1,4 @@
+import { About } from '../../components/About/About'
 import { Hero } from '../../components/Hero/Hero'
 import { PracticeList } from '../../components/PracticeList/PracticeList'
 import { Principles } from '../../components/Principles/Principles'
@@ -23,6 +24,7 @@ export function Home() {
         </div>
         <PracticeList />
       </section>
+      <About />
       <Principles />
       <ContactBanner />
     </>
