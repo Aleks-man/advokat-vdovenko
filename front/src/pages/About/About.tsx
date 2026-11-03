@@ -1,5 +1,6 @@
 import { AccordionItem } from '../../components/AccordionItem/AccordionItem'
 import { workSteps } from '../../data/site'
+import { faqItems } from '../../data/faq'
 import { ContactBanner } from '../../components/ContactBanner/ContactBanner'
 import './About.css'
 import { About } from '../../components/About/About'
@@ -32,24 +33,11 @@ export function AboutPage() {
           <h2>Вопросы о начале работы</h2>
         </div>
         <div className="faq">
-          <AccordionItem title="Что подготовить к первому разговору?">
-            <p>
-              Запишите, что и когда произошло, и подготовьте свои вопросы. Если у вас есть документы
-              по делу, скажите мне об этом при записи — я подскажу, что взять с собой.
-            </p>
-          </AccordionItem>
-          <AccordionItem title="Можно ли заранее узнать стоимость?">
-            <p>
-              Расскажите мне о деле и о том, какая помощь нужна. Объём работы и оплату мы обсудим до
-              её начала.
-            </p>
-          </AccordionItem>
-          <AccordionItem title="Как будем поддерживать связь?">
-            <p>
-              Способ связи и порядок передачи документов согласуем в начале работы. Если появятся
-              новые документы или назначат допрос либо заседание, сообщите мне об этом.
-            </p>
-          </AccordionItem>
+          {faqItems.map((item) => (
+            <AccordionItem key={item.question} title={item.question}>
+              <p>{item.answer}</p>
+            </AccordionItem>
+          ))}
         </div>
       </section>
       <ContactBanner />
