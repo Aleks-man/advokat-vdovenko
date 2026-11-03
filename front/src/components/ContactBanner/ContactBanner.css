@@ -1,7 +1,7 @@
 .contact-banner {
   background: var(--surface-tint);
   color: var(--ink);
-  padding-block: 90px;
+  padding-block: var(--panel-space);
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -32,7 +32,7 @@
   margin-bottom: 25px;
 }
 .contact-banner h2 {
-  font-size: clamp(27px, 3.6vw, 50px);
+  font-size: var(--section-title);
 }
 .contact-banner h2 em {
   color: #7e633e;
@@ -41,8 +41,9 @@
 }
 .contact-banner-copy {
   color: var(--muted);
-  font-size: 14px;
-  margin-top: 25px;
+  font-size: var(--text-size);
+  max-width: 50ch;
+  margin-top: 24px;
 }
 .contact-banner-actions {
   display: flex;
@@ -76,9 +77,6 @@
   color: #77582e;
 }
 @media (max-width: 760px) {
-  .contact-banner {
-    padding-block: 60px;
-  }
   .contact-banner-inner {
     align-items: flex-start;
     flex-direction: column;

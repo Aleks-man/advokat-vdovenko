@@ -1,5 +1,5 @@
 .about {
-  padding-block: 64px;
+  padding-block: var(--panel-space);
   border: 1px solid var(--line);
   background: var(--paper-light);
 }
@@ -57,7 +57,7 @@
   display: grid;
   gap: 18px;
   max-width: 650px;
-  font-size: 15px;
+  font-size: var(--text-size);
   color: var(--muted);
 }
 .about-facts {
@@ -98,9 +98,6 @@
   }
 }
 @media (max-width: 600px) {
-  .about {
-    padding-block: 36px;
-  }
   .about-heading .eyebrow {
     margin-bottom: 20px;
   }

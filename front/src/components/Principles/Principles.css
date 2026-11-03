@@ -1,5 +1,5 @@
 .principles {
-  padding-block: 64px;
+  padding-block: var(--panel-space);
   color: var(--on-dark);
   background: radial-gradient(ellipse at 0 100%, #384432, transparent 60%), var(--ink-dark);
 }
@@ -24,7 +24,7 @@
   margin-top: 24px;
 }
 .principles-content h2 {
-  font-size: clamp(26px, 3.5vw, 48px);
+  font-size: var(--section-title);
 }
 .principles-lead {
   max-width: 570px;
@@ -38,9 +38,6 @@
   color: var(--accent-light);
 }
 @media (max-width: 760px) {
-  .principles {
-    padding-block: 48px;
-  }
   .principles-inner {
     grid-template-columns: 1fr;
     gap: 24px;

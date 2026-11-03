@@ -51,11 +51,11 @@ h1 {
   font-family: var(--display);
   font-size: clamp(36px, 5.2vw, 74px);
   line-height: 1.04;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.04em;
 }
 h2 {
   font-family: var(--display);
-  font-size: clamp(28px, 3.5vw, 48px);
+  font-size: var(--section-title);
   line-height: 1.2;
   letter-spacing: -0.04em;
 }
@@ -66,7 +66,7 @@ h3 {
   letter-spacing: -0.025em;
 }
 p {
-  line-height: 1.75;
+  line-height: var(--text-leading);
 }
 .container,
 .panel {
@@ -124,7 +124,7 @@ p {
   font-size: 13px;
 }
 .section {
-  padding-block: 90px;
+  padding-block: var(--section-space);
 }
 .section-heading {
   display: grid;
@@ -141,8 +141,8 @@ p {
 .section-intro {
   color: var(--muted);
   max-width: 550px;
-  margin-top: 23px;
-  font-size: 15px;
+  margin-top: 24px;
+  font-size: var(--text-size);
 }
 .page-intro {
   padding: 70px 0 60px;
@@ -170,13 +170,13 @@ p {
   top: 10px;
 }
 @media (max-width: 700px) {
-  .section {
-    padding-block: 60px;
-  }
   .section-heading {
     grid-template-columns: 1fr;
-    gap: 22px;
+    gap: 16px;
     margin-bottom: 32px;
+  }
+  .section-heading .eyebrow {
+    padding-top: 0;
   }
   .page-intro {
     padding-top: 45px;

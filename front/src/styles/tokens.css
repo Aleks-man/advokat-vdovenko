@@ -15,6 +15,12 @@
   --serif: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
   --display: 'Manrope Variable', 'Segoe UI', Arial, sans-serif;
   --sans: 'Onest Variable', 'Segoe UI', Arial, sans-serif;
+  --section-space: clamp(56px, 6vw, 80px);
+  --panel-space: clamp(40px, 5vw, 64px);
+  --text-size: 16px;
+  --text-leading: 1.7;
+  --section-title: clamp(28px, 3.5vw, 48px);
+  --card-title: clamp(22px, 2.1vw, 28px);
   --page-width: 1320px;
   --gutter: clamp(20px, 4vw, 72px);
   --panel-inset: clamp(18px, 4vw, 56px);
