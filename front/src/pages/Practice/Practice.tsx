@@ -1,4 +1,4 @@
-import { practiceAreas } from '../../data/site'
+import { practiceAreas } from '../../data/practice'
 import { ContactBanner } from '../../components/ContactBanner/ContactBanner'
 import './Practice.css'
 import { PageIntro } from '../../components/PageIntro/PageIntro'
@@ -22,16 +22,26 @@ export function Practice() {
         {practiceAreas.map((area) => (
           <article className="practice-stage" id={`stage-${area.number}`} key={area.number}>
             <span className="eyebrow">Этап / {area.number}</span>
-            <div>
+            <div className="practice-stage-content">
               <h2>{area.title}</h2>
-              <p>{area.description}</p>
-              <p>{area.detail}</p>
+              <div className="practice-stage-topic">
+                <h3>С чем ко мне обращаются</h3>
+                <p>{area.situation}</p>
+              </div>
+              <div className="practice-stage-topic">
+                <h3>Что я могу сделать</h3>
+                <ul className="practice-services">
+                  {area.services.map((service) => (
+                    <li key={service}>{service}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </article>
         ))}
       </section>
       <div className="container content-disclaimer">
-        После знакомства с вашим делом я смогу сказать, какую работу готов взять на себя.
+        Конкретные задачи, объём участия и стоимость согласуем после знакомства с вашим делом.
       </div>
       <ContactBanner />
     </>

@@ -15,15 +15,37 @@
 }
 .practice-stage h2 {
   font-size: clamp(26px, 3vw, 42px);
-  margin-bottom: 25px;
+  margin-bottom: 0;
 }
 .practice-stage p {
   max-width: 630px;
   font-size: 15px;
   color: var(--muted);
 }
-.practice-stage p + p {
-  margin-top: 15px;
+.practice-stage-content {
+  display: grid;
+  gap: 24px;
+  min-width: 0;
+}
+.practice-stage-topic h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
+.practice-services {
+  display: grid;
+  gap: 8px;
+  max-width: 630px;
+  margin: 0;
+  padding-left: 20px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.practice-services li::marker {
+  color: var(--accent);
 }
 .content-disclaimer {
   padding-block: 30px 55px;

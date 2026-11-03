@@ -33,7 +33,7 @@ back/src/
 tests/browser/  — браузерные проверки
 ```
 
-Контент и контакты редактирую в `front/src/data/site.ts`. Цвета и размеры — в `front/src/styles/tokens.css`, подключение шрифтов — в `front/src/styles/fonts.css`.
+Контакты, навигацию и порядок работы редактирую в `front/src/data/site.ts`, направления защиты — в `front/src/data/practice.ts`. Цвета и размеры — в `front/src/styles/tokens.css`, подключение шрифтов — в `front/src/styles/fonts.css`.
 
 ## Проверки
 
