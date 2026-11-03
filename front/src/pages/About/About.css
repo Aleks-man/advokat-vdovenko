@@ -1,3 +1,6 @@
+.about-work {
+  padding-bottom: 0;
+}
 .work-steps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -22,25 +25,6 @@
   font-size: 13px;
   color: var(--muted);
   max-width: 300px;
-}
-.approach-quote {
-  background:
-    radial-gradient(ellipse at 95% 0%, rgb(167 125 67 / 18%), transparent 60%), var(--ink-dark);
-  color: var(--on-dark);
-  padding-block: 75px;
-}
-.approach-quote h2 {
-  margin-block: 30px;
-}
-.approach-quote h2 em {
-  color: var(--accent-light);
-  font-style: normal;
-  font-weight: 400;
-}
-.approach-quote p {
-  max-width: 560px;
-  font-size: 14px;
-  color: var(--on-dark-muted);
 }
 .faq {
   max-width: 840px;

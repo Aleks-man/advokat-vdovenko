@@ -7,7 +7,7 @@ export function AboutPage() {
   return (
     <>
       <About />
-      <section className="container section" id="approach">
+      <section className="container section about-work" id="approach">
         <div className="section-heading">
           <p className="eyebrow">Начало работы</p>
           <h2>
@@ -24,21 +24,6 @@ export function AboutPage() {
               <p>{step.text}</p>
             </article>
           ))}
-        </div>
-      </section>
-      <section className="approach-quote panel">
-        <div className="container">
-          <span className="eyebrow">Вопросы по делу</span>
-          <h2>
-            Что известно по делу
-            <br />
-            <em>и что делать дальше</em>
-          </h2>
-          <p>
-            Я изучу документы и объясню, какие действия можно предпринять и что ещё нужно выяснить.
-            Если что-то осталось непонятным, спросите меня. Мне важно, чтобы вы понимали, что
-            происходит с вашим делом и зачем нужен каждый следующий шаг.
-          </p>
         </div>
       </section>
       <section className="container section">
