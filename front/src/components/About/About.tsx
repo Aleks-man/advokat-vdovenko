@@ -5,6 +5,11 @@ export function About() {
   return (
     <section className="about panel" id="about" aria-labelledby="about-heading">
       <div className="container about-inner">
+        <div className="about-heading">
+          <p className="eyebrow">02 / Обо мне</p>
+          <h1 id="about-heading">{about.name}</h1>
+          <p className="about-profession">{about.profession}</p>
+        </div>
         <div className="about-portrait">
           <img
             src={about.portrait.src}
@@ -15,11 +20,6 @@ export function About() {
           />
         </div>
         <div className="about-content">
-          <div className="about-heading">
-            <p className="eyebrow">02 / Обо мне</p>
-            <h1 id="about-heading">{about.name}</h1>
-            <p className="about-profession">{about.profession}</p>
-          </div>
           <div className="about-biography">
             {about.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>

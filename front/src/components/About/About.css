@@ -6,10 +6,17 @@
 .about-inner {
   display: grid;
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.65fr);
-  align-items: center;
-  gap: 56px;
+  grid-template-areas:
+    'portrait heading'
+    'portrait content';
+  grid-template-rows: auto 1fr;
+  align-items: start;
+  column-gap: 56px;
+  row-gap: 24px;
 }
 .about-portrait {
+  grid-area: portrait;
+  align-self: center;
   width: 100%;
   max-width: 380px;
 }
@@ -22,10 +29,12 @@
   border-radius: 12px;
 }
 .about-content {
+  grid-area: content;
   min-width: 0;
 }
 .about-heading {
-  margin-bottom: 24px;
+  grid-area: heading;
+  min-width: 0;
 }
 .about-heading .eyebrow {
   margin-bottom: 26px;
@@ -74,7 +83,15 @@
 @media (max-width: 900px) {
   .about-inner {
     grid-template-columns: 1fr;
-    gap: 28px;
+    grid-template-areas:
+      'heading'
+      'portrait'
+      'content';
+    grid-template-rows: auto;
+    gap: 24px;
+  }
+  .about-portrait {
+    max-width: 240px;
   }
   .about-heading h1 {
     max-width: none;
@@ -83,24 +100,6 @@
 @media (max-width: 600px) {
   .about {
     padding-block: 36px;
-  }
-  .about-portrait {
-    width: 100%;
-    max-width: 380px;
-  }
-  .about-portrait img {
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
-    border-radius: 12px;
-  }
-  .about-content {
-    min-width: 0;
-  }
-  .about-heading {
-    margin-bottom: 24px;
   }
   .about-heading .eyebrow {
     margin-bottom: 20px;

@@ -139,6 +139,17 @@ test('mobile navigation and layouts have no horizontal overflow', async ({ page 
     await page.evaluate(async () => {
       await document.fonts.ready
     })
+    if (path === '/about') {
+      const heading = await page.getByRole('heading', { level: 1 }).boundingBox()
+      const portrait = await page.locator('.about-portrait').boundingBox()
+      expect(heading!.y + heading!.height).toBeLessThan(portrait!.y)
+      expect(portrait!.height).toBeLessThanOrEqual(301)
+    }
+    if (path === '/') {
+      await expect(page.locator('.hero-actions .button')).toBeInViewport()
+      const artwork = await page.locator('.hero-art').boundingBox()
+      expect(artwork!.height).toBeLessThanOrEqual(300)
+    }
     expect(
       await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
     ).toBe(true)

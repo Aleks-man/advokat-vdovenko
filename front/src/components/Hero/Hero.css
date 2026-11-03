@@ -169,12 +169,18 @@
     gap: 12px;
   }
   .hero-art {
-    min-height: 420px;
+    min-height: 0;
+    height: clamp(260px, 70vw, 300px);
     margin-top: 12px;
   }
   .hero-art::before {
-    width: 100%;
-    left: 0;
+    width: min(100%, 260px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .hero-image {
+    transform: none;
   }
   .hero-bottom {
     flex-wrap: wrap;
@@ -189,8 +195,5 @@
   }
   .hero h1 {
     font-size: 28px;
-  }
-  .hero-art {
-    min-height: 350px;
   }
 }
