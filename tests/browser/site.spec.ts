@@ -145,6 +145,13 @@ test('mobile navigation and layouts have no horizontal overflow', async ({ page 
       expect(heading!.y + heading!.height).toBeLessThan(portrait!.y)
       expect(portrait!.height).toBeLessThanOrEqual(301)
     }
+    if (path === '/contacts') {
+      await expect(page.locator('.contact-phone')).toBeInViewport()
+      for (const link of await page.locator('.contact-details .messenger-link').all()) {
+        await expect(link).toBeInViewport()
+      }
+      await page.screenshot({ path: 'artifacts/contacts-mobile.png', fullPage: true })
+    }
     if (path === '/') {
       await expect(page.locator('.hero-actions .button')).toBeInViewport()
       const artwork = await page.locator('.hero-art').boundingBox()

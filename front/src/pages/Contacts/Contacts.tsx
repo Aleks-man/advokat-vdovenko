@@ -4,14 +4,15 @@ import { MessengerLinks } from '../../components/MessengerLinks/MessengerLinks'
 import './Contacts.css'
 import { PageIntro } from '../../components/PageIntro/PageIntro'
 export function Contacts() {
+  const [emailName, emailDomain] = site.email.split('@')
   return (
     <>
       <PageIntro
+        compact
         eyebrow="03 / Контакты"
         title={
           <>
-            Связаться
-            <br />
+            Связаться{' '}
             <em>со мной</em>
           </>
         }
@@ -24,7 +25,12 @@ export function Contacts() {
             <Phone size={18} />
             <div>
               <span className="eyebrow">Телефон</span>
-              <a href={`tel:${site.phone.replace(/[^+\d]/g, '')}`}>{site.phone}</a>
+              <a
+                className="contact-value contact-phone"
+                href={`tel:${site.phone.replace(/[^+\d]/g, '')}`}
+              >
+                {site.phone}
+              </a>
               <small>Позвоните или напишите в удобном мессенджере</small>
               <MessengerLinks />
             </div>
@@ -33,7 +39,12 @@ export function Contacts() {
             <Mail size={18} />
             <div>
               <span className="eyebrow">Электронная почта</span>
-              <a href={`mailto:${site.email}`}>{site.email}</a>
+              <a className="contact-value contact-email" href={`mailto:${site.email}`}>
+                <span>
+                  {emailName}@<wbr />
+                  {emailDomain}
+                </span>
+              </a>
               <small>Чтобы задать вопрос или договориться о встрече</small>
             </div>
           </div>
@@ -41,7 +52,7 @@ export function Contacts() {
             <MapPin size={18} />
             <div>
               <span className="eyebrow">Адрес приёма</span>
-              <p>
+              <p className="contact-value contact-address">
                 {site.city}, {site.address}
               </p>
               <small>Принимаю по предварительной записи</small>

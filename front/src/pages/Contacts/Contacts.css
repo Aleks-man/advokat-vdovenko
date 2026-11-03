@@ -1,12 +1,13 @@
 .contacts-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 90px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 64px;
+  padding-block: 40px 56px;
 }
 .contact-detail {
   display: flex;
-  gap: 25px;
-  padding-block: 28px;
+  gap: 16px;
+  padding-block: 24px;
   border-bottom: 1px solid var(--line);
 }
 .contact-detail:first-child {
@@ -21,16 +22,27 @@
   font-size: 11px;
   color: var(--muted);
 }
-.contact-detail p,
-.contact-detail a {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+.contact-detail > div {
+  min-width: 0;
+  flex: 1;
+}
+.contact-detail .contact-value {
+  display: block;
+  margin-block: 10px 8px;
   font-family: var(--sans);
-  font-size: 30px;
-  margin-block: 10px 5px;
-  line-height: 1.4;
+  line-height: 1.5;
   overflow-wrap: anywhere;
+}
+.contact-phone {
+  font-size: clamp(22px, 2.5vw, 30px);
+  white-space: nowrap;
+}
+.contact-email,
+.contact-address {
+  font-size: clamp(18px, 1.6vw, 22px);
+}
+.contact-value[href]:hover {
+  color: var(--accent);
 }
 .contact-detail small {
   color: var(--muted);

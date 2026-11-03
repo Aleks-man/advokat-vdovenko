@@ -27,3 +27,19 @@
     font-size: clamp(30px, 7vw, 44px);
   }
 }
+
+.page-intro.page-intro-panel--compact {
+  padding-block: 32px;
+}
+.page-intro-panel.page-intro-panel--compact > h1 {
+  margin-top: 16px;
+  font-size: clamp(30px, 3.3vw, 44px);
+}
+.page-intro-panel.page-intro-panel--compact > p:not(.eyebrow) {
+  margin-top: 16px;
+}
+@media (max-width: 700px) {
+  .page-intro.page-intro-panel--compact {
+    padding-block: 24px;
+  }
+}
