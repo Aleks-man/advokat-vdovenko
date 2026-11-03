@@ -1,5 +1,8 @@
-import { Link } from 'react-router-dom'
+import { Phone } from 'lucide-react'
+import { MessengerLinks } from '../MessengerLinks/MessengerLinks'
+import { site } from '../../data/site'
 import './ContactBanner.css'
+
 export function ContactBanner() {
   return (
     <section className="contact-banner panel">
@@ -12,12 +15,19 @@ export function ContactBanner() {
             <em>по уголовному делу?</em>
           </h2>
           <p className="contact-banner-copy">
-            Выберите удобный способ связи — телефон, почту или мессенджер.
+            Позвоните или напишите мне, чтобы обсудить вашу ситуацию.
           </p>
         </div>
-        <Link className="button button--light" to="/contacts">
-          Договориться о консультации
-        </Link>
+        <div className="contact-banner-actions">
+          <a className="contact-banner-phone" href={`tel:${site.phone.replace(/[^+\d]/g, '')}`}>
+            <Phone size={20} aria-hidden="true" />
+            {site.phone}
+          </a>
+          <MessengerLinks />
+          <a className="contact-banner-email" href={`mailto:${site.email}`}>
+            {site.email}
+          </a>
+        </div>
       </div>
     </section>
   )

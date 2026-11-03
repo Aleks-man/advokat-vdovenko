@@ -44,14 +44,36 @@
   font-size: 14px;
   margin-top: 25px;
 }
-.contact-banner .button {
-  flex-shrink: 0;
-  background: var(--ink-dark);
-  border-color: var(--ink-dark);
-  color: var(--on-dark);
+.contact-banner-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  min-width: 0;
 }
-.contact-banner .button:hover {
-  background: #344136;
+.contact-banner-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: clamp(21px, 2.3vw, 28px);
+  font-weight: 500;
+  white-space: nowrap;
+}
+.contact-banner-phone svg {
+  flex-shrink: 0;
+  color: var(--accent);
+}
+.contact-banner-email {
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+.contact-banner-phone,
+.contact-banner-email {
+  transition: color 0.2s;
+}
+.contact-banner-phone:hover,
+.contact-banner-email:hover {
+  color: #77582e;
 }
 @media (max-width: 760px) {
   .contact-banner {
