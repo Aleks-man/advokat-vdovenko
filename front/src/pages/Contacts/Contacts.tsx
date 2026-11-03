@@ -1,5 +1,6 @@
 import { Mail, MapPin, Phone } from 'lucide-react'
 import { site } from '../../data/site'
+import { contactLinks } from '../../data/contacts'
 import { MessengerLinks } from '../../components/MessengerLinks/MessengerLinks'
 import './Contacts.css'
 import { PageIntro } from '../../components/PageIntro/PageIntro'
@@ -12,8 +13,7 @@ export function Contacts() {
         eyebrow="03 / Контакты"
         title={
           <>
-            Связаться{' '}
-            <em>со мной</em>
+            Связаться <em>со мной</em>
           </>
         }
       >
@@ -25,10 +25,7 @@ export function Contacts() {
             <Phone size={18} />
             <div>
               <span className="eyebrow">Телефон</span>
-              <a
-                className="contact-value contact-phone"
-                href={`tel:${site.phone.replace(/[^+\d]/g, '')}`}
-              >
+              <a className="contact-value contact-phone" href={contactLinks.phone}>
                 {site.phone}
               </a>
               <small>Позвоните или напишите в удобном мессенджере</small>
@@ -39,7 +36,7 @@ export function Contacts() {
             <Mail size={18} />
             <div>
               <span className="eyebrow">Электронная почта</span>
-              <a className="contact-value contact-email" href={`mailto:${site.email}`}>
+              <a className="contact-value contact-email" href={contactLinks.email}>
                 <span>
                   {emailName}@<wbr />
                   {emailDomain}

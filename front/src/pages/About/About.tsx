@@ -1,5 +1,5 @@
 import { AccordionItem } from '../../components/AccordionItem/AccordionItem'
-import { workSteps } from '../../data/site'
+import { workSteps } from '../../data/workSteps'
 import { faqItems } from '../../data/faq'
 import { ContactBanner } from '../../components/ContactBanner/ContactBanner'
 import './About.css'

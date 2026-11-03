@@ -18,43 +18,6 @@
     min-height 0.36s cubic-bezier(0.22, 1, 0.36, 1),
     padding 0.36s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex-shrink: 0;
-}
-.brand-mark {
-  display: block;
-  width: 68px;
-  height: 68px;
-  flex-shrink: 0;
-}
-.brand-name {
-  display: block;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 17px;
-  font-weight: 400;
-  line-height: 1.15;
-}
-.brand-name > span,
-.brand-name strong {
-  display: block;
-}
-.brand-name strong {
-  font-size: 23px;
-  font-weight: 400;
-  margin-top: 2px;
-}
-.brand-name small {
-  display: block;
-  font-family: var(--sans);
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  margin-top: 7px;
-  color: var(--muted);
-}
 .navigation {
   position: relative;
   isolation: isolate;
@@ -135,23 +98,6 @@
     min-height: 96px;
     gap: 12px;
   }
-  .brand-mark {
-    width: 58px;
-    height: 58px;
-  }
-  .brand {
-    gap: 12px;
-  }
-  .brand-name {
-    font-size: 16px;
-  }
-  .brand-name strong {
-    font-size: 21px;
-  }
-  .brand-name small {
-    font-size: 8px;
-    margin-top: 7px;
-  }
   .menu-toggle {
     display: flex;
     order: 3;
@@ -185,23 +131,6 @@
   }
 }
 @media (max-width: 380px) {
-  .brand {
-    gap: 9px;
-  }
-  .brand-mark {
-    width: 52px;
-    height: 52px;
-  }
-  .brand-name {
-    font-size: 14px;
-  }
-  .brand-name strong {
-    font-size: 19px;
-  }
-  .brand-name small {
-    font-size: 7px;
-    letter-spacing: 0.07em;
-  }
 }
 
 .header::before {
@@ -334,9 +263,6 @@
   .header-compact-name small {
     font-size: 7px;
   }
-}
-
-@media (max-width: 380px) {
   .header--compact {
     padding-inline: 6px;
   }

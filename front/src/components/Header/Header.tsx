@@ -1,7 +1,9 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
-import { NavLink, Link, useLocation } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import { Phone, Menu, X } from 'lucide-react'
 import { navigation, site } from '../../data/site'
+import { Brand } from '../Brand/Brand'
+import { contactLinks } from '../../data/contacts'
 import './Header.css'
 export function Header() {
   const [open, setOpen] = useState(false)
@@ -63,23 +65,12 @@ export function Header() {
   return (
     <div className="header-space">
       <header className={`header container${compact ? ' header--compact' : ''}`}>
-        <Link
-          to="/"
-          className="brand"
-          aria-label="Константин Вдовенко — главная"
-          onClick={() => setOpen(false)}
-        >
-          <img className="brand-mark" src="/brand/vdovenko.svg" alt="" width="68" height="68" />
-          <span className="brand-name">
-            <span>Константин</span>
-            <strong>Вдовенко</strong>
-            <small>АДВОКАТ · УГОЛОВНЫЕ ДЕЛА</small>
-          </span>
+        <Brand onClick={() => setOpen(false)}>
           <span className="header-compact-name" aria-hidden="true">
-            Константин Вдовенко
-            <small>АДВОКАТ · УГОЛОВНЫЕ ДЕЛА</small>
+            {site.name}
+            <small>{site.brandTagline}</small>
           </span>
-        </Link>
+        </Brand>
         <button
           className="menu-toggle"
           onClick={() => setOpen(!open)}
@@ -114,7 +105,7 @@ export function Header() {
         </nav>
         <a
           className="header-contact"
-          href={`tel:${site.phone.replace(/[^+\d]/g, '')}`}
+          href={contactLinks.phone}
           aria-label={`Позвонить: ${site.phone}`}
         >
           <Phone size={19} aria-hidden="true" />

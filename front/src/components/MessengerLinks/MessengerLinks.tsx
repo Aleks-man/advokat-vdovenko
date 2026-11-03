@@ -1,30 +1,28 @@
 import viberIcon from '../../assets/icons/viber.svg'
 import whatsappIcon from '../../assets/icons/whatsapp.svg'
 import telegramIcon from '../../assets/icons/telegram.svg'
-import { site } from '../../data/site'
+import { contactLinks } from '../../data/contacts'
 import './MessengerLinks.css'
 
 export function MessengerLinks() {
-  const phone = site.phone.replace(/[^+\d]/g, '')
-  const phoneDigits = phone.replace(/\D/g, '')
   const messengers = [
     {
       name: 'Viber',
       icon: viberIcon,
       kind: 'viber',
-      href: 'viber://chat?number=' + encodeURIComponent(phone),
+      href: contactLinks.viber,
     },
     {
       name: 'WhatsApp',
       icon: whatsappIcon,
       kind: 'whatsapp',
-      href: 'https://wa.me/' + phoneDigits,
+      href: contactLinks.whatsapp,
     },
     {
       name: 'Telegram',
       icon: telegramIcon,
       kind: 'telegram',
-      href: 'https://t.me/+' + phoneDigits,
+      href: contactLinks.telegram,
     },
   ]
 
