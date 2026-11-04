@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
+import { site } from '../data/site'
 const titles: Record<string, string> = {
   '/': 'Адвокат по уголовным делам',
   '/practice': 'Уголовная защита',
@@ -9,7 +10,7 @@ const titles: Record<string, string> = {
 export function RouteEffects() {
   const { pathname, hash } = useLocation()
   useEffect(() => {
-    document.title = `${titles[pathname] ?? 'Страница не найдена'} · Константин Вдовенко`
+    document.title = `${titles[pathname] ?? 'Страница не найдена'} · ${site.name}`
     if (hash) {
       document.getElementById(hash.slice(1))?.scrollIntoView()
     } else {
