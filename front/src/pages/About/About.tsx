@@ -3,11 +3,11 @@ import { workSteps } from '../../data/workSteps'
 import { faqItems } from '../../data/faq'
 import { ContactBanner } from '../../components/ContactBanner/ContactBanner'
 import './About.css'
-import { About } from '../../components/About/About'
+import { AttorneyProfile } from '../../components/AttorneyProfile/AttorneyProfile'
 export function AboutPage() {
   return (
     <>
-      <About />
+      <AttorneyProfile />
       <section className="container section about-work" id="approach">
         <div className="section-heading">
           <p className="eyebrow">Начало работы</p>

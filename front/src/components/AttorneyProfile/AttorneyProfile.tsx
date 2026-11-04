@@ -1,7 +1,7 @@
 import { about } from '../../data/about'
-import './About.css'
+import './AttorneyProfile.css'
 
-export function About() {
+export function AttorneyProfile() {
   return (
     <section className="about panel" id="about" aria-labelledby="about-heading">
       <div className="container about-inner">
