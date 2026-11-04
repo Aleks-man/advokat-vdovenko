@@ -2,11 +2,15 @@ import { Hero } from '../../components/Hero/Hero'
 import { PracticeList } from '../../components/PracticeList/PracticeList'
 import { Principles } from '../../components/Principles/Principles'
 import { ContactBanner } from '../../components/ContactBanner/ContactBanner'
+import { DeskBackground } from '../../components/DeskBackground/DeskBackground'
+import './Home.css'
+
 export function Home() {
   return (
     <>
       <Hero />
-      <section className="section container" id="practice">
+      <section className="section container home-practice" id="practice">
+        <DeskBackground variant="section" />
         <div className="section-heading">
           <p className="eyebrow">01 / Когда обращаться</p>
           <div>
