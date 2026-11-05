@@ -8,7 +8,7 @@
   margin-top: 24px;
   padding: 56px var(--panel-inset) 0;
   border: 1px solid #38453a;
-  border-radius: 24px;
+  border-radius: var(--panel-radius);
   color: var(--on-dark);
   background:
     radial-gradient(ellipse at 78% 38%, #3e4b3b 0%, transparent 58%),
@@ -116,7 +116,7 @@
   align-items: center;
   gap: 18px;
   padding-block: 24px;
-  border-top: 1px solid rgb(245 242 234 / 16%);
+  border-top: 1px solid var(--line-dark);
   font-size: 12px;
   color: var(--on-dark-muted);
 }
@@ -141,7 +141,6 @@
     grid-template-columns: 1fr;
     margin-top: 12px;
     padding: 30px var(--panel-inset) 0;
-    border-radius: 20px;
   }
   .hero-copy {
     padding: 0;

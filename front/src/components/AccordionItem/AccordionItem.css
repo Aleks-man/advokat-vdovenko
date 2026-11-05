@@ -32,7 +32,7 @@
 }
 .accordion-trigger:hover,
 .accordion-trigger[aria-expanded='true'] {
-  color: #7e633e;
+  color: var(--accent-text);
 }
 .accordion-panel {
   display: grid;

@@ -1,7 +1,8 @@
 .principles {
   padding-block: var(--panel-space);
   color: var(--on-dark);
-  background: radial-gradient(ellipse at 0 100%, #384432, transparent 60%), var(--ink-dark);
+  background: var(--surface-dark);
+  border: 1px solid rgb(223 188 131 / 12%);
 }
 .principles-inner {
   display: grid;

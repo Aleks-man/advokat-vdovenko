@@ -14,7 +14,7 @@
 .page-intro-panel > h1 em {
   font-style: normal;
   font-weight: 400;
-  color: #7e633e;
+  color: var(--accent-text);
 }
 .page-intro-panel > p:not(.eyebrow) {
   max-width: 590px;

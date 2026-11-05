@@ -8,6 +8,11 @@
   --line: #d7d9cf;
   --accent: #a77d43;
   --accent-light: #dfbc83;
+  --accent-text: #7e633e;
+  --accent-text-hover: #77582e;
+  --surface-dark: linear-gradient(135deg, #202b22, var(--ink-dark) 75%);
+  --line-dark: rgb(245 242 234 / 16%);
+  --panel-radius: 20px;
   --on-dark: #f5f2ea;
   --on-dark-muted: #bdc7bb;
   --card-radius: 16px;
@@ -22,4 +27,10 @@
   --page-width: 1320px;
   --gutter: clamp(20px, 4vw, 72px);
   --panel-inset: clamp(18px, 4vw, 56px);
+}
+
+@media (max-width: 760px) {
+  :root {
+    --panel-radius: 16px;
+  }
 }
