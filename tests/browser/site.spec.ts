@@ -312,3 +312,32 @@ test('FAQ animates both directions and supports keyboard and rapid toggles', asy
     await expect(panel).toBeHidden()
   }
 })
+
+test('Themis stays full size at 790px and becomes background below it', async ({ page }) => {
+  for (const width of [1440, 1280, 1024, 800, 790, 789, 390, 320]) {
+    await page.setViewportSize({ width, height: 1000 })
+    await page.goto('/')
+    await page.evaluate(() => document.fonts.ready)
+    const art = page.locator('.hero-art')
+    if (width >= 790) {
+      await expect(art).toHaveCSS('position', 'relative')
+      await expect(page.locator('.hero-image')).toHaveCSS('opacity', '1')
+      const image = await page.locator('.hero-image').boundingBox()
+      expect(image!.width).toBe(368)
+      expect(image!.height).toBe(460)
+      const bounds = await art.boundingBox()
+      const hero = await page.locator('.hero').boundingBox()
+      const padding = await page
+        .locator('.hero')
+        .evaluate((el) => parseFloat(getComputedStyle(el).paddingTop))
+      expect(bounds!.y - hero!.y).toBeCloseTo(padding + 1, 0)
+    } else {
+      await expect(art).toHaveCSS('position', 'absolute')
+      await expect(page.locator('.hero-image')).toHaveCSS('opacity', '0.18')
+    }
+    if ([800, 790, 789].includes(width)) {
+      await page.locator('.hero').screenshot({ path: `artifacts/hero-breakpoint-${width}.png` })
+    }
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
+  }
+})
