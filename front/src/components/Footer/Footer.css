@@ -83,6 +83,30 @@
 }
 
 @media (max-width: 600px) {
+  .footer {
+    padding-top: 40px;
+  }
+  .footer-top {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    padding-bottom: 32px;
+  }
+  .footer nav {
+    gap: 0;
+    font-size: 14px;
+  }
+  .footer nav a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .footer-phone,
+  .footer-email {
+    min-height: 44px;
+  }
+  .footer-contacts {
+    gap: 8px;
+  }
   .footer-contacts {
     grid-column: 1 / -1;
   }

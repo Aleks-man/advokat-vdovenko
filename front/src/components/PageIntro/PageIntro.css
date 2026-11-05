@@ -53,3 +53,7 @@
     font-size: 30px;
   }
 }
+
+.page-intro-panel--compact > h1 em {
+  white-space: nowrap;
+}

@@ -6,7 +6,7 @@
   isolation: isolate;
   overflow: hidden;
   margin-top: 24px;
-  padding: 56px var(--panel-inset) 0;
+  padding: 40px var(--panel-inset) 0;
   border: 1px solid #38453a;
   border-radius: var(--panel-radius);
   color: var(--on-dark);
@@ -16,7 +16,7 @@
   box-shadow: 0 24px 60px rgb(21 30 25 / 10%);
 }
 .hero-copy {
-  padding: 40px 0 56px;
+  padding: 24px 0 36px;
   align-self: center;
   position: relative;
   z-index: 2;
@@ -82,7 +82,7 @@
   background: #edce9e;
 }
 .hero-art {
-  min-height: 520px;
+  min-height: 460px;
   position: relative;
   isolation: isolate;
   align-self: stretch;
@@ -90,11 +90,15 @@
 .hero-art::before {
   content: '';
   position: absolute;
-  inset: 24px 7% 0;
-  border: 1px solid rgb(223 188 131 / 22%);
-  border-bottom: 0;
-  border-radius: 48% 48% 0 0;
-  background: linear-gradient(180deg, rgb(223 188 131 / 4%), transparent 75%);
+  inset: -8% -18% 5%;
+  z-index: -1;
+  background: radial-gradient(
+    ellipse at 52% 36%,
+    rgb(194 196 155 / 24%) 0%,
+    rgb(151 166 128 / 12%) 30%,
+    transparent 68%
+  );
+  filter: blur(24px);
   pointer-events: none;
 }
 .hero-image {
@@ -115,7 +119,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 18px;
-  padding-block: 24px;
+  padding-block: 20px;
   border-top: 1px solid var(--line-dark);
   font-size: 12px;
   color: var(--on-dark-muted);
@@ -126,11 +130,11 @@
 }
 @media (max-width: 1100px) {
   .hero {
-    padding: 36px var(--panel-inset) 0;
+    padding: 28px var(--panel-inset) 0;
     column-gap: 16px;
   }
   .hero-art {
-    min-height: 460px;
+    min-height: 420px;
   }
   .hero h1 {
     font-size: clamp(40px, 5.2vw, 60px);
@@ -143,7 +147,7 @@
     padding: 30px var(--panel-inset) 0;
   }
   .hero-copy {
-    padding: 0;
+    padding: 0 0 28px;
   }
   .hero h1 {
     font-size: clamp(36px, 9vw, 58px);
@@ -157,23 +161,42 @@
     gap: 20px;
     padding-inline: 17px;
   }
+  .hero-description {
+    margin-top: 24px;
+    font-size: 17px;
+  }
   .hero-actions {
     gap: 12px;
   }
   .hero-art {
+    position: absolute;
+    inset: 24px 12px 0 auto;
+    z-index: 0;
+    width: 92%;
     min-height: 0;
-    height: clamp(260px, 70vw, 300px);
-    margin-top: 12px;
+    pointer-events: none;
+  }
+  .hero-art::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #1b271f 0%, rgb(27 39 31 / 72%) 38%, transparent 85%);
   }
   .hero-art::before {
-    inset: 12px 12% 0;
-    max-width: 260px;
-    margin-inline: auto;
+    opacity: 0.35;
   }
   .hero-image {
     transform: none;
+    height: auto;
+    object-fit: contain;
+    object-position: right top;
+    opacity: 0.18;
+    filter: none;
+    mask-image: linear-gradient(180deg, #000 65%, transparent 100%);
   }
   .hero-bottom {
+    position: relative;
+    z-index: 2;
     flex-wrap: wrap;
     padding-block: 20px;
     gap: 10px;
@@ -181,6 +204,14 @@
   }
 }
 @media (max-width: 380px) {
+  .hero-copy .eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    gap: 10px;
+  }
+  .hero-copy .eyebrow::before {
+    width: 18px;
+  }
   .hero {
     padding-inline: var(--panel-inset);
   }

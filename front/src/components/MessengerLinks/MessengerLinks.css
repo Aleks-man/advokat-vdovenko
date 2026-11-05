@@ -27,3 +27,17 @@
   display: block;
   filter: invert(1);
 }
+
+@media (max-width: 760px) {
+  .messenger-links {
+    gap: 12px;
+  }
+  .messenger-links .messenger-link {
+    position: relative;
+  }
+  .messenger-link::before {
+    content: '';
+    position: absolute;
+    inset: -5px;
+  }
+}

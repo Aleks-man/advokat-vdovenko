@@ -92,3 +92,11 @@
 .contact-details .messenger-links {
   margin-top: 16px;
 }
+
+@media (max-width: 700px) {
+  .contact-phone,
+  .contact-email {
+    min-height: 44px;
+    padding-block: 6px;
+  }
+}

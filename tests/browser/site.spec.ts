@@ -154,8 +154,9 @@ test('mobile navigation and layouts have no horizontal overflow', async ({ page 
     }
     if (path === '/') {
       await expect(page.locator('.hero-actions .button')).toBeInViewport()
-      const artwork = await page.locator('.hero-art').boundingBox()
-      expect(artwork!.height).toBeLessThanOrEqual(300)
+      await expect(page.locator('.hero-art')).toHaveCSS('position', 'absolute')
+      const hero = await page.locator('.hero').boundingBox()
+      expect(hero!.height).toBeLessThanOrEqual(600)
     }
     expect(
       await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
@@ -184,13 +185,20 @@ test('mobile navigation and layouts have no horizontal overflow', async ({ page 
 })
 
 test('narrow mobile and tablet layouts stay within viewport', async ({ page }) => {
-  for (const width of [320, 768]) {
+  for (const width of [320, 390, 430, 768]) {
     await page.setViewportSize({ width, height: 900 })
     for (const path of ['/', '/practice', '/about', '/contacts']) {
       await page.goto(path)
       await page.evaluate(async () => {
         await document.fonts.ready
       })
+      if (path === '/' && width <= 430) {
+        const hero = await page.locator('.hero').boundingBox()
+        const image = await page.locator('.hero-image').boundingBox()
+        expect(image!.x).toBeGreaterThanOrEqual(hero!.x)
+        expect(image!.x + image!.width).toBeLessThanOrEqual(hero!.x + hero!.width)
+        await page.screenshot({ path: `artifacts/home-${width}.png`, fullPage: true })
+      }
       expect(
         await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
         `${path} at ${width}px`,

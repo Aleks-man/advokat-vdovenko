@@ -63,6 +63,16 @@
   color: var(--accent-text-hover);
 }
 @media (max-width: 1000px) {
+  .contact-banner-phone,
+  .contact-banner-email {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .contact-banner-email {
+    display: block;
+    padding-block: 12px;
+  }
   .contact-banner-actions {
     width: 100%;
     padding: 24px 0 0;
