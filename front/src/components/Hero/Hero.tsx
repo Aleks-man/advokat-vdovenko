@@ -1,22 +1,20 @@
 import { Link } from 'react-router-dom'
+import { site } from '../../data/site'
 import justiceHero from '../../assets/justice-hero.webp'
 import './Hero.css'
 export function Hero() {
+  const [firstName, ...lastName] = site.name.split(' ')
   return (
     <section className="hero container">
       <div className="hero-copy">
-        <p className="eyebrow">
-          <span className="status-dot" /> Адвокат по уголовным делам
-        </p>
+        <p className="eyebrow">Адвокат по уголовным делам</p>
         <h1>
-          Адвокат
-          <br />
-          <em>Константин</em>
-          <br />
-          <em>Вдовенко</em>
+          <span>{firstName}</span>
+          <em>{lastName.join(' ')}</em>
         </h1>
         <p className="hero-description">
-          Занимаюсь уголовными делами.<span>Обсудим вашу ситуацию и то, чем я могу помочь.</span>
+          Помогу разобраться в вашей ситуации
+          <span>Обсудим, что произошло и какая помощь нужна по делу.</span>
         </p>
         <div className="hero-actions">
           <Link to="/contacts" className="button">
