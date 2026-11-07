@@ -1,22 +1,13 @@
 .practice-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  border-top: 1px solid var(--line);
 }
 .practice-row {
   display: grid;
-  grid-template-columns: 30px minmax(0, 1fr) 24px;
-  grid-template-rows: auto 1fr;
+  grid-template-columns: 40px minmax(0, 1fr) minmax(0, 1.25fr) 24px;
   align-items: start;
-  gap: 18px;
-  min-height: 210px;
-  padding: 30px;
-  border: 1px solid var(--line);
-  border-radius: var(--card-radius);
-  background: var(--paper-light);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  gap: 24px;
+  padding-block: 28px;
+  border-bottom: 1px solid var(--line);
 }
 .practice-number {
   font-size: 12px;
@@ -25,23 +16,17 @@
   font-weight: 600;
 }
 .practice-row h3 {
-  grid-column: 2;
-  grid-row: 1;
   min-width: 0;
   font-size: var(--card-title);
-  max-width: 300px;
+  transition: color 0.2s;
 }
 .practice-row p {
-  grid-column: 2 / -1;
-  grid-row: 2;
   font-size: var(--text-size);
-  line-height: 1.7;
+  line-height: var(--text-leading);
   color: var(--muted);
-  max-width: 380px;
+  max-width: 46ch;
 }
 .practice-arrow {
-  grid-column: 3;
-  grid-row: 1;
   width: 24px;
   height: 30px;
   display: grid;
@@ -49,48 +34,31 @@
   color: var(--muted);
   transition: color 0.2s;
 }
-.practice-row:is(:hover, :focus-visible) {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgb(21 30 25 / 10%);
-}
+.practice-row:is(:hover, :focus-visible) h3,
 .practice-row:is(:hover, :focus-visible) .practice-arrow {
-  color: var(--accent);
+  color: var(--accent-text);
 }
 @media (max-width: 760px) {
-  .practice-list {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
   .practice-row {
-    padding: 24px;
-    grid-template-columns: 1fr 24px;
-    grid-template-rows: auto auto 1fr;
-    gap: 14px;
-    min-height: 0;
-  }
-  .practice-number {
-    grid-column: 1;
-    grid-row: 1;
-    padding-top: 0;
-    align-self: center;
-  }
-  .practice-arrow {
-    grid-column: 2;
-    grid-row: 1;
-    height: 20px;
+    grid-template-columns: 24px minmax(0, 1fr) 20px;
+    gap: 16px 12px;
+    padding-block: 24px;
   }
   .practice-row h3 {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    max-width: none;
+    grid-column: 2;
+  }
+  .practice-arrow {
+    grid-column: 3;
+    grid-row: 1;
+    width: 20px;
   }
   .practice-row p {
-    grid-column: 1 / -1;
-    grid-row: 3;
+    grid-column: 2 / -1;
+    grid-row: 2;
   }
 }
 @media (max-width: 380px) {
-  .practice-row {
-    padding: 20px;
+  .practice-row p {
+    grid-column: 1 / -1;
   }
 }
