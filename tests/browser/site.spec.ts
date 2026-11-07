@@ -341,3 +341,25 @@ test('Themis stays full size at 790px and becomes background below it', async ({
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
   }
 })
+
+test('useful materials expand on practice page without adding navigation items', async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' })
+  for (const width of [1280, 320]) {
+    await page.setViewportSize({ width, height: 900 })
+    await page.goto('/practice')
+    const materials = page.locator('.useful-materials')
+    await expect(materials.locator('.accordion-item')).toHaveCount(3)
+    await expect(page.locator('#main-navigation > a')).toHaveCount(4)
+    for (const item of await materials.locator('.accordion-item').all()) {
+      const trigger = item.getByRole('button')
+      await trigger.click()
+      await expect(item.getByRole('region')).toBeVisible()
+      await expect(item.locator('li')).toHaveCount(3)
+      await trigger.click()
+      await expect(item.locator('.accordion-panel')).toBeHidden()
+    }
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
+  }
+})

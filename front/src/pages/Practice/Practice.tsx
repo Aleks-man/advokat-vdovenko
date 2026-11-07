@@ -1,5 +1,6 @@
 import { practiceAreas } from '../../data/practice'
 import { ContactBanner } from '../../components/ContactBanner/ContactBanner'
+import { UsefulMaterials } from '../../components/UsefulMaterials/UsefulMaterials'
 import './Practice.css'
 import { PageIntro } from '../../components/PageIntro/PageIntro'
 export function Practice() {
@@ -43,6 +44,7 @@ export function Practice() {
       <div className="container content-disclaimer">
         Конкретные задачи, объём участия и стоимость согласуем после знакомства с вашим делом.
       </div>
+      <UsefulMaterials />
       <ContactBanner />
     </>
   )

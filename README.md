@@ -33,7 +33,7 @@ back/src/
 tests/browser/  — браузерные проверки
 ```
 
-Контакты и навигацию редактирую в `front/src/data/site.ts`, порядок работы — в `front/src/data/workSteps.ts`, направления защиты — в `front/src/data/practice.ts`, вопросы и ответы — в `front/src/data/faq.ts`. Цвета и размеры — в `front/src/styles/tokens.css`, подключение шрифтов — в `front/src/styles/fonts.css`.
+Контакты и навигацию редактирую в `front/src/data/site.ts`, порядок работы — в `front/src/data/workSteps.ts`, направления защиты — в `front/src/data/practice.ts`, вопросы и ответы — в `front/src/data/faq.ts`, полезные заметки — в `front/src/data/usefulMaterials.ts`. Цвета и размеры — в `front/src/styles/tokens.css`, подключение шрифтов — в `front/src/styles/fonts.css`.
 
 Общий логотип с именем — `front/src/components/Brand/`. Контактные ссылки формируются в `front/src/data/contacts.ts` из данных `site.ts`. Стили общих блоков лежат рядом с компонентами; глобальные правила — в `styles/`.
 

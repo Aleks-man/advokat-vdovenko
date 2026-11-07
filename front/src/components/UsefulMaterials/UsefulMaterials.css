@@ -1,0 +1,18 @@
+.useful-materials {
+  padding-block: 0 var(--section-space);
+}
+.useful-materials-list {
+  width: min(100%, 840px);
+  margin-left: auto;
+  border-top: 1px solid var(--line);
+}
+.useful-materials-points {
+  display: grid;
+  gap: 12px;
+  margin-block: 20px;
+  padding-left: 22px;
+  line-height: var(--text-leading);
+}
+.useful-materials-points li::marker {
+  color: var(--accent);
+}
