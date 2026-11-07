@@ -1,49 +1,36 @@
 .principles {
-  padding-block: var(--panel-space);
-  color: var(--on-dark);
-  background: var(--surface-dark);
-  border: 1px solid rgb(223 188 131 / 12%);
+  padding-bottom: var(--panel-space);
 }
 .principles-inner {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  align-items: center;
+  align-items: start;
   gap: 40px;
 }
 .principles-label {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.principles-label .eyebrow {
-  color: var(--accent-light);
-}
-.principles-monogram {
-  display: block;
-  width: 176px;
-  height: 176px;
-  margin-top: 24px;
-}
-.principles-content h2 {
-  font-size: var(--section-title);
+  padding-top: 10px;
 }
 .principles-lead {
-  max-width: 570px;
-  font-size: 16px;
-  color: var(--on-dark-muted);
+  max-width: 60ch;
+  font-size: var(--text-size);
+  color: var(--muted);
   margin-top: 24px;
 }
 .principles .text-link {
   margin-top: 24px;
-  border-color: var(--accent-light);
-  color: var(--accent-light);
+  border-color: currentColor;
+  color: var(--accent-text);
+  transition: color 0.2s;
 }
-@media (max-width: 760px) {
+.principles .text-link:hover {
+  color: var(--ink);
+}
+@media (max-width: 700px) {
   .principles-inner {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 16px;
   }
-  .principles-monogram {
-    display: none;
+  .principles-label {
+    padding-top: 0;
   }
 }

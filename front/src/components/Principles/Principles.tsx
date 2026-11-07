@@ -3,17 +3,10 @@ import './Principles.css'
 
 export function Principles() {
   return (
-    <section className="principles panel">
-      <div className="container principles-inner">
+    <section className="container principles">
+      <div className="principles-inner">
         <div className="principles-label">
           <p className="eyebrow">Мой подход</p>
-          <img
-            className="principles-monogram"
-            src="/brand/vdovenko.svg"
-            alt=""
-            width="176"
-            height="176"
-          />
         </div>
         <div className="principles-content">
           <h2>Как я работаю</h2>
