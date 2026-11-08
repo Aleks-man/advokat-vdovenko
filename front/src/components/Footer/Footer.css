@@ -1,5 +1,6 @@
 .footer {
-  background: var(--ink-dark);
+  background: var(--surface-dark);
+  border: 1px solid var(--surface-dark-border);
   color: var(--on-dark);
   padding-top: 32px;
 }

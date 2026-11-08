@@ -50,7 +50,7 @@
 }
 .contact-aside {
   background: var(--surface-dark);
-  border: 1px solid rgb(223 188 131 / 12%);
+  border: 1px solid var(--surface-dark-border);
   color: var(--on-dark);
   border-radius: var(--card-radius);
   padding: 40px;

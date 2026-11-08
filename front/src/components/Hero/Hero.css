@@ -7,12 +7,10 @@
   overflow: hidden;
   margin-top: 24px;
   padding: 40px var(--panel-inset) 0;
-  border: 1px solid #38453a;
+  border: 1px solid var(--surface-dark-border);
   border-radius: var(--panel-radius);
   color: var(--on-dark);
-  background:
-    radial-gradient(ellipse at 78% 38%, #3e4b3b 0%, transparent 58%),
-    linear-gradient(115deg, #151e19, #202b22);
+  background: var(--surface-dark);
   box-shadow: 0 24px 60px rgb(21 30 25 / 10%);
 }
 .hero-copy {
