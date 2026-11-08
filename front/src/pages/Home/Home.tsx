@@ -1,7 +1,6 @@
 import { Hero } from '../../components/Hero/Hero'
 import { PracticeList } from '../../components/PracticeList/PracticeList'
 import { Principles } from '../../components/Principles/Principles'
-import { ContactBanner } from '../../components/ContactBanner/ContactBanner'
 import { DeskBackground } from '../../components/DeskBackground/DeskBackground'
 import './Home.css'
 
@@ -28,7 +27,6 @@ export function Home() {
         <PracticeList />
       </section>
       <Principles />
-      <ContactBanner />
     </>
   )
 }

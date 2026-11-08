@@ -1,7 +1,6 @@
 import { AccordionItem } from '../../components/AccordionItem/AccordionItem'
 import { workSteps } from '../../data/workSteps'
 import { faqItems } from '../../data/faq'
-import { ContactBanner } from '../../components/ContactBanner/ContactBanner'
 import './About.css'
 import { AttorneyProfile } from '../../components/AttorneyProfile/AttorneyProfile'
 export function AboutPage() {
@@ -40,7 +39,6 @@ export function AboutPage() {
           ))}
         </div>
       </section>
-      <ContactBanner />
     </>
   )
 }
