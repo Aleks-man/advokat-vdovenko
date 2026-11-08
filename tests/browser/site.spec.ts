@@ -363,3 +363,36 @@ test('useful materials expand on practice page without adding navigation items',
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
   }
 })
+
+test('mobile menu dismisses outside and with Escape, and resets after desktop resize', async ({
+  page,
+}) => {
+  for (const width of [320, 390, 768]) {
+    await page.setViewportSize({ width, height: 900 })
+    await page.goto('/')
+    const toggle = page.locator('.menu-toggle')
+    const nav = page.locator('#main-navigation')
+    await toggle.click()
+    await expect(nav).toBeVisible()
+    await nav.locator('a').first().focus()
+    await page.keyboard.press('Escape')
+    await expect(nav).toBeHidden()
+    await expect(toggle).toBeFocused()
+    await expect(toggle).toHaveAttribute('aria-expanded', 'false')
+
+    await toggle.click()
+    await page.locator('.hero-bottom').click()
+    await expect(nav).toBeHidden()
+    await toggle.click()
+    await nav.locator('a[href="/contacts"]').click()
+    await expect(page).toHaveURL('/contacts')
+    await expect(nav).toBeHidden()
+
+    await toggle.click()
+    await page.setViewportSize({ width: 1280, height: 900 })
+    await expect(toggle).toHaveAttribute('aria-expanded', 'false')
+    await expect(nav).toBeVisible()
+    await page.setViewportSize({ width, height: 900 })
+    await expect(nav).toBeHidden()
+  }
+})

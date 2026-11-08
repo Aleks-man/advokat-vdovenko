@@ -1,26 +1,28 @@
-import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { Phone, Menu, X } from 'lucide-react'
 import { navigation, site } from '../../data/site'
 import { Brand } from '../Brand/Brand'
 import { contactLinks } from '../../data/contacts'
 import { useCompactHeader } from './hooks/useCompactHeader'
+import { useMobileMenu } from './hooks/useMobileMenu'
 import './Header.css'
 export function Header() {
-  const [open, setOpen] = useState(false)
+  const { open, buttonRef, navigationRef, close, toggle } = useMobileMenu()
   const compact = useCompactHeader()
   return (
     <div className="header-space">
       <header className={`header container${compact ? ' header--compact' : ''}`}>
-        <Brand onClick={() => setOpen(false)}>
+        <Brand onClick={close}>
           <span className="header-compact-name" aria-hidden="true">
             {site.name}
             <small>{site.brandTagline}</small>
           </span>
         </Brand>
         <button
+          ref={buttonRef}
+          type="button"
           className="menu-toggle"
-          onClick={() => setOpen(!open)}
+          onClick={toggle}
           aria-expanded={open}
           aria-controls="main-navigation"
           aria-label={open ? 'Закрыть меню' : 'Открыть меню'}
@@ -28,12 +30,13 @@ export function Header() {
           {open ? <X /> : <Menu />}
         </button>
         <nav
+          ref={navigationRef}
           id="main-navigation"
           className={`navigation ${open ? 'is-open' : ''}`}
           aria-label="Основная навигация"
         >
           {navigation.map((item) => (
-            <NavLink key={item.to} to={item.to} end onClick={() => setOpen(false)}>
+            <NavLink key={item.to} to={item.to} end onClick={close}>
               {item.label}
             </NavLink>
           ))}
