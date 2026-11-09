@@ -19,6 +19,7 @@
   --on-dark: #f5f2ea;
   --on-dark-muted: #bdc7bb;
   --card-radius: 16px;
+  --heading: Georgia, 'Times New Roman', serif;
   --display: 'Manrope Variable', 'Segoe UI', Arial, sans-serif;
   --sans: 'Onest Variable', 'Segoe UI', Arial, sans-serif;
   --section-space: clamp(56px, 6vw, 80px);

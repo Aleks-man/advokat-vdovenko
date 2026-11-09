@@ -35,11 +35,11 @@
 }
 .hero h1 {
   margin-top: 32px;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--heading);
   font-size: clamp(44px, 5.2vw, 76px);
   font-weight: 400;
   line-height: 1.08;
-  letter-spacing: -0.035em;
+  letter-spacing: normal;
 }
 .hero h1 span,
 .hero h1 em {

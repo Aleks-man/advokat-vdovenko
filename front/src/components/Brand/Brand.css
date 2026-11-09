@@ -12,7 +12,7 @@
 }
 .brand-name {
   display: block;
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: var(--heading);
   font-size: 17px;
   font-weight: 400;
   line-height: 1.15;
