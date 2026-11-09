@@ -207,9 +207,11 @@ test('narrow mobile and tablet layouts stay within viewport', async ({ page }) =
   }
 })
 
-test('fixed header compacts on scroll and mobile navigation remains usable', async ({ page }) => {
+test('header compacts only on mobile and tablet, while desktop stays full size', async ({
+  page,
+}) => {
   await page.emulateMedia({ reducedMotion: 'reduce' })
-  for (const width of [1280, 390, 320]) {
+  for (const width of [1280, 1025, 1024, 768, 390, 320]) {
     await page.setViewportSize({ width, height: 844 })
     await page.goto('/')
     await page.evaluate(() => document.fonts.ready)
@@ -220,10 +222,18 @@ test('fixed header compacts on scroll and mobile navigation remains usable', asy
       .locator('.hero')
       .evaluate((element) => element.getBoundingClientRect().top + window.scrollY)
     await page.evaluate(() => window.scrollTo({ top: 500, behavior: 'instant' }))
-    await expect(mark).toBeHidden()
+    if (width <= 1024) {
+      await expect(mark).toBeHidden()
+    } else {
+      await expect(mark).toBeVisible()
+    }
     const bounds = await header.boundingBox()
     expect(bounds!.y).toBe(0)
-    expect(bounds!.height).toBeLessThanOrEqual(68)
+    if (width <= 1024) {
+      expect(bounds!.height).toBeLessThanOrEqual(68)
+    } else {
+      expect(bounds!.height).toBe(108)
+    }
     expect(
       await page
         .locator('.hero')
@@ -245,6 +255,14 @@ test('fixed header compacts on scroll and mobile navigation remains usable', asy
       await expect(mark).toBeVisible()
     }
   }
+  await page.setViewportSize({ width: 1280, height: 844 })
+  await page.goto('/')
+  await page.evaluate(() => window.scrollTo({ top: 500, behavior: 'instant' }))
+  await expect(page.locator('header .brand-mark')).toBeVisible()
+  await page.setViewportSize({ width: 768, height: 844 })
+  await expect(page.locator('header .brand-mark')).toBeHidden()
+  await page.setViewportSize({ width: 1280, height: 844 })
+  await expect(page.locator('header .brand-mark')).toBeVisible()
 })
 
 test('FAQ animates both directions and supports keyboard and rapid toggles', async ({ page }) => {
