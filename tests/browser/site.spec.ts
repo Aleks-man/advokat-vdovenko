@@ -28,10 +28,10 @@ test('wide screens keep sections on the same centered grid', async ({ page }) =>
     await page.setViewportSize({ width, height: 1080 })
     for (const path of ['/', '/practice', '/about', '/contacts']) {
       await page.goto(path)
-      const header = await page.locator('header').boundingBox()
+      const header = await page.locator('.header-inner').boundingBox()
       expect(header).not.toBeNull()
       expect(header!.width).toBeLessThanOrEqual(1320)
-      const sections = page.locator('main > .container, main > .panel, footer')
+      const sections = page.locator('main > .container, main > .panel, footer > .container')
       for (const section of await sections.all()) {
         const bounds = await section.boundingBox()
         expect(bounds).not.toBeNull()
@@ -207,11 +207,9 @@ test('narrow mobile and tablet layouts stay within viewport', async ({ page }) =
   }
 })
 
-test('header compacts only on mobile and tablet, while desktop stays full size', async ({
-  page,
-}) => {
+test('header compacts on all screens without shifting page content', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' })
-  for (const width of [1280, 1025, 1024, 768, 390, 320]) {
+  for (const width of [1280, 1024, 961, 960, 768, 390, 320]) {
     await page.setViewportSize({ width, height: 844 })
     await page.goto('/')
     await page.evaluate(() => document.fonts.ready)
@@ -222,18 +220,10 @@ test('header compacts only on mobile and tablet, while desktop stays full size',
       .locator('.hero')
       .evaluate((element) => element.getBoundingClientRect().top + window.scrollY)
     await page.evaluate(() => window.scrollTo({ top: 500, behavior: 'instant' }))
-    if (width <= 1024) {
-      await expect(mark).toBeHidden()
-    } else {
-      await expect(mark).toBeVisible()
-    }
+    await expect(mark).toBeHidden()
     const bounds = await header.boundingBox()
     expect(bounds!.y).toBe(0)
-    if (width <= 1024) {
-      expect(bounds!.height).toBeLessThanOrEqual(68)
-    } else {
-      expect(bounds!.height).toBe(108)
-    }
+    expect(bounds!.height).toBeLessThanOrEqual(68)
     expect(
       await page
         .locator('.hero')
@@ -242,7 +232,7 @@ test('header compacts only on mobile and tablet, while desktop stays full size',
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
     await expect(header.locator('.brand-name')).toContainText('Константин')
     await expect(header.locator('.header-contact')).toHaveAttribute('href', 'tel:+79999999999')
-    if (width < 960) {
+    if (width <= 960) {
       await page.getByRole('button', { name: 'Открыть меню' }).click()
       await page
         .getByRole('navigation', { name: 'Основная навигация' })
@@ -258,10 +248,12 @@ test('header compacts only on mobile and tablet, while desktop stays full size',
   await page.setViewportSize({ width: 1280, height: 844 })
   await page.goto('/')
   await page.evaluate(() => window.scrollTo({ top: 500, behavior: 'instant' }))
-  await expect(page.locator('header .brand-mark')).toBeVisible()
+  await expect(page.locator('header .brand-mark')).toBeHidden()
   await page.setViewportSize({ width: 768, height: 844 })
   await expect(page.locator('header .brand-mark')).toBeHidden()
   await page.setViewportSize({ width: 1280, height: 844 })
+  await expect(page.locator('header .brand-mark')).toBeHidden()
+  await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }))
   await expect(page.locator('header .brand-mark')).toBeVisible()
 })
 
@@ -348,7 +340,7 @@ test('Themis stays full size at 790px and becomes background below it', async ({
       const padding = await page
         .locator('.hero')
         .evaluate((el) => parseFloat(getComputedStyle(el).paddingTop))
-      expect(bounds!.y - hero!.y).toBeCloseTo(padding + 1, 0)
+      expect(bounds!.y - hero!.y).toBeCloseTo(padding, 0)
     } else {
       await expect(art).toHaveCSS('position', 'absolute')
       await expect(page.locator('.hero-image')).toHaveCSS('opacity', '0.18')
@@ -412,5 +404,20 @@ test('mobile menu dismisses outside and with Escape, and resets after desktop re
     await expect(nav).toBeVisible()
     await page.setViewportSize({ width, height: 900 })
     await expect(nav).toBeHidden()
+  }
+})
+
+test('header content and hero share exact horizontal edges while scrolling', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' })
+  for (const width of [320, 390, 789, 960, 961, 1024, 1280, 1365, 1440, 1920]) {
+    await page.setViewportSize({ width, height: 900 })
+    await page.goto('/')
+    for (const scroll of [0, 180]) {
+      await page.evaluate((top) => window.scrollTo({ top, behavior: 'instant' }), scroll)
+      const header = await page.locator('.header-inner').boundingBox()
+      const hero = await page.locator('.hero').boundingBox()
+      expect(Math.abs(header!.x - hero!.x)).toBeLessThan(0.1)
+      expect(Math.abs(header!.x + header!.width - hero!.x - hero!.width)).toBeLessThan(0.1)
+    }
   }
 })

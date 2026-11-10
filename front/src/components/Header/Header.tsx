@@ -11,45 +11,47 @@ export function Header() {
   const compact = useCompactHeader()
   return (
     <div className="header-space">
-      <header className={`header container${compact ? ' header--compact' : ''}`}>
-        <Brand onClick={close}>
-          <span className="header-compact-name" aria-hidden="true">
-            {site.name}
-            <small>{site.brandTagline}</small>
-          </span>
-        </Brand>
-        <button
-          ref={buttonRef}
-          type="button"
-          className="menu-toggle"
-          onClick={toggle}
-          aria-expanded={open}
-          aria-controls="main-navigation"
-          aria-label={open ? 'Закрыть меню' : 'Открыть меню'}
-        >
-          {open ? <X /> : <Menu />}
-        </button>
-        <nav
-          ref={navigationRef}
-          id="main-navigation"
-          className={`navigation ${open ? 'is-open' : ''}`}
-          aria-label="Основная навигация"
-        >
-          {navigation.map((item) => (
-            <NavLink key={item.to} to={item.to} end onClick={close}>
-              {item.label}
-            </NavLink>
-          ))}
-          <span className="navigation-indicator" aria-hidden="true" />
-        </nav>
-        <a
-          className="header-contact"
-          href={contactLinks.phone}
-          aria-label={`Позвонить: ${site.phone}`}
-        >
-          <Phone size={19} aria-hidden="true" />
-          <span>{site.phone}</span>
-        </a>
+      <header className={`header${compact ? ' header--compact' : ''}`}>
+        <div className="header-inner container">
+          <Brand onClick={close}>
+            <span className="header-compact-name" aria-hidden="true">
+              {site.name}
+              <small>{site.brandTagline}</small>
+            </span>
+          </Brand>
+          <button
+            ref={buttonRef}
+            type="button"
+            className="menu-toggle"
+            onClick={toggle}
+            aria-expanded={open}
+            aria-controls="main-navigation"
+            aria-label={open ? 'Закрыть меню' : 'Открыть меню'}
+          >
+            {open ? <X /> : <Menu />}
+          </button>
+          <nav
+            ref={navigationRef}
+            id="main-navigation"
+            className={`navigation ${open ? 'is-open' : ''}`}
+            aria-label="Основная навигация"
+          >
+            {navigation.map((item) => (
+              <NavLink key={item.to} to={item.to} end onClick={close}>
+                {item.label}
+              </NavLink>
+            ))}
+            <span className="navigation-indicator" aria-hidden="true" />
+          </nav>
+          <a
+            className="header-contact"
+            href={contactLinks.phone}
+            aria-label={`Позвонить: ${site.phone}`}
+          >
+            <Phone size={19} aria-hidden="true" />
+            <span>{site.phone}</span>
+          </a>
+        </div>
       </header>
     </div>
   )
