@@ -2,6 +2,7 @@ import { Hero } from '../../components/Hero/Hero'
 import { PracticeList } from '../../components/PracticeList/PracticeList'
 import { Principles } from '../../components/Principles/Principles'
 import { DeskBackground } from '../../components/DeskBackground/DeskBackground'
+import { FirstConversation } from '../../components/FirstConversation/FirstConversation'
 import './Home.css'
 
 export function Home() {
@@ -26,6 +27,7 @@ export function Home() {
         </div>
         <PracticeList />
       </section>
+      <FirstConversation />
       <Principles />
     </>
   )

@@ -33,8 +33,8 @@ export function Hero() {
         />
       </div>
       <div className="hero-bottom">
-        <span>УГОЛОВНОЕ ПРАВО</span>
         <span>Проверка · следствие · суд</span>
+        <span>Вы можете обратиться за себя или за близкого.</span>
       </div>
     </section>
   )
