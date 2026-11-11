@@ -21,7 +21,7 @@
 }
 .step-number {
   font-family: var(--sans);
-  color: var(--accent);
+  color: var(--accent-text);
   font-size: 36px;
   line-height: 1.2;
 }

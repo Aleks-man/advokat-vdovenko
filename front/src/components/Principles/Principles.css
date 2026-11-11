@@ -48,14 +48,14 @@
   gap: 22px;
 }
 .principles-details h3 {
-  font-size: 18px;
+  font-size: var(--subheading-size);
   line-height: 1.4;
 }
 .principles-details p {
   max-width: 54ch;
   margin-top: 6px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: var(--text-small);
 }
 .principles .text-link {
   margin-top: 28px;

@@ -10,7 +10,7 @@
   padding-top: 24px;
 }
 .practice-stage > .eyebrow {
-  color: var(--accent);
+  color: var(--accent-text);
   padding-top: 10px;
 }
 .practice-stage h2 {
@@ -29,9 +29,8 @@
 }
 .practice-stage-topic h3 {
   margin-bottom: 10px;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1.5;
+  font-size: var(--subheading-size);
+  line-height: var(--subheading-leading);
   letter-spacing: 0;
 }
 .practice-services {
@@ -41,7 +40,7 @@
   margin: 0;
   padding-left: 20px;
   font-size: var(--text-size);
-  line-height: 1.7;
+  line-height: var(--text-leading);
   color: var(--muted);
 }
 .practice-services li::marker {
@@ -50,8 +49,8 @@
 .content-disclaimer {
   padding-block: 30px 55px;
   color: var(--muted);
-  font-size: 13px;
-  line-height: 1.7;
+  font-size: var(--text-small);
+  line-height: var(--text-leading);
 }
 @media (max-width: 700px) {
   .practice-stage {

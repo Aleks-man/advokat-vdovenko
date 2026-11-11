@@ -19,7 +19,6 @@
   flex-shrink: 0;
 }
 .contact-detail .eyebrow {
-  font-size: 11px;
   color: var(--muted);
 }
 .contact-detail > div {
@@ -30,6 +29,7 @@
   display: block;
   margin-block: 10px 8px;
   font-family: var(--sans);
+  font-weight: 500;
   line-height: 1.5;
   overflow-wrap: anywhere;
 }
@@ -42,11 +42,13 @@
   font-size: clamp(18px, 1.6vw, 22px);
 }
 .contact-value[href]:hover {
-  color: var(--accent);
+  color: var(--accent-text);
 }
 .contact-detail small {
+  display: block;
+  line-height: 1.6;
   color: var(--muted);
-  font-size: 13px;
+  font-size: var(--text-small);
 }
 .contact-aside {
   background: var(--surface-dark);
@@ -59,7 +61,7 @@
   color: var(--accent-light);
 }
 .contact-aside h2 {
-  font-size: clamp(25px, 2.6vw, 34px);
+  font-size: var(--panel-title);
   margin-block: 35px 25px;
 }
 .contact-aside h2 em {
@@ -69,12 +71,12 @@
 }
 .contact-aside > p:not(.eyebrow) {
   color: var(--on-dark-muted);
-  font-size: 14px;
+  font-size: var(--text-small);
 }
 .contact-aside-note {
-  font-size: 13px;
+  font-size: var(--text-small);
   color: var(--on-dark-muted);
-  line-height: 1.8;
+  line-height: var(--text-leading);
   padding-top: 25px;
   margin-top: 30px;
   border-top: 1px solid var(--line-dark);

@@ -10,13 +10,13 @@
   border-left: 2px solid var(--accent-light);
 }
 .first-conversation-note h3 {
-  font-size: 19px;
+  font-size: var(--subheading-size);
   line-height: 1.4;
 }
 .first-conversation-note p {
   margin-top: 16px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: var(--text-small);
 }
 .first-conversation-note .text-link {
   margin-top: 16px;
@@ -45,7 +45,7 @@
 .first-conversation-number {
   padding-top: 4px;
   color: var(--accent-text);
-  font-size: 12px;
+  font-size: var(--text-caption);
 }
 .first-conversation-list h3 {
   font-size: var(--card-title);

@@ -15,8 +15,9 @@
   background: transparent;
   color: var(--ink);
   font-family: var(--sans);
-  font-size: clamp(20px, 2vw, 24px);
-  line-height: 1.4;
+  font-size: var(--card-title);
+  font-weight: 500;
+  line-height: var(--subheading-leading);
   text-align: left;
   cursor: pointer;
   transition: color 0.2s;

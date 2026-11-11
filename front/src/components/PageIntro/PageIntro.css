@@ -37,7 +37,7 @@
 }
 .page-intro-panel.page-intro-panel--compact > h1 {
   margin-top: 16px;
-  font-size: clamp(30px, 3.3vw, 44px);
+  font-size: var(--page-title-compact);
 }
 .page-intro-panel.page-intro-panel--compact > p:not(.eyebrow) {
   margin-top: 16px;

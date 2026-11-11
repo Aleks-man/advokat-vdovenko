@@ -22,7 +22,8 @@
   aspect-ratio: 3 / 2;
   max-height: 100%;
   background-image:
-    linear-gradient(var(--background-wash-start), var(--background-wash-end)), var(--section-image);
+    linear-gradient(180deg, rgb(var(--background-rgb) / 70%), rgb(var(--background-rgb) / 78%)),
+    var(--section-image);
   background-size:
     100% 100%,
     cover;
@@ -36,14 +37,10 @@
 
 .section-background--practice {
   --section-image: url('../../assets/limestone-light.webp');
-  --background-wash-start: rgb(var(--background-rgb) / 55%);
-  --background-wash-end: rgb(var(--background-rgb) / 75%);
 }
 
 .section-background--contacts {
   --section-image: url('../../assets/desk-background.webp');
-  --background-wash-start: rgb(var(--background-rgb) / 72%);
-  --background-wash-end: rgb(var(--background-rgb) / 80%);
 }
 
 .section-background--contacts::before {
@@ -52,8 +49,6 @@
 
 .section-background--about {
   --section-image: url('../../assets/legal-library.webp');
-  --background-wash-start: rgb(var(--background-rgb) / 78%);
-  --background-wash-end: rgb(var(--background-rgb) / 86%);
 }
 
 @media (max-width: 760px) {
@@ -66,6 +61,5 @@
     background-position:
       center,
       72% top;
-    opacity: 0.7;
   }
 }

@@ -70,7 +70,7 @@
   display: block;
   color: var(--muted);
   font-weight: 400;
-  font-size: 15px;
+  font-size: var(--text-small);
   margin-top: 12px;
   max-width: 34ch;
 }
@@ -190,7 +190,7 @@
 }
 @media (max-width: 380px) {
   .hero-copy .eyebrow {
-    font-size: 10px;
+    font-size: 11px;
     letter-spacing: 0.06em;
     gap: 10px;
   }

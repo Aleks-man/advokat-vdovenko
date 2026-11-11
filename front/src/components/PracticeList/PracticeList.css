@@ -10,8 +10,8 @@
   border-bottom: 1px solid var(--line);
 }
 .practice-number {
-  font-size: 12px;
-  color: var(--accent);
+  font-size: var(--text-caption);
+  color: var(--accent-text);
   padding-top: 6px;
   font-weight: 600;
 }

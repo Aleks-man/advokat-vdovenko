@@ -67,7 +67,7 @@ test('desktop routes, stage links, FAQ and missing page', async ({ page }) => {
     await document.fonts.ready
   })
   const fontStatus = await page.evaluate(async () => {
-    const families = ['Manrope Variable', 'Onest Variable']
+    const families = ['Onest Variable']
     return Promise.all(
       families.map(async (family) => {
         const faces = await document.fonts.load(
@@ -78,7 +78,7 @@ test('desktop routes, stage links, FAQ and missing page', async ({ page }) => {
       }),
     )
   })
-  expect(fontStatus).toEqual([true, true])
+  expect(fontStatus).toEqual([true])
   await expect(page.getByRole('heading', { level: 1 })).toContainText('Константин')
   await page.screenshot({ path: 'artifacts/home-desktop.png', fullPage: true })
   await expect(page.locator('.about')).toHaveCount(0)

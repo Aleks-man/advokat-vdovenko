@@ -7,14 +7,14 @@
   --surface-hero: #eee8dc;
   --surface-document-rgb: 240 237 229;
   --selection: #d6ddc9;
-  --ink: #202b25;
-  --ink-dark: #151e19;
-  --muted: #60695f;
+  --ink: #19281f;
+  --ink-dark: #101c15;
+  --muted: #414d44;
   --line: #d7d9cf;
   --accent-rgb: 167 125 67;
   --accent: rgb(var(--accent-rgb));
   --accent-light: #dfbc83;
-  --accent-text: #7e633e;
+  --accent-text: #73552f;
   --surface-dark:
     radial-gradient(ellipse at 78% 38%, #3e4b3b 0%, transparent 58%),
     linear-gradient(115deg, #151e19, #202b22);
@@ -22,14 +22,21 @@
   --line-dark: rgb(245 242 234 / 16%);
   --panel-radius: 20px;
   --on-dark: #f5f2ea;
-  --on-dark-muted: #bdc7bb;
+  --on-dark-muted: #d1d8ce;
   --card-radius: 16px;
   --heading: Georgia, 'Times New Roman', serif;
-  --display: 'Manrope Variable', 'Segoe UI', Arial, sans-serif;
   --sans: 'Onest Variable', 'Segoe UI', Arial, sans-serif;
   --section-space: clamp(56px, 6vw, 80px);
   --panel-space: clamp(40px, 5vw, 64px);
   --text-size: 16px;
+  --text-small: 15px;
+  --text-caption: 12px;
+  --text-control: 14px;
+  --subheading-size: 18px;
+  --subheading-weight: 600;
+  --subheading-leading: 1.4;
+  --page-title-compact: clamp(30px, 3.3vw, 44px);
+  --panel-title: clamp(26px, 2.6vw, 34px);
   --text-leading: 1.7;
   --section-title: clamp(28px, 3.5vw, 48px);
   --card-title: clamp(22px, 2.1vw, 28px);
