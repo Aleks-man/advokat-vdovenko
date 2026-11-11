@@ -27,7 +27,9 @@
   background-size:
     100% 100%,
     cover;
-  background-position: right top;
+  background-position:
+    center,
+    right top;
   background-repeat: no-repeat;
   mask-image:
     linear-gradient(transparent, #000 12%, #000 72%, transparent),
@@ -60,6 +62,6 @@
       auto 520px;
     background-position:
       center,
-      72% top;
+      right top;
   }
 }
