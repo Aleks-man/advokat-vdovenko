@@ -36,12 +36,12 @@
   max-width: 100%;
 }
 .footer-phone {
-  font-size: var(--text-small);
+  font-size: var(--text-size);
   font-weight: 500;
   white-space: nowrap;
 }
 .footer-email {
-  font-size: var(--text-control);
+  font-size: var(--text-size);
   color: var(--on-dark-muted);
 }
 .footer-email span {

@@ -10,13 +10,13 @@
   align-items: center;
   gap: 12px;
   width: 100%;
-  padding: 25px 15px 25px 0;
+  padding: var(--space-medium) 16px var(--space-medium) 0;
   border: 0;
   background: transparent;
   color: var(--ink);
   font-family: var(--sans);
-  font-size: var(--card-title);
-  font-weight: 500;
+  font-size: var(--title-small);
+  font-weight: var(--subheading-weight);
   line-height: var(--subheading-leading);
   text-align: left;
   cursor: pointer;
@@ -59,7 +59,7 @@
   overflow: hidden;
 }
 .accordion-copy {
-  padding-bottom: 25px;
+  padding-bottom: var(--space-medium);
   max-width: 650px;
   font-size: var(--text-size);
   color: var(--muted);

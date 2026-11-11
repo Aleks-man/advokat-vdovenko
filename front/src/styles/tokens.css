@@ -29,24 +29,33 @@
   --section-space: clamp(56px, 6vw, 80px);
   --panel-space: clamp(40px, 5vw, 64px);
   --text-size: 16px;
-  --text-small: 15px;
   --text-caption: 12px;
-  --text-control: 14px;
-  --subheading-size: 18px;
   --subheading-weight: 600;
   --subheading-leading: 1.4;
-  --page-title-compact: clamp(30px, 3.3vw, 44px);
-  --panel-title: clamp(26px, 2.6vw, 34px);
-  --text-leading: 1.7;
-  --section-title: clamp(28px, 3.5vw, 48px);
-  --card-title: clamp(22px, 2.1vw, 28px);
+  --text-leading: 1.625;
+  --title-small: 20px;
+  --section-title: 36px;
+  --page-title: 48px;
+  --hero-title: 64px;
+  --space-small: 12px;
+  --space-medium: 24px;
+  --space-large: 32px;
   --page-width: 1320px;
   --gutter: clamp(20px, 4vw, 72px);
   --panel-inset: clamp(18px, 4vw, 56px);
 }
 
+@media (max-width: 1100px) {
+  :root {
+    --hero-title: 48px;
+  }
+}
+
 @media (max-width: 760px) {
   :root {
     --panel-radius: 16px;
+    --section-title: 28px;
+    --page-title: 32px;
+    --hero-title: 40px;
   }
 }

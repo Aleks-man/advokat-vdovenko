@@ -27,28 +27,28 @@
 }
 .contact-detail .contact-value {
   display: block;
-  margin-block: 10px 8px;
+  margin-block: var(--space-small);
   font-family: var(--sans);
   font-weight: 500;
   line-height: 1.5;
   overflow-wrap: anywhere;
 }
 .contact-phone {
-  font-size: clamp(22px, 2.5vw, 30px);
+  font-size: var(--title-small);
   white-space: nowrap;
 }
 .contact-email,
 .contact-address {
-  font-size: clamp(18px, 1.6vw, 22px);
+  font-size: var(--title-small);
 }
 .contact-value[href]:hover {
   color: var(--accent-text);
 }
 .contact-detail small {
   display: block;
-  line-height: 1.6;
+  line-height: var(--text-leading);
   color: var(--muted);
-  font-size: var(--text-small);
+  font-size: var(--text-size);
 }
 .contact-aside {
   background: var(--surface-dark);
@@ -61,8 +61,8 @@
   color: var(--accent-light);
 }
 .contact-aside h2 {
-  font-size: var(--panel-title);
-  margin-block: 35px 25px;
+  font-size: var(--section-title);
+  margin-block: var(--space-medium);
 }
 .contact-aside h2 em {
   font-weight: 400;
@@ -71,14 +71,14 @@
 }
 .contact-aside > p:not(.eyebrow) {
   color: var(--on-dark-muted);
-  font-size: var(--text-small);
+  font-size: var(--text-size);
 }
 .contact-aside-note {
-  font-size: var(--text-small);
+  font-size: var(--text-size);
   color: var(--on-dark-muted);
   line-height: var(--text-leading);
-  padding-top: 25px;
-  margin-top: 30px;
+  padding-top: var(--space-medium);
+  margin-top: var(--space-medium);
   border-top: 1px solid var(--line-dark);
 }
 @media (max-width: 850px) {

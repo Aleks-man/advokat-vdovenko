@@ -63,33 +63,33 @@
   max-width: 640px;
 }
 .principles h2 {
-  margin-top: 20px;
+  margin-top: var(--space-medium);
 }
 .principles-lead {
   max-width: 54ch;
   font-size: var(--text-size);
   color: var(--muted);
-  margin-top: 24px;
+  margin-top: var(--space-medium);
 }
 .principles-details {
   list-style: none;
   padding: 0;
   margin: 32px 0 0;
   display: grid;
-  gap: 22px;
+  gap: var(--space-medium);
 }
 .principles-details h3 {
-  font-size: var(--subheading-size);
+  font-size: var(--title-small);
   line-height: 1.4;
 }
 .principles-details p {
   max-width: 54ch;
-  margin-top: 6px;
+  margin-top: var(--space-small);
   color: var(--muted);
-  font-size: var(--text-small);
+  font-size: var(--text-size);
 }
 .principles .text-link {
-  margin-top: 28px;
+  margin-top: var(--space-medium);
   border-color: currentColor;
   color: var(--accent-text);
   transition: color 0.2s;

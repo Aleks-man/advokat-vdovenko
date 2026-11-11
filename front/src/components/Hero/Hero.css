@@ -46,7 +46,7 @@
 .hero h1 {
   margin-top: 32px;
   font-family: var(--heading);
-  font-size: clamp(44px, 5.2vw, 76px);
+  font-size: var(--hero-title);
   font-weight: 400;
   line-height: 1.08;
   letter-spacing: normal;
@@ -60,9 +60,9 @@
   color: var(--accent-text);
 }
 .hero-description {
-  margin-top: 28px;
+  margin-top: var(--space-medium);
   max-width: 38ch;
-  font-size: 18px;
+  font-size: var(--text-size);
   font-weight: 400;
   line-height: 1.6;
 }
@@ -70,7 +70,7 @@
   display: block;
   color: var(--muted);
   font-weight: 400;
-  font-size: var(--text-small);
+  font-size: var(--text-size);
   margin-top: 12px;
   max-width: 34ch;
 }
@@ -78,7 +78,7 @@
   display: flex;
   align-items: center;
   gap: 18px;
-  margin-top: 28px;
+  margin-top: var(--space-medium);
 }
 .hero .button {
   background: var(--ink);
@@ -127,9 +127,6 @@
     padding: 28px var(--panel-inset) 0;
     column-gap: 16px;
   }
-  .hero h1 {
-    font-size: clamp(40px, 5.2vw, 60px);
-  }
 }
 @media (max-width: 789.98px) {
   .hero {
@@ -141,8 +138,7 @@
     padding: 0 0 28px;
   }
   .hero h1 {
-    font-size: clamp(36px, 9vw, 58px);
-    margin-top: 25px;
+    margin-top: var(--space-medium);
   }
   .hero-copy .eyebrow {
     font-size: 11px;
@@ -154,7 +150,6 @@
   }
   .hero-description {
     margin-top: 24px;
-    font-size: 17px;
   }
   .hero-actions {
     gap: 12px;
@@ -201,6 +196,6 @@
     padding-inline: var(--panel-inset);
   }
   .hero h1 {
-    font-size: 34px;
+    font-size: var(--hero-title);
   }
 }

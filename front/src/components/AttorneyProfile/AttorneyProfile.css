@@ -37,25 +37,25 @@
   min-width: 0;
 }
 .about-heading .eyebrow {
-  margin-bottom: 26px;
+  margin-bottom: var(--space-medium);
   color: var(--accent-text);
 }
 .about-heading h1 {
   max-width: 540px;
   font-family: var(--heading);
-  font-size: var(--page-title-compact);
+  font-size: var(--page-title);
   font-weight: 400;
   line-height: 1.15;
   letter-spacing: normal;
 }
 .about-profession {
-  margin-top: 16px;
-  font-size: var(--text-small);
+  margin-top: var(--space-medium);
+  font-size: var(--text-size);
   color: var(--muted);
 }
 .about-biography {
   display: grid;
-  gap: 18px;
+  gap: var(--space-medium);
   max-width: 650px;
   font-size: var(--text-size);
   color: var(--muted);
@@ -69,14 +69,14 @@
   border-top: 1px solid var(--line);
 }
 .about-facts dt {
-  margin-bottom: 10px;
+  margin-bottom: var(--space-small);
   font-size: var(--text-caption);
   line-height: 1.5;
   color: var(--muted);
 }
 .about-facts dd {
   margin: 0;
-  font-size: var(--text-small);
+  font-size: var(--text-size);
   line-height: 1.5;
   color: var(--ink);
 }
@@ -99,13 +99,13 @@
 }
 @media (max-width: 600px) {
   .about-heading .eyebrow {
-    margin-bottom: 20px;
+    margin-bottom: var(--space-medium);
   }
   .about-facts {
     grid-template-columns: 1fr;
     gap: 20px;
   }
   .about-facts dt {
-    margin-bottom: 4px;
+    margin-bottom: var(--space-small);
   }
 }

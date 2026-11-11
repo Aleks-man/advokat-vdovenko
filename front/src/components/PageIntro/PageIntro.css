@@ -1,15 +1,15 @@
 .page-intro.page-intro-panel {
   margin-top: 24px;
-  padding: 56px var(--panel-inset);
+  padding: var(--panel-space) var(--panel-inset);
   border: 1px solid var(--line);
   border-radius: var(--card-radius);
   background: var(--paper-light);
 }
 .page-intro-panel > h1 {
   max-width: 950px;
-  font-size: clamp(36px, 4.5vw, 64px);
+  font-size: var(--page-title);
   line-height: 1.16;
-  margin-top: 30px;
+  margin-top: var(--space-medium);
 }
 .page-intro-panel > h1 em {
   font-style: normal;
@@ -19,38 +19,12 @@
 .page-intro-panel > p:not(.eyebrow) {
   max-width: 590px;
   color: var(--muted);
-  margin-top: 30px;
+  margin-top: var(--space-medium);
   font-size: var(--text-size);
 }
 @media (max-width: 700px) {
   .page-intro.page-intro-panel {
     margin-top: 12px;
-    padding-block: 36px;
-  }
-  .page-intro-panel > h1 {
-    font-size: clamp(30px, 7vw, 44px);
-  }
-}
-
-.page-intro.page-intro-panel--compact {
-  padding-block: 32px;
-}
-.page-intro-panel.page-intro-panel--compact > h1 {
-  margin-top: 16px;
-  font-size: var(--page-title-compact);
-}
-.page-intro-panel.page-intro-panel--compact > p:not(.eyebrow) {
-  margin-top: 16px;
-}
-@media (max-width: 700px) {
-  .page-intro.page-intro-panel--compact {
-    padding-block: 24px;
-  }
-}
-
-@media (max-width: 380px) {
-  .page-intro-panel > h1 {
-    font-size: 30px;
   }
 }
 

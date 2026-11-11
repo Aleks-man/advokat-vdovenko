@@ -14,7 +14,7 @@
   padding-top: 10px;
 }
 .practice-stage h2 {
-  font-size: clamp(26px, 3vw, 42px);
+  font-size: var(--section-title);
   margin-bottom: 0;
 }
 .practice-stage p {
@@ -28,8 +28,8 @@
   min-width: 0;
 }
 .practice-stage-topic h3 {
-  margin-bottom: 10px;
-  font-size: var(--subheading-size);
+  margin-bottom: var(--space-small);
+  font-size: var(--title-small);
   line-height: var(--subheading-leading);
   letter-spacing: 0;
 }
@@ -47,9 +47,9 @@
   color: var(--accent);
 }
 .content-disclaimer {
-  padding-block: 30px 55px;
+  padding-block: var(--space-large) var(--section-space);
   color: var(--muted);
-  font-size: var(--text-small);
+  font-size: var(--text-size);
   line-height: var(--text-leading);
 }
 @media (max-width: 700px) {

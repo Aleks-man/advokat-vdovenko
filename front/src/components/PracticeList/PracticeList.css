@@ -6,7 +6,7 @@
   grid-template-columns: 40px minmax(0, 1fr) minmax(0, 1.25fr) 24px;
   align-items: start;
   gap: 24px;
-  padding-block: 28px;
+  padding-block: var(--space-medium);
   border-bottom: 1px solid var(--line);
 }
 .practice-number {
@@ -17,7 +17,7 @@
 }
 .practice-row h3 {
   min-width: 0;
-  font-size: var(--card-title);
+  font-size: var(--title-small);
   transition: color 0.2s;
 }
 .practice-row p {
