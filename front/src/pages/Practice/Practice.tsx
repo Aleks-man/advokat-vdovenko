@@ -1,3 +1,4 @@
+import { SectionBackground } from '../../components/SectionBackground/SectionBackground'
 import { practiceAreas } from '../../data/practice'
 import { UsefulMaterials } from '../../components/UsefulMaterials/UsefulMaterials'
 import './Practice.css'
@@ -18,7 +19,8 @@ export function Practice() {
         Ко мне можно обратиться во время проверки, следствия, рассмотрения дела в суде или после
         вынесения решения. Расскажите, на каком этапе нужна моя помощь.
       </PageIntro>
-      <section className="container practice-stages">
+      <section className="container practice-stages section-with-background">
+        <SectionBackground variant="practice" />
         {practiceAreas.map((area) => (
           <article className="practice-stage" id={`stage-${area.number}`} key={area.number}>
             <span className="eyebrow">Этап / {area.number}</span>

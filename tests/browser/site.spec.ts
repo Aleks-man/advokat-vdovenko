@@ -421,3 +421,25 @@ test('header content and hero share exact horizontal edges while scrolling', asy
     }
   }
 })
+
+test('decorative backgrounds leave no empty area below the footer', async ({ page }) => {
+  for (const [width, height] of [
+    [1920, 1080],
+    [1280, 1440],
+    [320, 844],
+  ]) {
+    await page.setViewportSize({ width, height })
+    for (const path of ['/practice', '/about', '/contacts']) {
+      await page.goto(path)
+      await page.evaluate(() => document.fonts.ready)
+      const layout = await page.evaluate(() => ({
+        pageBottom: document.documentElement.scrollHeight,
+        footerBottom: document.querySelector('footer')!.getBoundingClientRect().bottom + scrollY,
+      }))
+      expect(Math.abs(layout.pageBottom - layout.footerBottom), path + ' at ' + width).toBeLessThan(
+        2,
+      )
+      expect(layout.footerBottom).toBeGreaterThanOrEqual(height - 1)
+    }
+  }
+})

@@ -1,3 +1,4 @@
+import { SectionBackground } from '../../components/SectionBackground/SectionBackground'
 import { AccordionItem } from '../../components/AccordionItem/AccordionItem'
 import { workSteps } from '../../data/workSteps'
 import { faqItems } from '../../data/faq'
@@ -7,7 +8,8 @@ export function AboutPage() {
   return (
     <>
       <AttorneyProfile />
-      <section className="container section about-work" id="approach">
+      <section className="container section about-work section-with-background" id="approach">
+        <SectionBackground variant="about" />
         <div className="section-heading">
           <p className="eyebrow">Начало работы</p>
           <h2>

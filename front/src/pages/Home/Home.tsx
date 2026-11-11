@@ -3,13 +3,12 @@ import { PracticeList } from '../../components/PracticeList/PracticeList'
 import { Principles } from '../../components/Principles/Principles'
 import { FirstConversation } from '../../components/FirstConversation/FirstConversation'
 import { MaterialsPreview } from '../../components/MaterialsPreview/MaterialsPreview'
-import './Home.css'
 
 export function Home() {
   return (
     <>
       <Hero />
-      <section className="section container home-practice" id="practice">
+      <section className="section container" id="practice">
         <div className="section-heading">
           <p className="eyebrow">01 / Когда обращаться</p>
           <div>

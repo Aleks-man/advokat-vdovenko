@@ -1,15 +1,20 @@
 :root {
-  --paper: #f3f1eb;
   --paper-light: #fffefa;
-  --surface-tint: #e8e3d8;
+  --background-rgb: 244 241 234;
+  --background-middle: #f1eee7;
+  --background-bottom: #eaeae3;
+  --background-glow: rgb(255 254 249 / 85%);
+  --surface-hero: #eee8dc;
+  --surface-document-rgb: 240 237 229;
+  --selection: #d6ddc9;
   --ink: #202b25;
   --ink-dark: #151e19;
   --muted: #60695f;
   --line: #d7d9cf;
-  --accent: #a77d43;
+  --accent-rgb: 167 125 67;
+  --accent: rgb(var(--accent-rgb));
   --accent-light: #dfbc83;
   --accent-text: #7e633e;
-  --accent-text-hover: #77582e;
   --surface-dark:
     radial-gradient(ellipse at 78% 38%, #3e4b3b 0%, transparent 58%),
     linear-gradient(115deg, #151e19, #202b22);

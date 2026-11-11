@@ -1,7 +1,0 @@
-# Consultation corner
-
-File: front/src/assets/consultation-corner.webp (1536 x 1024). Generated with built-in image_gen and optimized to WebP. Decorative fictional interior, not a photograph of the attorney office. Used only on /about to support personal consultation and beginning work together.
-
-## Prompt
-
-Use case: photorealistic-natural. Asset type: decorative background photograph for the About page of a premium criminal defense attorney website. Landscape 3:2. A calm private consultation corner: two elegant contemporary deep forest green upholstered armchairs turned subtly toward each other, only partially visible at the FAR RIGHT edge; between them a very small round warm limestone side table, empty. Warm ivory plaster wall and pale limestone floor. LEFT TWO THIRDS is empty bright ivory wall and floor with ample negative space for website copy. Quiet human scale, reassuring professional personal conversation, no intimidating grandeur. Premium realistic editorial interior photography, soft natural afternoon window light, subtle long shadows, clean contemporary materials. Palette ivory #f3f1eb, forest green #202b25, tiny muted brushed brass furniture details. Match elegant ivory stone, green leather and brass photography elsewhere on the site. No people, no desk, no notebook, no paper, no pen, no books, no columns, no plants, no logos, no text, no watermark. Output only photograph, no website interface.

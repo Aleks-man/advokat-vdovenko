@@ -11,9 +11,7 @@
   isolation: isolate;
   z-index: 20;
   --header-inset: 24px;
-  transition:
-    min-height 0.36s cubic-bezier(0.22, 1, 0.36, 1),
-    padding 0.36s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: min-height 0.36s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .header-inner {
   position: relative;
@@ -170,16 +168,11 @@
   background: var(--surface-dark);
   border: 1px solid var(--line-dark);
   border-top: 0;
-  border-radius: 0;
   pointer-events: none;
-  transition: border-color 0.36s ease;
 }
 .header--compact {
   min-height: 68px;
   --header-inset: 24px;
-}
-.header--compact::before {
-  border-color: var(--line-dark);
 }
 .header-inner > .brand {
   position: relative;
@@ -260,9 +253,7 @@
     min-height: 64px;
     --header-inset: 12px;
   }
-  .header-inner > .brand {
-    width: 210px;
-  }
+  .header-inner > .brand,
   .header--compact .header-inner > .brand {
     width: 210px;
   }
@@ -282,15 +273,14 @@
     gap: 6px;
     --header-inset: 8px;
   }
-  .header-inner > .brand,
-  .header--compact .header-inner > .brand {
+  .header-inner > .brand {
     width: 176px;
   }
   .header-compact-name {
     font-size: 16px;
   }
   .header-compact-name small {
-    font-size: 7px;
+    display: none;
   }
   .header--compact {
     --header-inset: 8px;

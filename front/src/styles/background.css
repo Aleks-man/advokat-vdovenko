@@ -1,11 +1,13 @@
 body {
-  position: relative;
-  isolation: isolate;
-  min-height: 100svh;
-  background-color: #f1eee7;
+  background-color: var(--background-middle);
   background-image:
-    radial-gradient(ellipse at 48% 0, rgb(255 254 249 / 85%), transparent 72%),
-    linear-gradient(180deg, #f4f1ea 0%, #f1eee7 45%, #eaeae3 100%);
+    radial-gradient(ellipse at 48% 0, var(--background-glow), transparent 72%),
+    linear-gradient(
+      180deg,
+      rgb(var(--background-rgb)) 0%,
+      var(--background-middle) 45%,
+      var(--background-bottom) 100%
+    );
   background-size:
     100% 1300px,
     100% 100%;

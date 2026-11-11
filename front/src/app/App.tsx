@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import { Header } from '../components/Header/Header'
 import { Footer } from '../components/Footer/Footer'
 import { Home } from '../pages/Home/Home'
@@ -7,18 +7,9 @@ import { AboutPage } from '../pages/About/About'
 import { Contacts } from '../pages/Contacts/Contacts'
 import { NotFound } from '../pages/NotFound/NotFound'
 import { RouteEffects } from './RouteEffects'
-import { DeskBackground } from '../components/DeskBackground/DeskBackground'
 export function App() {
-  const { pathname } = useLocation()
   return (
     <>
-      {(pathname === '/practice' || pathname === '/about' || pathname === '/contacts') && (
-        <DeskBackground
-          variant={
-            pathname === '/contacts' ? 'contacts' : pathname === '/about' ? 'about' : 'practice'
-          }
-        />
-      )}
       <a href="#main-content" className="skip-link">
         Перейти к содержимому
       </a>

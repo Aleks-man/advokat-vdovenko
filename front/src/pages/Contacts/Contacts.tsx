@@ -1,3 +1,4 @@
+import { SectionBackground } from '../../components/SectionBackground/SectionBackground'
 import { Mail, MapPin, Phone } from 'lucide-react'
 import { site } from '../../data/site'
 import { contactLinks } from '../../data/contacts'
@@ -19,7 +20,8 @@ export function Contacts() {
       >
         Свяжитесь со мной, чтобы задать вопрос или выбрать время консультации.
       </PageIntro>
-      <section className="container section contacts-layout">
+      <section className="container section contacts-layout section-with-background">
+        <SectionBackground variant="contacts" />
         <div className="contact-details">
           <div className="contact-detail">
             <Phone size={18} />

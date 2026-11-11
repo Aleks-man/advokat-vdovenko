@@ -3,8 +3,8 @@
   isolation: isolate;
   overflow: hidden;
   padding: var(--panel-space) var(--panel-inset);
-  background: #f0ede5;
-  border: 1px solid rgb(167 125 67 / 16%);
+  background: rgb(var(--surface-document-rgb));
+  border: 1px solid rgb(var(--accent-rgb) / 16%);
   border-radius: var(--panel-radius);
 }
 .principles::before {
@@ -21,10 +21,10 @@
   z-index: -1;
   background: linear-gradient(
     90deg,
-    #f0ede5 0%,
-    rgb(240 237 229 / 97%) 32%,
-    rgb(240 237 229 / 88%) 52%,
-    rgb(240 237 229 / 12%) 78%
+    rgb(var(--surface-document-rgb)) 0%,
+    rgb(var(--surface-document-rgb) / 97%) 32%,
+    rgb(var(--surface-document-rgb) / 88%) 52%,
+    rgb(var(--surface-document-rgb) / 12%) 78%
   );
 }
 .principles-content {
@@ -73,10 +73,10 @@
   .principles::after {
     background: linear-gradient(
       90deg,
-      #f0ede5 0%,
-      rgb(240 237 229 / 96%) 44%,
-      rgb(240 237 229 / 75%) 72%,
-      rgb(240 237 229 / 25%) 100%
+      rgb(var(--surface-document-rgb)) 0%,
+      rgb(var(--surface-document-rgb) / 96%) 44%,
+      rgb(var(--surface-document-rgb) / 75%) 72%,
+      rgb(var(--surface-document-rgb) / 25%) 100%
     );
   }
 }
@@ -90,7 +90,12 @@
     background-position: right bottom;
   }
   .principles::after {
-    background: linear-gradient(180deg, transparent 0, rgb(240 237 229 / 20%) 90px, #f0ede5 230px);
+    background: linear-gradient(
+      180deg,
+      transparent 0,
+      rgb(var(--surface-document-rgb) / 20%) 90px,
+      rgb(var(--surface-document-rgb)) 230px
+    );
   }
   .principles-content {
     width: 100%;

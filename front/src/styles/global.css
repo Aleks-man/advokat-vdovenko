@@ -7,7 +7,6 @@ html {
 }
 body {
   margin: 0;
-  background: var(--paper);
   color: var(--ink);
   font-family: var(--sans);
   -webkit-font-smoothing: antialiased;
@@ -42,7 +41,7 @@ button {
   cursor: pointer;
 }
 ::selection {
-  background: #d6ddc9;
+  background: var(--selection);
 }
 :focus-visible {
   outline: 2px solid var(--accent);

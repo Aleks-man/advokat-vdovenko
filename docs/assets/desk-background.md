@@ -1,6 +1,6 @@
 # Фон рабочего стола
 
-Файл: `front/src/assets/desk-background.webp` — 1536 × 1024 px, WebP. Создан встроенным image_gen; подключён в `front/src/styles/background.css`. Высветление, положение и плавное растворение задаются в CSS.
+Файл: `front/src/assets/desk-background.webp` — 1536 × 1024 px, WebP. Создан встроенным image_gen; подключён в `front/src/components/SectionBackground/SectionBackground.css`. Высветление, положение и плавное растворение задаются в CSS.
 
 ## Промпт
 
