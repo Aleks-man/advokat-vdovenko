@@ -12,8 +12,12 @@ export function App() {
   const { pathname } = useLocation()
   return (
     <>
-      {pathname !== '/' && (
-        <DeskBackground variant={pathname === '/contacts' ? 'contacts' : 'page'} />
+      {(pathname === '/practice' || pathname === '/about' || pathname === '/contacts') && (
+        <DeskBackground
+          variant={
+            pathname === '/contacts' ? 'contacts' : pathname === '/about' ? 'about' : 'practice'
+          }
+        />
       )}
       <a href="#main-content" className="skip-link">
         Перейти к содержимому

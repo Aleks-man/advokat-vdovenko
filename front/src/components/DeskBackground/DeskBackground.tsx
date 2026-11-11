@@ -1,9 +1,9 @@
 import './DeskBackground.css'
 
 type DeskBackgroundProps = {
-  variant?: 'page' | 'contacts' | 'section'
+  variant: 'practice' | 'contacts' | 'about'
 }
 
-export function DeskBackground({ variant = 'page' }: DeskBackgroundProps) {
+export function DeskBackground({ variant }: DeskBackgroundProps) {
   return <div className={`desk-background desk-background--${variant}`} aria-hidden="true" />
 }

@@ -3,6 +3,7 @@
   inset: 0;
   z-index: -1;
   pointer-events: none;
+  overflow: clip;
 }
 
 .desk-background::before {
@@ -15,8 +16,8 @@
   aspect-ratio: 3 / 2;
   transform: translateX(-50%);
   background-image:
-    linear-gradient(rgb(244 241 234 / 72%), rgb(244 241 234 / 80%)),
-    url('../../assets/desk-background.webp');
+    linear-gradient(rgb(244 241 234 / 35%), rgb(244 241 234 / 65%)),
+    url('../../assets/limestone-light.webp');
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -45,6 +46,9 @@
 .desk-background--contacts::before {
   top: clamp(240px, 24vw, 380px);
   transform: translateX(-50%) scaleX(-1);
+  background-image:
+    linear-gradient(rgb(244 241 234 / 72%), rgb(244 241 234 / 80%)),
+    url('../../assets/desk-background.webp');
 }
 
 @media (max-width: 760px) {
@@ -53,6 +57,18 @@
   }
 }
 
-.desk-background--section::before {
-  top: 0;
+.desk-background--about::before {
+  top: clamp(560px, 45vw, 720px);
+  background-image:
+    linear-gradient(rgb(244 241 234 / 72%), rgb(244 241 234 / 82%)),
+    url('../../assets/legal-library.webp');
+}
+
+@media (max-width: 760px) {
+  .desk-background--about::before {
+    top: 900px;
+    background-position:
+      center,
+      80% top;
+  }
 }
