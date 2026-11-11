@@ -16,15 +16,17 @@ export function UsefulMaterials() {
       </div>
       <div className="useful-materials-list">
         {usefulMaterials.map((material) => (
-          <AccordionItem key={material.id} title={material.title}>
-            <p>{material.intro}</p>
-            <ul className="useful-materials-points">
-              {material.points.map((point) => (
-                <li key={point}>{point}</li>
-              ))}
-            </ul>
-            <p>{material.closing}</p>
-          </AccordionItem>
+          <div key={material.id} id={`material-${material.id}`}>
+            <AccordionItem title={material.title}>
+              <p>{material.intro}</p>
+              <ul className="useful-materials-points">
+                {material.points.map((point) => (
+                  <li key={point}>{point}</li>
+                ))}
+              </ul>
+              <p>{material.closing}</p>
+            </AccordionItem>
+          </div>
         ))}
       </div>
     </section>
