@@ -1,31 +1,62 @@
 .principles {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  padding: var(--panel-space) var(--panel-inset);
-  background: rgb(var(--surface-document-rgb));
-  border: 1px solid rgb(var(--accent-rgb) / 16%);
-  border-radius: var(--panel-radius);
-}
-.principles::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: url('../../assets/document-folio.webp') center right / cover no-repeat;
-}
-.principles::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(
+  --document-wash: linear-gradient(
     90deg,
     rgb(var(--surface-document-rgb)) 0%,
     rgb(var(--surface-document-rgb) / 97%) 32%,
     rgb(var(--surface-document-rgb) / 88%) 52%,
     rgb(var(--surface-document-rgb) / 12%) 78%
   );
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: var(--panel-space) var(--panel-inset);
+}
+.principles::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: var(--document-wash), url('../../assets/document-folio.webp');
+  background-position: center right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  mask-image:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgb(0 0 0 / 6%) 1.5%,
+      rgb(0 0 0 / 25%) 3.5%,
+      rgb(0 0 0 / 55%) 6%,
+      rgb(0 0 0 / 82%) 8.5%,
+      rgb(0 0 0 / 96%) 10.5%,
+      #000 12.5%,
+      #000 87.5%,
+      rgb(0 0 0 / 96%) 89.5%,
+      rgb(0 0 0 / 82%) 91.5%,
+      rgb(0 0 0 / 55%) 94%,
+      rgb(0 0 0 / 25%) 96.5%,
+      rgb(0 0 0 / 6%) 98.5%,
+      transparent
+    ),
+    linear-gradient(
+      180deg,
+      transparent,
+      rgb(0 0 0 / 6%) 1.5%,
+      rgb(0 0 0 / 25%) 3.5%,
+      rgb(0 0 0 / 55%) 6%,
+      rgb(0 0 0 / 82%) 8.5%,
+      rgb(0 0 0 / 96%) 10.5%,
+      #000 12.5%,
+      #000 78%,
+      rgb(0 0 0 / 96%) 80.5%,
+      rgb(0 0 0 / 82%) 84%,
+      rgb(0 0 0 / 55%) 89%,
+      rgb(0 0 0 / 25%) 94%,
+      rgb(0 0 0 / 6%) 98%,
+      transparent
+    );
+  mask-composite: intersect;
+  pointer-events: none;
 }
 .principles-content {
   width: 57%;
@@ -70,8 +101,8 @@
   .principles-content {
     width: 72%;
   }
-  .principles::after {
-    background: linear-gradient(
+  .principles {
+    --document-wash: linear-gradient(
       90deg,
       rgb(var(--surface-document-rgb)) 0%,
       rgb(var(--surface-document-rgb) / 96%) 44%,
@@ -86,11 +117,15 @@
   }
   .principles::before {
     height: 260px;
-    background-size: auto 350px;
-    background-position: right bottom;
+    background-size:
+      100% 100%,
+      auto 350px;
+    background-position:
+      center,
+      right bottom;
   }
-  .principles::after {
-    background: linear-gradient(
+  .principles {
+    --document-wash: linear-gradient(
       180deg,
       transparent 0,
       rgb(var(--surface-document-rgb) / 20%) 90px,
