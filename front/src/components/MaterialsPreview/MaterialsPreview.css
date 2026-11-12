@@ -1,15 +1,17 @@
-.materials-preview {
+﻿.materials-preview {
   padding-bottom: var(--section-space);
 }
 .materials-preview-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-small) var(--space-large);
+  gap: var(--space-large);
 }
 .materials-preview-link {
   display: grid;
+  grid-template-columns: minmax(0, 1fr) 20px;
   grid-template-rows: subgrid;
-  grid-row: span 3;
+  grid-row: span 2;
+  gap: 12px;
   align-items: start;
   border-top: 1px solid var(--line);
   padding-top: 24px;
@@ -20,31 +22,26 @@
   transition: color 0.2s;
 }
 .materials-preview-link p {
-  margin: 0;
+  grid-column: 1 / -1;
   color: var(--muted);
-  font-size: var(--text-size);
 }
-.materials-preview-action {
-  margin-top: auto;
-  border-bottom: 1px solid currentColor;
-  padding-block: 6px;
-  color: var(--accent-text);
-  font-size: var(--text-size);
-}
-.materials-preview-link:hover h3 {
+.materials-preview-arrow {
+  grid-column: 2;
+  grid-row: 1;
+  margin-top: 4px;
   color: var(--accent-text);
 }
-@media (max-width: 700px) {
-  .materials-preview-link {
-    display: flex;
-    flex-direction: column;
-    grid-row: auto;
-  }
-  .materials-preview-link p {
-    margin-block: var(--space-small) var(--space-medium);
-  }
+.materials-preview-link:is(:hover, :focus-visible) h3 {
+  color: var(--accent-text);
+}
+@media (max-width: 760px) {
   .materials-preview-list {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 24px;
+  }
+  .materials-preview-link {
+    grid-template-rows: auto auto;
+    grid-row: auto;
+    padding-top: 20px;
   }
 }

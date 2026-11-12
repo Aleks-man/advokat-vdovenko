@@ -1,3 +1,4 @@
+﻿import { ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { usefulMaterials } from '../../data/usefulMaterials'
 import './MaterialsPreview.css'
@@ -5,12 +6,8 @@ import './MaterialsPreview.css'
 export function MaterialsPreview() {
   return (
     <section className="container materials-preview" aria-labelledby="materials-preview-title">
-      <div className="section-heading">
-        <p className="eyebrow">Полезное</p>
-        <div>
-          <h2 id="materials-preview-title">Можно прочитать заранее</h2>
-          <p className="section-intro">Короткие заметки о первом обращении и общении со мной.</p>
-        </div>
+      <div className="section-heading section-heading--simple">
+        <h2 id="materials-preview-title">Перед первым обращением</h2>
       </div>
       <div className="materials-preview-list">
         {usefulMaterials.map((material) => (
@@ -19,9 +16,9 @@ export function MaterialsPreview() {
             to={`/practice#material-${material.id}`}
             className="materials-preview-link"
           >
-            <h3>{material.title}</h3>
-            <p>{material.intro}</p>
-            <span className="materials-preview-action">Читать заметку</span>
+            <h3>{material.previewTitle}</h3>
+            <p>{material.previewText}</p>
+            <ArrowUpRight className="materials-preview-arrow" size={20} aria-hidden="true" />
           </Link>
         ))}
       </div>

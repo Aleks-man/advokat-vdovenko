@@ -443,3 +443,32 @@ test('decorative backgrounds leave no empty area below the footer', async ({ pag
     }
   }
 })
+
+test('material links open the selected note on navigation, reload and history changes', async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' })
+  for (const width of [1280, 320]) {
+    await page.setViewportSize({ width, height: 900 })
+    await page.goto('/')
+    const cards = page.locator('.materials-preview-link')
+    const target = await cards.first().getAttribute('href')
+    await cards.first().click()
+    await expect(page).toHaveURL(target!)
+    const note = page.locator('#material-first-conversation')
+    await expect(note.getByRole('button')).toHaveAttribute('aria-expanded', 'true')
+    await expect(note.getByRole('region')).toBeVisible()
+    await expect(note.getByRole('button')).toBeInViewport()
+    await note.getByRole('button').click()
+    await expect(note.getByRole('button')).toHaveAttribute('aria-expanded', 'false')
+    await page.reload()
+    await expect(note.getByRole('region')).toBeVisible()
+    await page.goBack()
+    await expect(page).toHaveURL('/')
+    await page.goForward()
+    await expect(note.getByRole('region')).toBeVisible()
+    await page.goto('/practice#material-help-for-relative')
+    await expect(page.locator('#material-help-for-relative').getByRole('region')).toBeVisible()
+    await expect(note.getByRole('button')).toHaveAttribute('aria-expanded', 'false')
+  }
+})

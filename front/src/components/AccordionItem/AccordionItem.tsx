@@ -3,11 +3,12 @@ import './AccordionItem.css'
 
 type AccordionItemProps = {
   title: string
+  defaultOpen?: boolean
   children: ReactNode
 }
 
-export function AccordionItem({ title, children }: AccordionItemProps) {
-  const [open, setOpen] = useState(false)
+export function AccordionItem({ title, children, defaultOpen = false }: AccordionItemProps) {
+  const [open, setOpen] = useState(defaultOpen)
   const id = useId()
   const triggerId = `${id}-trigger`
   const panelId = `${id}-panel`
