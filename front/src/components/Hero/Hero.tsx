@@ -13,12 +13,12 @@ export function Hero() {
           <em>{lastName.join(' ')}</em>
         </h1>
         <p className="hero-description">
-          Помогу разобраться в вашей ситуации
-          <span>Обсудим, что произошло и какая помощь нужна по делу.</span>
+          Защита по уголовным делам
+          <span>Помогаю на стадии проверки, следствия и в суде.</span>
         </p>
         <div className="hero-actions">
           <Link to="/contacts" className="button">
-            Связаться со мной
+            Обсудить ситуацию
           </Link>
         </div>
       </div>
