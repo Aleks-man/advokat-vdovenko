@@ -29,9 +29,6 @@
   margin: 0;
 }
 .first-conversation-list li {
-  display: grid;
-  grid-template-columns: 32px minmax(0, 1fr);
-  gap: 20px;
   padding-block: var(--space-medium);
   border-top: 1px solid var(--line);
 }
@@ -41,11 +38,6 @@
 }
 .first-conversation-list li:last-child {
   padding-bottom: 0;
-}
-.first-conversation-number {
-  padding-top: 4px;
-  color: var(--accent-text);
-  font-size: var(--text-caption);
 }
 .first-conversation-list h3 {
   font-size: var(--title-small);
@@ -65,9 +57,5 @@
   .first-conversation-note {
     max-width: 55ch;
     grid-row: 2;
-  }
-  .first-conversation-list li {
-    grid-template-columns: 24px minmax(0, 1fr);
-    gap: 12px;
   }
 }

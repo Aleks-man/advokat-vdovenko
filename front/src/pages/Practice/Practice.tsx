@@ -7,7 +7,7 @@ export function Practice() {
   return (
     <>
       <PageIntro
-        eyebrow="01 / Уголовная защита"
+        eyebrow="Уголовная защита"
         title={
           <>
             Помощь по делу
@@ -23,7 +23,6 @@ export function Practice() {
         <SectionBackground variant="practice" />
         {practiceAreas.map((area) => (
           <article className="practice-stage" id={`stage-${area.number}`} key={area.number}>
-            <span className="eyebrow">Этап / {area.number}</span>
             <div className="practice-stage-content">
               <h2>{area.title}</h2>
               <div className="practice-stage-topic">

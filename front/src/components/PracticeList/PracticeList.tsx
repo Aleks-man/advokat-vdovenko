@@ -7,7 +7,6 @@ export function PracticeList() {
     <div className="practice-list">
       {practiceAreas.map((area) => (
         <Link to={`/practice#stage-${area.number}`} className="practice-row" key={area.number}>
-          <span className="practice-number">{area.number}</span>
           <h3>{area.title}</h3>
           <p>{area.description}</p>
           <span className="practice-arrow" aria-hidden="true">

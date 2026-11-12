@@ -19,9 +19,8 @@ export function AboutPage() {
           </h2>
         </div>
         <div className="work-steps">
-          {workSteps.map((step, index) => (
+          {workSteps.map((step) => (
             <article key={step.title}>
-              <span className="step-number">0{index + 1}</span>
               <h3>{step.title}</h3>
               <p>{step.text}</p>
             </article>

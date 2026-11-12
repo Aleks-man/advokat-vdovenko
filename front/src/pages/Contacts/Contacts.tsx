@@ -11,7 +11,7 @@ export function Contacts() {
     <>
       <PageIntro
         compact
-        eyebrow="03 / Контакты"
+        eyebrow="Контакты"
         title={
           <>
             Связаться <em>со мной</em>

@@ -156,6 +156,10 @@ p {
   gap: 40px;
   margin-bottom: var(--space-large);
 }
+.section-heading--simple {
+  display: block;
+  max-width: 680px;
+}
 .section-heading .eyebrow {
   padding-top: 10px;
 }

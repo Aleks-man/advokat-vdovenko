@@ -6,7 +6,7 @@ export function AttorneyProfile() {
     <section className="about panel intro-surface" id="about" aria-labelledby="about-heading">
       <div className="container about-inner">
         <div className="about-heading">
-          <p className="eyebrow">02 / Обо мне</p>
+          <p className="eyebrow">Обо мне</p>
           <h1 id="about-heading">{about.name}</h1>
           <p className="about-profession">{about.profession}</p>
         </div>

@@ -22,8 +22,7 @@ export function FirstConversation() {
       className="container section first-conversation"
       aria-labelledby="first-conversation-title"
     >
-      <div className="section-heading">
-        <p className="eyebrow">02 / Перед разговором</p>
+      <div className="section-heading section-heading--simple">
         <div>
           <h2 id="first-conversation-title">С чего начать, если нужна помощь</h2>
           <p className="section-intro">
@@ -44,11 +43,8 @@ export function FirstConversation() {
           </Link>
         </aside>
         <ol className="first-conversation-list">
-          {preparationItems.map((item, index) => (
+          {preparationItems.map((item) => (
             <li key={item.title}>
-              <span className="first-conversation-number" aria-hidden="true">
-                0{index + 1}
-              </span>
               <div>
                 <h3>{item.title}</h3>
                 <p>{item.text}</p>

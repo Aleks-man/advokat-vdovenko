@@ -9,14 +9,9 @@ export function Home() {
     <>
       <Hero />
       <section className="section container" id="practice">
-        <div className="section-heading">
-          <p className="eyebrow">01 / Когда обращаться</p>
+        <div className="section-heading section-heading--simple">
           <div>
-            <h2>
-              С чем можно
-              <br />
-              обратиться
-            </h2>
+            <h2>С чем можно обратиться</h2>
             <p className="section-intro">
               Обратитесь ко мне, если вас вызывают на допрос, дело передано в суд или вы хотите
               обсудить уже вынесенное решение.

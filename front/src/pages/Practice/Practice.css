@@ -1,17 +1,10 @@
 .practice-stage {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 40px;
   padding-block: 48px;
   border-bottom: 1px solid var(--line);
   scroll-margin-top: 30px;
 }
 .practice-stages {
   padding-top: 24px;
-}
-.practice-stage > .eyebrow {
-  color: var(--accent-text);
-  padding-top: 10px;
 }
 .practice-stage h2 {
   font-size: var(--section-title);
@@ -26,6 +19,7 @@
   display: grid;
   gap: 24px;
   min-width: 0;
+  max-width: 840px;
 }
 .practice-stage-topic h3 {
   margin-bottom: var(--space-small);
@@ -54,8 +48,6 @@
 }
 @media (max-width: 700px) {
   .practice-stage {
-    grid-template-columns: 1fr;
-    gap: 20px;
     padding-block: 32px;
   }
 }
