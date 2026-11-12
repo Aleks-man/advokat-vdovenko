@@ -11,7 +11,7 @@ type PageIntroProps = {
 export function PageIntro({ eyebrow, title, children, compact = false }: PageIntroProps) {
   return (
     <section
-      className={`container page-intro page-intro-panel${compact ? ' page-intro-panel--compact' : ''}`}
+      className={`container page-intro page-intro-panel intro-surface${compact ? ' page-intro-panel--compact' : ''}`}
     >
       <p className="eyebrow">{eyebrow}</p>
       <h1>{title}</h1>

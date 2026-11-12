@@ -1,7 +1,5 @@
 .about {
   padding-block: var(--panel-space);
-  border: 1px solid var(--line);
-  background: var(--paper-light);
 }
 .about-inner {
   display: grid;

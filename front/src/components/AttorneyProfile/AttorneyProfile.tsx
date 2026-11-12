@@ -3,7 +3,7 @@ import './AttorneyProfile.css'
 
 export function AttorneyProfile() {
   return (
-    <section className="about panel" id="about" aria-labelledby="about-heading">
+    <section className="about panel intro-surface" id="about" aria-labelledby="about-heading">
       <div className="container about-inner">
         <div className="about-heading">
           <p className="eyebrow">02 / Обо мне</p>

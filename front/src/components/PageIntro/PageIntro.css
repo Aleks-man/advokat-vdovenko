@@ -1,9 +1,6 @@
 .page-intro.page-intro-panel {
   margin-top: 24px;
   padding: var(--panel-space) var(--panel-inset);
-  border: 1px solid var(--line);
-  border-radius: var(--card-radius);
-  background: var(--paper-light);
 }
 .page-intro-panel > h1 {
   max-width: 950px;
