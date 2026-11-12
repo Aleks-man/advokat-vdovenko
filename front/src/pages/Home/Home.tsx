@@ -4,6 +4,8 @@ import { Principles } from '../../components/Principles/Principles'
 import { FirstConversation } from '../../components/FirstConversation/FirstConversation'
 import { MaterialsPreview } from '../../components/MaterialsPreview/MaterialsPreview'
 
+import { ContactCallout } from '../../components/ContactCallout/ContactCallout'
+
 export function Home() {
   return (
     <>
@@ -23,6 +25,7 @@ export function Home() {
       <Principles />
       <FirstConversation />
       <MaterialsPreview />
+      <ContactCallout />
     </>
   )
 }

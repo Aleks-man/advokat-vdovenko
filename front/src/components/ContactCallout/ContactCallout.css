@@ -1,0 +1,65 @@
+.contact-callout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px 48px;
+  margin-bottom: var(--section-space);
+  padding: var(--panel-space) var(--panel-inset);
+  border: 1px solid var(--surface-dark-border);
+  border-radius: var(--panel-radius);
+  background: var(--surface-dark);
+  color: var(--on-dark);
+}
+.contact-callout-copy {
+  flex: 1 1 400px;
+  min-width: 0;
+}
+.contact-callout h2 {
+  max-width: 20ch;
+}
+.contact-callout p {
+  max-width: 44ch;
+  margin-top: 16px;
+  color: var(--on-dark-muted);
+}
+.contact-callout-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.contact-callout .button {
+  justify-content: center;
+  gap: 12px;
+  min-height: 56px;
+}
+.contact-callout .button svg {
+  flex-shrink: 0;
+}
+.contact-callout .contact-callout-primary {
+  background: var(--on-dark);
+  border-color: var(--on-dark);
+  color: var(--ink);
+}
+.contact-callout .contact-callout-primary:hover {
+  background: var(--paper-light);
+}
+.contact-callout .contact-callout-secondary {
+  background: transparent;
+  border-color: var(--on-dark-muted);
+  color: var(--on-dark);
+}
+.contact-callout .contact-callout-secondary:hover {
+  background: rgb(245 242 234 / 8%);
+}
+@media (max-width: 600px) {
+  .contact-callout {
+    gap: 28px;
+  }
+  .contact-callout-actions {
+    width: 100%;
+  }
+  .contact-callout .button {
+    padding-inline: 12px;
+  }
+}
