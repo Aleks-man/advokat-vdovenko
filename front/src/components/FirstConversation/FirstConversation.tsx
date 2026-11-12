@@ -1,18 +1,17 @@
-import { Link } from 'react-router-dom'
-import './FirstConversation.css'
+﻿import './FirstConversation.css'
 
 const preparationItems = [
   {
-    title: 'Коротко опишите, что произошло',
-    text: 'Когда началась ситуация, кого она касается и что происходит сейчас. Не нужно заранее подбирать юридические формулировки — расскажите своими словами.',
+    title: 'Расскажите о ситуации',
+    text: 'Что произошло и какая помощь нужна.',
   },
   {
-    title: 'Соберите то, что уже есть на руках',
-    text: 'Повестки, постановления, судебные решения, переписку и другие документы, которые относятся к вашему вопросу. При записи уточним, что стоит подготовить и как это передать.',
+    title: 'Обсудим задачу',
+    text: 'Какие документы изучить и что делать дальше.',
   },
   {
-    title: 'Сообщите о назначенных датах',
-    text: 'Если уже назначены допрос, заседание или другое действие, скажите об этом в начале разговора. Так я смогу понять, сколько времени есть на подготовку.',
+    title: 'Согласуем условия',
+    text: 'Объём работы, стоимость и порядок связи.',
   },
 ]
 
@@ -23,36 +22,17 @@ export function FirstConversation() {
       aria-labelledby="first-conversation-title"
     >
       <div className="section-heading section-heading--simple">
-        <div>
-          <h2 id="first-conversation-title">С чего начать, если нужна помощь</h2>
-          <p className="section-intro">
-            Не обязательно ждать, пока у вас будет полный комплект документов. Расскажите, что вам
-            известно, — я задам вопросы и объясню, что нужно уточнить.
-          </p>
-        </div>
+        <h2 id="first-conversation-title">Как начнём работу</h2>
       </div>
-      <div className="first-conversation-layout">
-        <aside className="first-conversation-note">
-          <h3>Если обращаетесь за близкого</h3>
-          <p>
-            Начните с того, что знаете сами: где он находится, кто с ним связывался и какие
-            документы есть у семьи. Если часть обстоятельств пока неизвестна, так и скажите.
-          </p>
-          <Link to="/about#approach" className="text-link">
-            Как договоримся о работе
-          </Link>
-        </aside>
-        <ol className="first-conversation-list">
-          {preparationItems.map((item) => (
-            <li key={item.title}>
-              <div>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
-      </div>
+      <ol className="first-conversation-list" role="list">
+        {preparationItems.map((item) => (
+          <li key={item.title}>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </li>
+        ))}
+      </ol>
+      <p className="first-conversation-note">Можно обратиться за себя или за близкого.</p>
     </section>
   )
 }
