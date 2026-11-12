@@ -23,10 +23,11 @@
 .footer-contacts {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
   min-width: 0;
   justify-self: end;
+  align-self: center;
 }
 .footer-phone,
 .footer-email {
@@ -78,6 +79,7 @@
 @media (max-width: 600px) {
   .footer {
     padding-top: 28px;
+    text-align: center;
   }
   .footer-top {
     grid-template-columns: minmax(0, 1fr);
@@ -90,7 +92,17 @@
   }
   .footer-contacts {
     gap: 8px;
-    justify-self: start;
-    align-items: flex-start;
+    justify-self: center;
+    align-items: center;
+  }
+  .footer-brand {
+    flex-direction: column;
+    justify-self: center;
+  }
+  .footer-bottom {
+    align-items: center;
+  }
+  .footer .messenger-links {
+    justify-content: center;
   }
 }
