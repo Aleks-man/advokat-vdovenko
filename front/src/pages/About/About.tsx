@@ -1,3 +1,4 @@
+import { ContactCallout } from '../../components/ContactCallout/ContactCallout'
 import { SectionBackground } from '../../components/SectionBackground/SectionBackground'
 import { AccordionItem } from '../../components/AccordionItem/AccordionItem'
 import { workSteps } from '../../data/workSteps'
@@ -40,6 +41,7 @@ export function AboutPage() {
           ))}
         </div>
       </section>
+      <ContactCallout />
     </>
   )
 }
