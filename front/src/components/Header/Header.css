@@ -192,6 +192,8 @@
     min-height: 0;
     max-height: calc(100dvh - var(--header-row-height));
     overflow: hidden;
+    scrollbar-width: none;
+    text-align: center;
     opacity: 0;
     transform: translateY(-8px);
     transition:
@@ -366,13 +368,14 @@
 @media (max-width: 960px) {
   .navigation.is-open .navigation-links {
     overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: var(--accent-text) transparent;
+  }
+  .navigation-links::-webkit-scrollbar {
+    display: none;
   }
   .navigation-contacts {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 8px;
     margin: 0 16px;
     padding: 12px 0 16px;
@@ -394,6 +397,7 @@
     color: var(--accent-light);
   }
   .navigation-contacts .messenger-links {
+    justify-content: center;
     gap: 8px;
   }
   .navigation-contacts .messenger-link {
