@@ -1,4 +1,4 @@
-﻿.principles {
+.principles {
   --document-wash: linear-gradient(
     90deg,
     rgb(var(--surface-document-rgb)) 0%,
@@ -72,23 +72,26 @@
   }
 }
 @media (max-width: 600px) {
-  .principles {
-    padding-block: 120px 32px;
+  .principles.container {
+    width: 100%;
+    padding: 36px calc(var(--gutter) + var(--panel-inset));
     --document-wash: linear-gradient(
-      180deg,
-      rgb(var(--surface-document-rgb) / 10%),
-      rgb(var(--surface-document-rgb)) 95%
+      90deg,
+      rgb(var(--surface-document-rgb) / 88%) 0%,
+      rgb(var(--surface-document-rgb) / 86%) 48%,
+      rgb(var(--surface-document-rgb) / 65%) 100%
     );
   }
   .principles::before {
-    inset: 0 0 auto;
+    inset: 0;
     width: 100%;
-    height: 170px;
+    height: 100%;
+    max-height: none;
     opacity: 1;
     background-size:
       100% 100%,
-      contain;
-    background-position: center top;
+      cover;
+    background-position: center;
   }
   .principles-content {
     width: 100%;

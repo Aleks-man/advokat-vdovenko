@@ -29,19 +29,11 @@
   position: relative;
   z-index: 2;
 }
-.hero-copy .eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  color: var(--accent-text);
-  letter-spacing: 0.12em;
-}
-.hero-copy .eyebrow::before {
-  content: '';
-  width: 28px;
-  height: 1px;
-  flex-shrink: 0;
-  background: currentColor;
+.hero-location {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
 }
 .hero h1 {
   margin-top: 32px;
@@ -62,9 +54,9 @@
 .hero-description {
   margin-top: var(--space-medium);
   max-width: 38ch;
-  font-size: var(--text-size);
-  font-weight: 400;
-  line-height: 1.6;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
 }
 .hero-description span {
   display: block;
@@ -72,7 +64,8 @@
   font-weight: 400;
   font-size: var(--text-size);
   margin-top: 12px;
-  max-width: 34ch;
+  max-width: 37ch;
+  line-height: var(--text-leading);
 }
 .hero-actions {
   display: flex;
@@ -119,7 +112,7 @@
   color: var(--muted);
 }
 .hero-bottom > :first-child {
-  letter-spacing: 0.15em;
+  font-weight: 500;
   color: var(--accent-text);
 }
 @media (max-width: 1100px) {
@@ -140,16 +133,17 @@
   .hero h1 {
     margin-top: var(--space-medium);
   }
-  .hero-copy .eyebrow {
-    font-size: 11px;
-    letter-spacing: 0.08em;
+  .hero-location {
+    max-width: 26ch;
+    font-size: 13px;
   }
   .hero .button {
     gap: 20px;
     padding-inline: 17px;
   }
   .hero-description {
-    margin-top: 24px;
+    margin-top: 20px;
+    font-size: 18px;
   }
   .hero-actions {
     gap: 12px;
@@ -181,21 +175,5 @@
     padding-block: 20px;
     gap: 10px;
     font-size: 11px;
-  }
-}
-@media (max-width: 380px) {
-  .hero-copy .eyebrow {
-    font-size: 11px;
-    letter-spacing: 0.06em;
-    gap: 10px;
-  }
-  .hero-copy .eyebrow::before {
-    width: 18px;
-  }
-  .hero {
-    padding-inline: var(--panel-inset);
-  }
-  .hero h1 {
-    font-size: var(--hero-title);
   }
 }

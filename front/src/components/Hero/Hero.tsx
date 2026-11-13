@@ -7,14 +7,17 @@ export function Hero() {
   return (
     <section className="hero container">
       <div className="hero-copy">
-        <p className="eyebrow">Адвокат по уголовным делам</p>
+        <p className="hero-location">Частная практика · Москва и область</p>
         <h1>
           <span>{firstName}</span>
           <em>{lastName.join(' ')}</em>
         </h1>
         <p className="hero-description">
-          Защита по уголовным делам
-          <span>Помогаю на стадии проверки, следствия и в суде.</span>
+          Адвокат по уголовным делам
+          <span>
+            Помогу разобраться в ситуации и определить следующие шаги — от проверки до защиты в
+            суде.
+          </span>
         </p>
         <div className="hero-actions">
           <Link to="/contacts" className="button">
