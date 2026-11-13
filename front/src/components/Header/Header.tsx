@@ -1,3 +1,4 @@
+import { MessengerLinks } from '../MessengerLinks/MessengerLinks'
 import { NavLink } from 'react-router-dom'
 import { Phone, Menu, X } from 'lucide-react'
 import { navigation, site } from '../../data/site'
@@ -43,6 +44,17 @@ export function Header() {
                 </NavLink>
               ))}
               <span className="navigation-indicator" aria-hidden="true" />
+              <div className="navigation-contacts">
+                <a
+                  className="navigation-phone"
+                  href={contactLinks.phone}
+                  aria-label={`Позвонить: ${site.phone}`}
+                >
+                  <Phone size={18} aria-hidden="true" />
+                  {site.phone}
+                </a>
+                <MessengerLinks />
+              </div>
             </div>
           </nav>
           <a

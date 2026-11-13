@@ -361,7 +361,7 @@ test('useful materials expand on practice page without adding navigation items',
     await page.goto('/practice')
     const materials = page.locator('.useful-materials')
     await expect(materials.locator('.accordion-item')).toHaveCount(3)
-    await expect(page.locator('#main-navigation a')).toHaveCount(4)
+    await expect(page.locator('#main-navigation .navigation-links > a')).toHaveCount(4)
     for (const item of await materials.locator('.accordion-item').all()) {
       const trigger = item.getByRole('button')
       await trigger.click()

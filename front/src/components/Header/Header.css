@@ -1,3 +1,6 @@
+.navigation-contacts {
+  display: none;
+}
 .navigation-links {
   display: contents;
 }
@@ -187,6 +190,7 @@
     flex-direction: column;
     align-items: stretch;
     min-height: 0;
+    max-height: calc(100dvh - var(--header-row-height));
     overflow: hidden;
     opacity: 0;
     transform: translateY(-8px);
@@ -198,19 +202,19 @@
     opacity: 1;
     transform: translateY(0);
   }
-  .navigation a {
+  .navigation-links > a {
     font-size: var(--text-size);
     min-height: 48px;
     padding: 14px 16px;
     border-radius: 8px;
   }
-  .navigation a:first-child {
+  .navigation-links > a:first-child {
     margin-top: 12px;
   }
-  .navigation a:last-of-type {
+  .navigation-links > a:last-of-type {
     margin-bottom: 20px;
   }
-  .navigation a[aria-current='page'] {
+  .navigation-links > a[aria-current='page'] {
     background: rgb(223 188 131 / 12%);
     color: var(--accent-light);
   }
@@ -325,7 +329,7 @@
   }
   .header .navigation {
     max-height: calc(100dvh - var(--header-row-height));
-    overflow-y: auto;
+    overflow: hidden;
   }
 }
 @media (max-width: 380px) {
@@ -356,5 +360,56 @@
   }
   .header--compact .header-compact-name {
     font-size: 15px;
+  }
+}
+
+@media (max-width: 960px) {
+  .navigation.is-open .navigation-links {
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-text) transparent;
+  }
+  .navigation-contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 0 16px;
+    padding: 12px 0 16px;
+    border-top: 1px solid var(--line-dark);
+  }
+  .navigation .navigation-phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    padding: 8px 0;
+    color: var(--on-dark);
+    font-size: var(--text-size);
+    font-weight: 500;
+    white-space: nowrap;
+    border-radius: 0;
+  }
+  .navigation-phone svg {
+    color: var(--accent-light);
+  }
+  .navigation-contacts .messenger-links {
+    gap: 8px;
+  }
+  .navigation-contacts .messenger-link {
+    width: 44px;
+    height: 44px;
+    min-height: 44px;
+    padding: 10px;
+    border-radius: 8px;
+    color: var(--accent-light);
+  }
+  .navigation-contacts .messenger-icon {
+    width: 24px;
+    height: 24px;
+  }
+  .navigation-contacts a:is(:hover, :focus-visible) {
+    background: rgb(223 188 131 / 8%);
+    color: var(--on-dark);
   }
 }
