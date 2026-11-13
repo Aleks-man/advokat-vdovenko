@@ -4,7 +4,7 @@ import telegramIcon from '../../assets/icons/telegram.svg'
 import { contactLinks } from '../../data/contacts'
 import './MessengerLinks.css'
 
-export function MessengerLinks() {
+export function MessengerLinks({ showLabels = false }: { showLabels?: boolean }) {
   const messengers = [
     {
       name: 'Viber',
@@ -27,18 +27,30 @@ export function MessengerLinks() {
   ]
 
   return (
-    <div className="messenger-links" role="group" aria-label="Связаться в мессенджерах">
+    <div
+      className={`messenger-links${showLabels ? ' messenger-links--labeled' : ''}`}
+      role="group"
+      aria-label="Связаться в мессенджерах"
+    >
       {messengers.map((messenger) => (
         <a
           key={messenger.kind}
-          className={`messenger-link messenger-link--${messenger.kind}`}
+          className="messenger-link"
           href={messenger.href}
           aria-label={`Написать в ${messenger.name}`}
           title={messenger.name}
           target={messenger.kind === 'viber' ? undefined : '_blank'}
           rel={messenger.kind === 'viber' ? undefined : 'noopener noreferrer'}
         >
-          <img src={messenger.icon} alt="" width="19" height="19" />
+          {showLabels && <span className="messenger-label">{messenger.name}</span>}
+          <span
+            className="messenger-icon"
+            style={{
+              maskImage: `url("${messenger.icon}")`,
+              WebkitMaskImage: `url("${messenger.icon}")`,
+            }}
+            aria-hidden="true"
+          />
         </a>
       ))}
     </div>
