@@ -374,6 +374,31 @@ test('useful materials expand on practice page without adding navigation items',
   }
 })
 
+test('mobile menu content keeps its size throughout opening and closing', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 })
+  await page.goto('/')
+  await page.evaluate(() => document.fonts.ready)
+  for (const open of [true, false]) {
+    const heights = await page.evaluate(async (open) => {
+      const nav = document.querySelector('#main-navigation')!
+      const links = nav.querySelector('.navigation-links')!
+      const button = document.querySelector<HTMLButtonElement>('.menu-toggle')!
+      button.click()
+      while (nav.classList.contains('is-open') !== open) {
+        await new Promise(requestAnimationFrame)
+      }
+      const heights: number[] = []
+      const start = performance.now()
+      while (performance.now() - start < 450) {
+        heights.push(links.getBoundingClientRect().height)
+        await new Promise(requestAnimationFrame)
+      }
+      return heights
+    }, open)
+    expect(Math.max(...heights) - Math.min(...heights)).toBeLessThan(1)
+  }
+})
+
 test('mobile menu dismisses outside and with Escape, and resets after desktop resize', async ({
   page,
 }) => {
