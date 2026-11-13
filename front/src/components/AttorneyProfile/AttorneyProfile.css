@@ -1,4 +1,4 @@
-﻿.about {
+.about {
   padding-block: var(--panel-space);
   border: 1px solid var(--line);
   background: rgb(255 254 250 / 60%);
@@ -49,14 +49,15 @@
   font-family: var(--heading);
   font-size: var(--page-title);
   font-weight: 400;
-  line-height: 1.15;
+  line-height: 1.16;
   letter-spacing: normal;
 }
 .about-profession {
   margin-top: 16px;
-  font-size: 20px;
+  font-size: var(--text-lead);
   font-weight: 500;
   color: var(--ink);
+  line-height: var(--subheading-leading);
 }
 .about-biography {
   display: grid;
@@ -82,7 +83,7 @@
 }
 .about-facts dd {
   margin: 0;
-  font-size: 14px;
+  font-size: var(--text-secondary);
   font-weight: 500;
   line-height: 1.5;
   color: var(--ink);
@@ -109,7 +110,7 @@
     padding-block: 32px;
   }
   .about-profession {
-    font-size: 18px;
+    font-size: var(--text-lead);
   }
   .about-portrait {
     max-width: 228px;

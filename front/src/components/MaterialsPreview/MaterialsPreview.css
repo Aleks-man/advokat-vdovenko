@@ -1,4 +1,4 @@
-﻿.materials-preview {
+.materials-preview {
   margin-top: 32px;
   padding-top: 24px;
   border-top: 1px solid var(--line);
@@ -6,7 +6,7 @@
 .materials-preview-label {
   margin-bottom: 12px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: var(--text-secondary);
 }
 .materials-preview-list {
   display: flex;
@@ -20,7 +20,7 @@
   min-height: 44px;
   padding-block: 8px;
   color: var(--accent-text);
-  font-size: 14px;
+  font-size: var(--text-secondary);
   font-weight: 500;
   text-decoration: underline;
   text-decoration-color: transparent;

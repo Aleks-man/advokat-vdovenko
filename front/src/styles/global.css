@@ -65,7 +65,7 @@ h1 {
   font-family: var(--heading);
   font-weight: 400;
   font-size: var(--page-title);
-  line-height: 1.14;
+  line-height: 1.16;
   letter-spacing: -0.02em;
 }
 h2 {
@@ -129,7 +129,7 @@ p {
   border-radius: 8px;
   border: 1px solid var(--ink);
   font-size: var(--text-size);
-  font-weight: 500;
+  font-weight: 600;
   transition:
     background 0.2s,
     transform 0.2s;
@@ -154,7 +154,7 @@ p {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 40px;
-  margin-bottom: var(--space-large);
+  margin-bottom: var(--space-medium);
 }
 .section-heading--simple {
   display: block;
@@ -188,7 +188,7 @@ p {
   .section-heading {
     grid-template-columns: 1fr;
     gap: 16px;
-    margin-bottom: 32px;
+    margin-bottom: var(--space-medium);
   }
   .section-heading .eyebrow {
     padding-top: 0;

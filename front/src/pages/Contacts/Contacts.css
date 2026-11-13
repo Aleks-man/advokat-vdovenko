@@ -1,9 +1,9 @@
-﻿.contacts-layout {
+.contacts-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
   align-items: start;
   gap: 40px;
-  padding-block: 24px 56px;
+  padding-block: 24px var(--section-space);
 }
 .contact-detail {
   display: flex;
@@ -68,7 +68,7 @@
   display: block;
   line-height: var(--text-leading);
   color: var(--muted);
-  font-size: 14px;
+  font-size: var(--text-secondary);
 }
 .contact-details .messenger-links {
   display: grid;
@@ -85,7 +85,7 @@
   min-height: 76px;
   padding: 10px 4px;
   border: 1px solid var(--line);
-  border-radius: 10px;
+  border-radius: 8px;
   background: rgb(var(--accent-rgb) / 5%);
   color: var(--ink);
   transition:

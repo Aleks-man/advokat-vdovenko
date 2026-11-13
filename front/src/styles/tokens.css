@@ -26,9 +26,11 @@
   --card-radius: 16px;
   --heading: Georgia, 'Times New Roman', serif;
   --sans: 'Onest Variable', 'Segoe UI', Arial, sans-serif;
-  --section-space: clamp(56px, 6vw, 80px);
-  --panel-space: clamp(40px, 5vw, 64px);
+  --section-space: clamp(32px, 4vw, 48px);
+  --panel-space: clamp(32px, 4vw, 48px);
   --text-size: 16px;
+  --text-secondary: 14px;
+  --text-lead: 20px;
   --text-caption: 12px;
   --subheading-weight: 600;
   --subheading-leading: 1.4;
@@ -57,5 +59,6 @@
     --section-title: 28px;
     --page-title: 32px;
     --hero-title: 40px;
+    --text-lead: 18px;
   }
 }

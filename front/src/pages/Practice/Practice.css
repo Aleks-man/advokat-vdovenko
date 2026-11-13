@@ -1,4 +1,4 @@
-﻿.practice-stage-nav {
+.practice-stage-nav {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -11,9 +11,9 @@
   min-height: 48px;
   padding: 12px 16px;
   border: 1px solid var(--line);
-  border-radius: 10px;
+  border-radius: 8px;
   background: rgb(255 254 250 / 65%);
-  font-size: 14px;
+  font-size: var(--text-secondary);
   font-weight: 500;
   transition:
     background 0.2s,
@@ -78,7 +78,7 @@
 }
 .practice-stage-topic h3 {
   margin-bottom: 12px;
-  font-size: var(--text-size);
+  font-size: var(--title-small);
   line-height: var(--subheading-leading);
 }
 .practice-services {
@@ -96,7 +96,7 @@
 .content-disclaimer {
   padding-block: 28px var(--section-space);
   color: var(--muted);
-  font-size: 14px;
+  font-size: var(--text-secondary);
   line-height: var(--text-leading);
 }
 @media (max-width: 850px) {
