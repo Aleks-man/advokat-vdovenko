@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { site } from '../../data/site'
+import { contactLinks } from '../../data/contacts'
 import justiceHero from '../../assets/justice-hero.webp'
 import './Hero.css'
 export function Hero() {
@@ -23,6 +24,14 @@ export function Hero() {
           <Link to="/contacts" className="button">
             Обсудить ситуацию
           </Link>
+          <a
+            className="text-link"
+            href={contactLinks.telegram}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Написать в Telegram
+          </a>
         </div>
       </div>
       <div className="hero-art">

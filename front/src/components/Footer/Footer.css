@@ -70,10 +70,6 @@
   .footer-top {
     gap: 30px;
   }
-  .footer-bottom {
-    flex-direction: column;
-    gap: 10px;
-  }
 }
 
 @media (max-width: 600px) {
@@ -100,6 +96,8 @@
     justify-self: center;
   }
   .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
     align-items: center;
   }
   .footer .messenger-links {
