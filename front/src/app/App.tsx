@@ -1,3 +1,4 @@
+import { PageScrollbar } from '../components/PageScrollbar/PageScrollbar'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { Header } from '../components/Header/Header'
 import { Footer } from '../components/Footer/Footer'
@@ -26,6 +27,7 @@ export function App() {
         </Routes>
       </main>
       <Footer />
+      <PageScrollbar />
     </>
   )
 }

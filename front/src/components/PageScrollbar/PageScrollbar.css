@@ -1,0 +1,49 @@
+html.overlay-scrollbar-enabled {
+  scrollbar-width: none;
+}
+html.overlay-scrollbar-enabled::-webkit-scrollbar {
+  display: none;
+}
+.page-scrollbar {
+  position: fixed;
+  top: 12px;
+  right: 2px;
+  width: 14px;
+  z-index: 90;
+  opacity: 0;
+  touch-action: none;
+  user-select: none;
+  transition: opacity 0.25s;
+}
+.page-scrollbar[hidden] {
+  display: none;
+}
+.page-scrollbar[data-visible='true'],
+.page-scrollbar:hover,
+.page-scrollbar:focus-visible {
+  opacity: 1;
+}
+.page-scrollbar:focus-visible {
+  outline-offset: -2px;
+}
+.page-scrollbar-thumb {
+  position: absolute;
+  top: 0;
+  right: 4px;
+  width: 4px;
+  height: var(--thumb-height, 40px);
+  transform: translateY(var(--thumb-top, 0px));
+  border-radius: 999px;
+  background: var(--ink);
+
+  opacity: 0.8;
+}
+.page-scrollbar:is(:hover, :focus-visible) .page-scrollbar-thumb {
+  opacity: 1;
+}
+@media (forced-colors: active) {
+  .page-scrollbar-thumb {
+    background: ButtonText;
+    opacity: 1;
+  }
+}
