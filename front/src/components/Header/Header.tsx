@@ -36,12 +36,14 @@ export function Header() {
             className={`navigation ${open ? 'is-open' : ''}`}
             aria-label="Основная навигация"
           >
-            {navigation.map((item) => (
-              <NavLink key={item.to} to={item.to} end onClick={close}>
-                {item.label}
-              </NavLink>
-            ))}
-            <span className="navigation-indicator" aria-hidden="true" />
+            <div className="navigation-links">
+              {navigation.map((item) => (
+                <NavLink key={item.to} to={item.to} end onClick={close}>
+                  {item.label}
+                </NavLink>
+              ))}
+              <span className="navigation-indicator" aria-hidden="true" />
+            </div>
           </nav>
           <a
             className="header-contact"

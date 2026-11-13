@@ -361,7 +361,7 @@ test('useful materials expand on practice page without adding navigation items',
     await page.goto('/practice')
     const materials = page.locator('.useful-materials')
     await expect(materials.locator('.accordion-item')).toHaveCount(3)
-    await expect(page.locator('#main-navigation > a')).toHaveCount(4)
+    await expect(page.locator('#main-navigation a')).toHaveCount(4)
     for (const item of await materials.locator('.accordion-item').all()) {
       const trigger = item.getByRole('button')
       await trigger.click()
@@ -382,8 +382,25 @@ test('mobile menu dismisses outside and with Escape, and resets after desktop re
     await page.goto('/')
     const toggle = page.locator('.menu-toggle')
     const nav = page.locator('#main-navigation')
+    const closedHeader = await page.locator('header').boundingBox()
+    const mainTop = await page.locator('main').evaluate((el) => el.getBoundingClientRect().top)
     await toggle.click()
     await expect(nav).toBeVisible()
+    await expect
+      .poll(async () => (await page.locator('header').boundingBox())!.height)
+      .toBeGreaterThan(closedHeader!.height + 150)
+    await expect
+      .poll(() =>
+        page.evaluate(() => {
+          const header = document.querySelector('header')!.getBoundingClientRect()
+          const nav = document.querySelector('#main-navigation')!.getBoundingClientRect()
+          return nav.bottom - header.bottom
+        }),
+      )
+      .toBeLessThanOrEqual(1)
+    expect(await page.locator('main').evaluate((el) => el.getBoundingClientRect().top)).toBe(
+      mainTop,
+    )
     await nav.locator('a').first().focus()
     await page.keyboard.press('Escape')
     await expect(nav).toBeHidden()
