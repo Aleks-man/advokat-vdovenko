@@ -1,8 +1,9 @@
-.contacts-layout {
+﻿.contacts-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 64px;
-  padding-block: 40px 56px;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  align-items: start;
+  gap: 40px;
+  padding-block: 24px 56px;
 }
 .contact-detail {
   display: flex;
@@ -10,12 +11,9 @@
   padding-block: 24px;
   border-bottom: 1px solid var(--line);
 }
-.contact-detail:first-child {
-  border-top: 1px solid var(--line);
-}
 .contact-detail > svg {
   margin-top: 4px;
-  color: var(--accent);
+  color: var(--accent-text);
   flex-shrink: 0;
 }
 .contact-detail .eyebrow {
@@ -27,19 +25,41 @@
 }
 .contact-detail .contact-value {
   display: block;
-  margin-block: var(--space-small);
+  margin-block: 8px;
   font-family: var(--sans);
   font-weight: 500;
   line-height: 1.5;
   overflow-wrap: anywhere;
 }
-.contact-phone {
-  font-size: var(--title-small);
+.contact-detail--primary {
+  position: relative;
+  display: block;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--card-radius);
+  background: rgb(255 254 250 / 85%);
+}
+.contact-detail--primary > svg {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+}
+.contact-detail--primary .contact-phone {
+  width: fit-content;
+  min-height: 44px;
+  padding-block: 4px;
+  font-size: clamp(20px, 5.5vw, 28px);
+  font-weight: 600;
   white-space: nowrap;
 }
 .contact-email,
 .contact-address {
-  font-size: var(--title-small);
+  font-size: 18px;
+}
+.contact-email {
+  width: fit-content;
+  min-height: 44px;
+  padding-block: 4px;
 }
 .contact-value[href]:hover {
   color: var(--accent-text);
@@ -48,57 +68,91 @@
   display: block;
   line-height: var(--text-leading);
   color: var(--muted);
-  font-size: var(--text-size);
+  font-size: 14px;
+}
+.contact-details .messenger-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 20px;
+}
+.contact-details .messenger-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  min-width: 0;
+  min-height: 76px;
+  padding: 10px 4px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgb(var(--accent-rgb) / 5%);
+  color: var(--ink);
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+.contact-details .messenger-icon {
+  order: -1;
+  width: 22px;
+  height: 22px;
+  color: var(--accent-text);
+}
+.contact-details .messenger-label {
+  letter-spacing: normal;
+}
+.contact-details .messenger-link:is(:hover, :focus-visible) {
+  border-color: var(--accent);
+  background: rgb(var(--accent-rgb) / 10%);
 }
 .contact-aside {
   background: var(--surface-dark);
   border: 1px solid var(--surface-dark-border);
   color: var(--on-dark);
   border-radius: var(--card-radius);
-  padding: 40px;
+  padding: 32px;
 }
 .contact-aside > .eyebrow {
   color: var(--accent-light);
 }
 .contact-aside h2 {
   font-size: var(--section-title);
-  margin-block: var(--space-medium);
+  margin-block: 20px;
 }
 .contact-aside h2 em {
   font-weight: 400;
   color: var(--accent-light);
   font-style: normal;
 }
-.contact-aside > p:not(.eyebrow) {
+.contact-aside > p:not(.eyebrow),
+.contact-aside-note {
   color: var(--on-dark-muted);
   font-size: var(--text-size);
 }
 .contact-aside-note {
-  font-size: var(--text-size);
-  color: var(--on-dark-muted);
   line-height: var(--text-leading);
-  padding-top: var(--space-medium);
-  margin-top: var(--space-medium);
+  padding-top: 20px;
+  margin-top: 20px;
   border-top: 1px solid var(--line-dark);
 }
 @media (max-width: 850px) {
   .contacts-layout {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 28px;
+  }
+}
+@media (max-width: 600px) {
+  .contacts-layout {
+    padding-top: 12px;
+  }
+  .contact-detail--primary {
+    padding: 20px;
+  }
+  .contact-detail--primary > svg {
+    top: 18px;
+    right: 20px;
   }
   .contact-aside {
-    padding: 30px;
-  }
-}
-
-.contact-details .messenger-links {
-  margin-top: 16px;
-}
-
-@media (max-width: 700px) {
-  .contact-phone,
-  .contact-email {
-    min-height: 44px;
-    padding-block: 6px;
+    padding: 24px;
   }
 }

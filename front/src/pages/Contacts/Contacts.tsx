@@ -23,15 +23,15 @@ export function Contacts() {
       <section className="container section contacts-layout section-with-background">
         <SectionBackground variant="contacts" />
         <div className="contact-details">
-          <div className="contact-detail">
+          <div className="contact-detail contact-detail--primary">
             <Phone size={18} />
             <div>
               <span className="eyebrow">Телефон</span>
               <a className="contact-value contact-phone" href={contactLinks.phone}>
                 {site.phone}
               </a>
-              <small>Позвоните или напишите в удобном мессенджере</small>
-              <MessengerLinks />
+              <small>Позвоните или выберите удобный мессенджер</small>
+              <MessengerLinks showLabels />
             </div>
           </div>
           <div className="contact-detail">
@@ -61,9 +61,7 @@ export function Contacts() {
         <aside className="contact-aside">
           <p className="eyebrow">Перед обращением</p>
           <h2>
-            Как договориться
-            <br />
-            <em>о встрече</em>
+            Договоримся <em>о встрече</em>
           </h2>
           <p>
             В первом сообщении коротко опишите ситуацию. Если уже назначен допрос или заседание,
