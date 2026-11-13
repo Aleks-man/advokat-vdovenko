@@ -5,8 +5,6 @@ type PracticeArea = {
   situation: string
   services: string[]
 }
-
-// Presentation service descriptions: confirm the actual scope before publishing.
 export const practiceAreas: PracticeArea[] = [
   {
     number: '01',

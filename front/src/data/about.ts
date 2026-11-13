@@ -1,11 +1,8 @@
-import portraitPlaceholder from '../assets/about-portrait-placeholder.webp'
+import portrait from '../assets/about-portrait.webp'
 import { site } from './site'
-
-// Presentation biography: replace these fictional details before publishing.
 export const about = {
   name: site.name,
-  // Generated fictional portrait; replace with the actual photograph before publishing.
-  portrait: { src: portraitPlaceholder, alt: 'Деловой портрет' },
+  portrait: { src: portrait, alt: 'Деловой портрет' },
   profession: site.profession,
   paragraphs: [
     'Юридическое образование получил в 2012 году. С 2014 года занимаюсь уголовными делами: участвую в защите на стадии следствия, работаю в суде и готовлю жалобы на судебные решения.',

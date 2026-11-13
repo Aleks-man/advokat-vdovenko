@@ -1,7 +1,0 @@
-# Legal library
-
-File: front/src/assets/legal-library.webp (1536 x 1024). Generated with built-in image_gen. Used only on /about; replaces the consultation armchairs. Contemporary legal volumes symbolize professional knowledge and experience.
-
-## Prompt
-
-Use case: photorealistic-natural. Asset type: elegant decorative background for a criminal defense attorney About page, landscape 3:2. Editorial fine-art still life of THREE substantial contemporary legal reference volumes with deep forest green cloth bindings, thin subtle gold rules on their spines, standing upright together on a pale warm limestone ledge at the FAR RIGHT. A single sculptural curved brushed brass bookend supports them. One volume leaning very slightly, carefully composed sculptural silhouette, beautiful natural fabric and paper edges. No visible titles or letters. LEFT TWO THIRDS completely empty warm ivory plaster wall and limestone ledge, for website copy. Refined modern professional library atmosphere, intellectual depth and personal expertise. Soft afternoon window light with gentle diagonal shadows, premium sharp natural photography, restrained palette ivory #f3f1eb, forest green #202b25, muted brass #a77d43. Clean fresh surfaces, no vintage distress, no old parchment, no orange sepia. No open book, no notebooks, no pens, no pencils, no loose documents, no folder, no chairs, no columns, no scales, no gavel, no people, no readable text, no logos, no watermark, no UI. Output photo only.

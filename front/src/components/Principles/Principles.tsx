@@ -1,7 +1,5 @@
-﻿import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './Principles.css'
-
-// Presentation copy; confirm the description of the practice before publishing.
 const documentQuestions = [
   {
     title: 'Повестка',

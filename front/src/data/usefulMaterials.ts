@@ -1,4 +1,3 @@
-// Организационные памятки для первого обращения. Содержание согласую перед публикацией.
 export const usefulMaterials = [
   {
     id: 'first-conversation',
