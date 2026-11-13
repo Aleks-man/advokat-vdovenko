@@ -194,6 +194,16 @@ p {
     padding-top: 0;
   }
 }
+@media (max-width: 760px) {
+  .hero-copy,
+  .principles,
+  .section-with-background {
+    --ink: var(--ink-dark);
+    --muted: var(--ink-dark);
+    --accent-text: #594020;
+    color: var(--ink);
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

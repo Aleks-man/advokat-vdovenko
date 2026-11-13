@@ -1,10 +1,11 @@
 .principles {
   --document-wash: linear-gradient(
     90deg,
-    rgb(var(--surface-document-rgb)) 0%,
-    rgb(var(--surface-document-rgb) / 90%) 24%,
-    rgb(var(--surface-document-rgb) / 12%) 80%
+    rgb(var(--surface-document-rgb) / 94%) 0%,
+    rgb(var(--surface-document-rgb) / 88%) clamp(0px, calc(100vw - 700px), 500px),
+    rgb(var(--surface-document-rgb) / 12%) max(100%, 1100px)
   );
+  --muted: var(--ink);
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -14,8 +15,8 @@
   content: '';
   position: absolute;
   inset: 0 0 0 auto;
-  width: 46%;
-  max-height: 420px;
+  width: 100%;
+  height: 100%;
   z-index: -1;
   background-image: var(--document-wash), url('../../assets/document-folio.webp');
   background-position: center right;
@@ -29,8 +30,7 @@
   pointer-events: none;
 }
 .principles-content {
-  width: 62%;
-  max-width: 640px;
+  width: min(100%, 640px);
 }
 .principles-lead {
   max-width: 48ch;
@@ -61,39 +61,4 @@
 }
 .principles .text-link:hover {
   color: var(--ink);
-}
-@media (max-width: 900px) {
-  .principles-content {
-    width: 72%;
-  }
-  .principles::before {
-    width: 40%;
-    opacity: 0.65;
-  }
-}
-@media (max-width: 600px) {
-  .principles.container {
-    width: 100%;
-    padding: 36px calc(var(--gutter) + var(--panel-inset));
-    --document-wash: linear-gradient(
-      90deg,
-      rgb(var(--surface-document-rgb) / 88%) 0%,
-      rgb(var(--surface-document-rgb) / 86%) 48%,
-      rgb(var(--surface-document-rgb) / 65%) 100%
-    );
-  }
-  .principles::before {
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    max-height: none;
-    opacity: 1;
-    background-size:
-      100% 100%,
-      cover;
-    background-position: center;
-  }
-  .principles-content {
-    width: 100%;
-  }
 }

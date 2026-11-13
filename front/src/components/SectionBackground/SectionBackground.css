@@ -1,4 +1,5 @@
 .section-with-background {
+  --muted: var(--ink);
   position: relative;
   isolation: isolate;
 }
@@ -19,10 +20,15 @@
   position: absolute;
   inset: 0 0 auto;
   width: 100%;
-  aspect-ratio: 3 / 2;
+  height: clamp(360px, 40vw, 520px);
   max-height: 100%;
   background-image:
-    linear-gradient(180deg, rgb(var(--background-rgb) / 70%), rgb(var(--background-rgb) / 78%)),
+    linear-gradient(
+      90deg,
+      rgb(var(--background-rgb) / 92%) 0%,
+      rgb(var(--background-rgb) / 88%) clamp(0px, calc(100vw - 700px), 500px),
+      rgb(var(--background-rgb) / 12%) max(100%, 1100px)
+    ),
     var(--section-image);
   background-size:
     100% 100%,
@@ -46,22 +52,10 @@
 }
 
 .section-background--contacts::before {
+  top: 25%;
   transform: scaleX(-1);
 }
 
 .section-background--about {
   --section-image: url('../../assets/legal-library.webp');
-}
-
-@media (max-width: 760px) {
-  .section-background::before {
-    height: min(100%, 520px);
-    aspect-ratio: auto;
-    background-size:
-      100% 100%,
-      auto 520px;
-    background-position:
-      center,
-      right top;
-  }
 }

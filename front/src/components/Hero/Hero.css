@@ -129,6 +129,7 @@
     padding: 30px var(--panel-inset) 0;
   }
   .hero-copy {
+    --muted: var(--ink);
     padding: 0 0 28px;
   }
   .hero h1 {
@@ -162,7 +163,7 @@
     height: auto;
     object-fit: contain;
     object-position: right top;
-    opacity: 0.18;
+    opacity: 0.28;
     filter: none;
     mask-image:
       linear-gradient(90deg, transparent, #000 45%),

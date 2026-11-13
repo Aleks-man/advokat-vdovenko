@@ -343,7 +343,7 @@ test('Themis stays full size at 790px and becomes background below it', async ({
       expect(bounds!.y - hero!.y).toBeCloseTo(padding, 0)
     } else {
       await expect(art).toHaveCSS('position', 'absolute')
-      await expect(page.locator('.hero-image')).toHaveCSS('opacity', '0.18')
+      await expect(page.locator('.hero-image')).toHaveCSS('opacity', '0.28')
     }
     if ([800, 790, 789].includes(width)) {
       await page.locator('.hero').screenshot({ path: `artifacts/hero-breakpoint-${width}.png` })
