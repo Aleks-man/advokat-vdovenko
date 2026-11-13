@@ -1,4 +1,4 @@
-﻿import { Mail, Phone } from 'lucide-react'
+import { Mail, Phone } from 'lucide-react'
 import { site } from '../../data/site'
 import { MessengerLinks } from '../MessengerLinks/MessengerLinks'
 import { Brand } from '../Brand/Brand'
@@ -11,7 +11,7 @@ export function Footer() {
         <div className="footer-top">
           <Brand className="footer-brand" />
           <div className="footer-contacts">
-            <MessengerLinks showLabels />
+            <MessengerLinks />
             <a className="footer-phone" href={contactLinks.phone}>
               <Phone size={16} aria-hidden="true" />
               <span>{site.phone}</span>
