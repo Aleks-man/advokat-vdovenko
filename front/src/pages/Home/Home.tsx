@@ -2,7 +2,6 @@ import { Hero } from '../../components/Hero/Hero'
 import { PracticeList } from '../../components/PracticeList/PracticeList'
 import { Principles } from '../../components/Principles/Principles'
 import { FirstConversation } from '../../components/FirstConversation/FirstConversation'
-import { MaterialsPreview } from '../../components/MaterialsPreview/MaterialsPreview'
 
 import { ContactCallout } from '../../components/ContactCallout/ContactCallout'
 
@@ -24,7 +23,7 @@ export function Home() {
       </section>
       <Principles />
       <FirstConversation />
-      <MaterialsPreview />
+
       <ContactCallout />
     </>
   )

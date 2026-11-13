@@ -1,4 +1,5 @@
-﻿import './FirstConversation.css'
+import { MaterialsPreview } from '../MaterialsPreview/MaterialsPreview'
+import './FirstConversation.css'
 
 const preparationItems = [
   {
@@ -25,14 +26,17 @@ export function FirstConversation() {
         <h2 id="first-conversation-title">Как начнём работу</h2>
       </div>
       <ol className="first-conversation-list" role="list">
-        {preparationItems.map((item) => (
+        {preparationItems.map((item, index) => (
           <li key={item.title}>
+            <span className="first-conversation-number" aria-hidden="true">
+              0{index + 1}
+            </span>
             <h3>{item.title}</h3>
             <p>{item.text}</p>
           </li>
         ))}
       </ol>
-      <p className="first-conversation-note">Можно обратиться за себя или за близкого.</p>
+      <MaterialsPreview />
     </section>
   )
 }
