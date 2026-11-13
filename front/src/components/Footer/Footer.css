@@ -30,7 +30,8 @@
   align-self: center;
 }
 .footer-phone,
-.footer-email {
+.footer-email,
+.footer-address {
   display: inline-flex;
   align-items: center;
   gap: 9px;
@@ -41,7 +42,8 @@
   font-weight: 500;
   white-space: nowrap;
 }
-.footer-email {
+.footer-email,
+.footer-address {
   font-size: var(--text-size);
   color: var(--on-dark-muted);
 }
@@ -49,7 +51,8 @@
   overflow-wrap: anywhere;
 }
 .footer-phone svg,
-.footer-email svg {
+.footer-email svg,
+.footer-address svg {
   flex-shrink: 0;
   color: var(--accent-light);
 }

@@ -1,4 +1,4 @@
-import { Mail, Phone } from 'lucide-react'
+import { Mail, MapPin, Phone } from 'lucide-react'
 import { site } from '../../data/site'
 import { MessengerLinks } from '../MessengerLinks/MessengerLinks'
 import { Brand } from '../Brand/Brand'
@@ -20,6 +20,12 @@ export function Footer() {
               <Mail size={15} aria-hidden="true" />
               <span>{site.email}</span>
             </a>
+            <p className="footer-address">
+              <MapPin size={15} aria-hidden="true" />
+              <span>
+                {site.city}, {site.address}
+              </span>
+            </p>
           </div>
         </div>
         <div className="footer-bottom">
