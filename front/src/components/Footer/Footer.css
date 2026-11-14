@@ -1,5 +1,5 @@
 .footer {
-  background: var(--surface-dark);
+  background: url('../../assets/matte-paper.svg'), var(--surface-dark);
   border-top: 1px solid var(--surface-dark-border);
   margin-top: 0;
   color: var(--on-dark);
