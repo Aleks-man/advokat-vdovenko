@@ -386,7 +386,8 @@
     font-size: 16px;
   }
   .header-compact-name small {
-    display: none;
+    font-size: 7px;
+    letter-spacing: 0.04em;
   }
   .header--compact {
     --header-inset: 8px;

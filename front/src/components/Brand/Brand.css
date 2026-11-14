@@ -70,6 +70,8 @@
     font-size: 19px;
   }
   .brand-name small {
-    display: none;
+    font-size: 7px;
+    letter-spacing: 0.04em;
+    margin-top: 5px;
   }
 }
