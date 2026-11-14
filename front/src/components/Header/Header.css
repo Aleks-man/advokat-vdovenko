@@ -192,6 +192,7 @@
     overflow: hidden;
   }
   .navigation-links {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -200,6 +201,7 @@
     overflow-x: hidden;
     overflow-y: auto;
     scrollbar-width: none;
+    padding-inline: clamp(12px, 3vw, 24px);
     text-align: center;
     opacity: 0;
     transition: opacity 0.32s ease-in-out;
@@ -207,13 +209,23 @@
   .navigation.is-open .navigation-links {
     opacity: 1;
   }
+  .navigation-links::after {
+    content: '';
+    position: absolute;
+    inset: 0 0 12px;
+    background:
+      url('../../assets/menu-side-ornament.svg') left calc(2% - 9px) center / 18px 96px no-repeat,
+      url('../../assets/menu-side-ornament.svg') right calc(2% - 9px) center / 18px 96px no-repeat,
+      url('../../assets/menu-frame.svg') center / 100% 100% no-repeat;
+    pointer-events: none;
+  }
   .navigation-links::before,
   .navigation-contacts::before {
     content: '';
     display: block;
     flex-shrink: 0;
-    width: min(calc(100% - 24px), 300px);
-    height: 25px;
+    width: min(calc(100% - 24px), 400px);
+    height: clamp(25px, 4.8vw, 34px);
     background: var(--accent-light);
     mask: url('../../assets/menu-ornament.svg') center / contain no-repeat;
     opacity: 0.65;
@@ -243,7 +255,12 @@
     pointer-events: none;
   }
   .navigation-links > a[aria-current='page'] {
-    background: rgb(223 188 131 / 12%);
+    background: linear-gradient(
+      90deg,
+      rgb(223 188 131 / 3%),
+      rgb(223 188 131 / 12%),
+      rgb(223 188 131 / 3%)
+    );
     color: var(--accent-light);
   }
   .navigation-indicator {
