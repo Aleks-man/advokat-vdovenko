@@ -9,9 +9,9 @@ export function AboutPage() {
   return (
     <>
       <AttorneyProfile />
-      <section className="container section about-work section-with-background" id="approach">
-        <SectionBackground variant="about" />
-        <div className="section-heading">
+      <section className="container section about-work" id="approach">
+        <div className="section-heading section-with-background">
+          <SectionBackground variant="about" />
           <p className="eyebrow">Начало работы</p>
           <h2>
             Что обсудить

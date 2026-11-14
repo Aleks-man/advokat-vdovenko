@@ -1,4 +1,4 @@
-﻿import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { SectionBackground } from '../../components/SectionBackground/SectionBackground'
 import { ContactCallout } from '../../components/ContactCallout/ContactCallout'
 import { practiceAreas } from '../../data/practice'
@@ -10,6 +10,7 @@ export function Practice() {
   return (
     <>
       <PageIntro
+        background="practice"
         eyebrow="Уголовная защита"
         title={
           <>
@@ -30,10 +31,14 @@ export function Practice() {
           </Link>
         ))}
       </nav>
-      <section className="container practice-stages section-with-background">
-        <SectionBackground variant="practice" />
+      <section className="container practice-stages">
         {practiceAreas.map((area) => (
-          <article className="practice-stage" id={`stage-${area.number}`} key={area.number}>
+          <article
+            key={area.number}
+            className={'practice-stage' + (area.number === '03' ? ' section-with-background' : '')}
+            id={'stage-' + area.number}
+          >
+            {area.number === '03' && <SectionBackground variant="case-file" />}
             <div className="practice-stage-content">
               <div className="practice-stage-heading">
                 <span className="practice-stage-number" aria-hidden="true">
