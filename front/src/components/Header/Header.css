@@ -192,7 +192,6 @@
     overflow: hidden;
   }
   .navigation-links {
-    position: relative;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -209,18 +208,7 @@
   .navigation.is-open .navigation-links {
     opacity: 1;
   }
-  .navigation-links::after {
-    content: '';
-    position: absolute;
-    inset: 0 0 12px;
-    background:
-      url('../../assets/menu-side-ornament.svg') left calc(2% - 9px) center / 18px 96px no-repeat,
-      url('../../assets/menu-side-ornament.svg') right calc(2% - 9px) center / 18px 96px no-repeat,
-      url('../../assets/menu-frame.svg') center / 100% 100% no-repeat;
-    pointer-events: none;
-  }
-  .navigation-links::before,
-  .navigation-contacts::before {
+  .navigation-links::before {
     content: '';
     display: block;
     flex-shrink: 0;
@@ -235,7 +223,13 @@
     margin: 10px auto 8px;
   }
   .navigation-contacts::before {
-    margin: 0 auto 4px;
+    content: '';
+    flex-shrink: 0;
+    width: min(70%, 220px);
+    height: 1px;
+    margin: 0 auto 12px;
+    background: linear-gradient(90deg, transparent, rgb(223 188 131 / 45%), transparent);
+    pointer-events: none;
   }
   .navigation-links > a {
     position: relative;
