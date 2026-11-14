@@ -37,7 +37,7 @@
   align-items: center;
   gap: 5px;
 }
-@media (min-width: 961px) {
+@media (min-width: 721px) {
   .header .navigation {
     margin-left: auto;
   }
@@ -128,7 +128,7 @@
     padding-inline: 11px;
   }
 }
-@media (max-width: 960px) {
+@media (max-width: 720px) {
   .header {
     min-height: 96px;
     gap: 12px;
@@ -256,7 +256,7 @@
   position: absolute;
   z-index: -1;
   inset: 0;
-  background: var(--surface-dark);
+  background: url('../../assets/matte-paper.svg'), var(--surface-dark);
   border: 1px solid var(--line-dark);
   border-top: 0;
   pointer-events: none;
@@ -336,7 +336,7 @@
   opacity: 1;
   transform: translate(0, -50%);
 }
-@media (max-width: 960px) {
+@media (max-width: 720px) {
   .header-space {
     height: 96px;
   }
@@ -391,7 +391,7 @@
   }
 }
 
-@media (max-width: 960px) {
+@media (max-width: 720px) {
   .navigation-links::-webkit-scrollbar {
     display: none;
   }
@@ -437,5 +437,32 @@
   .navigation-contacts a:is(:hover, :focus-visible) {
     background: rgb(223 188 131 / 8%);
     color: var(--on-dark);
+  }
+}
+
+@media (min-width: 721px) and (max-width: 960px) {
+  .header {
+    gap: 12px;
+    --header-inset: 12px;
+  }
+  .header .header-inner > .brand {
+    width: 210px;
+  }
+  .navigation {
+    gap: 2px;
+  }
+}
+
+@media (min-width: 721px) and (max-width: 840px) {
+  .navigation {
+    gap: 0;
+  }
+  .navigation a {
+    font-size: 13px;
+    padding-inline: 8px;
+    white-space: nowrap;
+  }
+  .header-compact-name {
+    font-size: 18px;
   }
 }

@@ -209,7 +209,7 @@ test('narrow mobile and tablet layouts stay within viewport', async ({ page }) =
 
 test('header compacts on all screens without shifting page content', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' })
-  for (const width of [1280, 1024, 961, 960, 768, 390, 320]) {
+  for (const width of [1280, 1024, 961, 960, 840, 768, 721, 720, 390, 320]) {
     await page.setViewportSize({ width, height: 844 })
     await page.goto('/')
     await page.evaluate(() => document.fonts.ready)
@@ -232,7 +232,7 @@ test('header compacts on all screens without shifting page content', async ({ pa
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
     await expect(header.locator('.brand-name')).toContainText('Константин')
     await expect(header.locator('.header-contact')).toHaveAttribute('href', 'tel:+79999999999')
-    if (width <= 960) {
+    if (width <= 720) {
       await page.getByRole('button', { name: 'Открыть меню' }).click()
       await page
         .getByRole('navigation', { name: 'Основная навигация' })
@@ -402,7 +402,7 @@ test('mobile menu content keeps its size throughout opening and closing', async 
 test('mobile menu dismisses outside and with Escape, and resets after desktop resize', async ({
   page,
 }) => {
-  for (const width of [320, 390, 768]) {
+  for (const width of [320, 390, 720]) {
     await page.setViewportSize({ width, height: 900 })
     await page.goto('/')
     const toggle = page.locator('.menu-toggle')

@@ -33,7 +33,7 @@ export function useMobileMenu() {
   }, [open])
 
   useEffect(() => {
-    const mobile = window.matchMedia('(max-width: 960px)')
+    const mobile = window.matchMedia('(max-width: 720px)')
     const onChange = () => {
       if (!mobile.matches) setOpen(false)
     }
