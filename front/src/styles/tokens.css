@@ -18,6 +18,9 @@
   --surface-dark:
     radial-gradient(ellipse at 78% 38%, #3e4b3b 0%, transparent 58%),
     linear-gradient(115deg, #151e19, #202b22);
+  --surface-frame:
+    radial-gradient(ellipse at 78% 38%, rgb(62 75 59 / 32%) 0%, transparent 72%),
+    linear-gradient(115deg, #151e19, #202b22);
   --surface-dark-border: #38453a;
   --line-dark: rgb(245 242 234 / 16%);
   --panel-radius: 20px;
