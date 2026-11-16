@@ -62,20 +62,37 @@
   }
   .page-intro-art {
     position: absolute;
+    grid-area: auto;
     top: 12px;
-    right: -24px;
+    right: 8px;
     z-index: -1;
-    width: clamp(240px, 65vw, 340px);
-    opacity: 0.42;
+    width: min(72%, 280px);
+    height: calc(100% - 24px);
+    opacity: 0.35;
   }
   .page-intro-panel--illustrated {
     overflow: hidden;
   }
   .page-intro-art img {
+    height: 100%;
+    object-fit: contain;
+    object-position: right top;
     filter: none;
     mask-image:
       linear-gradient(90deg, transparent, #000 48%),
-      linear-gradient(180deg, #000 55%, transparent 100%);
+      linear-gradient(180deg, #000 88%, transparent 100%);
     mask-composite: intersect;
+  }
+}
+
+@media (max-width: 850px) {
+  .page-intro-panel--illustrated {
+    --ink: #101510;
+    --muted: #101510;
+    --accent-text: #513a20;
+    color: var(--ink);
+  }
+  .page-intro-panel--illustrated > p:not(.eyebrow) {
+    font-weight: 500;
   }
 }
