@@ -1,0 +1,4 @@
+.home-practice,
+.first-conversation {
+  padding-inline: var(--panel-inset);
+}

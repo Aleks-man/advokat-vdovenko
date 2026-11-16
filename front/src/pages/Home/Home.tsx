@@ -4,12 +4,13 @@ import { Principles } from '../../components/Principles/Principles'
 import { FirstConversation } from '../../components/FirstConversation/FirstConversation'
 
 import { ContactCallout } from '../../components/ContactCallout/ContactCallout'
+import './Home.css'
 
 export function Home() {
   return (
     <>
       <Hero />
-      <section className="section container" id="practice">
+      <section className="section container home-practice" id="practice">
         <div className="section-heading section-heading--simple">
           <div>
             <h2>С чем можно обратиться</h2>
