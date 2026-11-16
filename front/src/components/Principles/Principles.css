@@ -62,3 +62,47 @@
 .principles .text-link:hover {
   color: var(--ink);
 }
+
+@media (max-width: 760px) {
+  .principles {
+    --ink: #101510;
+    --muted: #101510;
+    color: #101510;
+    --document-wash: linear-gradient(
+      90deg,
+      rgb(var(--surface-document-rgb) / 98%) 0%,
+      rgb(var(--surface-document-rgb) / 88%) 35%,
+      rgb(var(--surface-document-rgb) / 76%) 72%,
+      rgb(var(--surface-document-rgb) / 48%) 100%
+    );
+  }
+  .principles::before {
+    background-color: rgb(var(--surface-document-rgb));
+    background-image:
+      var(--document-wash),
+      linear-gradient(
+        180deg,
+        rgb(var(--surface-document-rgb)),
+        transparent 22%,
+        transparent 78%,
+        rgb(var(--surface-document-rgb))
+      ),
+      url('../../assets/document-folio.webp');
+    background-size:
+      100% 100%,
+      100% 320px,
+      auto 320px;
+    background-position:
+      center,
+      center,
+      right center;
+  }
+}
+
+@media (max-width: 760px) {
+  .principles-lead,
+  .principles-details p {
+    color: #101510;
+    font-weight: 500;
+  }
+}
