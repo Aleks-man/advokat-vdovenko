@@ -154,9 +154,9 @@ test('mobile navigation and layouts have no horizontal overflow', async ({ page 
     }
     if (path === '/') {
       await expect(page.locator('.hero-actions .button')).toBeInViewport()
-      await expect(page.locator('.hero-art')).toHaveCSS('position', 'absolute')
-      const hero = await page.locator('.hero').boundingBox()
-      expect(hero!.height).toBeLessThanOrEqual(600)
+      const copy = await page.locator('.hero-copy').boundingBox()
+      const portrait = await page.locator('.hero-art').boundingBox()
+      expect(portrait!.y).toBeGreaterThanOrEqual(copy!.y + copy!.height)
     }
     expect(
       await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
@@ -323,30 +323,23 @@ test('FAQ animates both directions and supports keyboard and rapid toggles', asy
   }
 })
 
-test('Themis stays full size at 790px and becomes background below it', async ({ page }) => {
-  for (const width of [1440, 1280, 1024, 800, 790, 789, 390, 320]) {
+test('hero portrait stays separate from the copy across screen sizes', async ({ page }) => {
+  for (const width of [1440, 1280, 1024, 961, 960, 800, 790, 789, 390, 320]) {
     await page.setViewportSize({ width, height: 1000 })
     await page.goto('/')
     await page.evaluate(() => document.fonts.ready)
-    const art = page.locator('.hero-art')
-    if (width >= 790) {
-      await expect(art).toHaveCSS('position', 'relative')
-      await expect(page.locator('.hero-image')).toHaveCSS('opacity', '1')
-      const image = await page.locator('.hero-image').boundingBox()
-      expect(image!.width).toBe(368)
-      expect(image!.height).toBe(460)
-      const bounds = await art.boundingBox()
-      const hero = await page.locator('.hero').boundingBox()
-      const padding = await page
-        .locator('.hero')
-        .evaluate((el) => parseFloat(getComputedStyle(el).paddingTop))
-      expect(bounds!.y - hero!.y).toBeCloseTo(padding, 0)
+    const image = page.locator('.hero-image')
+    await expect(image).toBeVisible()
+    expect(await image.evaluate((el: HTMLImageElement) => el.complete && el.naturalWidth > 0)).toBe(
+      true,
+    )
+    await expect(image).toHaveCSS('opacity', '1')
+    const portrait = await page.locator('.hero-art').boundingBox()
+    const copy = await page.locator('.hero-copy').boundingBox()
+    if (width > 960) {
+      expect(portrait!.x).toBeGreaterThanOrEqual(copy!.x + copy!.width)
     } else {
-      await expect(art).toHaveCSS('position', 'absolute')
-      await expect(page.locator('.hero-image')).toHaveCSS('opacity', '0.28')
-    }
-    if ([800, 790, 789].includes(width)) {
-      await page.locator('.hero').screenshot({ path: `artifacts/hero-breakpoint-${width}.png` })
+      expect(portrait!.y).toBeGreaterThanOrEqual(copy!.y + copy!.height)
     }
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
   }

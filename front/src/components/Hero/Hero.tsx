@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { site } from '../../data/site'
 import { contactLinks } from '../../data/contacts'
-import justiceHero from '../../assets/justice-hero.webp'
+import { about } from '../../data/about'
 import './Hero.css'
 export function Hero() {
   const [firstName, ...lastName] = site.name.split(' ')
@@ -37,10 +37,10 @@ export function Hero() {
       <div className="hero-art">
         <img
           className="hero-image"
-          src={justiceHero}
-          alt="Фемида с повязкой на глазах и весами — символ правосудия"
-          width={1122}
-          height={1402}
+          src={about.portrait.src}
+          alt={about.portrait.alt}
+          width={800}
+          height={1000}
           fetchPriority="high"
         />
       </div>
