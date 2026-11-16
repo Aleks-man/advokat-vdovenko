@@ -20,12 +20,18 @@ export function Footer() {
               <Mail size={15} aria-hidden="true" />
               <span>{site.email}</span>
             </a>
-            <p className="footer-address">
+            <a
+              className="footer-address"
+              href={contactLinks.map}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Открыть адрес в Яндекс Картах"
+            >
               <MapPin size={15} aria-hidden="true" />
               <span>
                 {site.city}, {site.address}
               </span>
-            </p>
+            </a>
           </div>
         </div>
         <div className="footer-bottom">

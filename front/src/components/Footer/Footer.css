@@ -57,7 +57,8 @@
   color: var(--accent-light);
 }
 .footer-phone:hover,
-.footer-email:hover {
+.footer-email:hover,
+.footer-address:hover {
   color: var(--accent-light);
 }
 .footer-bottom {
@@ -86,7 +87,8 @@
     padding-bottom: 20px;
   }
   .footer-phone,
-  .footer-email {
+  .footer-email,
+  .footer-address {
     min-height: 44px;
   }
   .footer-contacts {

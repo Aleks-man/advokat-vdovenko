@@ -51,9 +51,15 @@ export function Contacts() {
             <MapPin size={18} />
             <div>
               <span className="eyebrow">Адрес приёма</span>
-              <p className="contact-value contact-address">
+              <a
+                className="contact-value contact-address"
+                href={contactLinks.map}
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Открыть адрес в Яндекс Картах"
+              >
                 {site.city}, {site.address}
-              </p>
+              </a>
               <small>Принимаю по предварительной записи</small>
             </div>
           </div>
