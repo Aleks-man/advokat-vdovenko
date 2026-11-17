@@ -9,7 +9,7 @@ export function AboutPage() {
   return (
     <>
       <AttorneyProfile />
-      <section className="container section about-work" id="approach">
+      <section className="container section content-section about-work" id="approach">
         <div className="section-heading section-with-background">
           <SectionBackground variant="about" />
           <p className="eyebrow">Начало работы</p>
@@ -28,7 +28,7 @@ export function AboutPage() {
           ))}
         </div>
       </section>
-      <section className="container section">
+      <section className="container section content-section">
         <div className="section-heading">
           <p className="eyebrow">Перед обращением</p>
           <h2>Вопросы о начале работы</h2>

@@ -10,7 +10,7 @@
   align-items: center;
   gap: 12px;
   width: 100%;
-  padding: var(--space-medium) 16px var(--space-medium) 0;
+  padding: var(--heading-gap) 16px var(--heading-gap) 0;
   border: 0;
   background: transparent;
   color: var(--ink);
@@ -59,7 +59,7 @@
   overflow: hidden;
 }
 .accordion-copy {
-  padding-bottom: var(--space-medium);
+  padding-bottom: var(--heading-gap);
   max-width: 650px;
   font-size: var(--text-size);
   color: var(--muted);

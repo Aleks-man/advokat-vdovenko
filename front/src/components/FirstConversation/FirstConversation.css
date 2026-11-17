@@ -1,14 +1,14 @@
 .first-conversation-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 32px;
+  gap: var(--content-gap);
   list-style: none;
   padding: 0;
   margin: 0;
 }
 .first-conversation-list li {
   min-width: 0;
-  padding-top: 24px;
+  padding-top: var(--heading-gap);
   border-top: 1px solid var(--line);
 }
 .first-conversation-list h3 {
@@ -37,7 +37,7 @@
 @media (max-width: 760px) {
   .first-conversation-list {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: var(--heading-gap);
   }
   .first-conversation-list li {
     display: grid;

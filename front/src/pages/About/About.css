@@ -8,7 +8,7 @@
 }
 .work-steps article {
   min-width: 0;
-  padding: 24px 32px 0;
+  padding: var(--heading-gap) var(--content-gap) 0;
 }
 .work-steps article:first-child {
   padding-left: 0;
@@ -30,7 +30,7 @@
   max-width: 38ch;
 }
 .faq {
-  max-width: 840px;
+  width: calc((100% - var(--content-gap)) * 2 / 3);
   margin-left: auto;
   border-top: 1px solid var(--line);
 }
@@ -42,7 +42,7 @@
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     gap: 12px 16px;
-    padding: 24px 0;
+    padding: var(--heading-gap) 0;
   }
   .work-steps article + article {
     border-left: 0;
@@ -57,5 +57,11 @@
   }
   .work-steps p {
     max-width: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .faq {
+    width: 100%;
   }
 }

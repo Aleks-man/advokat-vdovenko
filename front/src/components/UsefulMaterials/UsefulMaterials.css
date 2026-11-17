@@ -2,7 +2,7 @@
   padding-block: 0 var(--section-space);
 }
 .useful-materials-list {
-  width: min(100%, 840px);
+  width: calc((100% - var(--content-gap)) * 2 / 3);
   margin-left: auto;
   border-top: 1px solid var(--line);
 }
@@ -15,4 +15,10 @@
 }
 .useful-materials-points li::marker {
   color: var(--accent);
+}
+
+@media (max-width: 700px) {
+  .useful-materials-list {
+    width: 100%;
+  }
 }

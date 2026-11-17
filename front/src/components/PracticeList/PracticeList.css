@@ -8,7 +8,7 @@
   grid-template-columns: minmax(0, 1fr) 24px;
   grid-template-rows: auto auto 1fr;
   gap: 16px;
-  padding: 28px;
+  padding: var(--card-padding);
   border: 1px solid var(--line);
   border-radius: var(--card-radius);
   background: rgb(255 254 250 / 55%);
@@ -63,7 +63,6 @@
     gap: 12px;
   }
   .practice-row {
-    padding: 18px;
     gap: 10px;
   }
   .practice-icon {

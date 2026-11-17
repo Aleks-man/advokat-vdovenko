@@ -6,7 +6,10 @@ import './UsefulMaterials.css'
 export function UsefulMaterials() {
   const { hash, key } = useLocation()
   return (
-    <section className="container useful-materials" aria-labelledby="useful-materials-heading">
+    <section
+      className="container content-section useful-materials"
+      aria-labelledby="useful-materials-heading"
+    >
       <div className="section-heading">
         <p className="eyebrow">Перед обращением</p>
         <div>

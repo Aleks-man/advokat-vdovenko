@@ -1,6 +1,6 @@
 .materials-preview {
-  margin-top: 32px;
-  padding-top: 24px;
+  margin-top: var(--content-gap);
+  padding-top: var(--heading-gap);
   border-top: 1px solid var(--line);
 }
 .materials-preview-label {

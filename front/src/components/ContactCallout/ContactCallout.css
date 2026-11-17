@@ -4,9 +4,9 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 20px 32px;
+  gap: var(--heading-gap) var(--content-gap);
   margin-bottom: var(--section-space);
-  padding: 24px var(--panel-inset);
+  padding: var(--heading-gap) var(--panel-inset);
   border: 1px solid var(--surface-dark-border);
   border-radius: var(--panel-radius);
   background: var(--surface-dark);

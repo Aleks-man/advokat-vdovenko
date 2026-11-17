@@ -29,14 +29,14 @@
   border-color: var(--accent);
 }
 .practice-stage {
-  padding-block: 40px;
+  padding-block: var(--stage-space);
   border-bottom: 1px solid var(--line);
   scroll-margin-top: 30px;
 }
 .practice-stage-content {
   display: grid;
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-  gap: 28px 40px;
+  gap: var(--heading-gap) var(--content-gap);
   min-width: 0;
 }
 .practice-stage-heading {
@@ -71,7 +71,7 @@
 }
 .practice-stage-situation {
   align-self: start;
-  padding: 24px;
+  padding: var(--card-padding);
   border-radius: var(--card-radius);
   background: rgb(255 254 250 / 70%);
   border: 1px solid var(--line);
@@ -94,7 +94,7 @@
   color: var(--accent);
 }
 .content-disclaimer {
-  padding-block: 28px var(--section-space);
+  padding-block: var(--heading-gap) var(--section-space);
   color: var(--muted);
   font-size: var(--text-secondary);
   line-height: var(--text-leading);
@@ -102,7 +102,7 @@
 @media (max-width: 850px) {
   .practice-stage-content {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: var(--heading-gap);
   }
 }
 @media (max-width: 600px) {
@@ -120,14 +120,8 @@
   .practice-stage-nav a span {
     padding-top: 2px;
   }
-  .practice-stage {
-    padding-block: 32px;
-  }
   .practice-stage-heading {
     gap: 12px;
     align-items: start;
-  }
-  .practice-stage-situation {
-    padding: 20px;
   }
 }

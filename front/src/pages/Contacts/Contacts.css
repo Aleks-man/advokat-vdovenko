@@ -2,13 +2,14 @@
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
   align-items: start;
-  gap: 40px;
-  padding-block: 24px var(--section-space);
+  gap: var(--content-gap);
+  padding-block: var(--heading-gap) var(--section-space);
+  padding-inline: var(--panel-inset);
 }
 .contact-detail {
   display: flex;
   gap: 16px;
-  padding-block: 24px;
+  padding-block: var(--card-padding);
   border-bottom: 1px solid var(--line);
 }
 .contact-detail > svg {
@@ -34,15 +35,15 @@
 .contact-detail--primary {
   position: relative;
   display: block;
-  padding: 28px;
+  padding: var(--card-padding);
   border: 1px solid var(--line);
   border-radius: var(--card-radius);
   background: rgb(255 254 250 / 85%);
 }
 .contact-detail--primary > svg {
   position: absolute;
-  top: 24px;
-  right: 28px;
+  top: var(--card-padding);
+  right: var(--card-padding);
 }
 .contact-detail--primary .contact-phone {
   width: fit-content;
@@ -74,7 +75,7 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
-  margin-top: 20px;
+  margin-top: var(--heading-gap);
 }
 .contact-details .messenger-link {
   display: flex;
@@ -110,14 +111,14 @@
   border: 1px solid var(--surface-dark-border);
   color: var(--on-dark);
   border-radius: var(--card-radius);
-  padding: 32px;
+  padding: var(--card-padding);
 }
 .contact-aside > .eyebrow {
   color: var(--accent-light);
 }
 .contact-aside h2 {
   font-size: var(--section-title);
-  margin-block: 20px;
+  margin-block: var(--heading-gap);
 }
 .contact-aside h2 em {
   font-weight: 400;
@@ -131,14 +132,14 @@
 }
 .contact-aside-note {
   line-height: var(--text-leading);
-  padding-top: 20px;
-  margin-top: 20px;
+  padding-top: var(--heading-gap);
+  margin-top: var(--heading-gap);
   border-top: 1px solid var(--line-dark);
 }
 @media (max-width: 850px) {
   .contacts-layout {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: var(--content-gap);
   }
 }
 @media (max-width: 600px) {
@@ -146,20 +147,8 @@
     gap: 20px;
     padding-block: 8px 24px;
   }
-  .contact-detail:not(.contact-detail--primary) {
-    padding-block: 18px;
-  }
-  .page-intro-panel--compact {
-    padding-bottom: 24px;
-  }
-  .contact-detail--primary {
-    padding: 20px;
-  }
   .contact-detail--primary > svg {
     top: 18px;
-    right: 20px;
-  }
-  .contact-aside {
-    padding: 24px;
+    right: var(--card-padding);
   }
 }

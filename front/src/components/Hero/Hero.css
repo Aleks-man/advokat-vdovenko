@@ -5,8 +5,8 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  margin-top: 24px;
-  padding: 40px var(--panel-inset) 0;
+  margin-top: var(--intro-offset);
+  padding: var(--intro-padding) var(--panel-inset) 0;
   color: var(--ink);
 }
 .hero::before {
@@ -24,8 +24,8 @@
   pointer-events: none;
 }
 .hero-copy {
-  padding: 24px 0 36px;
-  align-self: center;
+  padding: 0 0 24px;
+  align-self: start;
   position: relative;
   z-index: 2;
 }
@@ -36,7 +36,7 @@
   line-height: 1.5;
 }
 .hero h1 {
-  margin-top: 32px;
+  margin-top: var(--intro-title-gap);
   font-family: var(--heading);
   font-size: var(--hero-title);
   font-weight: 400;
@@ -52,7 +52,7 @@
   color: var(--accent-text);
 }
 .hero-description {
-  margin-top: var(--space-medium);
+  margin-top: var(--heading-gap);
   max-width: 38ch;
   font-size: var(--text-lead);
   font-weight: 500;
@@ -72,7 +72,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 18px;
-  margin-top: var(--space-medium);
+  margin-top: var(--heading-gap);
 }
 .hero .button {
   background: var(--ink);
@@ -119,22 +119,19 @@
 }
 @media (max-width: 1100px) {
   .hero {
-    padding: 28px var(--panel-inset) 0;
+    padding: var(--intro-padding) var(--panel-inset) 0;
     column-gap: 16px;
   }
 }
 @media (max-width: 960px) {
   .hero {
     grid-template-columns: 1fr;
-    margin-top: 12px;
-    padding: 30px var(--panel-inset) 0;
+    margin-top: var(--intro-offset);
+    padding: var(--intro-padding) var(--panel-inset) 0;
   }
   .hero-copy {
     --muted: var(--ink);
     padding: 0 0 28px;
-  }
-  .hero h1 {
-    margin-top: var(--space-medium);
   }
   .hero-location {
     max-width: 26ch;

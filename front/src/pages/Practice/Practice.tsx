@@ -23,7 +23,10 @@ export function Practice() {
         Ко мне можно обратиться во время проверки, следствия, рассмотрения дела в суде или после
         вынесения решения. Расскажите, на каком этапе нужна моя помощь.
       </PageIntro>
-      <nav className="container practice-stage-nav" aria-label="Этапы уголовной защиты">
+      <nav
+        className="container content-section practice-stage-nav"
+        aria-label="Этапы уголовной защиты"
+      >
         {practiceAreas.map((area) => (
           <Link key={area.number} to={`#stage-${area.number}`}>
             <span aria-hidden="true">{Number(area.number)}</span>
@@ -31,7 +34,7 @@ export function Practice() {
           </Link>
         ))}
       </nav>
-      <section className="container practice-stages">
+      <section className="container content-section practice-stages">
         {practiceAreas.map((area) => (
           <article
             key={area.number}
@@ -62,7 +65,7 @@ export function Practice() {
           </article>
         ))}
       </section>
-      <div className="container content-disclaimer">
+      <div className="container content-section content-disclaimer">
         Конкретные задачи, объём участия и стоимость согласуем после знакомства с вашим делом.
       </div>
       <UsefulMaterials />

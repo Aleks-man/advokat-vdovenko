@@ -1,12 +1,12 @@
 .page-intro.page-intro-panel {
-  margin-top: 24px;
-  padding: var(--panel-space) var(--panel-inset);
+  margin-top: var(--intro-offset);
+  padding: var(--intro-padding) var(--panel-inset) var(--heading-gap);
 }
 .page-intro-panel > h1 {
   max-width: 950px;
   font-size: var(--page-title);
   line-height: 1.16;
-  margin-top: var(--space-medium);
+  margin-top: var(--intro-title-gap);
 }
 .page-intro-panel > h1 em {
   font-style: normal;
@@ -16,13 +16,8 @@
 .page-intro-panel > p:not(.eyebrow) {
   max-width: 590px;
   color: var(--muted);
-  margin-top: var(--space-medium);
+  margin-top: var(--heading-gap);
   font-size: var(--text-size);
-}
-@media (max-width: 700px) {
-  .page-intro.page-intro-panel {
-    margin-top: 12px;
-  }
 }
 
 .page-intro-panel--compact > h1 em {

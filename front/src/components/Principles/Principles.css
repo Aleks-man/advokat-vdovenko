@@ -9,7 +9,7 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  padding: 40px var(--panel-inset);
+  padding: var(--panel-space) var(--panel-inset);
 }
 .principles::before {
   content: '';
@@ -40,7 +40,7 @@
 .principles-details {
   list-style: none;
   padding: 0;
-  margin: 24px 0 0;
+  margin: var(--heading-gap) 0 0;
   display: grid;
   gap: 16px;
 }
@@ -54,7 +54,7 @@
   color: var(--muted);
 }
 .principles .text-link {
-  margin-top: var(--space-medium);
+  margin-top: var(--heading-gap);
   border-color: currentColor;
   color: var(--accent-text);
   transition: color 0.2s;

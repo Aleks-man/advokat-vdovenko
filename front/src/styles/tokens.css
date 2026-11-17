@@ -30,7 +30,14 @@
   --heading: Georgia, 'Times New Roman', serif;
   --sans: 'Onest Variable', 'Segoe UI', Arial, sans-serif;
   --section-space: clamp(32px, 4vw, 48px);
-  --panel-space: clamp(32px, 4vw, 48px);
+  --panel-space: var(--section-space);
+  --intro-offset: clamp(8px, 1vw, 12px);
+  --intro-padding: clamp(20px, 2vw, 28px);
+  --intro-title-gap: 12px;
+  --content-gap: clamp(20px, 2.5vw, 32px);
+  --heading-gap: clamp(20px, 2.2vw, 24px);
+  --card-padding: clamp(18px, 2.4vw, 28px);
+  --stage-space: clamp(28px, 3.3vw, 40px);
   --text-size: 16px;
   --text-secondary: 14px;
   --text-lead: 20px;
