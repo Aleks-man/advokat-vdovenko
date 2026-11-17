@@ -49,6 +49,9 @@
 
 .section-background--contacts {
   --section-image: url('../../assets/desk-background.webp');
+  left: 0;
+  width: 100%;
+  transform: none;
 }
 
 .section-background--contacts::before {
