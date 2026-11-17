@@ -143,7 +143,14 @@
 }
 @media (max-width: 600px) {
   .contacts-layout {
-    padding-top: 12px;
+    gap: 20px;
+    padding-block: 8px 24px;
+  }
+  .contact-detail:not(.contact-detail--primary) {
+    padding-block: 18px;
+  }
+  .page-intro-panel--compact {
+    padding-bottom: 24px;
   }
   .contact-detail--primary {
     padding: 20px;
