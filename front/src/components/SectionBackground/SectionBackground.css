@@ -184,3 +184,9 @@
     opacity: 0.3;
   }
 }
+
+@media (min-width: 851px) {
+  .section-background--contacts::before {
+    opacity: 0.78;
+  }
+}
