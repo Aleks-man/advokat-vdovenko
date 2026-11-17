@@ -26,7 +26,7 @@ export function Practice() {
       <nav className="container practice-stage-nav" aria-label="Этапы уголовной защиты">
         {practiceAreas.map((area) => (
           <Link key={area.number} to={`#stage-${area.number}`}>
-            <span aria-hidden="true">{area.number}</span>
+            <span aria-hidden="true">{Number(area.number)}</span>
             {area.title}
           </Link>
         ))}
@@ -42,7 +42,7 @@ export function Practice() {
             <div className="practice-stage-content">
               <div className="practice-stage-heading">
                 <span className="practice-stage-number" aria-hidden="true">
-                  {area.number}
+                  {Number(area.number)}
                 </span>
                 <h2>{area.title}</h2>
               </div>

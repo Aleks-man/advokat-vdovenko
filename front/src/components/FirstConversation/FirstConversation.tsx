@@ -29,7 +29,7 @@ export function FirstConversation() {
         {preparationItems.map((item, index) => (
           <li key={item.title}>
             <span className="first-conversation-number" aria-hidden="true">
-              0{index + 1}
+              {index + 1}
             </span>
             <h3>{item.title}</h3>
             <p>{item.text}</p>
