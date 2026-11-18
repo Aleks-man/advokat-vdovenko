@@ -324,7 +324,9 @@ test('FAQ animates both directions and supports keyboard and rapid toggles', asy
 })
 
 test('hero portrait stays separate from the copy across screen sizes', async ({ page }) => {
-  for (const width of [1440, 1280, 1024, 961, 960, 800, 790, 789, 390, 320]) {
+  for (const width of [
+    1440, 1280, 1100, 1024, 961, 960, 900, 851, 850, 849, 768, 601, 600, 390, 320,
+  ]) {
     await page.setViewportSize({ width, height: 1000 })
     await page.goto('/')
     await page.evaluate(() => document.fonts.ready)
@@ -336,10 +338,33 @@ test('hero portrait stays separate from the copy across screen sizes', async ({ 
     await expect(image).toHaveCSS('opacity', '1')
     const portrait = await page.locator('.hero-art').boundingBox()
     const copy = await page.locator('.hero-copy').boundingBox()
-    if (width > 960) {
+    if (width > 850) {
       expect(portrait!.x).toBeGreaterThanOrEqual(copy!.x + copy!.width)
+      expect(portrait!.width).toBeCloseTo(280, 0)
+      expect(portrait!.height).toBeLessThanOrEqual(copy!.height)
     } else {
-      expect(portrait!.y).toBeGreaterThanOrEqual(copy!.y + copy!.height)
+      const title = await page.locator('.hero h1').boundingBox()
+      const description = await page.locator('.hero-description').boundingBox()
+      expect(portrait!.y).toBeGreaterThanOrEqual(title!.y + title!.height)
+      if (width > 600) {
+        expect(description!.x).toBeGreaterThanOrEqual(portrait!.x + portrait!.width)
+        expect(description!.y).toBeCloseTo(portrait!.y, 0)
+      } else {
+        expect(description!.y).toBeGreaterThanOrEqual(portrait!.y + portrait!.height)
+        const hero = await page.locator('.hero').boundingBox()
+        expect(title!.x + title!.width / 2).toBeCloseTo(hero!.x + hero!.width / 2, 0)
+        expect(title!.width).toBeLessThanOrEqual(360)
+      }
+      expect(portrait!.x).toBeCloseTo(title!.x, 0)
+      expect(portrait!.width).toBeCloseTo(
+        width <= 600 ? title!.width : Math.min(240, title!.width),
+        0,
+      )
+      if (width <= 600) {
+        expect(portrait!.height).toBeLessThanOrEqual(280)
+        const button = await page.locator('.hero-actions .button').boundingBox()
+        expect(button!.width).toBeCloseTo(title!.width, 0)
+      }
     }
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
   }

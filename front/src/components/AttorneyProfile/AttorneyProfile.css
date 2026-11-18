@@ -20,11 +20,11 @@
   align-self: start;
   width: 100%;
   max-width: 360px;
-  padding: 8px;
-  border: 1px solid var(--line);
-  border-radius: var(--card-radius);
-  background: var(--paper-light);
-  box-shadow: 0 12px 32px rgb(25 40 31 / 6%);
+  padding: 4px;
+  border: 1px solid var(--portrait-border);
+  border-radius: var(--portrait-radius);
+  background: var(--portrait-surface);
+  box-shadow: var(--portrait-shadow);
 }
 .about-portrait img {
   display: block;
@@ -32,7 +32,7 @@
   height: auto;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: calc(var(--portrait-radius) - 5px);
 }
 .about-content {
   grid-area: content;
