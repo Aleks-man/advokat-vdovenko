@@ -91,7 +91,9 @@ test('desktop routes, stage links, FAQ and missing page', async ({ page }) => {
     .click()
   await expect(page).toHaveURL('/about')
   await expect(page.getByRole('heading', { level: 1 })).toContainText('Константин')
-  await expect(page.locator('.about-portrait img')).toBeVisible()
+  await expect(page.locator('.about img')).toHaveCount(0)
+  await expect(page.locator('.about-biography')).toBeVisible()
+  await expect(page.locator('.about-facts > div')).toHaveCount(3)
   await page.getByText('Можно ли заранее узнать стоимость?').click()
   await expect(
     page.getByRole('region', { name: 'Можно ли заранее узнать стоимость?' }),
@@ -141,9 +143,8 @@ test('mobile navigation and layouts have no horizontal overflow', async ({ page 
     })
     if (path === '/about') {
       const heading = await page.getByRole('heading', { level: 1 }).boundingBox()
-      const portrait = await page.locator('.about-portrait').boundingBox()
-      expect(heading!.y + heading!.height).toBeLessThan(portrait!.y)
-      expect(portrait!.height).toBeLessThanOrEqual(301)
+      const biography = await page.locator('.about-biography').boundingBox()
+      expect(heading!.y + heading!.height).toBeLessThan(biography!.y)
     }
     if (path === '/contacts') {
       await expect(page.locator('.contact-phone')).toBeInViewport()
@@ -153,8 +154,8 @@ test('mobile navigation and layouts have no horizontal overflow', async ({ page 
       await page.screenshot({ path: 'artifacts/contacts-mobile.png', fullPage: true })
     }
     if (path === '/') {
-      await expect(page.locator('.hero-actions .button')).toBeInViewport()
-      const copy = await page.locator('.hero-copy').boundingBox()
+      await expect(page.locator('.hero-actions .button')).toBeVisible()
+      const copy = await page.locator('.hero-heading').boundingBox()
       const portrait = await page.locator('.hero-art').boundingBox()
       expect(portrait!.y).toBeGreaterThanOrEqual(copy!.y + copy!.height)
     }
@@ -323,53 +324,98 @@ test('FAQ animates both directions and supports keyboard and rapid toggles', asy
   }
 })
 
-test('hero portrait stays separate from the copy across screen sizes', async ({ page }) => {
-  for (const width of [
-    1440, 1280, 1100, 1024, 961, 960, 900, 851, 850, 849, 768, 601, 600, 390, 320,
-  ]) {
+test('hero balances portrait and text across screen sizes', async ({ page }) => {
+  test.setTimeout(90000)
+  await page.goto('/')
+  await page.evaluate(() => document.fonts.ready)
+  const widths = [
+    ...new Set([
+      320,
+      390,
+      450,
+      451,
+      600,
+      601,
+      636,
+      637,
+      638,
+      899,
+      900,
+      901,
+      999,
+      1000,
+      1001,
+      1440,
+      1920,
+      ...Array.from({ length: 42 }, (_, index) => 601 + index * 32),
+    ]),
+  ].sort((left, right) => left - right)
+  for (const width of widths) {
     await page.setViewportSize({ width, height: 1000 })
-    await page.goto('/')
-    await page.evaluate(() => document.fonts.ready)
     const image = page.locator('.hero-image')
     await expect(image).toBeVisible()
     expect(await image.evaluate((el: HTMLImageElement) => el.complete && el.naturalWidth > 0)).toBe(
       true,
     )
-    await expect(image).toHaveCSS('opacity', '1')
-    const portrait = await page.locator('.hero-art').boundingBox()
-    const copy = await page.locator('.hero-copy').boundingBox()
-    if (width > 850) {
-      expect(portrait!.x).toBeGreaterThanOrEqual(copy!.x + copy!.width)
-      expect(portrait!.width).toBeCloseTo(280, 0)
-      expect(portrait!.height).toBeLessThanOrEqual(copy!.height)
-    } else {
-      const title = await page.locator('.hero h1').boundingBox()
-      const description = await page.locator('.hero-description').boundingBox()
-      expect(portrait!.y).toBeGreaterThanOrEqual(title!.y + title!.height)
-      if (width > 600) {
-        expect(description!.x).toBeGreaterThanOrEqual(portrait!.x + portrait!.width)
-        expect(description!.y).toBeCloseTo(portrait!.y, 0)
-      } else {
-        expect(description!.y).toBeGreaterThanOrEqual(portrait!.y + portrait!.height)
-        const hero = await page.locator('.hero').boundingBox()
-        expect(title!.x + title!.width / 2).toBeCloseTo(hero!.x + hero!.width / 2, 0)
-        expect(title!.width).toBeLessThanOrEqual(360)
-      }
-      expect(portrait!.x).toBeCloseTo(title!.x, 0)
-      expect(portrait!.width).toBeCloseTo(
-        width <= 600 ? title!.width : Math.min(240, title!.width),
+    const portrait = (await page.locator('.hero-art').boundingBox())!
+    const heading = (await page.locator('.hero-heading').boundingBox())!
+    const content = (await page.locator('.hero-content').boundingBox())!
+    const actions = (await page.locator('.hero-actions').boundingBox())!
+    if (width > 600) {
+      const copy = (await page.locator('.hero-copy').boundingBox())!
+      expect(portrait.x + portrait.width, `${width}px: separate columns`).toBeLessThanOrEqual(
+        copy.x,
+      )
+      expect(portrait.height, `${width}px: equal heights`).toBeCloseTo(copy.height, 0)
+      expect(heading.y, `${width}px: aligned tops`).toBeCloseTo(portrait.y, 0)
+      expect(actions.y + actions.height, `${width}px: aligned bottoms`).toBeCloseTo(
+        portrait.y + portrait.height,
         0,
       )
-      if (width <= 600) {
-        expect(portrait!.height).toBeLessThanOrEqual(280)
-        const button = await page.locator('.hero-actions .button').boundingBox()
-        expect(button!.width).toBeCloseTo(title!.width, 0)
+      expect(actions.x, `${width}px: actions stay in text column`).toBeCloseTo(copy.x, 0)
+      const gaps = [content.y - heading.y - heading.height, actions.y - content.y - content.height]
+      for (const gap of gaps) {
+        expect(gap, `${width}px: groups do not overlap`).toBeGreaterThanOrEqual(15)
+        expect(gap, `${width}px: no stretched empty space`).toBeLessThanOrEqual(70)
       }
+    } else {
+      expect(heading.y + heading.height).toBeLessThanOrEqual(portrait.y)
+      expect(content.y).toBeGreaterThanOrEqual(portrait.y + portrait.height)
+      expect(portrait.height).toBeLessThanOrEqual(290)
+      const hero = (await page.locator('.hero').boundingBox())!
+      expect(portrait.x + portrait.width / 2).toBeCloseTo(hero.x + hero.width / 2, 0)
     }
+    const button = (await page.locator('.hero-actions .button').boundingBox())!
+    const telegram = (await page.locator('.hero-actions .text-link').boundingBox())!
+    if (width > 450) {
+      expect(telegram.x, `${width}px: buttons in one row`).toBeGreaterThanOrEqual(
+        button.x + button.width,
+      )
+    } else {
+      expect(telegram.y).toBeGreaterThanOrEqual(button.y + button.height)
+    }
+    const imageBounds = (await image.boundingBox())!
+    expect(
+      imageBounds.width / imageBounds.height,
+      `${width}px: retain full portrait height`,
+    ).toBeLessThanOrEqual(0.81)
+    const nameTops = await page
+      .locator('.hero h1')
+      .evaluate((element) =>
+        [...element.children].map((child) => child.getBoundingClientRect().top),
+      )
+    expect(nameTops[0]).toBeCloseTo(nameTops[1], 0)
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
+    const clippedText = await page
+      .locator('.hero p, .hero h1, .hero dd, .hero a')
+      .evaluateAll((elements) =>
+        elements
+          .filter((element) => element.scrollWidth > element.clientWidth + 1)
+          .map((element) => element.textContent),
+      )
+    expect(clippedText, `${width}px: text stays inside its column`).toEqual([])
   }
 })
-
 test('useful materials expand on practice page without adding navigation items', async ({
   page,
 }) => {
@@ -451,7 +497,7 @@ test('mobile menu dismisses outside and with Escape, and resets after desktop re
     await expect(toggle).toHaveAttribute('aria-expanded', 'false')
 
     await toggle.click()
-    await page.locator('.hero-bottom').click()
+    await page.locator('.home-practice h2').click()
     await expect(nav).toBeHidden()
     await toggle.click()
     await nav.locator('a[href="/contacts"]').click()

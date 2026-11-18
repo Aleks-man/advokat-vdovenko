@@ -20,12 +20,14 @@ for (const width of widths) {
         const header = document.querySelector('.header')!.getBoundingClientRect()
         const label = document
           .querySelector(
-            'main .hero-location, main .page-intro .eyebrow, main .about-heading .eyebrow',
+            innerWidth > 900 && document.querySelector('.hero')
+              ? '.hero-art'
+              : 'main .hero-location, main .page-intro .eyebrow, main .about-heading .eyebrow',
           )!
           .getBoundingClientRect()
         return label.top - header.bottom
       })
-      expect(introGap, route + ' first text clears the header').toBeGreaterThanOrEqual(20)
+      expect(introGap, route + ' introduction clears the header').toBeGreaterThanOrEqual(20)
       expect(introGap, route + ' compact introduction').toBeLessThanOrEqual(42)
       const problems = await page
         .locator('main h1, main h2, main h3, main p, main .contact-value')
@@ -59,11 +61,7 @@ for (const width of widths) {
       }
       if (route === '/') {
         const edges = await page
-          .locator(
-            width <= 600
-              ? '.home-practice h2, .principles h2, .first-conversation h2'
-              : '.hero h1, .home-practice h2, .principles h2, .first-conversation h2',
-          )
+          .locator('.home-practice h2, .principles h2, .first-conversation h2')
           .evaluateAll((elements) =>
             elements.map((element) => element.getBoundingClientRect().left),
           )
