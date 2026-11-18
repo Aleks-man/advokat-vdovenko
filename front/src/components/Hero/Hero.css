@@ -75,8 +75,19 @@
   overflow: hidden;
   border: 1px solid var(--portrait-border);
   border-radius: var(--portrait-radius);
-  background: var(--portrait-surface);
-  box-shadow: var(--portrait-shadow);
+  background: var(--paper-light);
+  box-shadow:
+    var(--portrait-shadow),
+    inset 0 0 0 1px rgb(var(--accent-rgb) / 10%);
+}
+.hero-art::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  z-index: 1;
+  border: 1px solid rgb(var(--accent-rgb) / 24%);
+  border-radius: calc(var(--portrait-radius) - 4px);
+  pointer-events: none;
 }
 .hero-image {
   position: absolute;
