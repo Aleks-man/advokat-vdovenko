@@ -63,7 +63,7 @@
     z-index: -1;
     width: min(72%, 280px);
     height: calc(100% - 24px);
-    opacity: 0.35;
+    opacity: 0.25;
   }
   .page-intro-panel--illustrated {
     overflow: hidden;

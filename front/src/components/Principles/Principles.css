@@ -77,6 +77,7 @@
     );
   }
   .principles::before {
+    opacity: 0.75;
     background-color: rgb(var(--surface-document-rgb));
     background-image:
       var(--document-wash),
