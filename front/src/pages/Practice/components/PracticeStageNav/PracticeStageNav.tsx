@@ -10,7 +10,7 @@ export function PracticeStageNav() {
       aria-label="Этапы уголовной защиты"
     >
       {practiceAreas.map((area) => (
-        <Link key={area.number} to={`#stage-${area.number}`}>
+        <Link key={area.id} to={`#${area.anchorId}`}>
           <span aria-hidden="true">{Number(area.number)}</span>
           {area.title}
         </Link>

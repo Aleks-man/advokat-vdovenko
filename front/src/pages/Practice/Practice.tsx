@@ -26,7 +26,7 @@ export function Practice() {
       <PracticeStageNav />
       <section className="container content-section practice-stages">
         {practiceAreas.map((area) => (
-          <PracticeStage key={area.number} area={area} />
+          <PracticeStage key={area.id} area={area} />
         ))}
       </section>
       <div className="container content-section content-disclaimer">

@@ -6,10 +6,10 @@ import './PracticeStage.css'
 export function PracticeStage({ area }: { area: PracticeArea }) {
   return (
     <article
-      className={'practice-stage' + (area.number === '03' ? ' section-with-background' : '')}
-      id={'stage-' + area.number}
+      className={'practice-stage' + (area.background ? ' section-with-background' : '')}
+      id={area.anchorId}
     >
-      {area.number === '03' && <SectionBackground variant="case-file" />}
+      {area.background && <SectionBackground variant={area.background} />}
       <div className="practice-stage-content">
         <div className="practice-stage-heading">
           <span className="practice-stage-number" aria-hidden="true">

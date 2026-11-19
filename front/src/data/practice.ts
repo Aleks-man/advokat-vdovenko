@@ -1,4 +1,7 @@
 export type PracticeArea = {
+  id: 'pre-investigation' | 'investigation' | 'trial' | 'appeal'
+  anchorId: string
+  background?: 'case-file'
   number: string
   title: string
   description: string
@@ -7,6 +10,8 @@ export type PracticeArea = {
 }
 export const practiceAreas: PracticeArea[] = [
   {
+    id: 'pre-investigation',
+    anchorId: 'stage-01',
     number: '01',
     title: 'До возбуждения дела',
     description:
@@ -20,6 +25,8 @@ export const practiceAreas: PracticeArea[] = [
     ],
   },
   {
+    id: 'investigation',
+    anchorId: 'stage-02',
     number: '02',
     title: 'Во время следствия',
     description: 'Нужна помощь при допросах, изучении документов и подготовке защиты.',
@@ -32,6 +39,9 @@ export const practiceAreas: PracticeArea[] = [
     ],
   },
   {
+    id: 'trial',
+    anchorId: 'stage-03',
+    background: 'case-file',
     number: '03',
     title: 'В суде',
     description: 'Дело передано в суд. Нужны подготовка к заседаниям и участие защитника.',
@@ -44,6 +54,8 @@ export const practiceAreas: PracticeArea[] = [
     ],
   },
   {
+    id: 'appeal',
+    anchorId: 'stage-04',
     number: '04',
     title: 'После решения суда',
     description: 'Вы хотите разобраться в решении суда и обсудить возможность обжалования.',

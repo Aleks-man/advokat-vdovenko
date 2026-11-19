@@ -1,17 +1,29 @@
-﻿import { ArrowUpRight, FileSearch, MessagesSquare, Landmark, FileCheck2 } from 'lucide-react'
+﻿import {
+  ArrowUpRight,
+  FileSearch,
+  MessagesSquare,
+  Landmark,
+  FileCheck2,
+  type LucideIcon,
+} from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { practiceAreas } from '../../data/practice'
+import { practiceAreas, type PracticeArea } from '../../data/practice'
 import './PracticeList.css'
 
-const stageIcons = [FileSearch, MessagesSquare, Landmark, FileCheck2]
+const stageIcons = {
+  'pre-investigation': FileSearch,
+  investigation: MessagesSquare,
+  trial: Landmark,
+  appeal: FileCheck2,
+} satisfies Record<PracticeArea['id'], LucideIcon>
 
 export function PracticeList() {
   return (
     <div className="practice-list">
-      {practiceAreas.map((area, index) => {
-        const Icon = stageIcons[index] ?? FileSearch
+      {practiceAreas.map((area) => {
+        const Icon = stageIcons[area.id]
         return (
-          <Link to={`/practice#stage-${area.number}`} className="practice-row" key={area.number}>
+          <Link to={`/practice#${area.anchorId}`} className="practice-row" key={area.id}>
             <span className="practice-icon" aria-hidden="true">
               <Icon size={24} strokeWidth={1.5} />
             </span>
