@@ -19,9 +19,17 @@ export function Hero() {
           <p className="hero-description">
             <span className="hero-profession">{attorney.profession}</span>
             <span className="hero-summary">
-              Помогу разобраться в ситуации и определить следующие шаги — от проверки до защиты в
-              суде.
+              <span className="hero-summary-full">
+                Помогу разобраться в ситуации и определить следующие шаги — от проверки до защиты в
+                суде.
+              </span>
+              <span className="hero-summary-short">
+                Помогу разобраться в ситуации и выстроить защиту.
+              </span>
             </span>
+          </p>
+          <p className="hero-mobile-practice">
+            Уголовная практика {attorney.practiceSince.toLocaleLowerCase('ru-RU')}
           </p>
           <dl className="hero-facts">
             <div>

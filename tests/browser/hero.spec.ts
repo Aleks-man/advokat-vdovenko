@@ -67,6 +67,12 @@ test('hero balances portrait and text across screen sizes', async ({ page }) => 
     const heading = (await page.locator('.hero-heading').boundingBox())!
     const content = (await page.locator('.hero-content').boundingBox())!
     const actions = (await page.locator('.hero-actions').boundingBox())!
+    if (width > 600) {
+      await expect(page.locator('.hero-summary-short')).toBeHidden()
+      await expect(page.locator('.hero-mobile-practice')).toBeHidden()
+      await expect(page.locator('.hero-summary-full')).toBeVisible()
+      await expect(page.locator('.hero-facts')).toBeVisible()
+    }
     if (width > 900) {
       const copy = (await page.locator('.hero-copy').boundingBox())!
       expect(portrait.x + portrait.width, `${width}px: separate columns`).toBeLessThanOrEqual(
@@ -108,14 +114,10 @@ test('hero balances portrait and text across screen sizes', async ({ page }) => 
       expect(profession.y + profession.height).toBeLessThanOrEqual(portrait.y)
       expect(summary.y).toBeGreaterThanOrEqual(portrait.y + portrait.height)
       expect(portrait.height).toBeLessThanOrEqual(350)
-      const facts = await page.locator('.hero-facts > div').all()
-      const first = (await facts[0].boundingBox())!
-      const second = (await facts[1].boundingBox())!
-      if (width >= 375) {
-        expect(first.y).toBeCloseTo(second.y, 0)
-      } else {
-        expect(second.y).toBeGreaterThanOrEqual(first.y + first.height)
-      }
+      await expect(page.locator('.hero-facts')).toBeHidden()
+      await expect(page.locator('.hero-summary-full')).toBeHidden()
+      await expect(page.locator('.hero-summary-short')).toBeVisible()
+      await expect(page.locator('.hero-mobile-practice')).toBeVisible()
       const hero = (await page.locator('.hero').boundingBox())!
       const imageBounds = (await image.boundingBox())!
       expect(imageBounds.x).toBeGreaterThanOrEqual(hero.x)

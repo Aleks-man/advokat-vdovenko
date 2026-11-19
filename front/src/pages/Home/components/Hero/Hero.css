@@ -168,3 +168,8 @@
     white-space: nowrap;
   }
 }
+
+.hero-summary-short,
+.hero-mobile-practice {
+  display: none;
+}
