@@ -36,6 +36,7 @@ tests/browser/  — браузерные проверки
 Общие сведения об адвокате — имя, специальность, образование, начало практики, регион и портрет — находятся в `front/src/data/attorney.ts`. Главная, биография, шапка, подвал и заголовки страниц используют эти данные. Тексты биографии и список фактов — в `front/src/data/about.ts`. Контакты, настройки бренда и навигация — в `front/src/data/site.ts`, порядок работы — в `front/src/data/workSteps.ts`, направления защиты — в `front/src/data/practice.ts`, вопросы и ответы — в `front/src/data/faq.ts`, полезные заметки — в `front/src/data/usefulMaterials.ts`. Цвета и размеры — в `front/src/styles/tokens.css`, подключение шрифтов — в `front/src/styles/fonts.css`.
 
 Общий логотип с именем — `front/src/components/Brand/`. Контактные ссылки формируются в `front/src/data/contacts.ts` из данных `site.ts`. Стили общих блоков лежат рядом с компонентами; глобальные правила — в `styles/`. Блоки, которые используются только на одной странице, находятся в `pages/<Page>/components/<Block>/`: разметка и CSS лежат рядом. Файл страницы задаёт порядок блоков, её CSS отвечает только за общую раскладку. Если собственных стилей у страницы нет, отдельный CSS-файл не создаётся.
+Блоки главной `Hero`, `DocumentHelp` и `FirstConversation` находятся в `front/src/pages/Home/components/`. Ресурсы приложения хранятся в `front/src/assets/`, описание генерации изображения папки с делом — в `docs/assets/case-file.prompt.md`.
 
 ## Проверки
 

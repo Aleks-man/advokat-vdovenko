@@ -1,7 +1,7 @@
-import { Hero } from '../../components/Hero/Hero'
+import { Hero } from './components/Hero/Hero'
 import { PracticeList } from '../../components/PracticeList/PracticeList'
-import { DocumentHelp } from '../../components/DocumentHelp/DocumentHelp'
-import { FirstConversation } from '../../components/FirstConversation/FirstConversation'
+import { DocumentHelp } from './components/DocumentHelp/DocumentHelp'
+import { FirstConversation } from './components/FirstConversation/FirstConversation'
 
 import { ContactCallout } from '../../components/ContactCallout/ContactCallout'
 import './Home.css'

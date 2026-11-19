@@ -1,6 +1,6 @@
-import { attorney } from '../../data/attorney'
+import { attorney } from '../../../../data/attorney'
 import { Link } from 'react-router-dom'
-import { contactLinks } from '../../data/contacts'
+import { contactLinks } from '../../../../data/contacts'
 import './Hero.css'
 export function Hero() {
   const [firstName, ...lastName] = attorney.name.split(' ')
