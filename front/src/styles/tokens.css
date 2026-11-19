@@ -29,7 +29,6 @@
   --card-radius: 16px;
   --portrait-radius: 12px;
   --portrait-border: rgb(var(--accent-rgb) / 42%);
-  --portrait-surface: linear-gradient(145deg, #e5dac6, #f5f2ea 48%, #ccd2c7);
   --portrait-shadow: 0 6px 18px rgb(25 40 31 / 4%);
   --heading: Georgia, 'Times New Roman', serif;
   --sans: 'Onest Variable', 'Segoe UI', Arial, sans-serif;
@@ -52,19 +51,10 @@
   --title-small: 20px;
   --section-title: 36px;
   --page-title: 48px;
-  --hero-title: 64px;
   --space-small: 12px;
-  --space-medium: 24px;
-  --space-large: 32px;
   --page-width: 1320px;
   --gutter: clamp(20px, 4vw, 72px);
   --panel-inset: clamp(18px, 4vw, 56px);
-}
-
-@media (max-width: 1100px) {
-  :root {
-    --hero-title: 48px;
-  }
 }
 
 @media (max-width: 760px) {
@@ -72,7 +62,6 @@
     --panel-radius: 16px;
     --section-title: 28px;
     --page-title: 32px;
-    --hero-title: 40px;
     --text-lead: 18px;
   }
 }
