@@ -1,3 +1,4 @@
+import { attorney } from '../../data/attorney'
 import { about } from '../../data/about'
 import './AttorneyProfile.css'
 
@@ -7,8 +8,8 @@ export function AttorneyProfile() {
       <div className="container about-inner">
         <div className="about-heading">
           <p className="eyebrow">Обо мне</p>
-          <h1 id="about-heading">{about.name}</h1>
-          <p className="about-profession">{about.profession}</p>
+          <h1 id="about-heading">{attorney.name}</h1>
+          <p className="about-profession">{attorney.profession}</p>
         </div>
         <div className="about-content">
           <div className="about-biography">

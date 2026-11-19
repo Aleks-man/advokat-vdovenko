@@ -1,7 +1,5 @@
 export const site = {
   brandTagline: 'АДВОКАТ · УГОЛОВНЫЕ ДЕЛА',
-  name: 'Константин Вдовенко',
-  profession: 'Адвокат по уголовным делам',
   phone: '+7 (999) 999 99 99',
   email: 'advokat.vdovenko@example.com',
   city: 'Москва',

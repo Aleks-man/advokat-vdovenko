@@ -1,3 +1,4 @@
+import { attorney } from '../../data/attorney'
 import { HeaderNavigation } from './HeaderNavigation'
 import { Phone, Menu, X } from 'lucide-react'
 import { site } from '../../data/site'
@@ -15,7 +16,7 @@ export function Header() {
         <div className="header-inner container">
           <Brand onClick={close}>
             <span className="header-compact-name" aria-hidden="true">
-              {site.name}
+              {attorney.name}
               <small>{site.brandTagline}</small>
             </span>
           </Brand>

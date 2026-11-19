@@ -1,8 +1,8 @@
+import { attorney } from '../data/attorney'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import { site } from '../data/site'
 const titles: Record<string, string> = {
-  '/': 'Адвокат по уголовным делам',
+  '/': attorney.profession,
   '/practice': 'Уголовная защита',
   '/about': 'Обо мне',
   '/contacts': 'Контакты',
@@ -10,7 +10,7 @@ const titles: Record<string, string> = {
 export function RouteEffects() {
   const { pathname, hash } = useLocation()
   useEffect(() => {
-    document.title = `${titles[pathname] ?? 'Страница не найдена'} · ${site.name}`
+    document.title = `${titles[pathname] ?? 'Страница не найдена'} · ${attorney.name}`
     if (hash) {
       document.getElementById(hash.slice(1))?.scrollIntoView()
     } else {

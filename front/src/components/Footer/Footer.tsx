@@ -1,3 +1,4 @@
+import { attorney } from '../../data/attorney'
 import { Mail, MapPin, Phone } from 'lucide-react'
 import { site } from '../../data/site'
 import { MessengerLinks } from '../MessengerLinks/MessengerLinks'
@@ -36,7 +37,7 @@ export function Footer() {
         </div>
         <div className="footer-bottom">
           <span>
-            © {new Date().getFullYear()} {site.name}
+            © {new Date().getFullYear()} {attorney.name}
           </span>
           <span>Частная адвокатская практика</span>
         </div>

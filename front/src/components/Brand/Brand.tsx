@@ -1,3 +1,4 @@
+import { attorney } from '../../data/attorney'
 import { Link } from 'react-router-dom'
 import type { ReactNode } from 'react'
 import { site } from '../../data/site'
@@ -10,12 +11,12 @@ type BrandProps = {
 }
 
 export function Brand({ className = '', onClick, children }: BrandProps) {
-  const [firstName, ...lastName] = site.name.split(' ')
+  const [firstName, ...lastName] = attorney.name.split(' ')
   return (
     <Link
       to="/"
       className={`brand ${className}`}
-      aria-label={`${site.name} — главная`}
+      aria-label={`${attorney.name} — главная`}
       onClick={onClick}
     >
       <img className="brand-mark" src="/brand/vdovenko.svg" alt="" width="68" height="68" />

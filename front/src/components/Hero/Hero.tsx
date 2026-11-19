@@ -1,22 +1,21 @@
+import { attorney } from '../../data/attorney'
 import { Link } from 'react-router-dom'
-import { site } from '../../data/site'
 import { contactLinks } from '../../data/contacts'
-import { about } from '../../data/about'
 import './Hero.css'
 export function Hero() {
-  const [firstName, ...lastName] = site.name.split(' ')
+  const [firstName, ...lastName] = attorney.name.split(' ')
   return (
     <section className="hero container">
       <div className="hero-copy">
         <div className="hero-heading">
-          <p className="hero-location">Частная практика · Москва и область</p>
+          <p className="hero-location">Частная практика · {attorney.region.label}</p>
           <h1>
             <span>{firstName}</span> <em>{lastName.join(' ')}</em>
           </h1>
         </div>
         <div className="hero-content">
           <p className="hero-description">
-            Адвокат по уголовным делам
+            {attorney.profession}
             <span>
               Помогу разобраться в ситуации и определить следующие шаги — от проверки до защиты в
               суде.
@@ -25,7 +24,7 @@ export function Hero() {
           <dl className="hero-facts">
             <div>
               <dt>Уголовная практика</dt>
-              <dd>С 2014 года</dd>
+              <dd>{attorney.practiceSince}</dd>
             </div>
             <div>
               <dt>Стадии защиты</dt>
@@ -50,8 +49,8 @@ export function Hero() {
       <div className="hero-art">
         <img
           className="hero-image"
-          src={about.portrait.src}
-          alt={about.portrait.alt}
+          src={attorney.portrait.src}
+          alt={attorney.portrait.alt}
           width={800}
           height={1000}
           fetchPriority="high"
