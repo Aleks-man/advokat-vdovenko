@@ -1,10 +1,3 @@
-.navigation-contacts {
-  display: none;
-}
-.navigation-panel,
-.navigation-links {
-  display: contents;
-}
 .header-space {
   height: 108px;
 }
@@ -29,65 +22,6 @@
   min-height: inherit;
   padding-inline: var(--header-inset);
   transition: padding 0.36s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.navigation {
-  position: relative;
-  isolation: isolate;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-@media (min-width: 721px) {
-  .header .navigation {
-    margin-left: auto;
-  }
-}
-.navigation-indicator {
-  position: absolute;
-  position-anchor: --active-navigation;
-  top: anchor(top);
-  left: anchor(left);
-  width: anchor-size(width);
-  height: anchor-size(height);
-  z-index: -1;
-  pointer-events: none;
-  border-radius: 30px;
-  background: rgb(223 188 131 / 16%);
-  transition:
-    left 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-    top 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-    width 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-    height 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-}
-.navigation a[aria-current='page'] {
-  anchor-name: --active-navigation;
-}
-.navigation:not(:has(a[aria-current='page'])) .navigation-indicator {
-  display: none;
-}
-@supports not (anchor-name: --active-navigation) {
-  .navigation-indicator {
-    display: none;
-  }
-  .navigation a[aria-current='page'] {
-    background: rgb(223 188 131 / 16%);
-  }
-}
-.navigation a {
-  font-size: 14px;
-  color: var(--on-dark-muted);
-  padding: 10px 13px;
-  border-radius: 30px;
-  transition:
-    background 0.2s,
-    color 0.2s;
-}
-.navigation a:hover,
-.navigation a.active {
-  color: var(--on-dark);
-}
-.navigation a:hover:not(.active) {
-  background: rgb(223 188 131 / 8%);
 }
 .header-contact {
   display: inline-flex;
@@ -123,9 +57,6 @@
     justify-content: center;
     width: 40px;
     min-height: 40px;
-  }
-  .navigation a {
-    padding-inline: 11px;
   }
 }
 @media (max-width: 720px) {
@@ -165,100 +96,6 @@
   .menu-toggle {
     grid-column: 3;
     grid-row: 1;
-  }
-  .navigation {
-    display: grid;
-    grid-column: 1 / -1;
-    grid-row: 2;
-    grid-template-rows: 0fr;
-    min-width: 0;
-    align-items: stretch;
-    gap: 0;
-    visibility: hidden;
-    transition:
-      grid-template-rows 0.32s ease-in-out,
-      visibility 0s 0.32s;
-  }
-  .navigation.is-open {
-    grid-template-rows: 1fr;
-    visibility: visible;
-    transition:
-      grid-template-rows 0.32s ease-in-out,
-      visibility 0s;
-  }
-  .navigation-panel {
-    display: block;
-    min-height: 0;
-    overflow: hidden;
-  }
-  .navigation-links {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    min-height: 0;
-    max-height: calc(100dvh - var(--header-row-height));
-    overflow-x: hidden;
-    overflow-y: auto;
-    scrollbar-width: none;
-    padding-inline: clamp(12px, 3vw, 24px);
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.32s ease-in-out;
-  }
-  .navigation.is-open .navigation-links {
-    opacity: 1;
-  }
-  .navigation-links::before {
-    content: '';
-    display: block;
-    flex-shrink: 0;
-    width: min(calc(100% - 24px), 400px);
-    height: clamp(25px, 4.8vw, 34px);
-    background: var(--accent-light);
-    mask: url('../../assets/menu-ornament.svg') center / contain no-repeat;
-    opacity: 0.65;
-    pointer-events: none;
-  }
-  .navigation-links::before {
-    margin: 10px auto 8px;
-  }
-  .navigation-contacts::before {
-    content: '';
-    flex-shrink: 0;
-    width: min(70%, 220px);
-    height: 1px;
-    margin: 0 auto 12px;
-    background: linear-gradient(90deg, transparent, rgb(223 188 131 / 45%), transparent);
-    pointer-events: none;
-  }
-  .navigation-links > a {
-    position: relative;
-    font-size: var(--text-size);
-    min-height: 48px;
-    padding: 14px 16px;
-    border-radius: 8px;
-  }
-  .navigation-links > a + a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 18%;
-    width: 64%;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgb(223 188 131 / 30%), transparent);
-    pointer-events: none;
-  }
-  .navigation-links > a[aria-current='page'] {
-    background: linear-gradient(
-      90deg,
-      rgb(223 188 131 / 3%),
-      rgb(223 188 131 / 12%),
-      rgb(223 188 131 / 3%)
-    );
-    color: var(--accent-light);
-  }
-  .navigation-indicator {
-    display: none;
   }
 }
 
@@ -366,10 +203,6 @@
   .header-compact-name small {
     font-size: 8px;
   }
-  .header .navigation {
-    max-height: calc(100dvh - var(--header-row-height));
-    overflow: hidden;
-  }
 }
 @media (max-width: 380px) {
   .header-inner {
@@ -403,55 +236,6 @@
   }
 }
 
-@media (max-width: 720px) {
-  .navigation-links::-webkit-scrollbar {
-    display: none;
-  }
-  .navigation-contacts {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    margin: 0 16px;
-    padding: 8px 0 16px;
-  }
-  .navigation .navigation-phone {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    min-height: 44px;
-    padding: 8px 0;
-    color: var(--on-dark);
-    font-size: var(--text-size);
-    font-weight: 500;
-    white-space: nowrap;
-    border-radius: 0;
-  }
-  .navigation-phone svg {
-    color: var(--accent-light);
-  }
-  .navigation-contacts .messenger-links {
-    justify-content: center;
-    gap: 8px;
-  }
-  .navigation-contacts .messenger-link {
-    width: 44px;
-    height: 44px;
-    min-height: 44px;
-    padding: 10px;
-    border-radius: 8px;
-    color: var(--accent-light);
-  }
-  .navigation-contacts .messenger-icon {
-    width: 24px;
-    height: 24px;
-  }
-  .navigation-contacts a:is(:hover, :focus-visible) {
-    background: rgb(223 188 131 / 8%);
-    color: var(--on-dark);
-  }
-}
-
 @media (min-width: 721px) and (max-width: 960px) {
   .header {
     gap: 12px;
@@ -460,20 +244,9 @@
   .header .header-inner > .brand {
     width: 210px;
   }
-  .navigation {
-    gap: 2px;
-  }
 }
 
 @media (min-width: 721px) and (max-width: 840px) {
-  .navigation {
-    gap: 0;
-  }
-  .navigation a {
-    font-size: 13px;
-    padding-inline: 8px;
-    white-space: nowrap;
-  }
   .header-compact-name {
     font-size: 18px;
   }

@@ -1,7 +1,6 @@
-import { MessengerLinks } from '../MessengerLinks/MessengerLinks'
-import { NavLink } from 'react-router-dom'
+import { HeaderNavigation } from './HeaderNavigation'
 import { Phone, Menu, X } from 'lucide-react'
-import { navigation, site } from '../../data/site'
+import { site } from '../../data/site'
 import { Brand } from '../Brand/Brand'
 import { contactLinks } from '../../data/contacts'
 import { useCompactHeader } from './hooks/useCompactHeader'
@@ -31,34 +30,7 @@ export function Header() {
           >
             {open ? <X /> : <Menu />}
           </button>
-          <nav
-            ref={navigationRef}
-            id="main-navigation"
-            className={`navigation ${open ? 'is-open' : ''}`}
-            aria-label="Основная навигация"
-          >
-            <div className="navigation-panel">
-              <div className="navigation-links">
-                {navigation.map((item) => (
-                  <NavLink key={item.to} to={item.to} end onClick={close}>
-                    {item.label}
-                  </NavLink>
-                ))}
-                <span className="navigation-indicator" aria-hidden="true" />
-                <div className="navigation-contacts">
-                  <a
-                    className="navigation-phone"
-                    href={contactLinks.phone}
-                    aria-label={`Позвонить: ${site.phone}`}
-                  >
-                    <Phone size={18} aria-hidden="true" />
-                    {site.phone}
-                  </a>
-                  <MessengerLinks />
-                </div>
-              </div>
-            </div>
-          </nav>
+          <HeaderNavigation open={open} navigationRef={navigationRef} close={close} />
           <a
             className="header-contact"
             href={contactLinks.phone}
