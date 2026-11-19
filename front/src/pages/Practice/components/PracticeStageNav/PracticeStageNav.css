@@ -1,0 +1,46 @@
+.practice-stage-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-block: 8px 24px;
+}
+.practice-stage-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgb(255 254 250 / 65%);
+  font-size: var(--text-secondary);
+  font-weight: 500;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+.practice-stage-nav a span {
+  color: var(--accent-text);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+.practice-stage-nav a:is(:hover, :focus-visible) {
+  background: var(--paper-light);
+  border-color: var(--accent);
+}
+@media (max-width: 600px) {
+  .practice-stage-nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    padding-bottom: 8px;
+  }
+  .practice-stage-nav a {
+    align-items: start;
+    padding: 12px;
+    gap: 8px;
+  }
+  .practice-stage-nav a span {
+    padding-top: 2px;
+  }
+}

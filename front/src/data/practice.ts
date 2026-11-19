@@ -1,4 +1,4 @@
-type PracticeArea = {
+export type PracticeArea = {
   number: string
   title: string
   description: string

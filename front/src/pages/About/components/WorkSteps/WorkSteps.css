@@ -29,11 +29,6 @@
   color: var(--muted);
   max-width: 38ch;
 }
-.faq {
-  width: calc((100% - var(--content-gap)) * 2 / 3);
-  margin-left: auto;
-  border-top: 1px solid var(--line);
-}
 @media (max-width: 900px) {
   .work-steps {
     grid-template-columns: 1fr;
@@ -59,26 +54,17 @@
     max-width: none;
   }
 }
-
-@media (max-width: 700px) {
-  .faq {
-    width: 100%;
-  }
-}
-
 .about-work .section-heading {
   min-height: 180px;
   align-content: center;
   padding-right: 200px;
 }
-
 .about-work .section-background {
   left: auto;
   right: calc(-1 * var(--gutter));
   width: 340px;
   transform: none;
 }
-
 .about-work .section-background::before {
   height: 100%;
   background-image:
@@ -92,7 +78,6 @@
     right center;
   opacity: 0.7;
 }
-
 @media (max-width: 700px) {
   .about-work .section-heading {
     min-height: 190px;

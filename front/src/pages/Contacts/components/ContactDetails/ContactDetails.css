@@ -1,0 +1,106 @@
+.contact-detail {
+  display: flex;
+  gap: 16px;
+  padding-block: var(--card-padding);
+  border-bottom: 1px solid var(--line);
+}
+.contact-detail > svg {
+  margin-top: 4px;
+  color: var(--accent-text);
+  flex-shrink: 0;
+}
+.contact-detail .eyebrow {
+  color: var(--muted);
+}
+.contact-detail > div {
+  min-width: 0;
+  flex: 1;
+}
+.contact-detail .contact-value {
+  display: block;
+  margin-block: 8px;
+  font-family: var(--sans);
+  font-weight: 500;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.contact-detail--primary {
+  position: relative;
+  display: block;
+  padding: var(--card-padding);
+  border: 1px solid var(--line);
+  border-radius: var(--card-radius);
+  background: rgb(255 254 250 / 85%);
+}
+.contact-detail--primary > svg {
+  position: absolute;
+  top: var(--card-padding);
+  right: var(--card-padding);
+}
+.contact-detail--primary .contact-phone {
+  width: fit-content;
+  min-height: 44px;
+  padding-block: 4px;
+  font-size: clamp(20px, 5.5vw, 28px);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.contact-email,
+.contact-address {
+  font-size: 18px;
+}
+.contact-email {
+  width: fit-content;
+  min-height: 44px;
+  padding-block: 4px;
+}
+.contact-value[href]:hover {
+  color: var(--accent-text);
+}
+.contact-detail small {
+  display: block;
+  line-height: var(--text-leading);
+  color: var(--muted);
+  font-size: var(--text-secondary);
+}
+.contact-details .messenger-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: var(--heading-gap);
+}
+.contact-details .messenger-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  min-width: 0;
+  min-height: 76px;
+  padding: 10px 4px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgb(var(--accent-rgb) / 5%);
+  color: var(--ink);
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+}
+.contact-details .messenger-icon {
+  order: -1;
+  width: 22px;
+  height: 22px;
+  color: var(--accent-text);
+}
+.contact-details .messenger-label {
+  letter-spacing: normal;
+}
+.contact-details .messenger-link:is(:hover, :focus-visible) {
+  border-color: var(--accent);
+  background: rgb(var(--accent-rgb) / 10%);
+}
+@media (max-width: 600px) {
+  .contact-detail--primary > svg {
+    top: 18px;
+    right: var(--card-padding);
+  }
+}

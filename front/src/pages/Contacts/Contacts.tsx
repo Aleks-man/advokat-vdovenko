@@ -1,12 +1,9 @@
+import { ContactDetails } from './components/ContactDetails/ContactDetails'
+import { ContactAside } from './components/ContactAside/ContactAside'
 import { SectionBackground } from '../../components/SectionBackground/SectionBackground'
-import { Mail, MapPin, Phone } from 'lucide-react'
-import { site } from '../../data/site'
-import { contactLinks } from '../../data/contacts'
-import { MessengerLinks } from '../../components/MessengerLinks/MessengerLinks'
 import './Contacts.css'
 import { PageIntro } from '../../components/PageIntro/PageIntro'
 export function Contacts() {
-  const [emailName, emailDomain] = site.email.split('@')
   return (
     <>
       <PageIntro
@@ -22,63 +19,8 @@ export function Contacts() {
       </PageIntro>
       <section className="container section contacts-layout section-with-background">
         <SectionBackground variant="contacts" />
-        <div className="contact-details">
-          <div className="contact-detail contact-detail--primary">
-            <Phone size={18} />
-            <div>
-              <span className="eyebrow">Телефон</span>
-              <a className="contact-value contact-phone" href={contactLinks.phone}>
-                {site.phone}
-              </a>
-              <small>Позвоните или выберите удобный мессенджер</small>
-              <MessengerLinks showLabels />
-            </div>
-          </div>
-          <div className="contact-detail">
-            <Mail size={18} />
-            <div>
-              <span className="eyebrow">Электронная почта</span>
-              <a className="contact-value contact-email" href={contactLinks.email}>
-                <span>
-                  {emailName}@<wbr />
-                  {emailDomain}
-                </span>
-              </a>
-              <small>Чтобы задать вопрос или договориться о встрече</small>
-            </div>
-          </div>
-          <div className="contact-detail">
-            <MapPin size={18} />
-            <div>
-              <span className="eyebrow">Адрес приёма</span>
-              <a
-                className="contact-value contact-address"
-                href={contactLinks.map}
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Открыть адрес в Яндекс Картах"
-              >
-                {site.city}, {site.address}
-              </a>
-              <small>Принимаю по предварительной записи</small>
-            </div>
-          </div>
-        </div>
-        <aside className="contact-aside">
-          <p className="eyebrow">Перед обращением</p>
-          <h2>
-            Договоримся <em>о встрече</em>
-          </h2>
-          <p>
-            В первом сообщении коротко опишите ситуацию. Если уже назначен допрос или заседание,
-            укажите дату — это поможет понять, сколько времени есть до встречи.
-          </p>
-          <div className="contact-aside-note">
-            О времени и месте встречи договоримся заранее.
-            <br />
-            Если планируете приехать, сначала подтвердите запись.
-          </div>
-        </aside>
+        <ContactDetails />
+        <ContactAside />
       </section>
     </>
   )
