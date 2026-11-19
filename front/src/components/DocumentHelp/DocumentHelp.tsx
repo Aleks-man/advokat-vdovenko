@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import './Principles.css'
+import './DocumentHelp.css'
 const documentQuestions = [
   {
     title: 'Повестка',
@@ -15,15 +15,15 @@ const documentQuestions = [
   },
 ]
 
-export function Principles() {
+export function DocumentHelp() {
   return (
-    <section className="container principles" aria-labelledby="principles-title">
-      <div className="principles-content">
-        <h2 id="principles-title">Вам пришёл документ?</h2>
-        <p className="principles-lead">
+    <section className="container document-help" aria-labelledby="document-help-title">
+      <div className="document-help-content">
+        <h2 id="document-help-title">Вам пришёл документ?</h2>
+        <p className="document-help-lead">
           Начнём с того, что у вас на руках. Если документов нет — с вашего рассказа.
         </p>
-        <ul className="principles-details">
+        <ul className="document-help-details">
           {documentQuestions.map((item) => (
             <li key={item.title}>
               <h3>{item.title}</h3>

@@ -1,4 +1,4 @@
-.principles {
+.document-help {
   --document-wash: linear-gradient(
     90deg,
     rgb(var(--surface-document-rgb) / 94%) 0%,
@@ -11,7 +11,7 @@
   overflow: hidden;
   padding: var(--panel-space) var(--panel-inset);
 }
-.principles::before {
+.document-help::before {
   content: '';
   position: absolute;
   inset: 0 0 0 auto;
@@ -29,42 +29,42 @@
   mask-repeat: no-repeat;
   pointer-events: none;
 }
-.principles-content {
+.document-help-content {
   width: min(100%, 640px);
 }
-.principles-lead {
+.document-help-lead {
   max-width: 48ch;
   color: var(--muted);
   margin-top: 16px;
 }
-.principles-details {
+.document-help-details {
   list-style: none;
   padding: 0;
   margin: var(--heading-gap) 0 0;
   display: grid;
   gap: 16px;
 }
-.principles-details h3 {
+.document-help-details h3 {
   font-size: var(--title-small);
   line-height: var(--subheading-leading);
 }
-.principles-details p {
+.document-help-details p {
   max-width: 48ch;
   margin-top: 4px;
   color: var(--muted);
 }
-.principles .text-link {
+.document-help .text-link {
   margin-top: var(--heading-gap);
   border-color: currentColor;
   color: var(--accent-text);
   transition: color 0.2s;
 }
-.principles .text-link:hover {
+.document-help .text-link:hover {
   color: var(--ink);
 }
 
 @media (max-width: 760px) {
-  .principles {
+  .document-help {
     --accent-text: #594020;
     --ink: #101510;
     color: var(--ink);
@@ -76,7 +76,7 @@
       rgb(var(--surface-document-rgb) / 48%) 100%
     );
   }
-  .principles::before {
+  .document-help::before {
     opacity: 0.75;
     background-color: rgb(var(--surface-document-rgb));
     background-image:
@@ -98,8 +98,8 @@
       center,
       right center;
   }
-  .principles-lead,
-  .principles-details p {
+  .document-help-lead,
+  .document-help-details p {
     font-weight: 500;
   }
 }

@@ -1,6 +1,6 @@
 import { Hero } from '../../components/Hero/Hero'
 import { PracticeList } from '../../components/PracticeList/PracticeList'
-import { Principles } from '../../components/Principles/Principles'
+import { DocumentHelp } from '../../components/DocumentHelp/DocumentHelp'
 import { FirstConversation } from '../../components/FirstConversation/FirstConversation'
 
 import { ContactCallout } from '../../components/ContactCallout/ContactCallout'
@@ -22,7 +22,7 @@ export function Home() {
         </div>
         <PracticeList />
       </section>
-      <Principles />
+      <DocumentHelp />
       <FirstConversation />
 
       <ContactCallout />

@@ -61,7 +61,7 @@ for (const width of widths) {
       }
       if (route === '/') {
         const edges = await page
-          .locator('.home-practice h2, .principles h2, .first-conversation h2')
+          .locator('.home-practice h2, .document-help h2, .first-conversation h2')
           .evaluateAll((elements) =>
             elements.map((element) => element.getBoundingClientRect().left),
           )
