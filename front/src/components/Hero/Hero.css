@@ -248,3 +248,12 @@
     width: 100%;
   }
 }
+
+@media (max-width: 760px) {
+  .hero-copy {
+    --ink: var(--ink-dark);
+    --muted: var(--ink-dark);
+    --accent-text: #594020;
+    color: var(--ink);
+  }
+}

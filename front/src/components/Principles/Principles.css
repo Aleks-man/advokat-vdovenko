@@ -65,6 +65,15 @@
 
 @media (max-width: 760px) {
   .principles {
+    --ink: var(--ink-dark);
+    --muted: var(--ink-dark);
+    --accent-text: #594020;
+    color: var(--ink);
+  }
+}
+
+@media (max-width: 760px) {
+  .principles {
     --ink: #101510;
     --muted: #101510;
     color: #101510;

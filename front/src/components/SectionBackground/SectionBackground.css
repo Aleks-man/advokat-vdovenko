@@ -78,33 +78,6 @@
     var(--section-image);
 }
 
-.about-work .section-heading {
-  min-height: 180px;
-  align-content: center;
-  padding-right: 200px;
-}
-
-.about-work .section-background {
-  left: auto;
-  right: calc(-1 * var(--gutter));
-  width: 340px;
-  transform: none;
-}
-
-.about-work .section-background::before {
-  height: 100%;
-  background-image:
-    linear-gradient(90deg, rgb(var(--background-rgb)), rgb(var(--background-rgb) / 12%) 65%),
-    var(--section-image);
-  background-size:
-    100% 100%,
-    auto 210px;
-  background-position:
-    center,
-    right center;
-  opacity: 0.7;
-}
-
 @media (max-width: 700px) {
   .page-intro-panel--illustrated .section-background::before {
     background-size:
@@ -129,24 +102,6 @@
         rgb(var(--background-rgb) / 30%) 100%
       ),
       var(--section-image);
-  }
-
-  .about-work .section-heading {
-    min-height: 190px;
-    padding-right: 100px;
-    gap: 12px;
-  }
-
-  .about-work .section-background {
-    right: calc(-0.5 * var(--gutter));
-    width: 140px;
-  }
-
-  .about-work .section-background::before {
-    background-size:
-      100% 100%,
-      auto 170px;
-    opacity: 0.6;
   }
 }
 
@@ -192,5 +147,14 @@
 @media (min-width: 851px) {
   .section-background--contacts::before {
     opacity: 0.78;
+  }
+}
+
+@media (max-width: 760px) {
+  .section-with-background {
+    --ink: var(--ink-dark);
+    --muted: var(--ink-dark);
+    --accent-text: #594020;
+    color: var(--ink);
   }
 }
