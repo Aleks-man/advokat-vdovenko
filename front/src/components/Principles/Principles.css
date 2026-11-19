@@ -65,18 +65,9 @@
 
 @media (max-width: 760px) {
   .principles {
-    --ink: var(--ink-dark);
-    --muted: var(--ink-dark);
     --accent-text: #594020;
-    color: var(--ink);
-  }
-}
-
-@media (max-width: 760px) {
-  .principles {
     --ink: #101510;
-    --muted: #101510;
-    color: #101510;
+    color: var(--ink);
     --document-wash: linear-gradient(
       90deg,
       rgb(var(--surface-document-rgb) / 98%) 0%,
@@ -107,12 +98,8 @@
       center,
       right center;
   }
-}
-
-@media (max-width: 760px) {
   .principles-lead,
   .principles-details p {
-    color: #101510;
     font-weight: 500;
   }
 }

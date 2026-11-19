@@ -60,6 +60,11 @@
   .page-intro-panel--illustrated {
     grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto;
+    overflow: hidden;
+    --ink: #101510;
+    --muted: #101510;
+    --accent-text: #513a20;
+    color: var(--ink);
   }
   .page-intro-art {
     position: absolute;
@@ -72,27 +77,13 @@
     height: calc(100% - 24px);
     opacity: 0.25;
   }
-  .page-intro-panel--illustrated {
-    overflow: hidden;
-  }
   .page-intro-art img {
-    height: 100%;
-    object-fit: contain;
     object-position: center;
     filter: none;
     mask-image:
       linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent),
       linear-gradient(180deg, #000 88%, transparent 100%);
     mask-composite: intersect;
-  }
-}
-
-@media (max-width: 850px) {
-  .page-intro-panel--illustrated {
-    --ink: #101510;
-    --muted: #101510;
-    --accent-text: #513a20;
-    color: var(--ink);
   }
   .page-intro-panel--illustrated > p:not(.eyebrow) {
     font-weight: 500;
