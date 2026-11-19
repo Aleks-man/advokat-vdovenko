@@ -20,9 +20,7 @@ for (const width of widths) {
         const header = document.querySelector('.header')!.getBoundingClientRect()
         const label = document
           .querySelector(
-            innerWidth > 900 && document.querySelector('.hero')
-              ? '.hero-art'
-              : 'main .hero-location, main .page-intro .eyebrow, main .about-heading .eyebrow',
+            'main .hero-location, main .page-intro .eyebrow, main .about-heading .eyebrow',
           )!
           .getBoundingClientRect()
         return label.top - header.bottom

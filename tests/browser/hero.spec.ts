@@ -27,11 +27,21 @@ test('hero balances portrait and text across screen sizes', async ({ page }) => 
   const widths = [
     ...new Set([
       320,
+      360,
+      374,
+      375,
       390,
+      500,
       450,
       451,
       600,
       601,
+      699,
+      700,
+      701,
+      760,
+      761,
+      768,
       636,
       637,
       638,
@@ -57,12 +67,15 @@ test('hero balances portrait and text across screen sizes', async ({ page }) => 
     const heading = (await page.locator('.hero-heading').boundingBox())!
     const content = (await page.locator('.hero-content').boundingBox())!
     const actions = (await page.locator('.hero-actions').boundingBox())!
-    if (width > 600) {
+    if (width > 900) {
       const copy = (await page.locator('.hero-copy').boundingBox())!
       expect(portrait.x + portrait.width, `${width}px: separate columns`).toBeLessThanOrEqual(
         copy.x,
       )
-      expect(portrait.height, `${width}px: equal heights`).toBeCloseTo(copy.height, 0)
+      expect(portrait.height, `${width}px: equal photo and text heights`).toBeCloseTo(
+        copy.height,
+        0,
+      )
       expect(heading.y, `${width}px: aligned tops`).toBeCloseTo(portrait.y, 0)
       expect(actions.y + actions.height, `${width}px: aligned bottoms`).toBeCloseTo(
         portrait.y + portrait.height,
@@ -74,10 +87,35 @@ test('hero balances portrait and text across screen sizes', async ({ page }) => 
         expect(gap, `${width}px: groups do not overlap`).toBeGreaterThanOrEqual(15)
         expect(gap, `${width}px: no stretched empty space`).toBeLessThanOrEqual(70)
       }
+    } else if (width > 600) {
+      const profession = (await page.locator('.hero-profession').boundingBox())!
+      const summary = (await page.locator('.hero-summary').boundingBox())!
+      const facts = (await page.locator('.hero-facts').boundingBox())!
+      expect(heading.y + heading.height).toBeLessThanOrEqual(profession.y)
+      expect(profession.y).toBeCloseTo(portrait.y, 0)
+      expect(profession.x).toBeGreaterThanOrEqual(portrait.x + portrait.width)
+      expect(summary.x).toBeGreaterThanOrEqual(portrait.x + portrait.width)
+      expect(summary.y).toBeGreaterThanOrEqual(profession.y + profession.height)
+      expect(facts.y).toBeGreaterThanOrEqual(summary.y + summary.height)
+      expect(facts.y - summary.y - summary.height).toBeCloseTo(18, 0)
+      expect(actions.y).toBeGreaterThanOrEqual(portrait.y + portrait.height)
+      expect(actions.x).toBeCloseTo(heading.x, 0)
     } else {
       expect(heading.y + heading.height).toBeLessThanOrEqual(portrait.y)
-      expect(content.y).toBeGreaterThanOrEqual(portrait.y + portrait.height)
-      expect(portrait.height).toBeLessThanOrEqual(290)
+      const profession = (await page.locator('.hero-profession').boundingBox())!
+      const summary = (await page.locator('.hero-summary').boundingBox())!
+      expect(profession.y).toBeGreaterThanOrEqual(heading.y + heading.height)
+      expect(profession.y + profession.height).toBeLessThanOrEqual(portrait.y)
+      expect(summary.y).toBeGreaterThanOrEqual(portrait.y + portrait.height)
+      expect(portrait.height).toBeLessThanOrEqual(350)
+      const facts = await page.locator('.hero-facts > div').all()
+      const first = (await facts[0].boundingBox())!
+      const second = (await facts[1].boundingBox())!
+      if (width >= 375) {
+        expect(first.y).toBeCloseTo(second.y, 0)
+      } else {
+        expect(second.y).toBeGreaterThanOrEqual(first.y + first.height)
+      }
       const hero = (await page.locator('.hero').boundingBox())!
       const imageBounds = (await image.boundingBox())!
       expect(imageBounds.x).toBeGreaterThanOrEqual(hero.x)
@@ -93,11 +131,24 @@ test('hero balances portrait and text across screen sizes', async ({ page }) => 
     } else {
       expect(telegram.y).toBeGreaterThanOrEqual(button.y + button.height)
     }
-    const imageBounds = (await image.boundingBox())!
     expect(
-      imageBounds.width / imageBounds.height,
-      `${width}px: retain full portrait height`,
-    ).toBeLessThanOrEqual(0.81)
+      portrait.width / portrait.height,
+      `${width}px: frame keeps portrait proportions`,
+    ).toBeCloseTo(4 / 5, 2)
+    const visible = await image.evaluate((img: HTMLImageElement) => {
+      const bounds = img.getBoundingClientRect()
+      const fit = getComputedStyle(img).objectFit
+      const scale =
+        fit === 'contain'
+          ? Math.min(bounds.width / img.naturalWidth, bounds.height / img.naturalHeight)
+          : Math.max(bounds.width / img.naturalWidth, bounds.height / img.naturalHeight)
+      return {
+        width: Math.min(1, bounds.width / (img.naturalWidth * scale)),
+        height: Math.min(1, bounds.height / (img.naturalHeight * scale)),
+      }
+    })
+    expect(visible.width, `${width}px: shoulders stay in the frame`).toBeCloseTo(1, 3)
+    expect(visible.height, `${width}px: portrait stays fully visible`).toBeCloseTo(1, 3)
     const nameTops = await page
       .locator('.hero h1')
       .evaluate((element) =>

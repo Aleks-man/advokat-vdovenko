@@ -1,0 +1,60 @@
+@media (min-width: 601px) and (max-width: 900px) {
+  .hero {
+    grid-template-columns: clamp(200px, 25vw, 224px) minmax(0, 1fr);
+    grid-template-areas:
+      'heading heading'
+      'portrait profession'
+      'portrait summary'
+      'portrait facts'
+      'actions actions';
+    grid-template-rows: auto auto auto 1fr auto;
+    gap: 18px 28px;
+  }
+  .hero-copy,
+  .hero-content,
+  .hero-description {
+    display: contents;
+  }
+  .hero-heading {
+    grid-area: heading;
+  }
+  .hero-location {
+    font-size: 11px;
+    letter-spacing: 0.06em;
+  }
+  .hero h1 {
+    font-size: clamp(32px, 4.8vw, 42px);
+  }
+  .hero-profession {
+    grid-area: profession;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: var(--subheading-leading);
+  }
+  .hero-art {
+    align-self: start;
+  }
+  .hero-summary {
+    grid-area: summary;
+    margin: 0;
+    max-width: 36ch;
+    font-size: 16px;
+  }
+  .hero-facts {
+    grid-area: facts;
+    align-self: start;
+    display: grid;
+    gap: 14px;
+  }
+  .hero-actions {
+    grid-area: actions;
+    gap: 18px;
+  }
+  .hero-actions .button {
+    padding: 15px 22px;
+    font-size: var(--text-secondary);
+  }
+  .hero-actions .text-link {
+    font-size: var(--text-secondary);
+  }
+}

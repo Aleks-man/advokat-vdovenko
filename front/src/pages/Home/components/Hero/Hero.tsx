@@ -2,6 +2,8 @@ import { attorney } from '../../../../data/attorney'
 import { Link } from 'react-router-dom'
 import { contactLinks } from '../../../../data/contacts'
 import './Hero.css'
+import './Hero.tablet.css'
+import './Hero.mobile.css'
 export function Hero() {
   const [firstName, ...lastName] = attorney.name.split(' ')
   return (
@@ -15,8 +17,8 @@ export function Hero() {
         </div>
         <div className="hero-content">
           <p className="hero-description">
-            {attorney.profession}
-            <span>
+            <span className="hero-profession">{attorney.profession}</span>
+            <span className="hero-summary">
               Помогу разобраться в ситуации и определить следующие шаги — от проверки до защиты в
               суде.
             </span>
