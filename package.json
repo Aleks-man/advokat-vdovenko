@@ -9,15 +9,17 @@
   "scripts": {
     "dev": "concurrently -n front,back -c green,blue \"npm run dev -w front\" \"npm run dev -w back\"",
     "build": "npm run build --workspaces",
-    "typecheck": "npm run typecheck --workspaces",
+    "typecheck": "npm run typecheck --workspaces && npm run typecheck:browser",
     "test": "npm run test -w back",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "test:browser": "playwright test"
+    "test:browser": "playwright test",
+    "typecheck:browser": "tsc --project tests/browser/tsconfig.json"
   },
   "devDependencies": {
     "@playwright/test": "^1.64.1",
     "concurrently": "^9.2.1",
-    "prettier": "^3.9.10"
+    "prettier": "^3.9.10",
+    "typescript": "~5.8.3"
   }
 }

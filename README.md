@@ -47,6 +47,15 @@ npm run build
 npm run format:check
 ```
 
+`npm run typecheck` проверяет исходники фронтенда и бэкенда, тесты API, браузерные тесты и конфигурацию Playwright. Настройки разделены по назначению: `back/tsconfig.test.json` — тесты API, `tests/browser/tsconfig.json` — браузерные тесты. Обе тестовые конфигурации работают без генерации JavaScript; тесты API по-прежнему исключены из production-сборки.
+
+Для отдельной проверки типов тестов:
+
+```sh
+npm run typecheck:browser
+npm run typecheck:tests -w back
+```
+
 Для форматирования — `npm run format`. Браузерные тесты используют Google Chrome; настройки находятся в `playwright.config.ts`. Скриншоты сохраняются в `artifacts/`, каталог исключён из Git.
 Браузерные тесты разделены по назначению: `navigation` и `header` — меню и шапка, `hero` — первый экран, `accordion` — FAQ и анимация, `materials` — полезные заметки, `contacts` и `about` — блоки соответствующих страниц, `routes` — переходы и редиректы, `layout` и `spacing` — общая вёрстка, `scrollbar` — прокрутка. Проверки переполнения страниц сосредоточены в `spacing.spec.ts`; компонентные тесты проверяют собственное поведение и геометрию.
 
