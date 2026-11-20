@@ -55,8 +55,8 @@
   }
 }
 .about-work .section-heading {
-  min-height: 180px;
-  align-content: center;
+  min-height: 120px;
+  align-content: start;
   padding-right: 200px;
 }
 .about-work .section-background {
@@ -80,7 +80,7 @@
 }
 @media (max-width: 700px) {
   .about-work .section-heading {
-    min-height: 190px;
+    min-height: 140px;
     padding-right: 100px;
     gap: 12px;
   }

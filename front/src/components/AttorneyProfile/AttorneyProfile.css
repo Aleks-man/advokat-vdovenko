@@ -1,6 +1,7 @@
 .about.panel {
   margin-top: var(--intro-offset);
-  padding-block: var(--intro-padding) var(--panel-space);
+  margin-bottom: 0;
+  padding-block: var(--intro-padding) var(--section-space);
 }
 .about-inner {
   display: grid;

@@ -10,7 +10,7 @@ export function PracticeList() {
         return (
           <Link to={`/practice#${area.anchorId}`} className="practice-row" key={area.id}>
             <span className="practice-number" aria-hidden="true">
-              {String(index + 1).padStart(2, '0')}
+              {index + 1}
             </span>
             <h3>{area.title}</h3>
             <p>{area.description}</p>
