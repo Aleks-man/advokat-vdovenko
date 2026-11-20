@@ -8,8 +8,8 @@ export const attorney = {
   educationYear: 2012,
   practiceSince: `С ${practiceStartYear} года`,
   region: {
-    label: 'Москва и область',
-    inText: 'Москве и Московской области',
+    label: 'Симферополь, Крым',
+    inText: 'Симферополе и Республике Крым',
   },
   portrait: { src: portrait, alt: 'Деловой портрет' },
 }

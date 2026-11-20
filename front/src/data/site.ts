@@ -2,8 +2,8 @@ export const site = {
   brandTagline: 'АДВОКАТ · УГОЛОВНЫЕ ДЕЛА',
   phone: '+7 (999) 999 99 99',
   email: 'advokat.vdovenko@example.com',
-  city: 'Москва',
-  address: 'ул. Тихая, д. 18, офис 24',
+  city: 'Республика Крым, г. Симферополь',
+  address: 'ул. Грибоедова, д. 74',
 }
 export const navigation = [
   { to: '/', label: 'Главная' },
