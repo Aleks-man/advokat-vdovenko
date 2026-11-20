@@ -1,3 +1,4 @@
+import { ChevronRight } from 'lucide-react'
 import { useId, useState, type ReactNode } from 'react'
 import './AccordionItem.css'
 
@@ -24,9 +25,12 @@ export function AccordionItem({ title, children, defaultOpen = false }: Accordio
           aria-controls={panelId}
           onClick={() => setOpen((current) => !current)}
         >
-          <span className="accordion-arrow" aria-hidden="true">
-            ▶
-          </span>
+          <ChevronRight
+            className="accordion-arrow"
+            size={16}
+            strokeWidth={1.75}
+            aria-hidden="true"
+          />
           {title}
         </button>
       </h3>

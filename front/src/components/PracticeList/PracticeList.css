@@ -1,47 +1,45 @@
-﻿.practice-list {
+.practice-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
+  column-gap: clamp(28px, 5vw, 72px);
 }
 .practice-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 24px;
-  grid-template-rows: auto auto 1fr;
-  gap: 16px;
-  padding: var(--card-padding);
-  border: 1px solid var(--line);
-  border-radius: var(--card-radius);
-  background: rgb(255 254 250 / 55%);
-  transition:
-    background 0.2s,
-    border-color 0.2s,
-    box-shadow 0.2s;
+  grid-template-columns: 40px minmax(0, 1fr) 24px;
+  grid-template-rows: auto 1fr;
+  gap: 12px 20px;
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+  transition: border-color 0.2s;
 }
-.practice-icon {
-  display: grid;
-  place-items: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: rgb(var(--accent-rgb) / 10%);
+.practice-number {
+  grid-column: 1;
+  grid-row: 1 / -1;
+  font-family: var(--heading);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1;
   color: var(--accent-text);
 }
 .practice-row h3 {
-  grid-column: 1 / -1;
-  min-width: 0;
-  font-size: var(--title-small);
+  grid-column: 2;
+  margin: 0;
+  font-family: var(--heading);
+  font-size: clamp(24px, 2.2vw, 30px);
+  font-weight: 400;
+  line-height: 1.15;
 }
 .practice-row p {
-  grid-column: 1 / -1;
+  grid-column: 2;
+  grid-row: 2;
   font-size: var(--text-size);
   line-height: var(--text-leading);
   color: var(--muted);
-  max-width: 46ch;
+  max-width: 42ch;
 }
 .practice-arrow {
-  grid-column: 2;
+  grid-column: 3;
   grid-row: 1;
-  align-self: start;
   display: grid;
   place-items: center;
   width: 24px;
@@ -51,22 +49,23 @@
 }
 .practice-row:is(:hover, :focus-visible) {
   border-color: var(--accent);
-  background: var(--paper-light);
-  box-shadow: 0 8px 24px rgb(25 40 31 / 5%);
 }
 .practice-row:is(:hover, :focus-visible) .practice-arrow {
-  transform: translate(2px, -2px);
+  transform: translate(3px, -3px);
 }
 @media (max-width: 760px) {
   .practice-list {
-    grid-template-columns: 1fr;
-    gap: 12px;
+    grid-template-columns: minmax(0, 1fr);
   }
   .practice-row {
-    gap: 10px;
+    grid-template-columns: 30px minmax(0, 1fr) 20px;
+    gap: 10px 14px;
+    padding: 22px 0;
   }
-  .practice-icon {
-    width: 40px;
-    height: 40px;
+  .practice-number {
+    font-size: 27px;
+  }
+  .practice-row h3 {
+    font-size: 25px;
   }
 }

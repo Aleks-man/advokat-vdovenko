@@ -51,6 +51,9 @@ test('hero balances portrait and text across screen sizes', async ({ page }) => 
       999,
       1000,
       1001,
+      1099,
+      1100,
+      1101,
       1440,
       1920,
       ...Array.from({ length: 42 }, (_, index) => 601 + index * 32),
@@ -156,7 +159,11 @@ test('hero balances portrait and text across screen sizes', async ({ page }) => 
       .evaluate((element) =>
         [...element.children].map((child) => child.getBoundingClientRect().top),
       )
-    expect(nameTops[0]).toBeCloseTo(nameTops[1], 0)
+    if (width >= 1100) {
+      expect(nameTops[1]).toBeGreaterThan(nameTops[0])
+    } else {
+      expect(nameTops[0]).toBeCloseTo(nameTops[1], 0)
+    }
     const clippedText = await page
       .locator('.hero p, .hero h1, .hero dd, .hero a')
       .evaluateAll((elements) =>
