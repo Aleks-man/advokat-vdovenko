@@ -42,6 +42,8 @@ tests/browser/  — браузерные проверки
 
 ## Проверки
 
+GitHub Actions запускает проверку форматирования, типов, тесты API и сборку при каждом push и pull request. Workflow находится в `.github/workflows/ci.yml`, использует Node.js 22 и также доступен для ручного запуска во вкладке Actions. Браузерные тесты пока запускаются локально.
+
 ```sh
 npm run typecheck
 npm test
