@@ -1,0 +1,56 @@
+.intro-surface {
+  position: relative;
+  isolation: isolate;
+}
+.intro-surface::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(ellipse at 50% 45%, var(--surface-hero), transparent 70%);
+  pointer-events: none;
+}
+.eyebrow {
+  color: var(--accent-text);
+  font-size: var(--text-caption);
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  background: var(--ink);
+  color: var(--paper-light);
+  padding: 18px 23px;
+  border-radius: 8px;
+  border: 1px solid var(--ink);
+  font-size: var(--text-size);
+  font-weight: 600;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+.button:hover {
+  background: var(--ink-dark);
+  transform: translateY(-2px);
+}
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  padding-block: 8px;
+  border-bottom: 1px solid var(--ink);
+  font-size: var(--text-size);
+  font-weight: 500;
+}
+
+.section-intro {
+  color: var(--muted);
+  max-width: 550px;
+  margin-top: var(--heading-gap);
+  font-size: var(--text-size);
+}
