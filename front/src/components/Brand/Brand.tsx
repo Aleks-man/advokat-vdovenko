@@ -1,3 +1,4 @@
+import { routes } from '../../data/routes'
 import { attorney } from '../../data/attorney'
 import { Link } from 'react-router-dom'
 import type { ReactNode } from 'react'
@@ -14,7 +15,7 @@ export function Brand({ className = '', onClick, children }: BrandProps) {
   const [firstName, ...lastName] = attorney.name.split(' ')
   return (
     <Link
-      to="/"
+      to={routes.home.path}
       className={`brand ${className}`}
       aria-label={`${attorney.name} — главная`}
       onClick={onClick}

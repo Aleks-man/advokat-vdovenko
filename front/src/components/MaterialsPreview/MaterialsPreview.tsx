@@ -1,4 +1,5 @@
-﻿import { ArrowUpRight } from 'lucide-react'
+import { routes } from '../../data/routes'
+import { ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { usefulMaterials } from '../../data/usefulMaterials'
 import './MaterialsPreview.css'
@@ -11,7 +12,7 @@ export function MaterialsPreview() {
         {usefulMaterials.map((material) => (
           <Link
             key={material.id}
-            to={`/practice#material-${material.id}`}
+            to={`${routes.practice.path}#material-${material.id}`}
             className="materials-preview-link"
           >
             {material.previewTitle}

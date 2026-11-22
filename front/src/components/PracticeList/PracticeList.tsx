@@ -1,4 +1,5 @@
-﻿import { ArrowUpRight } from 'lucide-react'
+import { routes } from '../../data/routes'
+import { ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { practiceAreas } from '../../data/practice'
 import './PracticeList.css'
@@ -8,7 +9,11 @@ export function PracticeList() {
     <div className="practice-list">
       {practiceAreas.map((area, index) => {
         return (
-          <Link to={`/practice#${area.anchorId}`} className="practice-row" key={area.id}>
+          <Link
+            to={`${routes.practice.path}#${area.anchorId}`}
+            className="practice-row"
+            key={area.id}
+          >
             <span className="practice-number" aria-hidden="true">
               {index + 1}
             </span>

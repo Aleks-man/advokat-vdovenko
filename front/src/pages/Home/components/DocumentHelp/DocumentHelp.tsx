@@ -1,3 +1,4 @@
+import { routes } from '../../../../data/routes'
 import { Link } from 'react-router-dom'
 import './DocumentHelp.css'
 const documentQuestions = [
@@ -31,7 +32,7 @@ export function DocumentHelp() {
             </li>
           ))}
         </ul>
-        <Link to="/practice" className="text-link">
+        <Link to={routes.practice.path} className="text-link">
           В каких вопросах я могу помочь
         </Link>
       </div>

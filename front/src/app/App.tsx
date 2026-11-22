@@ -1,3 +1,4 @@
+import { routes, legacyRoutes } from '../data/routes'
 import { PageScrollbar } from '../components/PageScrollbar/PageScrollbar'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { Header } from '../components/Header/Header'
@@ -18,11 +19,14 @@ export function App() {
       <RouteEffects />
       <main id="main-content" tabIndex={-1}>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/practice" element={<Practice />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/approach" element={<Navigate to="/about" replace />} />
-          <Route path="/contacts" element={<Contacts />} />
+          <Route path={routes.home.path} element={<Home />} />
+          <Route path={routes.practice.path} element={<Practice />} />
+          <Route path={routes.about.path} element={<AboutPage />} />
+          <Route
+            path={legacyRoutes.approach}
+            element={<Navigate to={routes.about.path} replace />}
+          />
+          <Route path={routes.contacts.path} element={<Contacts />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

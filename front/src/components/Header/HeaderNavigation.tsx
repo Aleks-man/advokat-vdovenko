@@ -2,7 +2,8 @@ import type { Ref } from 'react'
 import { NavLink } from 'react-router-dom'
 import { Phone } from 'lucide-react'
 import { MessengerLinks } from '../MessengerLinks/MessengerLinks'
-import { navigation, site } from '../../data/site'
+import { site } from '../../data/site'
+import { navigation } from '../../data/routes'
 import { contactLinks } from '../../data/contacts'
 import './HeaderNavigation.css'
 
@@ -23,7 +24,7 @@ export function HeaderNavigation({ open, navigationRef, close }: HeaderNavigatio
       <div className="navigation-panel">
         <div className="navigation-links">
           {navigation.map((item) => (
-            <NavLink key={item.to} to={item.to} end onClick={close}>
+            <NavLink key={item.path} to={item.path} end onClick={close}>
               {item.label}
             </NavLink>
           ))}

@@ -5,9 +5,3 @@ export const site = {
   city: 'Республика Крым, г. Симферополь',
   address: 'ул. Грибоедова, д. 74',
 }
-export const navigation = [
-  { to: '/', label: 'Главная' },
-  { to: '/practice', label: 'Уголовная защита' },
-  { to: '/about', label: 'Обо мне' },
-  { to: '/contacts', label: 'Контакты' },
-]

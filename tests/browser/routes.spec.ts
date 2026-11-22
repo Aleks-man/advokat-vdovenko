@@ -37,3 +37,17 @@ test('desktop navigation, stage links, legacy redirect and missing page', async 
   await expect(page).toHaveURL('/')
   expect(errors).toEqual([])
 })
+
+test('page titles follow direct routes and the legacy redirect', async ({ page }) => {
+  for (const [path, title] of [
+    ['/', 'Адвокат по уголовным делам'],
+    ['/practice', 'Уголовная защита'],
+    ['/about', 'Обо мне'],
+    ['/contacts', 'Контакты'],
+    ['/approach', 'Обо мне'],
+    ['/missing-page', 'Страница не найдена'],
+  ]) {
+    await page.goto(path)
+    await expect(page).toHaveTitle(title + ' · Константин Вдовенко')
+  }
+})

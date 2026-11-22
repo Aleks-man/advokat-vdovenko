@@ -1,3 +1,4 @@
+import { routes } from '../../data/routes'
 import { Link } from 'react-router-dom'
 import './NotFound.css'
 export function NotFound() {
@@ -8,7 +9,7 @@ export function NotFound() {
         Вернёмся
         <br />к главному.
       </h1>
-      <Link to="/" className="button">
+      <Link to={routes.home.path} className="button">
         На главную
       </Link>
     </section>

@@ -1,3 +1,4 @@
+import { routes } from '../../../../data/routes'
 import { attorney } from '../../../../data/attorney'
 import { Link } from 'react-router-dom'
 import { contactLinks } from '../../../../data/contacts'
@@ -43,7 +44,7 @@ export function Hero() {
           </dl>
         </div>
         <div className="hero-actions">
-          <Link to="/contacts" className="button">
+          <Link to={routes.contacts.path} className="button">
             Обсудить ситуацию
           </Link>
           <a
