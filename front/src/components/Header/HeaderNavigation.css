@@ -122,8 +122,6 @@
     mask: url('../../assets/menu-ornament.svg') center / contain no-repeat;
     opacity: 0.65;
     pointer-events: none;
-  }
-  .navigation-links::before {
     margin: 10px auto 8px;
   }
   .navigation-contacts::before {
@@ -164,15 +162,10 @@
   .navigation-indicator {
     display: none;
   }
-}
-@media (max-width: 720px) {
   .header .navigation {
     max-height: calc(100dvh - var(--header-row-height));
     overflow: hidden;
   }
-}
-
-@media (max-width: 720px) {
   .navigation-links::-webkit-scrollbar {
     display: none;
   }
