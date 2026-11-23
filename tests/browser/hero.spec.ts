@@ -137,8 +137,8 @@ test('hero balances portrait and text across screen sizes', async ({ page }) => 
       expect(telegram.y).toBeGreaterThanOrEqual(button.y + button.height)
     }
     expect(
-      portrait.width / portrait.height,
-      `${width}px: frame keeps portrait proportions`,
+      (portrait.width - 10) / (portrait.height - 10),
+      `${width}px: photo keeps portrait proportions inside the frame`,
     ).toBeCloseTo(4 / 5, 2)
     const visible = await image.evaluate((img: HTMLImageElement) => {
       const bounds = img.getBoundingClientRect()

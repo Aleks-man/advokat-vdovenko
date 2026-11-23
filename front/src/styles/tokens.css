@@ -27,8 +27,8 @@
   --on-dark: #f5f2ea;
   --on-dark-muted: #d1d8ce;
   --card-radius: 16px;
-  --portrait-radius: 12px;
-  --portrait-border: rgb(var(--accent-rgb) / 42%);
+  --portrait-radius: 16px;
+  --portrait-border: #8a6a40;
   --portrait-shadow: 0 6px 18px rgb(25 40 31 / 4%);
   --heading: Georgia, 'Times New Roman', serif;
   --sans: 'Onest Variable', 'Segoe UI', Arial, sans-serif;

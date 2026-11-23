@@ -71,7 +71,7 @@
   align-self: stretch;
   min-width: 0;
   min-height: 0;
-  aspect-ratio: 4 / 5;
+  padding: 4px;
   overflow: hidden;
   border: 1px solid var(--portrait-border);
   border-radius: var(--portrait-radius);
@@ -90,11 +90,9 @@
   pointer-events: none;
 }
 .hero-image {
-  position: absolute;
-  inset: 4px;
   display: block;
-  width: calc(100% - 8px);
-  height: calc(100% - 8px);
+  width: 100%;
+  height: auto;
   object-fit: contain;
   object-position: center top;
   border-radius: calc(var(--portrait-radius) - 5px);
