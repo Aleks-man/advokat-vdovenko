@@ -75,7 +75,7 @@
   background-image: var(--section-image);
   background-size: contain;
   background-position: right center;
-  opacity: 0.34;
+  opacity: 0.14;
   mask-image:
     linear-gradient(transparent, #000 15%, #000 80%, transparent),
     linear-gradient(90deg, transparent, #000 18%, #000 85%, transparent);
@@ -84,7 +84,7 @@
 
 @media (max-width: 850px) {
   .section-background--contacts::before {
-    opacity: 0.72;
+    opacity: 0.5;
   }
 
   .section-background--case-file::before {
@@ -94,13 +94,13 @@
     transform: none;
     background-size: contain;
     background-position: center;
-    opacity: 0.22;
+    opacity: 0.1;
   }
 }
 
 @media (min-width: 851px) {
   .section-background--contacts::before {
-    opacity: 0.78;
+    opacity: 0.36;
   }
 }
 
