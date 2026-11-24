@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { calculateScrollbarGeometry } from '../scrollbarGeometry'
 
 export function usePageScrollbar() {
   const trackRef = useRef<HTMLDivElement>(null)
@@ -26,22 +27,20 @@ export function usePageScrollbar() {
       }, 1100)
     }
     const update = () => {
-      const height = window.innerHeight
-      maxScroll = Math.max(0, root.scrollHeight - height)
-      trackTop = Math.max(12, (header?.getBoundingClientRect().bottom ?? 0) + 12)
-      const trackBottom = Math.min(
-        height - 12,
-        (footer?.getBoundingClientRect().top ?? height) - 12,
-      )
-      const trackHeight = Math.max(0, trackBottom - trackTop)
-      thumbHeight = Math.min(
-        trackHeight,
-        Math.max(32, Math.min(104, (trackHeight * height) / root.scrollHeight)),
-      )
+      const geometry = calculateScrollbarGeometry({
+        viewportHeight: window.innerHeight,
+        pageHeight: root.scrollHeight,
+        scrollY: window.scrollY,
+        headerBottom: header?.getBoundingClientRect().bottom ?? 0,
+        footerTop: footer?.getBoundingClientRect().top ?? window.innerHeight,
+      })
+      thumbHeight = geometry.thumbHeight
+      maxScroll = geometry.maxScroll
+      travel = geometry.travel
+      trackTop = geometry.trackTop
+      const { trackHeight, progress } = geometry
       track.style.top = `${trackTop}px`
       track.style.height = `${trackHeight}px`
-      travel = trackHeight - thumbHeight
-      const progress = maxScroll ? Math.min(1, Math.max(0, window.scrollY / maxScroll)) : 0
       track.hidden = maxScroll === 0
       track.style.setProperty('--thumb-height', `${thumbHeight}px`)
       track.style.setProperty('--thumb-top', `${progress * travel}px`)
