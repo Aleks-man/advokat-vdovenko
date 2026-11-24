@@ -1,7 +1,6 @@
 export type PracticeArea = {
   id: 'pre-investigation' | 'investigation' | 'trial' | 'appeal'
   anchorId: string
-  background?: 'case-file'
   number: string
   title: string
   description: string
@@ -41,7 +40,6 @@ export const practiceAreas: PracticeArea[] = [
   {
     id: 'trial',
     anchorId: 'stage-03',
-    background: 'case-file',
     number: '03',
     title: 'В суде',
     description: 'Дело передано в суд. Нужны подготовка к заседаниям и участие защитника.',

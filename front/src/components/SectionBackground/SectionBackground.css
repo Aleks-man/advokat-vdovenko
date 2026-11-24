@@ -55,26 +55,36 @@
   transform: scaleX(-1);
 }
 
-.section-background--case-file {
-  --section-image: url('../../assets/case-file.webp');
+.section-background--courtroom {
+  --section-image: url('../../assets/courtroom-background.webp');
+  left: 0;
+  width: 100%;
+  transform: none;
 }
 
-.section-background--case-file::before {
-  left: auto;
-  right: 0;
-  top: 50%;
-  width: min(100%, 480px);
-  height: auto;
+.section-background--courtroom::before {
+  inset: 0;
+  width: 100%;
+  height: 100%;
   max-height: none;
-  aspect-ratio: 3 / 2;
-  transform: translateY(-50%);
-  background-image: var(--section-image);
-  background-size: contain;
-  background-position: right center;
-  opacity: 0.14;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgb(var(--background-rgb)) 0%,
+      rgb(var(--background-rgb) / 94%) 38%,
+      rgb(var(--background-rgb) / 66%) 78%,
+      rgb(var(--background-rgb) / 24%) 100%
+    ),
+    var(--section-image);
+  background-size:
+    100% 100%,
+    auto 100%;
+  background-position:
+    center,
+    right center;
   mask-image:
-    linear-gradient(transparent, #000 15%, #000 80%, transparent),
-    linear-gradient(90deg, transparent, #000 18%, #000 85%, transparent);
+    linear-gradient(transparent, #000 18%, #000 78%, transparent),
+    linear-gradient(90deg, transparent, #000 10%, #000 92%, transparent);
   mask-composite: intersect;
 }
 
@@ -83,14 +93,15 @@
     opacity: 0.5;
   }
 
-  .section-background--case-file::before {
-    width: min(100%, 560px);
-    top: auto;
-    bottom: 24px;
-    transform: none;
-    background-size: contain;
-    background-position: center;
-    opacity: 0.1;
+  .section-background--courtroom::before {
+    background-image:
+      linear-gradient(
+        90deg,
+        rgb(var(--background-rgb) / 94%) 0%,
+        rgb(var(--background-rgb) / 82%) 45%,
+        rgb(var(--background-rgb) / 55%) 100%
+      ),
+      var(--section-image);
   }
 }
 

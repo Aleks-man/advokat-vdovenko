@@ -1,15 +1,10 @@
-import { SectionBackground } from '../../../../components/SectionBackground/SectionBackground'
 import type { PracticeArea } from '../../../../data/practice'
 
 import './PracticeStage.css'
 
 export function PracticeStage({ area }: { area: PracticeArea }) {
   return (
-    <article
-      className={'practice-stage' + (area.background ? ' section-with-background' : '')}
-      id={area.anchorId}
-    >
-      {area.background && <SectionBackground variant={area.background} />}
+    <article className="practice-stage" id={area.anchorId}>
       <div className="practice-stage-content">
         <div className="practice-stage-heading">
           <span className="practice-stage-number" aria-hidden="true">
