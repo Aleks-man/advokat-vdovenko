@@ -1,4 +1,3 @@
-import { SectionBackground } from '../../../../components/SectionBackground/SectionBackground'
 import { workSteps } from '../../../../data/workSteps'
 
 import './WorkSteps.css'
@@ -6,8 +5,7 @@ import './WorkSteps.css'
 export function WorkSteps() {
   return (
     <section className="container section content-section about-work" id="approach">
-      <div className="section-heading section-with-background">
-        <SectionBackground variant="about" />
+      <div className="section-heading">
         <p className="eyebrow">Начало работы</p>
         <h2>
           Что обсудить

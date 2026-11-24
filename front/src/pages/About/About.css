@@ -1,0 +1,46 @@
+.about-atmosphere {
+  position: relative;
+  isolation: isolate;
+  --muted: var(--ink);
+}
+
+.about-atmosphere::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  width: min(100%, 1150px);
+  aspect-ratio: 3 / 2;
+  pointer-events: none;
+  --about-wash: linear-gradient(
+    90deg,
+    rgb(var(--background-rgb)) 0%,
+    rgb(var(--background-rgb) / 94%) 30%,
+    rgb(var(--background-rgb) / 76%) 60%,
+    rgb(var(--background-rgb) / 28%) 100%
+  );
+  background-image: var(--about-wash), url('../../assets/consultation-chairs.webp');
+  background-size:
+    100% 100%,
+    cover;
+  background-position: center;
+  mask-image:
+    linear-gradient(transparent, #000 15%, #000 72%, transparent),
+    linear-gradient(90deg, transparent, #000 18%, #000 95%, transparent);
+  mask-composite: intersect;
+  filter: blur(clamp(0px, calc(1.65px - 0.15vw), 0.6px));
+}
+
+@media (max-width: 900px) {
+  .about-atmosphere::before {
+    top: 140px;
+    width: 100%;
+    height: 620px;
+    aspect-ratio: auto;
+    background-size:
+      100% 100%,
+      auto 620px;
+    background-position: right center;
+  }
+}

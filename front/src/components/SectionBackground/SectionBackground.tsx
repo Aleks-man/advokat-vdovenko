@@ -1,7 +1,7 @@
 import './SectionBackground.css'
 
 type SectionBackgroundProps = {
-  variant: 'contacts' | 'about' | 'case-file'
+  variant: 'contacts' | 'case-file'
 }
 
 export function SectionBackground({ variant }: SectionBackgroundProps) {

@@ -55,10 +55,6 @@
   transform: scaleX(-1);
 }
 
-.section-background--about {
-  --section-image: url('../../assets/legal-library.webp');
-}
-
 .section-background--case-file {
   --section-image: url('../../assets/case-file.webp');
 }
