@@ -1,4 +1,4 @@
-import { MaterialsPreview } from '../../../../components/MaterialsPreview/MaterialsPreview'
+import { MaterialsPreview } from '../MaterialsPreview/MaterialsPreview'
 import './FirstConversation.css'
 
 const preparationItems = [

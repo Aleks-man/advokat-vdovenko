@@ -2,7 +2,7 @@ import { PracticeStageNav } from './components/PracticeStageNav/PracticeStageNav
 import { PracticeStage } from './components/PracticeStage/PracticeStage'
 import { ContactCallout } from '../../components/ContactCallout/ContactCallout'
 import { practiceAreas } from '../../data/practice'
-import { UsefulMaterials } from '../../components/UsefulMaterials/UsefulMaterials'
+import { UsefulMaterials } from './components/UsefulMaterials/UsefulMaterials'
 import { PageIntro } from '../../components/PageIntro/PageIntro'
 import './Practice.css'
 

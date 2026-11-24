@@ -1,5 +1,5 @@
 import { Hero } from './components/Hero/Hero'
-import { PracticeList } from '../../components/PracticeList/PracticeList'
+import { PracticeList } from './components/PracticeList/PracticeList'
 import { DocumentHelp } from './components/DocumentHelp/DocumentHelp'
 import { FirstConversation } from './components/FirstConversation/FirstConversation'
 

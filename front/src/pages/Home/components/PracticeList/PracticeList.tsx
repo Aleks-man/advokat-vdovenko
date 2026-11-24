@@ -1,7 +1,7 @@
-import { routes } from '../../data/routes'
+import { routes } from '../../../../data/routes'
 import { ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { practiceAreas } from '../../data/practice'
+import { practiceAreas } from '../../../../data/practice'
 import './PracticeList.css'
 
 export function PracticeList() {

@@ -1,7 +1,7 @@
-import { routes } from '../../data/routes'
+import { routes } from '../../../../data/routes'
 import { ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { usefulMaterials } from '../../data/usefulMaterials'
+import { usefulMaterials } from '../../../../data/usefulMaterials'
 import './MaterialsPreview.css'
 
 export function MaterialsPreview() {
