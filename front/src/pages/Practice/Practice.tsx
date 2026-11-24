@@ -9,21 +9,23 @@ import './Practice.css'
 export function Practice() {
   return (
     <>
-      <PageIntro
-        background="practice"
-        eyebrow="Уголовная защита"
-        title={
-          <>
-            Помощь по делу
-            <br />
-            <em>на разных этапах</em>
-          </>
-        }
-      >
-        Ко мне можно обратиться во время проверки, следствия, рассмотрения дела в суде или после
-        вынесения решения. Расскажите, на каком этапе нужна моя помощь.
-      </PageIntro>
-      <PracticeStageNav />
+      <div className="practice-opening">
+        <PageIntro
+          background="practice"
+          eyebrow="Уголовная защита"
+          title={
+            <>
+              Помощь по делу
+              <br />
+              <em>на разных этапах</em>
+            </>
+          }
+        >
+          Ко мне можно обратиться во время проверки, следствия, рассмотрения дела в суде или после
+          вынесения решения. Расскажите, на каком этапе нужна моя помощь.
+        </PageIntro>
+        <PracticeStageNav />
+      </div>
       <section className="container content-section practice-stages">
         {practiceAreas.map((area) => (
           <PracticeStage key={area.id} area={area} />
