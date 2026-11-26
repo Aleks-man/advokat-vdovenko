@@ -1,4 +1,4 @@
-import { routes, legacyRoutes } from '@/data/routes'
+import { routes, legacyRoutes } from '@/app/routes'
 import { PageScrollbar } from '@/components/PageScrollbar/PageScrollbar'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { Header } from '@/components/Header/Header'

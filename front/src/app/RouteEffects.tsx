@@ -1,4 +1,4 @@
-import { routes } from '@/data/routes'
+import { routes } from '@/app/routes'
 import { attorney } from '@/data/attorney'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'

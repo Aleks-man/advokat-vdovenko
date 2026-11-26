@@ -1,4 +1,4 @@
-import { routes } from '@/data/routes'
+import { routes } from '@/app/routes'
 import { ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { usefulMaterials } from '@/data/usefulMaterials'

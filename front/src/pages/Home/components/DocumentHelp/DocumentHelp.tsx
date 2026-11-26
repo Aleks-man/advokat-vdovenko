@@ -1,4 +1,4 @@
-import { routes } from '@/data/routes'
+import { routes } from '@/app/routes'
 import { Link } from 'react-router-dom'
 import './DocumentHelp.css'
 const documentQuestions = [

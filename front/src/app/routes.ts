@@ -1,4 +1,4 @@
-import { attorney } from './attorney'
+import { attorney } from '@/data/attorney'
 
 export const routes = {
   home: { path: '/', label: 'Главная', title: attorney.profession },

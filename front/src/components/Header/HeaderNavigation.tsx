@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { Phone } from 'lucide-react'
 import { MessengerLinks } from '../MessengerLinks/MessengerLinks'
 import { site } from '@/data/site'
-import { navigation } from '@/data/routes'
+import { navigation } from '@/app/routes'
 import { contactLinks } from '@/data/contacts'
 import './HeaderNavigation.css'
 
