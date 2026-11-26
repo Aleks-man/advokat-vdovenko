@@ -1,5 +1,5 @@
 import { attorney } from '@/data/attorney'
-import { about } from '@/data/about'
+import { about } from '../../data/about'
 import './AttorneyProfile.css'
 
 export function AttorneyProfile() {

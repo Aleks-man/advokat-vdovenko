@@ -1,4 +1,4 @@
-import { attorney } from './attorney'
+import { attorney } from '@/data/attorney'
 
 export const about = {
   paragraphs: [

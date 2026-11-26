@@ -1,4 +1,4 @@
-import { workSteps } from '@/data/workSteps'
+import { workSteps } from '../../data/workSteps'
 
 import './WorkSteps.css'
 
