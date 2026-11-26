@@ -16,15 +16,14 @@
   .hero-description {
     display: contents;
   }
+  .hero-copy {
+    --ink: var(--ink-dark);
+    --muted: var(--ink-dark);
+    --accent-text: #594020;
+    color: var(--ink);
+  }
   .hero-heading {
     grid-area: heading;
-  }
-  .hero-profession {
-    grid-area: profession;
-    margin-top: -6px;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: var(--subheading-leading);
   }
   .hero-location {
     font-size: 10px;
@@ -33,24 +32,18 @@
   .hero h1 {
     font-size: clamp(23px, 5.5vw, 32px);
   }
-  .hero-art {
-    width: 100%;
-    max-width: 280px;
-    justify-self: center;
+  .hero-profession {
+    grid-area: profession;
+    margin-top: -6px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: var(--subheading-leading);
   }
   .hero-summary {
     grid-area: summary;
     max-width: none;
     margin: 0;
     text-align: left;
-  }
-  .hero-actions {
-    grid-area: actions;
-    justify-content: center;
-    gap: 8px 18px;
-  }
-  .hero-actions .button {
-    justify-content: center;
   }
   .hero-facts,
   .hero-summary-full {
@@ -67,6 +60,19 @@
     font-size: var(--text-secondary);
     line-height: var(--text-leading);
     text-align: left;
+  }
+  .hero-art {
+    width: 100%;
+    max-width: 280px;
+    justify-self: center;
+  }
+  .hero-actions {
+    grid-area: actions;
+    justify-content: center;
+    gap: 8px 18px;
+  }
+  .hero-actions .button {
+    justify-content: center;
   }
 }
 @media (min-width: 451px) and (max-width: 600px) {
@@ -92,14 +98,5 @@
   }
   .hero-actions .button {
     width: 100%;
-  }
-}
-
-@media (max-width: 600px) {
-  .hero-copy {
-    --ink: var(--ink-dark);
-    --muted: var(--ink-dark);
-    --accent-text: #594020;
-    color: var(--ink);
   }
 }
