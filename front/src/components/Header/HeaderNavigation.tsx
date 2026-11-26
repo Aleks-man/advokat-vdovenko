@@ -2,9 +2,9 @@ import type { Ref } from 'react'
 import { NavLink } from 'react-router-dom'
 import { Phone } from 'lucide-react'
 import { MessengerLinks } from '../MessengerLinks/MessengerLinks'
-import { site } from '../../data/site'
-import { navigation } from '../../data/routes'
-import { contactLinks } from '../../data/contacts'
+import { site } from '@/data/site'
+import { navigation } from '@/data/routes'
+import { contactLinks } from '@/data/contacts'
 import './HeaderNavigation.css'
 
 type HeaderNavigationProps = {

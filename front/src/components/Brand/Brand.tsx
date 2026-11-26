@@ -1,8 +1,8 @@
-import { routes } from '../../data/routes'
-import { attorney } from '../../data/attorney'
+import { routes } from '@/data/routes'
+import { attorney } from '@/data/attorney'
 import { Link } from 'react-router-dom'
 import type { ReactNode } from 'react'
-import { site } from '../../data/site'
+import { site } from '@/data/site'
 import './Brand.css'
 
 type BrandProps = {

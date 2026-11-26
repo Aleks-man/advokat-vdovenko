@@ -1,4 +1,4 @@
-import type { PracticeArea } from '../../../../data/practice'
+import type { PracticeArea } from '@/data/practice'
 
 import './PracticeStage.css'
 

@@ -1,5 +1,5 @@
-import { AccordionItem } from '../../../../components/AccordionItem/AccordionItem'
-import { faqItems } from '../../../../data/faq'
+import { AccordionItem } from '@/components/AccordionItem/AccordionItem'
+import { faqItems } from '@/data/faq'
 
 import './FaqSection.css'
 

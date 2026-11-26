@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom'
-import { AccordionItem } from '../../../../components/AccordionItem/AccordionItem'
-import { usefulMaterials } from '../../../../data/usefulMaterials'
+import { AccordionItem } from '@/components/AccordionItem/AccordionItem'
+import { usefulMaterials } from '@/data/usefulMaterials'
 import './UsefulMaterials.css'
 
 export function UsefulMaterials() {

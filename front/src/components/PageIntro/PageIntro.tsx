@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import justice from '../../assets/justice-hero.webp'
+import justice from '@/assets/justice-hero.webp'
 import './PageIntro.css'
 
 type PageIntroProps = {

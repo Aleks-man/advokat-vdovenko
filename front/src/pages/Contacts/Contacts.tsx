@@ -1,8 +1,8 @@
 import { ContactDetails } from './components/ContactDetails/ContactDetails'
 import { ContactAside } from './components/ContactAside/ContactAside'
-import { SectionBackground } from '../../components/SectionBackground/SectionBackground'
+import { SectionBackground } from '@/components/SectionBackground/SectionBackground'
 import './Contacts.css'
-import { PageIntro } from '../../components/PageIntro/PageIntro'
+import { PageIntro } from '@/components/PageIntro/PageIntro'
 export function Contacts() {
   return (
     <>

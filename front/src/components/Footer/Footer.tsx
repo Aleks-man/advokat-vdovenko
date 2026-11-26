@@ -1,9 +1,9 @@
-import { attorney } from '../../data/attorney'
+import { attorney } from '@/data/attorney'
 import { Mail, MapPin, Phone } from 'lucide-react'
-import { site } from '../../data/site'
+import { site } from '@/data/site'
 import { MessengerLinks } from '../MessengerLinks/MessengerLinks'
 import { Brand } from '../Brand/Brand'
-import { contactLinks } from '../../data/contacts'
+import { contactLinks } from '@/data/contacts'
 import './Footer.css'
 export function Footer() {
   return (

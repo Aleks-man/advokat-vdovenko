@@ -1,4 +1,4 @@
-import portrait from '../assets/about-portrait.webp'
+import portrait from '@/assets/about-portrait.webp'
 
 const practiceStartYear = 2014
 

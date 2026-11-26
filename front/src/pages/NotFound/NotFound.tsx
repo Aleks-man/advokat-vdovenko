@@ -1,4 +1,4 @@
-import { routes } from '../../data/routes'
+import { routes } from '@/data/routes'
 import { Link } from 'react-router-dom'
 import './NotFound.css'
 export function NotFound() {

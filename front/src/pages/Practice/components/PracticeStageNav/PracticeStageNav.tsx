@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { practiceAreas } from '../../../../data/practice'
+import { practiceAreas } from '@/data/practice'
 
 import './PracticeStageNav.css'
 

@@ -1,7 +1,7 @@
-import viberIcon from '../../assets/icons/viber.svg'
-import whatsappIcon from '../../assets/icons/whatsapp.svg'
-import telegramIcon from '../../assets/icons/telegram.svg'
-import { contactLinks } from '../../data/contacts'
+import viberIcon from '@/assets/icons/viber.svg'
+import whatsappIcon from '@/assets/icons/whatsapp.svg'
+import telegramIcon from '@/assets/icons/telegram.svg'
+import { contactLinks } from '@/data/contacts'
 import './MessengerLinks.css'
 
 export function MessengerLinks({ showLabels = false }: { showLabels?: boolean }) {

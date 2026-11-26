@@ -1,10 +1,10 @@
 import { PracticeStageNav } from './components/PracticeStageNav/PracticeStageNav'
 import { PracticeStage } from './components/PracticeStage/PracticeStage'
-import { ContactCallout } from '../../components/ContactCallout/ContactCallout'
-import { practiceAreas } from '../../data/practice'
+import { ContactCallout } from '@/components/ContactCallout/ContactCallout'
+import { practiceAreas } from '@/data/practice'
 import { UsefulMaterials } from './components/UsefulMaterials/UsefulMaterials'
-import { PageIntro } from '../../components/PageIntro/PageIntro'
-import { SectionBackground } from '../../components/SectionBackground/SectionBackground'
+import { PageIntro } from '@/components/PageIntro/PageIntro'
+import { SectionBackground } from '@/components/SectionBackground/SectionBackground'
 import './Practice.css'
 
 const stageGroups = [practiceAreas.slice(0, 1), practiceAreas.slice(1, 3), practiceAreas.slice(3)]

@@ -1,5 +1,5 @@
 import { ArrowUpRight, Phone } from 'lucide-react'
-import { contactLinks } from '../../data/contacts'
+import { contactLinks } from '@/data/contacts'
 import './ContactCallout.css'
 
 export function ContactCallout() {
