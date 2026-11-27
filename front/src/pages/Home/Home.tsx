@@ -3,7 +3,7 @@ import { PracticeList } from './components/PracticeList/PracticeList'
 import { DocumentHelp } from './components/DocumentHelp/DocumentHelp'
 import { FirstConversation } from './components/FirstConversation/FirstConversation'
 
-import { ContactCallout } from '@/components/ContactCallout/ContactCallout'
+import { ContactCallout } from '@/components/contact/ContactCallout/ContactCallout'
 import './Home.css'
 
 export function Home() {

@@ -1,7 +1,7 @@
 import { Mail, MapPin, Phone } from 'lucide-react'
 import { site } from '@/data/site'
 import { contactLinks } from '@/data/contacts'
-import { MessengerLinks } from '@/components/MessengerLinks/MessengerLinks'
+import { MessengerLinks } from '@/components/contact/MessengerLinks/MessengerLinks'
 
 import './ContactDetails.css'
 
