@@ -11,7 +11,16 @@ app.use((_req, res) => {
 })
 app.use(
   (error: unknown, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
-    const status = error instanceof SyntaxError ? 400 : 500
-    res.status(status).json({ error: status === 400 ? 'Invalid JSON' : 'Internal server error' })
+    if (error instanceof Error && 'type' in error) {
+      if (error.type === 'entity.too.large') {
+        res.status(413).json({ error: 'Payload too large' })
+        return
+      }
+      if (error.type === 'entity.parse.failed') {
+        res.status(400).json({ error: 'Invalid JSON' })
+        return
+      }
+    }
+    res.status(500).json({ error: 'Internal server error' })
   },
 )

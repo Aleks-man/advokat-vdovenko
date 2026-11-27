@@ -13,3 +13,20 @@ test('unknown endpoints return JSON 404', async () => {
   assert.equal(response.status, 404)
   assert.equal(response.body.error, 'Not found')
 })
+
+test('malformed JSON returns JSON 400', async () => {
+  const response = await request(app)
+    .post('/api/health')
+    .set('Content-Type', 'application/json')
+    .send('{"broken":')
+  assert.equal(response.status, 400)
+  assert.deepEqual(response.body, { error: 'Invalid JSON' })
+})
+
+test('JSON exceeding the 16kb limit returns JSON 413', async () => {
+  const response = await request(app)
+    .post('/api/health')
+    .send({ value: 'x'.repeat(16 * 1024) })
+  assert.equal(response.status, 413)
+  assert.deepEqual(response.body, { error: 'Payload too large' })
+})
