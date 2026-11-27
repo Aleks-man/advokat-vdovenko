@@ -9,8 +9,9 @@
   position: absolute;
   z-index: -1;
   top: 0;
-  right: 0;
+  right: max(var(--gutter), calc((100% - var(--page-width)) / 2));
   width: min(100%, 1150px);
+  max-width: calc(100% - var(--gutter) * 2);
   aspect-ratio: 3 / 2;
   pointer-events: none;
   --about-wash: linear-gradient(
@@ -27,7 +28,17 @@
   background-position: center;
   mask-image:
     linear-gradient(transparent, #000 15%, #000 72%, transparent),
-    linear-gradient(90deg, transparent, #000 18%, #000 95%, transparent);
+    linear-gradient(
+      90deg,
+      transparent,
+      #000 18%,
+      #000 88%,
+      rgb(0 0 0 / 96%) 90%,
+      rgb(0 0 0 / 85%) 92%,
+      rgb(0 0 0 / 50%) 95%,
+      rgb(0 0 0 / 15%) 98%,
+      transparent 100%
+    );
   mask-composite: intersect;
   filter: blur(clamp(0px, calc(1.65px - 0.15vw), 0.6px));
 }
