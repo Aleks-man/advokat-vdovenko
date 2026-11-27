@@ -1,24 +1,27 @@
 import { test, expect } from '@playwright/test'
+import { site } from '../../front/src/data/site'
 
 test('contact details and footer expose phone and messenger links', async ({ page }) => {
+  const phoneDigits = site.phone.match(/\d/g)!.join('')
+  const internationalPhone = `+${phoneDigits}`
   await page.goto('/contacts')
   await expect(page.locator('.contact-details a[href^="tel:"]')).toHaveAttribute(
     'href',
-    'tel:+79999999999',
+    `tel:${internationalPhone}`,
   )
   for (const section of ['.contact-details', 'footer']) {
     const contacts = page.locator(section)
     await expect(contacts.getByRole('link', { name: 'Написать в Viber' })).toHaveAttribute(
       'href',
-      'viber://chat?number=%2B79999999999',
+      `viber://chat?number=${encodeURIComponent(internationalPhone)}`,
     )
     await expect(contacts.getByRole('link', { name: 'Написать в WhatsApp' })).toHaveAttribute(
       'href',
-      'https://wa.me/79999999999',
+      `https://wa.me/${phoneDigits}`,
     )
     await expect(contacts.getByRole('link', { name: 'Написать в Telegram' })).toHaveAttribute(
       'href',
-      'https://t.me/+79999999999',
+      `https://t.me/${internationalPhone}`,
     )
   }
 })
